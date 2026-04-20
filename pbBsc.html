@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PB B.Sc Nursing – Post Basic Bachelor of Science | Noor College</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#C0211F;--red-light:#E03533;--red-dark:#8B1614;
+  --navy:#0C1A3A;--navy-mid:#172D5C;--navy-light:#1E3A70;
+  --white:#FFFFFF;--off-white:#F7F6F2;--light-gray:#E8EAF0;
+  --mid-gray:#B8BCC8;--text-muted:#64748B;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--navy);background:var(--white);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 6%;background:rgba(12,26,58,0.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(192,33,31,0.3);transition:height 0.3s,background 0.3s}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-mark{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--red),var(--red-dark));display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:#fff;box-shadow:0 0 0 2px rgba(192,33,31,0.4)}
+.logo-words span{display:block;font-size:14px;font-weight:600;color:#fff}
+.logo-words small{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid-gray)}
+nav ul{list-style:none;display:flex;gap:32px;align-items:center}
+nav ul a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:12.5px;font-weight:500;letter-spacing:0.8px;text-transform:uppercase;position:relative;padding-bottom:3px;transition:color 0.3s}
+nav ul a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;background:var(--red-light);transition:width 0.3s}
+nav ul a:hover{color:#fff}
+nav ul a:hover::after{width:100%}
+.btn-nav{background:var(--red)!important;color:#fff!important;padding:8px 22px!important;border-radius:3px;font-weight:600!important}
+.btn-nav::after{display:none!important}
+
+/* HERO */
+.page-hero{min-height:76vh;background:var(--navy);position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:0 6% 80px;padding-top:70px}
+.ph-bg{position:absolute;inset:0;background:radial-gradient(ellipse 58% 68% at 76% 30%,rgba(192,33,31,0.27) 0%,transparent 62%),radial-gradient(ellipse 46% 56% at 6% 86%,rgba(30,58,112,0.65) 0%,transparent 58%),linear-gradient(150deg,#0C1A3A 0%,#172D5C 52%,#0C1A3A 100%)}
+.ph-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.032) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.032) 1px,transparent 1px);background-size:72px 72px;animation:gridDrift 22s linear infinite}
+@keyframes gridDrift{from{background-position:0 0}to{background-position:72px 72px}}
+.ph-slice{position:absolute;top:0;right:0;bottom:0;width:42%;background:linear-gradient(135deg,transparent 28%,rgba(192,33,31,0.09) 100%);clip-path:polygon(22% 0,100% 0,100% 100%,0 100%)}
+/* animated bars */
+.hbar{position:absolute;height:1px;background:linear-gradient(90deg,transparent,rgba(192,33,31,0.3),transparent);pointer-events:none;animation:barSlide 10s linear infinite}
+.hb1{width:40%;right:0;top:22%;animation-delay:0s}
+.hb2{width:28%;right:0;top:40%;animation-delay:2s;animation-duration:14s}
+.hb3{width:50%;right:0;top:56%;animation-delay:5s;animation-duration:12s}
+.hb4{width:20%;right:0;top:70%;animation-delay:3s;animation-duration:16s}
+@keyframes barSlide{0%{transform:translateX(30%);opacity:0}20%{opacity:1}80%{opacity:1}100%{transform:translateX(-100%);opacity:0}}
+/* rotating diamond */
+.hero-diamond{position:absolute;right:8%;top:15%;width:240px;height:240px;border:1px solid rgba(192,33,31,0.2);transform:rotate(45deg);animation:dRot 20s linear infinite;pointer-events:none}
+.hero-diamond::before{content:'';position:absolute;inset:30px;border:1px solid rgba(255,255,255,0.07)}
+.hero-diamond::after{content:'';position:absolute;inset:60px;border:1px solid rgba(192,33,31,0.15)}
+@keyframes dRot{from{transform:rotate(45deg)}to{transform:rotate(405deg)}}
+/* dots */
+.hdot{position:absolute;border-radius:50%;pointer-events:none;background:rgba(192,33,31,0.5);animation:dotP 3s ease-in-out infinite}
+.hd1{width:8px;height:8px;right:8%;top:14%}.hd2{width:5px;height:5px;right:22%;top:32%;background:rgba(255,255,255,0.3);animation-delay:1s}.hd3{width:6px;height:6px;right:35%;top:50%;animation-delay:2s}
+@keyframes dotP{0%,100%{opacity:0.4;transform:scale(1)}50%{opacity:1;transform:scale(1.6)}}
+/* upgrade ladder */
+.upgrade-ladder{position:absolute;right:5%;bottom:60px;z-index:2;pointer-events:none}
+.ul-track{display:flex;flex-direction:column;align-items:center;border:1px solid rgba(255,255,255,0.08);border-radius:2px;overflow:hidden}
+.ul-step{width:80px;padding:10px 0;text-align:center;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,0.06);color:rgba(255,255,255,0.3)}
+.ul-step:last-child{border-bottom:none}
+.ul-step.active{background:rgba(192,33,31,0.22);color:var(--red-light);border-left:2px solid var(--red)}
+
+.ph-content{position:relative;z-index:2;max-width:820px}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:24px}
+.breadcrumb::before{content:'';width:28px;height:1px;background:var(--red);margin-right:4px}
+.breadcrumb a{color:rgba(255,255,255,0.38);text-decoration:none}
+.breadcrumb a:hover{color:var(--red-light)}
+.breadcrumb .sep{color:rgba(255,255,255,0.22)}
+.breadcrumb .cur{color:var(--red-light)}
+.course-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(192,33,31,0.18);border:1px solid rgba(192,33,31,0.4);color:#F4A0A0;padding:7px 20px;border-radius:30px;font-size:11.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:22px}
+.course-badge::before{content:'';width:7px;height:7px;background:var(--red-light);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.4)}}
+.ph-content h1{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5.8vw,76px);font-weight:700;color:#fff;line-height:1.0;letter-spacing:-1px;animation:fadeUp 0.9s ease 0.2s both}
+.ph-content h1 em{color:var(--red-light);font-style:italic}
+.ph-sub{font-size:16.5px;color:rgba(255,255,255,0.6);font-weight:300;max-width:580px;line-height:1.75;margin-top:16px;animation:fadeUp 0.9s ease 0.4s both}
+.quick-pills{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px;animation:fadeUp 0.9s ease 0.6s both}
+.qpill{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);padding:8px 18px;border-radius:30px;font-size:12.5px;color:rgba(255,255,255,0.85);font-weight:500}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+/* PATHWAY STRIP */
+.pathway-strip{background:var(--navy-mid);border-bottom:1px solid rgba(255,255,255,0.05)}
+.ps-inner{max-width:1140px;margin:0 auto;display:flex;align-items:stretch}
+.ps-step{flex:1;padding:22px 24px;display:flex;align-items:center;gap:12px;border-right:1px solid rgba(255,255,255,0.06);position:relative;transition:background 0.3s}
+.ps-step:last-child{border-right:none}
+.ps-step:hover{background:rgba(255,255,255,0.03)}
+.ps-step.active{background:rgba(192,33,31,0.12)}
+.ps-step.active::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--red)}
+.ps-num{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:rgba(255,255,255,0.07);flex-shrink:0;line-height:1}
+.ps-step.active .ps-num{color:rgba(192,33,31,0.3)}
+.ps-label p{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:3px}
+.ps-label strong{font-size:14px;font-weight:600;color:rgba(255,255,255,0.65)}
+.ps-step.active .ps-label strong{color:#fff}
+.ps-arr{position:absolute;right:-9px;top:50%;transform:translateY(-50%);color:rgba(192,33,31,0.5);font-size:16px;z-index:2}
+
+/* LAYOUT */
+.page-body{max-width:1200px;margin:0 auto;padding:80px 6%;display:grid;grid-template-columns:1fr 320px;gap:60px;align-items:start}
+.sidebar{position:sticky;top:90px}
+
+/* SIDEBAR */
+.sc{background:var(--white);border:1px solid var(--light-gray);border-radius:2px;overflow:hidden;margin-bottom:20px}
+.sc-head{background:var(--navy);padding:20px 24px}
+.sc-head h4{font-size:12.5px;font-weight:600;color:#fff;letter-spacing:1px;text-transform:uppercase}
+.sc-body{padding:20px 24px}
+.ir{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--light-gray)}
+.ir:last-child{border-bottom:none}
+.ii{font-size:16px;flex-shrink:0;margin-top:1px}
+.il{font-size:10.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:2px}
+.iv{font-size:14px;color:var(--navy);font-weight:500;line-height:1.45}
+.apply-card{background:linear-gradient(135deg,var(--red-dark),var(--red));border-radius:2px;padding:28px 24px;position:relative;overflow:hidden}
+.apply-card::before{content:'';position:absolute;top:-20px;right:-20px;width:100px;height:100px;border-radius:50%;background:rgba(255,255,255,0.06)}
+.apply-card h4{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:8px}
+.apply-card p{font-size:13px;color:rgba(255,255,255,0.8);line-height:1.6;margin-bottom:20px}
+.apply-btn{display:block;width:100%;padding:13px;background:#fff;color:var(--red);border-radius:3px;font-size:14px;font-weight:700;text-align:center;text-decoration:none;transition:all 0.3s}
+.apply-btn:hover{background:var(--off-white);transform:translateY(-1px)}
+.cc{background:var(--navy);border-radius:2px;padding:22px 24px;margin-top:20px}
+.cc p{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:8px}
+.cc a{display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none;font-size:16px;font-weight:600;margin-bottom:8px;transition:color 0.3s}
+.cc a:hover{color:var(--red-light)}
+.toc{background:var(--off-white);border:1px solid var(--light-gray);border-radius:2px;padding:20px 24px;margin-bottom:20px}
+.toc h4{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:14px}
+.toc ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.toc ul a{font-size:13.5px;color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:8px;padding:4px 0;transition:all 0.2s}
+.toc ul a::before{content:'';width:14px;height:1.5px;background:var(--red);flex-shrink:0;transition:width 0.3s}
+.toc ul a:hover{color:var(--red);padding-left:4px}
+.toc ul a:hover::before{width:22px}
+.ol{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--light-gray);text-decoration:none;color:var(--navy);font-size:14px;font-weight:500;transition:all 0.25s}
+.ol:last-child{border-bottom:none}
+.ol::before{content:'→';font-size:11px;color:var(--red);flex-shrink:0}
+.ol:hover{color:var(--red);padding-left:6px}
+
+/* MAIN CONTENT */
+.cs{margin-bottom:64px}
+.cs:last-child{margin-bottom:0}
+.cst{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+.cst::before{content:'—  ';opacity:0.5}
+.cs h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,40px);font-weight:700;color:var(--navy);line-height:1.15;margin-bottom:18px}
+.cs h2 em{color:var(--red);font-style:italic}
+.cs p{font-size:15.5px;color:var(--text-muted);line-height:1.85;margin-bottom:16px}
+.divider{height:1px;background:linear-gradient(90deg,var(--red),var(--light-gray),transparent);margin:0 0 64px;opacity:0.6}
+
+/* key stats */
+.krow{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--light-gray);border:1px solid var(--light-gray);margin:28px 0}
+.kc{background:var(--white);padding:24px 20px;text-align:center}
+.kc strong{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;color:var(--navy);display:block;line-height:1}
+.kc strong span{color:var(--red)}
+.kc small{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted)}
+
+/* eligibility */
+.elig-card{background:var(--navy);border-radius:2px;padding:36px 40px;display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:8px}
+.ec-col h4{font-size:11.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.ei{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px;font-size:14px;color:rgba(255,255,255,0.75);line-height:1.55}
+.ei:last-child{margin-bottom:0}
+.ed{width:6px;height:6px;border-radius:50%;background:var(--red-light);flex-shrink:0;margin-top:6px}
+
+/* objectives */
+.obj{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:8px}
+.obj li{display:flex;align-items:flex-start;gap:14px;font-size:15px;color:#374151;line-height:1.6;padding:14px 18px;background:var(--off-white);border-left:3px solid var(--red);border-radius:0 2px 2px 0}
+.obj li::before{content:'✦';color:var(--red);font-size:12px;margin-top:3px;flex-shrink:0}
+
+/* curriculum tabs */
+.ytabs{display:flex;border-bottom:2px solid var(--light-gray)}
+.ytab{padding:12px 36px;font-size:13px;font-weight:600;color:var(--text-muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all 0.3s;background:none;border-top:none;border-left:none;border-right:none;font-family:'DM Sans',sans-serif}
+.ytab.active{color:var(--red);border-bottom-color:var(--red)}
+.ypanel{display:none;padding-top:28px}
+.ypanel.active{display:block}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.si{display:flex;align-items:center;gap:12px;padding:14px 18px;background:var(--white);border:1px solid var(--light-gray);border-radius:2px;font-size:14px;color:var(--navy);font-weight:500;transition:all 0.3s}
+.si:hover{border-color:rgba(192,33,31,0.3);background:rgba(192,33,31,0.02);transform:translateX(3px)}
+.sd{width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0}
+
+/* clinical */
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.ccard{background:var(--white);border:1px solid var(--light-gray);border-radius:2px;padding:22px 20px;transition:all 0.3s;position:relative;overflow:hidden}
+.ccard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform 0.4s}
+.ccard:hover{box-shadow:0 8px 24px rgba(12,26,58,0.08);transform:translateY(-3px)}
+.ccard:hover::before{transform:scaleX(1)}
+.ci{font-size:28px;margin-bottom:10px;display:block}
+.ccard h4{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.ccard p{font-size:13px;color:var(--text-muted);line-height:1.6}
+
+/* exam table */
+.et{width:100%;border-collapse:collapse;margin-top:16px}
+.et th{background:var(--navy);color:#fff;padding:12px 16px;text-align:left;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase}
+.et td{padding:13px 16px;border-bottom:1px solid var(--light-gray);font-size:14px;color:var(--navy)}
+.et tr:last-child td{border-bottom:none}
+.et tr:nth-child(even) td{background:var(--off-white)}
+.pct{font-weight:700;color:var(--red)}
+
+/* internship timeline */
+.ilist{list-style:none;position:relative;margin-top:8px}
+.ilist::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--red),var(--light-gray))}
+.ii-item{display:flex;gap:20px;align-items:flex-start;padding:0 0 28px 0;position:relative}
+.ii-item:last-child{padding-bottom:0}
+.idot{width:42px;height:42px;border-radius:50%;flex-shrink:0;background:var(--white);border:2px solid var(--red);display:flex;align-items:center;justify-content:center;font-size:15px;position:relative;z-index:1;box-shadow:0 0 0 4px rgba(192,33,31,0.08)}
+.idur{font-size:12px;font-weight:600;color:var(--red);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.ititle{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:4px}
+.idesc{font-size:13.5px;color:var(--text-muted);line-height:1.6}
+
+/* facilities */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+.fc-card{background:var(--off-white);border:1px solid var(--light-gray);border-radius:2px;padding:22px 20px;display:flex;gap:16px;align-items:flex-start;transition:all 0.3s}
+.fc-card:hover{background:var(--white);box-shadow:0 6px 20px rgba(12,26,58,0.07);transform:translateY(-2px)}
+.fi{font-size:26px;flex-shrink:0}
+.fc-card h4{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:4px}
+.fc-card p{font-size:13px;color:var(--text-muted);line-height:1.55}
+
+/* career */
+.crgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+.crcard{background:var(--off-white);border:1px solid var(--light-gray);border-radius:2px;padding:24px 18px;text-align:center;transition:all 0.35s;cursor:default}
+.crcard:hover{background:var(--navy);border-color:var(--navy);transform:translateY(-4px)}
+.cricon{font-size:32px;margin-bottom:10px;display:block}
+.crcard h4{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:6px;transition:color 0.3s}
+.crcard p{font-size:12.5px;color:var(--text-muted);line-height:1.6;transition:color 0.3s}
+.crcard:hover h4,.crcard:hover p{color:rgba(255,255,255,0.82)}
+
+/* compare */
+.compare-box{display:grid;grid-template-columns:1fr auto 1fr;border:1px solid var(--light-gray);border-radius:2px;overflow:hidden;margin-top:8px}
+.cb-l{background:var(--off-white);padding:32px 28px}
+.cb-m{background:var(--red);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 18px;gap:8px}
+.cb-m span{font-size:22px;color:#fff}
+.cb-m small{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);writing-mode:vertical-rl;transform:rotate(180deg)}
+.cb-r{background:var(--navy);padding:32px 28px}
+.cbl-label{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;display:block;color:var(--text-muted)}
+.cbr-label{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;display:block;color:rgba(255,255,255,0.4)}
+.cb-l h4{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--navy);margin-bottom:12px}
+.cb-r h4{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:12px}
+.cblist{list-style:none;display:flex;flex-direction:column;gap:9px}
+.cb-l .cblist li{font-size:13.5px;color:var(--text-muted);display:flex;align-items:center;gap:8px}
+.cb-r .cblist li{font-size:13.5px;color:rgba(255,255,255,0.72);display:flex;align-items:center;gap:8px}
+.cb-l .cblist li::before{content:'·';color:var(--mid-gray);font-size:18px}
+.cb-r .cblist li::before{content:'✓';color:var(--red-light);font-size:13px;font-weight:700}
+
+/* why */
+.wgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--light-gray);border:1px solid var(--light-gray);margin-top:8px}
+.wi{background:var(--white);padding:24px 22px;display:flex;gap:14px;align-items:flex-start;transition:background 0.3s}
+.wi:hover{background:var(--off-white)}
+.wn{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:rgba(192,33,31,0.14);line-height:1;flex-shrink:0;margin-top:-4px;transition:color 0.3s}
+.wi:hover .wn{color:rgba(192,33,31,0.28)}
+.wi h4{font-size:14.5px;font-weight:600;color:var(--navy);margin-bottom:5px}
+.wi p{font-size:13px;color:var(--text-muted);line-height:1.6}
+
+/* conclusion */
+.conc{background:linear-gradient(135deg,var(--navy),var(--navy-mid));border-radius:2px;padding:42px 46px;position:relative;overflow:hidden;margin-top:8px}
+.conc::before{content:'"';position:absolute;top:-15px;right:24px;font-family:'Cormorant Garamond',serif;font-size:130px;font-weight:700;color:rgba(192,33,31,0.15);line-height:1}
+.conc p{font-size:17px;color:rgba(255,255,255,0.85);line-height:1.85;font-style:italic;position:relative;z-index:1}
+.conc strong{color:var(--red-light);font-style:normal}
+
+/* reveal */
+.r{opacity:0;transform:translateY(30px);transition:opacity 0.65s ease,transform 0.65s ease}
+.r.on{opacity:1;transform:translateY(0)}
+.r.d1{transition-delay:0.08s}.r.d2{transition-delay:0.16s}.r.d3{transition-delay:0.24s}
+
+/* CONTACT STRIP */
+.contact-strip{background:linear-gradient(135deg,var(--red-dark) 0%,var(--red) 55%,var(--red-light) 100%);padding:72px 6%;position:relative;overflow:hidden}
+.contact-strip::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.07)' stroke-width='1'%3E%3Cpath d='M30 0v60M0 30h60'/%3E%3C/g%3E%3C/svg%3E")}
+.csi{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;position:relative;z-index:1}
+.cst2 h3{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3.5vw,40px);font-weight:700;color:#fff;margin-bottom:10px}
+.cst2 p{font-size:15px;color:rgba(255,255,255,0.8);max-width:500px;line-height:1.75}
+.csa{display:flex;gap:16px;flex-wrap:wrap}
+.csb{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.14);border:1.5px solid rgba(255,255,255,0.3);padding:16px 24px;border-radius:3px;color:#fff;text-decoration:none;transition:all 0.3s}
+.csb:hover{background:rgba(255,255,255,0.24);transform:translateY(-2px)}
+.csb-i{font-size:20px}
+.csb p{font-size:10.5px;opacity:0.7;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:2px}
+.csb strong{font-size:16px;font-weight:600}
+
+/* FOOTER */
+footer{background:var(--navy);color:#fff;padding:68px 6% 0}
+.ftop{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:52px;padding-bottom:52px}
+.fb p{font-size:13.5px;color:rgba(255,255,255,0.45);line-height:1.8;margin:16px 0 20px;max-width:260px}
+.socs{display:flex;gap:10px}
+.soc{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);font-size:12px;font-weight:700;text-decoration:none;transition:all 0.3s}
+.soc:hover{background:var(--red);border-color:var(--red);color:#fff}
+.fcol h4{font-size:10.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#fff;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.07)}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.fcol ul a{color:rgba(255,255,255,0.48);text-decoration:none;font-size:13px;transition:all 0.3s;display:flex;align-items:center;gap:6px}
+.fcol ul a::before{content:'→';font-size:10px;color:var(--red)}
+.fcol ul a:hover{color:#fff;padding-left:4px}
+.fbot{max-width:1140px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.07);padding:20px 0;display:flex;align-items:center;justify-content:space-between;font-size:12px;color:rgba(255,255,255,0.3);flex-wrap:wrap;gap:12px}
+.fbot a{color:var(--red-light);text-decoration:none}
+.rline{height:3px;max-width:1140px;margin:0 auto;background:linear-gradient(90deg,transparent,var(--red) 30%,var(--red) 70%,transparent);opacity:0.45}
+.tbar{background:rgba(0,0,0,0.22);padding:13px 6%;text-align:center;border-top:1px solid rgba(255,255,255,0.04)}
+.tbar p{font-size:11.5px;color:rgba(255,255,255,0.28)}
+.tbar span{color:rgba(192,33,31,0.55)}
+
+@media(max-width:960px){
+  .page-body{grid-template-columns:1fr;gap:48px}
+  .sidebar{position:static}
+  .cgrid,.sgrid,.fgrid,.wgrid,.elig-card{grid-template-columns:1fr 1fr}
+  .crgrid{grid-template-columns:1fr 1fr}
+  .compare-box{grid-template-columns:1fr}
+  .cb-m{flex-direction:row;padding:14px 28px;justify-content:center}
+  .cb-m small{writing-mode:horizontal-tb;transform:none}
+  .ftop{grid-template-columns:1fr 1fr}
+  nav ul{display:none}
+  .upgrade-ladder{display:none}
+  .ps-inner{flex-wrap:wrap}
+}
+@media(max-width:600px){
+  .cgrid,.sgrid,.fgrid,.crgrid,.wgrid,.krow{grid-template-columns:1fr}
+  .ftop{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="logo">
+    <div class="logo-mark">NC</div>
+    <div class="logo-words"><span>Noor College</span><small>School of Nursing</small></div>
+  </a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="courses.html">Our Courses</a></li>
+    <li><a href="#">Facilities</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#contact-strip" class="btn-nav">Apply Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="ph-bg"></div><div class="ph-grid"></div><div class="ph-slice"></div>
+  <div class="hbar hb1"></div><div class="hbar hb2"></div><div class="hbar hb3"></div><div class="hbar hb4"></div>
+  <div class="hero-diamond"></div>
+  <div class="hdot hd1"></div><div class="hdot hd2"></div><div class="hdot hd3"></div>
+  <div class="upgrade-ladder">
+    <div class="ul-track">
+      <div class="ul-step">Ph.D</div>
+      <div class="ul-step">M.Sc</div>
+      <div class="ul-step active">PB B.Sc ✦</div>
+      <div class="ul-step">GNM</div>
+    </div>
+  </div>
+  <div class="ph-content">
+    <div class="breadcrumb">
+      <a href="index.html">Noor College</a><span class="sep">›</span>
+      <a href="courses.html">Our Courses</a><span class="sep">›</span>
+      <span class="cur">PB B.Sc Nursing</span>
+    </div>
+    <div class="course-badge">Post Basic · 2 Year Upgrade Programme</div>
+    <h1>Post Basic<br>B.Sc <em>Nursing</em></h1>
+    <p class="ph-sub">Designed exclusively for registered GNM nurses — upgrade your qualifications, deepen clinical expertise, and unlock senior roles and global career opportunities in just two years.</p>
+    <div class="quick-pills">
+      <div class="qpill">📅 2 Years</div>
+      <div class="qpill">🏛️ INC Recognised</div>
+      <div class="qpill">🎓 For GNM Holders Only</div>
+      <div class="qpill">⏱️ 40 Hrs / Week</div>
+    </div>
+  </div>
+</div>
+
+<!-- PATHWAY STRIP -->
+<div class="pathway-strip">
+  <div class="ps-inner">
+    <div class="ps-step">
+      <div class="ps-num">01</div>
+      <div class="ps-label"><p>Start with</p><strong>GNM Diploma</strong></div>
+      <div class="ps-arr">›</div>
+    </div>
+    <div class="ps-step active">
+      <div class="ps-num">02</div>
+      <div class="ps-label"><p>Upgrade to</p><strong>PB B.Sc Nursing ✦</strong></div>
+      <div class="ps-arr">›</div>
+    </div>
+    <div class="ps-step">
+      <div class="ps-num">03</div>
+      <div class="ps-label"><p>Advance to</p><strong>M.Sc Nursing</strong></div>
+      <div class="ps-arr">›</div>
+    </div>
+    <div class="ps-step">
+      <div class="ps-num">04</div>
+      <div class="ps-label"><p>Lead with</p><strong>Ph.D / Global Career</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE BODY -->
+<div class="page-body">
+  <main>
+
+    <!-- About -->
+    <div class="cs r" id="about">
+      <span class="cst">About the Programme</span>
+      <h2>What is <em>PB B.Sc Nursing?</em></h2>
+      <p>The Post Basic B.Sc. Nursing (PB B.Sc. Nursing) is a two-year undergraduate programme designed for <strong>registered nurses (GNM diploma holders)</strong> who wish to upgrade their education and professional skills. Recognised by the <strong>Indian Nursing Council (INC)</strong>, the programme builds on existing clinical experience and equips nurses with advanced knowledge, leadership abilities, and eligibility for higher studies.</p>
+      <p>This programme prepares graduates for <strong>senior clinical roles, teaching positions, administrative responsibilities,</strong> and global career opportunities — transforming working nurses into advanced nursing professionals.</p>
+      <div class="krow">
+        <div class="kc"><strong>2<span>yrs</span></strong><small>Programme Duration</small></div>
+        <div class="kc"><strong>GNM<span>+</span></strong><small>Entry Requirement</small></div>
+        <div class="kc"><strong>INC</strong><small>Recognised</small></div>
+      </div>
+    </div>
+    <div class="divider"></div>
+
+    <!-- Eligibility -->
+    <div class="cs r" id="eligibility">
+      <span class="cst">Who Can Apply</span>
+      <h2>Eligibility <em>Criteria</em></h2>
+      <p>This programme is designed exclusively for currently registered nurses. Here is what you need to qualify for admission at Noor College:</p>
+      <div class="elig-card">
+        <div class="ec-col">
+          <h4>Educational Requirements</h4>
+          <div class="ei"><div class="ed"></div>Diploma in General Nursing & Midwifery (GNM) from an INC-recognised institution</div>
+          <div class="ei"><div class="ed"></div>10+2 pass in any stream, or equivalent qualification recognised by the university</div>
+          <div class="ei"><div class="ed"></div>Must be a Registered Nurse and Registered Midwife (RN/RM) with the State Nursing Council</div>
+        </div>
+        <div class="ec-col">
+          <h4>Additional Requirements</h4>
+          <div class="ei"><div class="ed"></div>Valid RN/RM registration with the State Nursing Council of Karnataka</div>
+          <div class="ei"><div class="ed"></div>Certificate of medical fitness required at the time of admission</div>
+          <div class="ei"><div class="ed"></div>Reservation norms as per Government of Karnataka guidelines</div>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+
+    <!-- Objectives -->
+    <div class="cs r" id="objectives">
+      <span class="cst">Programme Goals</span>
+      <h2>Programme <em>Objectives</em></h2>
+      <p>Graduates of the PB B.Sc. Nursing programme at Noor College will emerge as advanced nursing professionals equipped to lead, teach, and excel:</p>
+      <ul class="obj">
+        <li>Upgrade professional competence as bedside nurses, nurse educators, and healthcare administrators.</li>
+        <li>Provide comprehensive nursing care using advanced clinical knowledge and evidence-based practices.</li>
+        <li>Take up leadership and supervisory roles in hospitals and healthcare organisations.</li>
+        <li>Promote community health awareness and evidence-based nursing practices in all settings.</li>
+        <li>Pursue higher education — M.Sc. Nursing, Nurse Practitioner programmes, or Ph.D.</li>
+      </ul>
+    </div>
+    <div class="divider"></div>
+
+    <!-- Curriculum -->
+    <div class="cs r" id="curriculum">
+      <span class="cst">Academic Structure</span>
+      <h2>Curriculum <em>Overview</em></h2>
+      <p>A focused two-year curriculum building directly on your GNM foundation — advancing into specialised nursing knowledge, research methodology, nursing education, and clinical administration.</p>
+      <div class="ytabs">
+        <button class="ytab active" onclick="showYear('y1',this)">First Year</button>
+        <button class="ytab" onclick="showYear('y2',this)">Second Year</button>
+      </div>
+      <div class="ypanel active" id="y1">
+        <div class="sgrid">
+          <div class="si"><div class="sd"></div>Nursing Foundation</div>
+          <div class="si"><div class="sd"></div>Nutrition & Dietetics</div>
+          <div class="si"><div class="sd"></div>Biochemistry & Biophysics</div>
+          <div class="si"><div class="sd"></div>Psychology</div>
+          <div class="si"><div class="sd"></div>Microbiology</div>
+          <div class="si"><div class="sd"></div>Maternal Nursing</div>
+          <div class="si"><div class="sd"></div>Child Health Nursing</div>
+          <div class="si"><div class="sd"></div>Medical-Surgical Nursing</div>
+          <div class="si"><div class="sd"></div>English</div>
+        </div>
+      </div>
+      <div class="ypanel" id="y2">
+        <div class="sgrid">
+          <div class="si"><div class="sd"></div>Sociology</div>
+          <div class="si"><div class="sd"></div>Community Health Nursing</div>
+          <div class="si"><div class="sd"></div>Mental Health Nursing</div>
+          <div class="si"><div class="sd"></div>Introduction to Nursing Education</div>
+          <div class="si"><div class="sd"></div>Introduction to Nursing Administration</div>
+          <div class="si"><div class="sd"></div>Nursing Research & Statistics</div>
+          <div class="si"><div class="sd"></div>Hospital & Community Internship</div>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+
+    <!-- Clinical Training -->
+    <div class="cs r" id="clinical">
+      <span class="cst">Hands-On Learning</span>
+      <h2>Clinical <em>Training</em></h2>
+      <p>Students receive extensive clinical exposure in multi-specialty hospitals and community settings — building on GNM experience with advanced, supervised rotations across all key nursing specialties.</p>
+      <div class="cgrid">
+        <div class="ccard"><span class="ci">🏥</span><h4>Medical-Surgical Nursing</h4><p>Advanced bedside care, critical care, OT training, and complex patient management in surgical wards.</p></div>
+        <div class="ccard"><span class="ci">🤱</span><h4>Obstetrics & Gynecology</h4><p>Antenatal, intranatal, postnatal care — supervised deliveries and advanced gynecological procedures.</p></div>
+        <div class="ccard"><span class="ci">👶</span><h4>Pediatrics & Child Health</h4><p>Neonatal care, immunisation, pediatric emergency nursing, growth monitoring and child health.</p></div>
+        <div class="ccard"><span class="ci">🧠</span><h4>Psychiatric Nursing</h4><p>Advanced mental health nursing — therapeutic communication, patient safety, crisis management, rehabilitation.</p></div>
+        <div class="ccard"><span class="ci">🏘️</span><h4>Community Health Nursing</h4><p>Rural postings, health education, public health campaigns, maternal health outreach and community assessments.</p></div>
+        <div class="ccard"><span class="ci">📋</span><h4>Nursing Education & Administration</h4><p>Supervised experience in ward management, clinical teaching, healthcare administration, and leadership.</p></div>
+      </div>
+    </div>
+    <div class="divider"></div>
+
+    <!-- Examination -->
+    <div class="cs r" id="examination">
+      <span class="cst">Assessment</span>
+      <h2>Examination & <em>Evaluation</em></h2>
+      <p>Assessment combines continuous internal evaluation with university examinations — comprehensively testing advanced nursing theory and clinical performance throughout both years.</p>
+      <table class="et">
+        <thead><tr><th>Component</th><th>Weightage</th><th>Details</th></tr></thead>
+        <tbody>
+          <tr><td>Internal Assessment</td><td><span class="pct">25%</span></td><td>Assignments, seminars, clinical performance and viva evaluation</td></tr>
+          <tr><td>University Examination</td><td><span class="pct">75%</span></td><td>Theory and practical examinations per RGUHS norms each year</td></tr>
+          <tr><td>Passing — Theory & Practicals</td><td><span class="pct">50%</span></td><td>Minimum 50% required separately in theory and practicals</td></tr>
+          <tr><td>Theory Attendance</td><td><span class="pct">75%</span></td><td>Minimum attendance required to appear for university examinations</td></tr>
+          <tr><td>Clinical Attendance</td><td><span class="pct">100%</span></td><td>Full clinical attendance mandatory throughout the programme</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="divider"></div>
+
+    <!-- Internship -->
+    <div class="cs r" id="internship">
+      <span class="cst">Final Semester</span>
+      <h2>Internship <em>Programme</em></h2>
+      <p>The final semester internship develops leadership and advanced clinical decision-making skills across six departments — combining senior nursing practice with education and administrative management exposure.</p>
+      <ul class="ilist">
+        <li class="ii-item"><div class="idot">🏥</div><div><p class="idur">8 Weeks</p><p class="ititle">Medical-Surgical Nursing</p><p class="idesc">Advanced surgical and medical ward postings — complex patient assessment, critical care, wound care, and advanced drug administration and monitoring.</p></div></li>
+        <li class="ii-item"><div class="idot">🤱</div><div><p class="idur">8 Weeks</p><p class="ititle">Midwifery & Gynecology</p><p class="idesc">Comprehensive antenatal, intranatal, and postnatal care — conducting deliveries, obstetric emergency management, and gynecological nursing procedures.</p></div></li>
+        <li class="ii-item"><div class="idot">👶</div><div><p class="idur">4 Weeks</p><p class="ititle">Pediatrics</p><p class="idesc">Neonatal care, immunisation, pediatric growth monitoring, pediatric emergency nursing, and family-centred child health care.</p></div></li>
+        <li class="ii-item"><div class="idot">🏘️</div><div><p class="idur">4 Weeks</p><p class="ititle">Community Health Nursing</p><p class="idesc">PHC field postings, school health programmes, maternal health outreach, rural community nursing, and public health campaigns.</p></div></li>
+        <li class="ii-item"><div class="idot">🧠</div><div><p class="idur">4 Weeks</p><p class="ititle">Psychiatry</p><p class="idesc">Psychiatric unit postings — therapeutic communication, patient safety, mental health assessment, crisis intervention, and rehabilitation support.</p></div></li>
+        <li class="ii-item"><div class="idot">📋</div><div><p class="idur">4 Weeks</p><p class="ititle">Nursing Education & Administration</p><p class="idesc">Hands-on experience in ward management, healthcare administration, quality monitoring, clinical teaching, and nursing education practices.</p></div></li>
+      </ul>
+    </div>
+    <div class="divider"></div>
+
+    <!-- Facilities -->
+    <div class="cs r" id="facilities">
+      <span class="cst">Infrastructure</span>
+      <h2>Our <em>Facilities</em></h2>
+      <p>Noor College provides a fully equipped, modern learning environment designed to support advanced nursing education from smart classrooms and simulation labs to an affiliated teaching hospital.</p>
+      <div class="fgrid">
+        <div class="fc-card"><div class="fi">🖥️</div><div><h4>Modern Classrooms</h4><p>Smart classrooms with AV teaching aids, projectors, and digital learning tools for advanced nursing education.</p></div></div>
+        <div class="fc-card"><div class="fi">🔬</div><div><h4>Nursing Labs & Simulation</h4><p>Fully equipped skill labs and clinical simulation facilities for practising advanced nursing procedures safely.</p></div></div>
+        <div class="fc-card"><div class="fi">📚</div><div><h4>Digital Library</h4><p>Updated nursing journals, e-learning resources, reference books, and HELINET access for research support.</p></div></div>
+        <div class="fc-card"><div class="fi">🏥</div><div><h4>Affiliated Teaching Hospital</h4><p>Multi-specialty parent hospital with 100+ beds providing comprehensive clinical training and internship.</p></div></div>
+        <div class="fc-card"><div class="fi">👩‍🏫</div><div><h4>Experienced Faculty</h4><p>Nursing educators with advanced qualifications and deep clinical expertise — providing guidance and mentorship.</p></div></div>
+        <div class="fc-card"><div class="fi">🏠</div><div><h4>Hostel Facilities</h4><p>Separate, secure accommodation for male and female students with amenities and a focused study environment.</p></div></div>
+      </div>
+    </div>
+    <div class="divider"></div>
+
+    <!-- Career -->
+    <div class="cs r" id="careers">
+      <span class="cst">After Graduation</span>
+      <h2>Career <em>Opportunities</em></h2>
+      <p>PB B.Sc. Nursing graduates are eligible for diverse, senior, and globally competitive roles — spanning clinical nursing, education, administration, community health, and international healthcare systems.</p>
+      <div class="crgrid">
+        <div class="crcard"><span class="cricon">🏥</span><h4>Clinical Nurse Specialist</h4><p>Senior staff nurse and specialist roles in hospitals and specialty units</p></div>
+        <div class="crcard"><span class="cricon">📚</span><h4>Nursing Educator</h4><p>Lecturer and tutor roles in nursing colleges and institutions</p></div>
+        <div class="crcard"><span class="cricon">🗂️</span><h4>Nurse Administrator</h4><p>Ward managers, nursing supervisors and hospital admin roles</p></div>
+        <div class="crcard"><span class="cricon">🏘️</span><h4>Community Health Nurse</h4><p>PHCs, NGOs, health missions and public health programmes</p></div>
+        <div class="crcard"><span class="cricon">🎓</span><h4>Higher Studies</h4><p>Direct pathway to M.Sc. Nursing, Nurse Practitioner and Ph.D.</p></div>
+        <div class="crcard"><span class="cricon">✈️</span><h4>International Careers</h4><p>NCLEX (USA), HAAD, DHA, MOH — global nursing licensing exams</p></div>
+      </div>
+    </div>
+    <div class="divider"></div>
+
+    <!-- Compare -->
+    <div class="cs r" id="comparison">
+      <span class="cst">The Upgrade Advantage</span>
+      <h2>GNM vs <em>PB B.Sc:</em> What Changes?</h2>
+      <p>Upgrading from GNM to PB B.Sc. Nursing is a career transformation — not just a qualification upgrade. Here's exactly what changes:</p>
+      <div class="compare-box">
+        <div class="cb-l">
+          <span class="cbl-label">Before — GNM Graduate</span>
+          <h4>Registered Nurse</h4>
+          <ul class="cblist">
+            <li>Staff nurse roles only</li>
+            <li>Diploma-level position ceiling</li>
+            <li>Not eligible for M.Sc. direct entry</li>
+            <li>Restricted for teaching positions</li>
+            <li>Limited international eligibility</li>
+          </ul>
+        </div>
+        <div class="cb-m"><span>→</span><small>Upgrade</small></div>
+        <div class="cb-r">
+          <span class="cbr-label">After — PB B.Sc. Graduate</span>
+          <h4>Advanced Nurse Professional</h4>
+          <ul class="cblist">
+            <li>Senior clinical, educator & admin roles</li>
+            <li>Bachelor-level professional credibility</li>
+            <li>Eligible for M.Sc. Nursing directly</li>
+            <li>Qualified to teach in nursing institutions</li>
+            <li>Eligible for NCLEX, HAAD, DHA, MOH</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+
+    <!-- Why -->
+    <div class="cs r" id="why">
+      <span class="cst">Why Noor College</span>
+      <h2>Why Choose <em>Us?</em></h2>
+      <div class="wgrid">
+        <div class="wi"><div class="wn">01</div><div><h4>INC & State Council Recognised</h4><p>Our PB B.Sc. programme is fully recognised by INC and the State Nursing Council — complete professional credibility for your upgraded degree.</p></div></div>
+        <div class="wi"><div class="wn">02</div><div><h4>Focused Advanced Curriculum</h4><p>A targeted two-year programme building directly on GNM — advancing theory, lab skills, and hospital exposure in a structured, career-focused format.</p></div></div>
+        <div class="wi"><div class="wn">03</div><div><h4>Reputed Hospital Tie-Ups</h4><p>Clinical training at affiliated multi-specialty hospitals ensures senior-level nursing exposure and real-world practice throughout both years.</p></div></div>
+        <div class="wi"><div class="wn">04</div><div><h4>Experienced & Supportive Faculty</h4><p>Expert nursing educators with advanced qualifications and clinical backgrounds — invested in your growth and academic success.</p></div></div>
+        <div class="wi"><div class="wn">05</div><div><h4>Global Career Opportunities</h4><p>Graduates become eligible for international licensing — NCLEX (USA), HAAD, DHA, MOH — and senior nursing positions worldwide.</p></div></div>
+        <div class="wi"><div class="wn">06</div><div><h4>Placement & Higher Education Guidance</h4><p>Dedicated placement assistance and guidance for M.Sc. Nursing, Nurse Practitioner programmes, and doctoral studies.</p></div></div>
+      </div>
+    </div>
+    <div class="divider"></div>
+
+    <!-- Conclusion -->
+    <div class="cs r" id="conclusion">
+      <span class="cst">Your Career, Elevated</span>
+      <h2>The Ideal <em>Upgrade Path</em> for Nurses</h2>
+      <div class="conc">
+        <p>"The Post Basic B.Sc. Nursing programme is the <strong>ideal pathway for registered nurses</strong> to advance their qualifications, expand their career horizons, and become leaders in nursing and healthcare. By upgrading from GNM to PB B.Sc., nurses enhance their clinical skills, professional credibility, and global career opportunities — taking the next decisive step toward a future without limits."</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="toc r">
+      <h4>On This Page</h4>
+      <ul>
+        <li><a href="#about">About the Programme</a></li>
+        <li><a href="#eligibility">Eligibility Criteria</a></li>
+        <li><a href="#objectives">Programme Objectives</a></li>
+        <li><a href="#curriculum">Curriculum Overview</a></li>
+        <li><a href="#clinical">Clinical Training</a></li>
+        <li><a href="#examination">Examination</a></li>
+        <li><a href="#internship">Internship</a></li>
+        <li><a href="#facilities">Facilities</a></li>
+        <li><a href="#careers">Career Opportunities</a></li>
+        <li><a href="#comparison">GNM vs PB B.Sc</a></li>
+        <li><a href="#why">Why Choose Us</a></li>
+      </ul>
+    </div>
+
+    <div class="sc r d1">
+      <div class="sc-head"><h4>Programme Details</h4></div>
+      <div class="sc-body">
+        <div class="ir"><span class="ii">📅</span><div><p class="il">Duration</p><p class="iv">2 Years (including internship)</p></div></div>
+        <div class="ir"><span class="ii">⏱️</span><div><p class="il">Weekly Hours</p><p class="iv">40 hours (theory + labs + clinical)</p></div></div>
+        <div class="ir"><span class="ii">🎓</span><div><p class="il">Eligibility</p><p class="iv">GNM Diploma · RN/RM Registered · 10+2 pass</p></div></div>
+        <div class="ir"><span class="ii">🏛️</span><div><p class="il">Recognition</p><p class="iv">INC Recognised · State Nursing Council · RGUHS</p></div></div>
+        <div class="ir"><span class="ii">🏥</span><div><p class="il">Internship</p><p class="iv">Final semester — hospital & community postings</p></div></div>
+        <div class="ir"><span class="ii">🎯</span><div><p class="il">Next Step</p><p class="iv">Eligible for M.Sc Nursing after completion</p></div></div>
+        <div class="ir"><span class="ii">📋</span><div><p class="il">Medical Fitness</p><p class="iv">Certificate required at admission</p></div></div>
+      </div>
+    </div>
+
+    <div class="apply-card r d2">
+      <h4>Apply for PB B.Sc Nursing</h4>
+      <p>Ready to upgrade your nursing career? Seats are limited for the upcoming batch at Noor College.</p>
+      <a href="#contact-strip" class="apply-btn">Enquire Now →</a>
+    </div>
+
+    <div class="cc r d3">
+      <p>Speak with our admissions team</p>
+      <a href="tel:+919845026920">📞 +91 98450 26920</a>
+      <a href="mailto:info@noorcollege.com" style="font-size:14px;color:rgba(255,255,255,0.55)">✉️ info@noorcollege.com</a>
+    </div>
+
+    <div class="sc r d2" style="margin-top:20px">
+      <div class="sc-head"><h4>Other Programs</h4></div>
+      <div class="sc-body" style="padding:12px 24px">
+        <a href="gnm.html" class="ol">GNM Diploma</a>
+        <a href="bsc-nursing.html" class="ol">B.Sc Nursing (4 Years)</a>
+        <a href="msc-nursing.html" class="ol">M.Sc Nursing (2 Years)</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- CONTACT STRIP -->
+<div class="contact-strip" id="contact-strip">
+  <div class="csi">
+    <div class="cst2 r">
+      <h3>Ready to Upgrade with PB B.Sc Nursing?</h3>
+      <p>Our Post Basic B.Sc. programme is the ideal pathway for registered nurses looking to advance, lead, and go global. Contact us today to begin your application at Noor College.</p>
+    </div>
+    <div class="csa r d2">
+      <a href="tel:+919845026920" class="csb">
+        <div class="csb-i">📞</div>
+        <div><p>Call Us</p><strong>+91 98450 26920</strong></div>
+      </a>
+      <a href="mailto:info@noorcollege.com" class="csb">
+        <div class="csb-i">✉️</div>
+        <div><p>Email Us</p><strong>info@noorcollege.com</strong></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="rline"></div>
+  <div class="ftop" style="padding-top:56px">
+    <div class="fb">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">NC</div>
+        <div class="logo-words"><span>Noor College</span><small>School of Nursing</small></div>
+      </a>
+      <p>Dedicated to producing healthcare professionals who serve with compassion, competence and character — Noor Education Trust, Bangalore.</p>
+      <div class="socs">
+        <a href="#" class="soc">f</a><a href="#" class="soc">in</a><a href="#" class="soc">tw</a><a href="#" class="soc">yt</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h4>Programs</h4>
+      <ul>
+        <li><a href="gnm.html">GNM Diploma</a></li>
+        <li><a href="bsc-nursing.html">B.Sc Nursing</a></li>
+        <li><a href="#">Post Basic B.Sc</a></li>
+        <li><a href="msc-nursing.html">M.Sc Nursing</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="courses.html">Our Courses</a></li>
+        <li><a href="#">Facilities</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h4>Accreditation</h4>
+      <ul>
+        <li><a href="#">RGUHS Affiliated</a></li>
+        <li><a href="#">INC Approved</a></li>
+        <li><a href="#">KNC Registered</a></li>
+      </ul>
+      <div style="margin-top:20px;display:flex;flex-direction:column;gap:8px">
+        <span style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:5px 12px;border-radius:20px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.38)">Noor Education Trust</span>
+        <span style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:5px 12px;border-radius:20px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.38)">Est. Bangalore</span>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <p>© 2025 Noor College & School of Nursing. All rights reserved.</p>
+    <p>Under <a href="#">Noor Education Trust</a> · Affiliated to <a href="#">RGUHS</a></p>
+  </div>
+  <div class="tbar"><p>Compassion · Competence · <span>Character</span> — Bhoopasandra Main Road, Bangalore, Karnataka</p></div>
+</footer>
+
+<script>
+function showYear(id,btn){document.querySelectorAll('.ypanel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.ytab').forEach(t=>t.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active')}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}})},{threshold:0.08});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+window.addEventListener('scroll',()=>{const n=document.getElementById('nav');n.style.height=window.scrollY>60?'58px':'70px';n.style.background=window.scrollY>60?'rgba(12,26,58,1)':'rgba(12,26,58,0.97)'});
+</script>
+</body>
+</html>

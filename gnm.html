@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GNM – Diploma in General Nursing & Midwifery | Noor College</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#C0211F;--red-light:#E03533;--red-dark:#8B1614;
+  --navy:#0C1A3A;--navy-mid:#172D5C;--navy-light:#1E3A70;
+  --white:#FFFFFF;--off-white:#F7F6F2;--light-gray:#E8EAF0;
+  --mid-gray:#B8BCC8;--text-muted:#64748B;--gold:#C9963A;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--navy);background:var(--white);overflow-x:hidden}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  height:70px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 6%;
+  background:rgba(12,26,58,0.97);backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(192,33,31,0.3);
+  transition:height 0.3s,background 0.3s;
+}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-mark{
+  width:42px;height:42px;border-radius:50%;
+  background:linear-gradient(135deg,var(--red),var(--red-dark));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:#fff;
+  box-shadow:0 0 0 2px rgba(192,33,31,0.4);
+}
+.logo-words span{display:block;font-size:14px;font-weight:600;color:#fff}
+.logo-words small{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid-gray)}
+nav ul{list-style:none;display:flex;gap:32px;align-items:center}
+nav ul a{
+  color:rgba(255,255,255,0.75);text-decoration:none;font-size:12.5px;
+  font-weight:500;letter-spacing:0.8px;text-transform:uppercase;
+  position:relative;padding-bottom:3px;transition:color 0.3s;
+}
+nav ul a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;background:var(--red-light);transition:width 0.3s}
+nav ul a:hover{color:#fff}
+nav ul a:hover::after{width:100%}
+.btn-nav{background:var(--red)!important;color:#fff!important;padding:8px 22px!important;border-radius:3px;font-weight:600!important;transition:background 0.3s!important}
+.btn-nav:hover{background:var(--red-light)!important}
+.btn-nav::after{display:none!important}
+
+/* ── HERO ── */
+.page-hero{
+  min-height:72vh;background:var(--navy);
+  position:relative;overflow:hidden;
+  display:flex;align-items:flex-end;
+  padding:0 6% 80px;padding-top:70px;
+}
+.ph-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 70% at 70% 30%,rgba(192,33,31,0.25) 0%,transparent 65%),
+    radial-gradient(ellipse 50% 60% at 5% 85%,rgba(30,58,112,0.7) 0%,transparent 60%),
+    linear-gradient(150deg,#0C1A3A 0%,#172D5C 55%,#0C1A3A 100%);
+}
+.ph-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.035) 1px,transparent 1px);
+  background-size:72px 72px;
+  animation:gridDrift 22s linear infinite;
+}
+@keyframes gridDrift{from{background-position:0 0}to{background-position:72px 72px}}
+.ph-slice{position:absolute;top:0;right:0;bottom:0;width:40%;background:linear-gradient(135deg,transparent 30%,rgba(192,33,31,0.08) 100%);clip-path:polygon(20% 0,100% 0,100% 100%,0 100%)}
+/* floating rings */
+.ring{position:absolute;border-radius:50%;pointer-events:none;animation:ringFloat 7s ease-in-out infinite}
+.ring1{width:260px;height:260px;right:6%;top:12%;border:1px solid rgba(192,33,31,0.18);animation-delay:0s}
+.ring2{width:130px;height:130px;right:20%;top:38%;background:rgba(192,33,31,0.07);animation-delay:2.5s}
+.ring3{width:65px;height:65px;right:32%;top:58%;border:1px solid rgba(255,255,255,0.07);animation-delay:5s}
+@keyframes ringFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-16px) rotate(6deg)}}
+
+.ph-content{position:relative;z-index:2;max-width:820px}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:24px}
+.breadcrumb::before{content:'';width:28px;height:1px;background:var(--red);margin-right:4px}
+.breadcrumb a{color:rgba(255,255,255,0.38);text-decoration:none;transition:color 0.3s}
+.breadcrumb a:hover{color:var(--red-light)}
+.breadcrumb .sep{color:rgba(255,255,255,0.22)}
+.breadcrumb .cur{color:var(--red-light)}
+/* course badge */
+.course-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(192,33,31,0.18);border:1px solid rgba(192,33,31,0.4);
+  color:#F4A0A0;padding:7px 18px;border-radius:30px;
+  font-size:11.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+  margin-bottom:22px;
+}
+.course-badge::before{content:'';width:7px;height:7px;background:var(--red-light);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.4)}}
+.ph-content h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(38px,6.5vw,78px);font-weight:700;color:#fff;
+  line-height:1.0;letter-spacing:-1px;
+  animation:fadeUp 0.9s ease 0.2s both;
+}
+.ph-content h1 em{color:var(--red-light);font-style:italic}
+.ph-sub{font-size:16.5px;color:rgba(255,255,255,0.6);font-weight:300;max-width:560px;line-height:1.75;margin-top:16px;animation:fadeUp 0.9s ease 0.4s both}
+/* quick-info pills */
+.quick-pills{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px;animation:fadeUp 0.9s ease 0.6s both}
+.qpill{
+  display:flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);
+  padding:8px 18px;border-radius:30px;
+  font-size:12.5px;color:rgba(255,255,255,0.85);font-weight:500;
+}
+.qpill-icon{font-size:14px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── STICKY SIDEBAR LAYOUT ── */
+.page-body{
+  max-width:1200px;margin:0 auto;padding:80px 6%;
+  display:grid;grid-template-columns:1fr 320px;gap:60px;align-items:start;
+}
+/* Sticky sidebar */
+.sidebar{position:sticky;top:90px}
+.sidebar-card{
+  background:var(--white);border:1px solid var(--light-gray);
+  border-radius:2px;overflow:hidden;margin-bottom:20px;
+}
+.sidebar-card-head{
+  background:var(--navy);padding:20px 24px;
+}
+.sidebar-card-head h4{font-size:13px;font-weight:600;color:#fff;letter-spacing:1px;text-transform:uppercase}
+.sidebar-card-body{padding:20px 24px}
+.info-row{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--light-gray)}
+.info-row:last-child{border-bottom:none}
+.info-icon{font-size:16px;flex-shrink:0;margin-top:1px}
+.info-label{font-size:10.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:2px}
+.info-val{font-size:14px;color:var(--navy);font-weight:500;line-height:1.45}
+/* Apply CTA card */
+.apply-card{
+  background:linear-gradient(135deg,var(--red-dark),var(--red));
+  border-radius:2px;padding:28px 24px;
+  position:relative;overflow:hidden;
+}
+.apply-card::before{
+  content:'';position:absolute;top:-20px;right:-20px;
+  width:100px;height:100px;border-radius:50%;
+  background:rgba(255,255,255,0.06);
+}
+.apply-card h4{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:8px}
+.apply-card p{font-size:13px;color:rgba(255,255,255,0.8);line-height:1.6;margin-bottom:20px}
+.apply-btn{
+  display:block;width:100%;padding:13px;
+  background:#fff;color:var(--red);
+  border-radius:3px;font-size:14px;font-weight:700;
+  text-align:center;text-decoration:none;
+  transition:all 0.3s;
+}
+.apply-btn:hover{background:var(--off-white);transform:translateY(-1px)}
+.contact-card{background:var(--navy);border-radius:2px;padding:22px 24px;margin-top:20px}
+.contact-card p{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:8px}
+.contact-card a{display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none;font-size:16px;font-weight:600;transition:color 0.3s}
+.contact-card a:hover{color:var(--red-light)}
+
+/* Table of contents nav */
+.toc{background:var(--off-white);border:1px solid var(--light-gray);border-radius:2px;padding:20px 24px;margin-bottom:20px}
+.toc h4{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:14px}
+.toc ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.toc ul a{font-size:13.5px;color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:8px;padding:4px 0;border-bottom:1px solid transparent;transition:all 0.2s}
+.toc ul a::before{content:'';width:14px;height:1.5px;background:var(--red);flex-shrink:0;transition:width 0.3s}
+.toc ul a:hover{color:var(--red);padding-left:4px}
+.toc ul a:hover::before{width:22px}
+
+/* ── MAIN CONTENT ── */
+.content-section{margin-bottom:64px}
+.content-section:last-child{margin-bottom:0}
+.cs-tag{
+  display:inline-block;font-size:10.5px;font-weight:600;
+  letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:10px;
+}
+.cs-tag::before{content:'—  ';opacity:0.5}
+.content-section h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(26px,3vw,40px);font-weight:700;
+  color:var(--navy);line-height:1.15;margin-bottom:18px;
+}
+.content-section h2 em{color:var(--red);font-style:italic}
+.content-section p{font-size:15.5px;color:var(--text-muted);line-height:1.85;margin-bottom:16px}
+
+/* section divider */
+.sec-divider{height:1px;background:linear-gradient(90deg,var(--red),var(--light-gray),transparent);margin:0 0 64px;opacity:0.6}
+
+/* Objectives list */
+.obj-list{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:8px}
+.obj-list li{
+  display:flex;align-items:flex-start;gap:14px;
+  font-size:15px;color:#374151;line-height:1.6;
+  padding:14px 18px;background:var(--off-white);border-left:3px solid var(--red);border-radius:0 2px 2px 0;
+}
+.obj-list li::before{content:'✦';color:var(--red);font-size:12px;margin-top:3px;flex-shrink:0}
+
+/* Curriculum tabs */
+.curriculum-years{display:flex;gap:0;margin-bottom:0;border-bottom:2px solid var(--light-gray)}
+.year-tab{
+  padding:12px 28px;font-size:13px;font-weight:600;
+  color:var(--text-muted);cursor:pointer;
+  border-bottom:2px solid transparent;margin-bottom:-2px;
+  transition:all 0.3s;letter-spacing:0.5px;
+  background:none;border-top:none;border-left:none;border-right:none;
+  font-family:'DM Sans',sans-serif;
+}
+.year-tab.active{color:var(--red);border-bottom-color:var(--red)}
+.year-tab:hover{color:var(--navy)}
+.year-panel{display:none;padding-top:28px}
+.year-panel.active{display:block}
+.subject-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.subject-item{
+  display:flex;align-items:center;gap:12px;
+  padding:14px 18px;background:var(--white);
+  border:1px solid var(--light-gray);border-radius:2px;
+  font-size:14px;color:var(--navy);font-weight:500;
+  transition:all 0.3s;
+}
+.subject-item:hover{border-color:rgba(192,33,31,0.3);background:rgba(192,33,31,0.02);transform:translateX(3px)}
+.subject-dot{width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0}
+
+/* Clinical training */
+.clinical-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+.clinical-card{
+  background:var(--white);border:1px solid var(--light-gray);
+  border-radius:2px;padding:22px 20px;
+  transition:all 0.3s;position:relative;overflow:hidden;
+}
+.clinical-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;
+  height:2px;background:var(--red);
+  transform:scaleX(0);transform-origin:left;transition:transform 0.4s;
+}
+.clinical-card:hover{box-shadow:0 8px 24px rgba(12,26,58,0.08);transform:translateY(-3px)}
+.clinical-card:hover::before{transform:scaleX(1)}
+.clinical-icon{font-size:28px;margin-bottom:10px;display:block}
+.clinical-card h4{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.clinical-card p{font-size:13px;color:var(--text-muted);line-height:1.6}
+
+/* Hours badge */
+.hours-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--navy);color:#fff;
+  padding:16px 28px;border-radius:2px;margin-top:20px;
+}
+.hours-badge strong{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:var(--red-light)}
+.hours-badge span{font-size:13px;line-height:1.4}
+
+/* Exam table */
+.exam-table{width:100%;border-collapse:collapse;margin-top:16px}
+.exam-table th{background:var(--navy);color:#fff;padding:12px 16px;text-align:left;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase}
+.exam-table td{padding:13px 16px;border-bottom:1px solid var(--light-gray);font-size:14px;color:var(--navy)}
+.exam-table tr:last-child td{border-bottom:none}
+.exam-table tr:nth-child(even) td{background:var(--off-white)}
+.pct{font-weight:700;color:var(--red)}
+
+/* Internship timeline */
+.internship-list{list-style:none;position:relative;margin-top:8px}
+.internship-list::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:2px;background:var(--light-gray)}
+.internship-item{
+  display:flex;gap:20px;align-items:flex-start;
+  padding:0 0 24px 0;position:relative;
+}
+.internship-item:last-child{padding-bottom:0}
+.i-dot{
+  width:42px;height:42px;border-radius:50%;flex-shrink:0;
+  background:var(--white);border:2px solid var(--red);
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;position:relative;z-index:1;
+}
+.i-body{}
+.i-title{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:3px}
+.i-dur{font-size:12px;font-weight:600;color:var(--red);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.i-desc{font-size:13.5px;color:var(--text-muted);line-height:1.6}
+
+/* Career grid */
+.career-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+.career-card{
+  background:var(--off-white);border:1px solid var(--light-gray);
+  border-radius:2px;padding:22px 18px;text-align:center;
+  transition:all 0.35s;cursor:default;
+}
+.career-card:hover{background:var(--navy);border-color:var(--navy);transform:translateY(-4px)}
+.career-icon{font-size:32px;margin-bottom:10px;display:block}
+.career-card h4{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:6px;transition:color 0.3s}
+.career-card p{font-size:12.5px;color:var(--text-muted);line-height:1.6;transition:color 0.3s}
+.career-card:hover h4,.career-card:hover p{color:rgba(255,255,255,0.8)}
+.career-card:hover .career-icon{filter:brightness(1.3)}
+
+/* Why choose us */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--light-gray);border:1px solid var(--light-gray);margin-top:8px}
+.why-item{
+  background:var(--white);padding:24px 22px;
+  display:flex;gap:14px;align-items:flex-start;
+  transition:background 0.3s;
+}
+.why-item:hover{background:var(--off-white)}
+.why-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:36px;font-weight:700;color:rgba(192,33,31,0.15);
+  line-height:1;flex-shrink:0;margin-top:-4px;
+  transition:color 0.3s;
+}
+.why-item:hover .why-num{color:rgba(192,33,31,0.3)}
+.why-item h4{font-size:14.5px;font-weight:600;color:var(--navy);margin-bottom:5px}
+.why-item p{font-size:13px;color:var(--text-muted);line-height:1.6}
+
+/* Conclusion callout */
+.conclusion-box{
+  background:linear-gradient(135deg,var(--navy),var(--navy-mid));
+  border-radius:2px;padding:40px 44px;
+  position:relative;overflow:hidden;margin-top:8px;
+}
+.conclusion-box::before{
+  content:'"';position:absolute;top:-15px;right:24px;
+  font-family:'Cormorant Garamond',serif;font-size:130px;font-weight:700;
+  color:rgba(192,33,31,0.15);line-height:1;
+}
+.conclusion-box p{font-size:17px;color:rgba(255,255,255,0.85);line-height:1.85;font-style:italic;position:relative;z-index:1}
+
+/* Reveal */
+.r{opacity:0;transform:translateY(30px);transition:opacity 0.65s ease,transform 0.65s ease}
+.r.on{opacity:1;transform:translateY(0)}
+.r.d1{transition-delay:0.08s}.r.d2{transition-delay:0.16s}.r.d3{transition-delay:0.24s}
+
+/* ── CONTACT STRIP ── */
+.contact-strip{
+  background:linear-gradient(135deg,var(--red-dark) 0%,var(--red) 55%,var(--red-light) 100%);
+  padding:72px 6%;position:relative;overflow:hidden;
+}
+.contact-strip::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.07)' stroke-width='1'%3E%3Cpath d='M30 0v60M0 30h60'/%3E%3C/g%3E%3C/svg%3E");
+}
+.cs-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;position:relative;z-index:1}
+.cs-text h3{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3.5vw,40px);font-weight:700;color:#fff;margin-bottom:10px}
+.cs-text p{font-size:15px;color:rgba(255,255,255,0.8);max-width:500px;line-height:1.75}
+.cs-actions{display:flex;gap:16px;flex-wrap:wrap}
+.cs-btn{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.14);border:1.5px solid rgba(255,255,255,0.3);padding:16px 24px;border-radius:3px;color:#fff;text-decoration:none;transition:all 0.3s}
+.cs-btn:hover{background:rgba(255,255,255,0.24);transform:translateY(-2px)}
+.cs-btn-icon{font-size:20px}
+.cs-btn p{font-size:10.5px;opacity:0.7;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:2px}
+.cs-btn strong{font-size:16px;font-weight:600}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);color:#fff;padding:68px 6% 0}
+.footer-top{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:52px;padding-bottom:52px}
+.fb p{font-size:13.5px;color:rgba(255,255,255,0.45);line-height:1.8;margin:16px 0 20px;max-width:260px}
+.socials{display:flex;gap:10px}
+.soc{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);font-size:12px;font-weight:700;text-decoration:none;transition:all 0.3s}
+.soc:hover{background:var(--red);border-color:var(--red);color:#fff}
+.fc h4{font-size:10.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#fff;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.07)}
+.fc ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.fc ul a{color:rgba(255,255,255,0.48);text-decoration:none;font-size:13px;transition:all 0.3s;display:flex;align-items:center;gap:6px}
+.fc ul a::before{content:'→';font-size:10px;color:var(--red)}
+.fc ul a:hover{color:#fff;padding-left:4px}
+.footer-bottom{max-width:1140px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.07);padding:20px 0;display:flex;align-items:center;justify-content:space-between;font-size:12px;color:rgba(255,255,255,0.3);flex-wrap:wrap;gap:12px}
+.footer-bottom a{color:var(--red-light);text-decoration:none}
+.red-line{height:3px;max-width:1140px;margin:0 auto;background:linear-gradient(90deg,transparent,var(--red) 30%,var(--red) 70%,transparent);opacity:0.45}
+.trust-bar{background:rgba(0,0,0,0.22);padding:13px 6%;text-align:center;border-top:1px solid rgba(255,255,255,0.04)}
+.trust-bar p{font-size:11.5px;color:rgba(255,255,255,0.28)}
+.trust-bar span{color:rgba(192,33,31,0.55)}
+
+@media(max-width:960px){
+  .page-body{grid-template-columns:1fr;gap:48px}
+  .sidebar{position:static}
+  .clinical-grid,.subject-grid,.career-grid{grid-template-columns:1fr 1fr}
+  .why-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+  nav ul{display:none}
+}
+@media(max-width:600px){
+  .clinical-grid,.subject-grid,.career-grid,.why-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="logo">
+    <div class="logo-mark">NC</div>
+    <div class="logo-words">
+      <span>Noor College</span>
+      <small>School of Nursing</small>
+    </div>
+  </a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="courses.html">Our Courses</a></li>
+    <li><a href="#">Facilities</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#contact-strip" class="btn-nav">Apply Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="ph-bg"></div>
+  <div class="ph-grid"></div>
+  <div class="ph-slice"></div>
+  <div class="ring ring1"></div>
+  <div class="ring ring2"></div>
+  <div class="ring ring3"></div>
+  <div class="ph-content">
+    <div class="breadcrumb">
+      <a href="index.html">Noor College</a>
+      <span class="sep">›</span>
+      <a href="courses.html">Our Courses</a>
+      <span class="sep">›</span>
+      <span class="cur">GNM</span>
+    </div>
+    <div class="course-badge">
+      <span>Diploma Program</span>
+    </div>
+    <h1>General Nursing &<br><em>Midwifery</em></h1>
+    <p class="ph-sub">A three-year professional diploma recognised by the Indian Nursing Council — building skilled, compassionate nurses and midwives for hospitals, clinics and communities.</p>
+    <div class="quick-pills">
+      <div class="qpill"><span class="qpill-icon">📅</span> 3 Years (+ Internship)</div>
+      <div class="qpill"><span class="qpill-icon">🏛️</span> INC & RGUHS Recognised</div>
+      <div class="qpill"><span class="qpill-icon">⏱️</span> 40 Hrs / Week</div>
+      <div class="qpill"><span class="qpill-icon">🏥</span> 2,600+ Clinical Hours</div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE BODY (main + sidebar) -->
+<div class="page-body">
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- About -->
+    <div class="content-section r" id="about">
+      <span class="cs-tag">About the Programme</span>
+      <h2>What is the <em>GNM</em> Programme?</h2>
+      <p>The Diploma in General Nursing & Midwifery (GNM) is a three-year professional course designed to prepare students as skilled nurses and midwives. Recognized by the <strong>Indian Nursing Council (INC)</strong>, the programme equips students with theoretical knowledge, clinical training, and hands-on experience to work in hospitals, clinics, and community healthcare centers.</p>
+      <p>At Noor College, we focus on holistic education — nurturing not only professional skills but also compassion, empathy, and ethical responsibility, making our graduates ready to serve society with excellence.</p>
+    </div>
+    <div class="sec-divider"></div>
+
+    <!-- Objectives -->
+    <div class="content-section r" id="objectives">
+      <span class="cs-tag">Programme Goals</span>
+      <h2>Programme <em>Objectives</em></h2>
+      <p>Graduates of the GNM programme at Noor College will be equipped to:</p>
+      <ul class="obj-list">
+        <li>Deliver safe and effective nursing care to patients across all settings.</li>
+        <li>Function as competent midwives — assisting mothers during pregnancy, childbirth, and postnatal care.</li>
+        <li>Provide preventive, promotive, curative, and rehabilitative health services.</li>
+        <li>Work as valuable members of healthcare teams in hospitals and communities.</li>
+        <li>Pursue higher education in nursing and related healthcare fields.</li>
+      </ul>
+    </div>
+    <div class="sec-divider"></div>
+
+    <!-- Curriculum -->
+    <div class="content-section r" id="curriculum">
+      <span class="cs-tag">Academic Structure</span>
+      <h2>Curriculum <em>Structure</em></h2>
+      <p>A carefully structured three-year curriculum integrating classroom theory, laboratory work, and live clinical practice at partner hospitals.</p>
+      <div class="curriculum-years">
+        <button class="year-tab active" onclick="showYear('y1',this)">First Year</button>
+        <button class="year-tab" onclick="showYear('y2',this)">Second Year</button>
+        <button class="year-tab" onclick="showYear('y3',this)">Third Year</button>
+      </div>
+      <div class="year-panel active" id="y1">
+        <div class="subject-grid">
+          <div class="subject-item"><div class="subject-dot"></div>Anatomy & Physiology</div>
+          <div class="subject-item"><div class="subject-dot"></div>Microbiology</div>
+          <div class="subject-item"><div class="subject-dot"></div>Psychology & Sociology</div>
+          <div class="subject-item"><div class="subject-dot"></div>Nursing Foundations & First Aid</div>
+          <div class="subject-item"><div class="subject-dot"></div>Community Health Nursing I</div>
+          <div class="subject-item"><div class="subject-dot"></div>Nutrition</div>
+          <div class="subject-item"><div class="subject-dot"></div>English & Computer Education</div>
+          <div class="subject-item"><div class="subject-dot"></div>Personal Hygiene</div>
+        </div>
+      </div>
+      <div class="year-panel" id="y2">
+        <div class="subject-grid">
+          <div class="subject-item"><div class="subject-dot"></div>Medical-Surgical Nursing I</div>
+          <div class="subject-item"><div class="subject-dot"></div>Medical-Surgical Nursing II</div>
+          <div class="subject-item"><div class="subject-dot"></div>Child Health Nursing</div>
+          <div class="subject-item"><div class="subject-dot"></div>Mental Health Nursing</div>
+        </div>
+      </div>
+      <div class="year-panel" id="y3">
+        <div class="subject-grid">
+          <div class="subject-item"><div class="subject-dot"></div>Midwifery & Gynecological Nursing</div>
+          <div class="subject-item"><div class="subject-dot"></div>Community Health Nursing II</div>
+          <div class="subject-item"><div class="subject-dot"></div>Hospital Internship Rotations</div>
+          <div class="subject-item"><div class="subject-dot"></div>Community Health Centre Postings</div>
+        </div>
+      </div>
+    </div>
+    <div class="sec-divider"></div>
+
+    <!-- Clinical Training -->
+    <div class="content-section r" id="clinical">
+      <span class="cs-tag">Hands-On Learning</span>
+      <h2>Clinical <em>Training</em></h2>
+      <p>Our students undergo extensive, supervised clinical practice in leading hospitals and health centres across Bangalore. Night duties and rotational postings are mandatory to provide real-world exposure.</p>
+      <div class="hours-badge">
+        <strong>2,600+</strong>
+        <span>Hours of supervised<br>clinical practice</span>
+      </div>
+      <div class="clinical-grid" style="margin-top:24px">
+        <div class="clinical-card">
+          <span class="clinical-icon">🏥</span>
+          <h4>Medical & Surgical Wards</h4>
+          <p>Bedside care, pre- and post-operative nursing, wound management and patient monitoring.</p>
+        </div>
+        <div class="clinical-card">
+          <span class="clinical-icon">🤱</span>
+          <h4>Maternity Units</h4>
+          <p>Antenatal, intranatal, and postnatal care — including assisting in live deliveries under supervision.</p>
+        </div>
+        <div class="clinical-card">
+          <span class="clinical-icon">👶</span>
+          <h4>Pediatric Wards</h4>
+          <p>Infant and child healthcare including immunisation, growth monitoring and pediatric nursing procedures.</p>
+        </div>
+        <div class="clinical-card">
+          <span class="clinical-icon">🧠</span>
+          <h4>Psychiatric Units</h4>
+          <p>Mental health nursing, therapeutic communication, and patient support in psychiatric settings.</p>
+        </div>
+        <div class="clinical-card">
+          <span class="clinical-icon">🏘️</span>
+          <h4>Community Health Centres</h4>
+          <p>Health education, rural health services, immunisation drives, and preventive healthcare campaigns.</p>
+        </div>
+        <div class="clinical-card">
+          <span class="clinical-icon">🌙</span>
+          <h4>Night Duties & Rotations</h4>
+          <p>Mandatory night shift and rotational ward postings for complete real-world clinical exposure.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sec-divider"></div>
+
+    <!-- Examination -->
+    <div class="content-section r" id="examination">
+      <span class="cs-tag">Assessment & Evaluation</span>
+      <h2>Examination & <em>Evaluation</em></h2>
+      <p>Assessment is conducted through a combination of continuous internal evaluation and state board examinations, ensuring students are comprehensively evaluated on both theory and practical competence.</p>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>Component</th>
+            <th>Weightage</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Internal Assessment</td>
+            <td><span class="pct">25%</span></td>
+            <td>Assignments, class tests, clinical performance records</td>
+          </tr>
+          <tr>
+            <td>Board Examination</td>
+            <td><span class="pct">75%</span></td>
+            <td>Conducted by State Nursing Examination Board</td>
+          </tr>
+          <tr>
+            <td>Passing – Theory & Practicals</td>
+            <td><span class="pct">50%</span></td>
+            <td>Minimum 50% required separately in theory and practicals</td>
+          </tr>
+          <tr>
+            <td>Passing – English</td>
+            <td><span class="pct">40%</span></td>
+            <td>Minimum 40% required in English paper</td>
+          </tr>
+          <tr>
+            <td>Theory Attendance</td>
+            <td><span class="pct">75%</span></td>
+            <td>Minimum attendance required to appear for board exams</td>
+          </tr>
+          <tr>
+            <td>Clinical Attendance</td>
+            <td><span class="pct">100%</span></td>
+            <td>Full clinical attendance mandatory throughout the programme</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="sec-divider"></div>
+
+    <!-- Internship -->
+    <div class="content-section r" id="internship">
+      <span class="cs-tag">Final Year</span>
+      <h2>Internship <em>Programme</em></h2>
+      <p>Internship is an integral part of the GNM programme, forming the backbone of the final year. Students gain structured, supervised experience across five key clinical departments — building the confidence and competence needed for independent nursing practice.</p>
+      <ul class="internship-list">
+        <li class="internship-item">
+          <div class="i-dot">🏥</div>
+          <div class="i-body">
+            <p class="i-dur">9 Weeks</p>
+            <p class="i-title">Medical-Surgical Nursing</p>
+            <p class="i-desc">Supervised practice in medical and surgical wards — patient assessment, pre- and post-operative care, wound care, and medication administration.</p>
+          </div>
+        </li>
+        <li class="internship-item">
+          <div class="i-dot">🤱</div>
+          <div class="i-body">
+            <p class="i-dur">12 Weeks</p>
+            <p class="i-title">Midwifery & Gynecology</p>
+            <p class="i-desc">The longest rotation — covering antenatal monitoring, delivery assistance, postnatal care, and gynecological nursing procedures.</p>
+          </div>
+        </li>
+        <li class="internship-item">
+          <div class="i-dot">👶</div>
+          <div class="i-body">
+            <p class="i-dur">3 Weeks</p>
+            <p class="i-title">Pediatrics</p>
+            <p class="i-desc">Child health nursing in pediatric wards — immunisation, developmental monitoring, nutritional support, and family-centred care.</p>
+          </div>
+        </li>
+        <li class="internship-item">
+          <div class="i-dot">🏘️</div>
+          <div class="i-body">
+            <p class="i-dur">3 Weeks</p>
+            <p class="i-title">Community Health</p>
+            <p class="i-desc">Field postings at PHCs and community health centres — health education, immunisation drives, maternal health outreach, and rural healthcare.</p>
+          </div>
+        </li>
+        <li class="internship-item">
+          <div class="i-dot">🧠</div>
+          <div class="i-body">
+            <p class="i-dur">2 Weeks</p>
+            <p class="i-title">Psychiatry</p>
+            <p class="i-desc">Exposure to psychiatric nursing — therapeutic relationships, patient safety, mental health assessment, and rehabilitation support.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="sec-divider"></div>
+
+    <!-- Career Opportunities -->
+    <div class="content-section r" id="careers">
+      <span class="cs-tag">After Graduation</span>
+      <h2>Career <em>Opportunities</em></h2>
+      <p>GNM graduates are in high demand across India and internationally. After completing the programme, students are equipped for a wide range of nursing and healthcare roles.</p>
+      <div class="career-grid">
+        <div class="career-card">
+          <span class="career-icon">🏥</span>
+          <h4>Staff Nurse</h4>
+          <p>ICU, OT, general wards in hospitals across India and abroad</p>
+        </div>
+        <div class="career-card">
+          <span class="career-icon">🏘️</span>
+          <h4>Community Health Nurse</h4>
+          <p>PHCs and rural health missions, government health programmes</p>
+        </div>
+        <div class="career-card">
+          <span class="career-icon">🌟</span>
+          <h4>Specialty Nurse</h4>
+          <p>Pediatrics, psychiatry, maternity — specialised clinical roles</p>
+        </div>
+        <div class="career-card">
+          <span class="career-icon">📚</span>
+          <h4>Nurse Educator</h4>
+          <p>Teaching and training roles in nursing colleges and healthcare institutions</p>
+        </div>
+        <div class="career-card">
+          <span class="career-icon">🎓</span>
+          <h4>Higher Studies</h4>
+          <p>Post Basic B.Sc, B.Sc Nursing, M.Sc Nursing, specialised diplomas</p>
+        </div>
+        <div class="career-card">
+          <span class="career-icon">✈️</span>
+          <h4>Overseas Careers</h4>
+          <p>NCLEX, MOH, HAAD, DHA licensing — international nursing careers</p>
+        </div>
+      </div>
+    </div>
+    <div class="sec-divider"></div>
+
+    <!-- Why Choose Us -->
+    <div class="content-section r" id="why">
+      <span class="cs-tag">Why Noor College</span>
+      <h2>Why Choose <em>Us?</em></h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-num">01</div>
+          <div>
+            <h4>INC & State Nursing Council Recognised</h4>
+            <p>Our GNM programme is officially recognised by the Indian Nursing Council and affiliated to RGUHS — ensuring your degree is nationally and internationally credible.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">02</div>
+          <div>
+            <h4>Strong Academic + Clinical Integration</h4>
+            <p>Theory and hands-on training go hand-in-hand throughout the programme, with 2,600+ hours of supervised clinical practice.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">03</div>
+          <div>
+            <h4>Experienced & Supportive Faculty</h4>
+            <p>Our teaching team comprises seasoned nursing tutors, doctors and clinicians from leading institutions — invested in your growth.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">04</div>
+          <div>
+            <h4>Excellent Hospital Partnerships</h4>
+            <p>Clinical postings at affiliated multi-specialty hospitals give students real-world exposure from the very first year.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">05</div>
+          <div>
+            <h4>Holistic & Value-Based Education</h4>
+            <p>Beyond academics — we build character, discipline, empathy and ethical responsibility in every student.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">06</div>
+          <div>
+            <h4>Placement & Career Counselling</h4>
+            <p>Dedicated placement assistance and career guidance helping graduates find the right opportunities in India and abroad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sec-divider"></div>
+
+    <!-- Conclusion -->
+    <div class="content-section r" id="conclusion">
+      <span class="cs-tag">A Noble Career Awaits</span>
+      <h2>Your First Step Toward <em>Healthcare Excellence</em></h2>
+      <div class="conclusion-box">
+        <p>"The Diploma in General Nursing & Midwifery is more than a qualification — it is a pathway to a noble and secure career. At Noor College, we ensure that students are not only well-trained nurses but also compassionate caregivers, ready to serve patients and communities with dedication. By choosing this programme, students take their first step toward becoming vital contributors to the healthcare system, both in India and abroad."</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- Table of contents -->
+    <div class="toc r">
+      <h4>On This Page</h4>
+      <ul>
+        <li><a href="#about">About the Programme</a></li>
+        <li><a href="#objectives">Programme Objectives</a></li>
+        <li><a href="#curriculum">Curriculum Structure</a></li>
+        <li><a href="#clinical">Clinical Training</a></li>
+        <li><a href="#examination">Examination & Evaluation</a></li>
+        <li><a href="#internship">Internship</a></li>
+        <li><a href="#careers">Career Opportunities</a></li>
+        <li><a href="#why">Why Choose Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Quick Info -->
+    <div class="sidebar-card r d1">
+      <div class="sidebar-card-head">
+        <h4>Programme Details</h4>
+      </div>
+      <div class="sidebar-card-body">
+        <div class="info-row">
+          <span class="info-icon">📅</span>
+          <div>
+            <p class="info-label">Duration</p>
+            <p class="info-val">3 Years (incl. internship)</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-icon">⏱️</span>
+          <div>
+            <p class="info-label">Weekly Hours</p>
+            <p class="info-val">40 hours (theory + practical + clinical)</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-icon">🎓</span>
+          <div>
+            <p class="info-label">Eligibility</p>
+            <p class="info-val">10+2 (Science/Arts/Commerce) · Min 40% · English compulsory</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-icon">🧑‍⚕️</span>
+          <div>
+            <p class="info-label">Age Limit</p>
+            <p class="info-val">17–35 years</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-icon">🏛️</span>
+          <div>
+            <p class="info-label">Recognition</p>
+            <p class="info-val">INC Recognised · RGUHS Affiliated</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-icon">🏥</span>
+          <div>
+            <p class="info-label">Clinical Hours</p>
+            <p class="info-val">2,600+ supervised hours</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-icon">📋</span>
+          <div>
+            <p class="info-label">Medical Fitness</p>
+            <p class="info-val">Certificate of medical fitness required</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Apply CTA -->
+    <div class="apply-card r d2">
+      <h4>Apply for GNM</h4>
+      <p>Begin your nursing journey at Noor College. Seats are limited — enquire today to secure your place.</p>
+      <a href="#contact-strip" class="apply-btn">Enquire Now →</a>
+    </div>
+
+    <!-- Contact -->
+    <div class="contact-card r d3">
+      <p>Speak with us directly</p>
+      <a href="tel:+919845026920">📞 +91 98450 26920</a>
+      <a href="mailto:info@noorcollege.com" style="margin-top:10px;font-size:14px;color:rgba(255,255,255,0.6)">✉️ info@noorcollege.com</a>
+    </div>
+
+    <!-- Other courses -->
+    <div class="sidebar-card r d2" style="margin-top:20px">
+      <div class="sidebar-card-head"><h4>Other Programs</h4></div>
+      <div class="sidebar-card-body" style="padding:12px 24px">
+        <a href="#" style="display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid var(--light-gray);text-decoration:none;color:var(--navy);font-size:14px;font-weight:500;transition:all 0.3s" onmouseover="this.style.color='var(--red)';this.style.paddingLeft='4px'" onmouseout="this.style.color='var(--navy)';this.style.paddingLeft='0'">
+          <span style="color:var(--red);font-size:11px">→</span> B.Sc Nursing (4 Years)
+        </a>
+        <a href="#" style="display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid var(--light-gray);text-decoration:none;color:var(--navy);font-size:14px;font-weight:500;transition:all 0.3s" onmouseover="this.style.color='var(--red)';this.style.paddingLeft='4px'" onmouseout="this.style.color='var(--navy)';this.style.paddingLeft='0'">
+          <span style="color:var(--red);font-size:11px">→</span> Post Basic B.Sc Nursing
+        </a>
+        <a href="#" style="display:flex;align-items:center;gap:10px;padding:11px 0;text-decoration:none;color:var(--navy);font-size:14px;font-weight:500;transition:all 0.3s" onmouseover="this.style.color='var(--red)';this.style.paddingLeft='4px'" onmouseout="this.style.color='var(--navy)';this.style.paddingLeft='0'">
+          <span style="color:var(--red);font-size:11px">→</span> M.Sc Nursing (2 Years)
+        </a>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- CONTACT STRIP -->
+<div class="contact-strip" id="contact-strip">
+  <div class="cs-inner">
+    <div class="cs-text r">
+      <h3>Interested in the GNM Programme?</h3>
+      <p>At Noor College & School of Nursing, our GNM programme is designed to build the compassionate, skilled nurses our healthcare system needs. Reach out to us to learn more or begin your application.</p>
+    </div>
+    <div class="cs-actions r d2">
+      <a href="tel:+919845026920" class="cs-btn">
+        <div class="cs-btn-icon">📞</div>
+        <div>
+          <p>Call Us</p>
+          <strong>+91 98450 26920</strong>
+        </div>
+      </a>
+      <a href="mailto:info@noorcollege.com" class="cs-btn">
+        <div class="cs-btn-icon">✉️</div>
+        <div>
+          <p>Email Us</p>
+          <strong>info@noorcollege.com</strong>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="red-line"></div>
+  <div class="footer-top" style="padding-top:56px">
+    <div class="fb">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">NC</div>
+        <div class="logo-words"><span>Noor College</span><small>School of Nursing</small></div>
+      </a>
+      <p>Dedicated to producing healthcare professionals who serve with compassion, competence and character — Noor Education Trust, Bangalore.</p>
+      <div class="socials">
+        <a href="#" class="soc">f</a>
+        <a href="#" class="soc">in</a>
+        <a href="#" class="soc">tw</a>
+        <a href="#" class="soc">yt</a>
+      </div>
+    </div>
+    <div class="fc">
+      <h4>Programs</h4>
+      <ul>
+        <li><a href="#">GNM Diploma</a></li>
+        <li><a href="#">B.Sc Nursing</a></li>
+        <li><a href="#">Post Basic B.Sc</a></li>
+        <li><a href="#">M.Sc Nursing</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="courses.html">Our Courses</a></li>
+        <li><a href="#">Facilities</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Accreditation</h4>
+      <ul>
+        <li><a href="#">RGUHS Affiliated</a></li>
+        <li><a href="#">INC Approved</a></li>
+        <li><a href="#">KNC Registered</a></li>
+      </ul>
+      <div style="margin-top:20px;display:flex;flex-direction:column;gap:8px">
+        <span style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:5px 12px;border-radius:20px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.38)">Noor Education Trust</span>
+        <span style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:5px 12px;border-radius:20px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.38)">Est. Bangalore</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Noor College & School of Nursing. All rights reserved.</p>
+    <p>Under <a href="#">Noor Education Trust</a> · Affiliated to <a href="#">RGUHS</a></p>
+  </div>
+  <div class="trust-bar">
+    <p>Compassion · Competence · <span>Character</span> — Bhoopasandra Main Road, Bangalore, Karnataka</p>
+  </div>
+</footer>
+
+<script>
+// Year tab switcher
+function showYear(id, btn) {
+  document.querySelectorAll('.year-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.year-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.r').forEach(el => obs.observe(el));
+
+// Navbar shrink
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('nav');
+  nav.style.height = window.scrollY > 60 ? '58px' : '70px';
+  nav.style.background = window.scrollY > 60 ? 'rgba(12,26,58,1)' : 'rgba(12,26,58,0.97)';
+});
+</script>
+</body>
+</html>

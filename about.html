@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us – Noor College & School of Nursing</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red: #C0211F;
+  --red-light: #E03533;
+  --red-dark: #8B1614;
+  --red-glow: rgba(192,33,31,0.15);
+  --navy: #0C1A3A;
+  --navy-mid: #172D5C;
+  --navy-light: #1E3A70;
+  --white: #FFFFFF;
+  --off-white: #F7F6F2;
+  --light-gray: #E8EAF0;
+  --mid-gray: #B8BCC8;
+  --text-muted: #64748B;
+  --gold: #C9963A;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--navy);background:var(--white);overflow-x:hidden}
+
+/* ── BREADCRUMB HERO ── */
+.page-hero{
+  min-height:60vh;
+  background:var(--navy);
+  position:relative;overflow:hidden;
+  display:flex;align-items:flex-end;
+  padding:0 6% 80px;
+  padding-top:70px;
+}
+.ph-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 70% 80% at 80% 30%,rgba(192,33,31,0.2) 0%,transparent 65%),
+    radial-gradient(ellipse 50% 60% at 10% 80%,rgba(30,58,112,0.8) 0%,transparent 60%),
+    linear-gradient(150deg,#0C1A3A 0%,#172D5C 60%,#0C1A3A 100%);
+}
+/* Animated grid lines */
+.ph-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);
+  background-size:80px 80px;
+  animation:gridDrift 20s linear infinite;
+}
+@keyframes gridDrift{from{background-position:0 0}to{background-position:80px 80px}}
+/* Red diagonal accent */
+.ph-diagonal{
+  position:absolute;top:0;right:0;width:45%;height:100%;
+  background:linear-gradient(135deg,transparent 40%,rgba(192,33,31,0.08) 100%);
+  clip-path:polygon(30% 0,100% 0,100% 100%,0% 100%);
+}
+.ph-line{
+  position:absolute;left:6%;bottom:0;width:60px;height:3px;
+  background:linear-gradient(90deg,var(--red),transparent);
+}
+.ph-content{position:relative;z-index:2;max-width:900px}
+.breadcrumb{
+  display:flex;align-items:center;gap:8px;
+  font-size:12px;letter-spacing:1.5px;text-transform:uppercase;
+  color:rgba(255,255,255,0.4);margin-bottom:28px;
+}
+.breadcrumb a{color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.3s}
+.breadcrumb a:hover{color:var(--red-light)}
+.breadcrumb span{color:var(--red-light)}
+.breadcrumb::before{
+  content:'';width:30px;height:1px;background:var(--red);margin-right:4px;
+}
+.ph-content h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(42px,7vw,84px);font-weight:700;color:#fff;
+  line-height:1.0;letter-spacing:-1px;
+  animation:fadeUp 0.9s ease 0.2s both;
+}
+.ph-content h1 em{color:var(--red-light);font-style:italic}
+.ph-sub{
+  font-size:17px;color:rgba(255,255,255,0.6);font-weight:300;
+  max-width:560px;line-height:1.7;margin-top:18px;
+  animation:fadeUp 0.9s ease 0.4s both;
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+/* Floating shapes */
+.ph-shape{
+  position:absolute;border-radius:50%;pointer-events:none;
+  animation:shapeFloat 7s ease-in-out infinite;
+}
+.ph-shape1{width:200px;height:200px;right:8%;top:20%;
+  border:1px solid rgba(192,33,31,0.25);animation-delay:0s}
+.ph-shape2{width:100px;height:100px;right:18%;top:35%;
+  background:rgba(192,33,31,0.06);animation-delay:2s}
+.ph-shape3{width:60px;height:60px;right:28%;top:55%;
+  border:1px solid rgba(255,255,255,0.1);animation-delay:4s}
+@keyframes shapeFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-16px) rotate(8deg)}}
+
+/* ── LAYOUT UTIL ── */
+.container{max-width:1140px;margin:0 auto;padding:0 6%}
+section{padding:100px 6%}
+.tag{
+  display:inline-block;font-size:11px;font-weight:600;
+  letter-spacing:3px;text-transform:uppercase;color:var(--red);
+  margin-bottom:10px;
+}
+.tag::before{content:'—  ';opacity:0.5}
+h2.headline{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(32px,4vw,52px);font-weight:700;
+  color:var(--navy);line-height:1.1;margin-bottom:18px;
+}
+h2.headline em{color:var(--red);font-style:italic}
+.lead{font-size:17px;color:var(--text-muted);line-height:1.85;max-width:600px}
+
+/* Reveal */
+.r{opacity:0;transform:translateY(36px);transition:opacity 0.7s ease,transform 0.7s ease}
+.r.on{opacity:1;transform:translateY(0)}
+.r.d1{transition-delay:0.1s}.r.d2{transition-delay:0.2s}.r.d3{transition-delay:0.3s}.r.d4{transition-delay:0.4s}
+
+/* ── INTRO SECTION ── */
+.intro{background:var(--off-white);padding:100px 6%}
+.intro-grid{
+  max-width:1140px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center;
+}
+.intro-img{
+  position:relative;
+}
+.intro-img-main{
+  width:100%;height:520px;
+  background:linear-gradient(135deg,var(--navy-mid),var(--navy));
+  border-radius:2px;overflow:hidden;position:relative;
+  display:flex;align-items:center;justify-content:center;
+}
+.img-placeholder{
+  display:flex;flex-direction:column;align-items:center;gap:16px;
+  color:rgba(255,255,255,0.3);
+}
+.img-placeholder-icon{font-size:64px}
+.img-placeholder-text{font-size:12px;letter-spacing:3px;text-transform:uppercase}
+/* Corner brackets */
+.bracket{
+  position:absolute;width:50px;height:50px;
+}
+.bracket-tl{top:-12px;left:-12px;border-top:3px solid var(--red);border-left:3px solid var(--red)}
+.bracket-br{bottom:-12px;right:-12px;border-bottom:3px solid var(--red);border-right:3px solid var(--red)}
+/* Accent stat box */
+.intro-stat{
+  position:absolute;bottom:-28px;right:-28px;
+  background:var(--red);color:#fff;
+  padding:24px 28px;border-radius:2px;
+  box-shadow:0 16px 40px rgba(192,33,31,0.35);
+  text-align:center;min-width:140px;
+}
+.intro-stat strong{
+  font-family:'Cormorant Garamond',serif;
+  font-size:52px;font-weight:700;display:block;line-height:1;
+}
+.intro-stat span{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;opacity:0.85;margin-top:4px;display:block}
+/* Trust badge */
+.trust-badge{
+  position:absolute;top:-20px;left:-20px;
+  background:var(--white);border:1px solid var(--light-gray);
+  padding:14px 18px;border-radius:2px;
+  box-shadow:0 8px 24px rgba(12,26,58,0.1);
+  display:flex;align-items:center;gap:12px;
+}
+.trust-badge .tb-icon{
+  width:40px;height:40px;border-radius:50%;background:rgba(12,26,58,0.06);
+  display:flex;align-items:center;justify-content:center;font-size:18px;
+}
+.trust-badge p{font-size:12px;font-weight:600;color:var(--navy);margin:0}
+.trust-badge small{font-size:10px;color:var(--text-muted);letter-spacing:0.5px}
+.intro-text .tag{margin-top:0}
+.intro-text p{font-size:16px;color:var(--text-muted);line-height:1.85;margin-bottom:20px}
+
+/* ── MISSION ── */
+.mission{
+  background:var(--navy);
+  position:relative;overflow:hidden;
+}
+.mission::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 70% at 90% 50%,rgba(192,33,31,0.18) 0%,transparent 65%);
+}
+.mission-grid{
+  max-width:1140px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;
+  position:relative;z-index:1;
+}
+.mission .tag{color:rgba(255,255,255,0.5)}
+.mission h2.headline{color:#fff}
+.mission .lead{color:rgba(255,255,255,0.6)}
+/* Big italic quote */
+.mission-quote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(28px,3.5vw,44px);font-weight:600;
+  color:#fff;line-height:1.25;font-style:italic;
+  position:relative;padding-left:32px;
+}
+.mission-quote::before{
+  content:'';position:absolute;left:0;top:4px;bottom:4px;
+  width:3px;background:var(--red);
+}
+.mission-pillars{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.06);
+  margin-top:40px;
+}
+.pillar{
+  background:rgba(255,255,255,0.02);
+  padding:28px 24px;
+  transition:background 0.3s;
+  position:relative;
+}
+.pillar:hover{background:rgba(255,255,255,0.05)}
+.pillar::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;
+  height:2px;background:linear-gradient(90deg,var(--red),transparent);
+  transform:scaleX(0);transform-origin:left;transition:transform 0.4s;
+}
+.pillar:hover::after{transform:scaleX(1)}
+.pillar-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:36px;font-weight:700;color:rgba(192,33,31,0.4);
+  display:block;line-height:1;margin-bottom:10px;
+}
+.pillar h4{font-size:14px;font-weight:600;color:#fff;letter-spacing:0.5px;margin-bottom:6px}
+.pillar p{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6}
+
+/* ── PHILOSOPHY ── */
+.philosophy{background:var(--white)}
+.philosophy-inner{
+  max-width:1140px;margin:0 auto;
+  display:grid;grid-template-columns:5fr 4fr;
+  gap:80px;align-items:center;
+}
+.philosophy-text .lead{margin-bottom:28px}
+.philosophy-text blockquote{
+  border-left:3px solid var(--red);
+  padding:20px 28px;
+  background:var(--off-white);
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;font-style:italic;color:var(--navy);line-height:1.6;
+  margin:28px 0;
+}
+.philosophy-img{
+  height:460px;
+  background:linear-gradient(160deg,var(--navy-mid),var(--navy));
+  border-radius:2px;
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.philosophy-img::after{
+  content:'PHILOSOPHY';
+  position:absolute;bottom:20px;right:20px;
+  font-size:10px;letter-spacing:4px;color:rgba(255,255,255,0.2);font-weight:600;
+}
+/* Diagonal red slice on image */
+.philosophy-img::before{
+  content:'';position:absolute;
+  bottom:0;left:0;right:0;height:60%;
+  background:linear-gradient(to top,rgba(192,33,31,0.15),transparent);
+}
+.phil-overlay{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:28px;z-index:2;
+  background:linear-gradient(to top,rgba(12,26,58,0.9),transparent);
+}
+.phil-overlay p{font-size:13px;color:rgba(255,255,255,0.7);line-height:1.6}
+
+/* ── ACADEMIC EXCELLENCE ── */
+.academic{
+  background:var(--off-white);
+  position:relative;overflow:hidden;
+}
+.academic::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:linear-gradient(to bottom,var(--red),transparent);
+}
+.academic-inner{max-width:1140px;margin:0 auto}
+.academic-grid{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  gap:24px;margin-top:56px;
+}
+.ac-card{
+  background:var(--white);border:1px solid var(--light-gray);
+  padding:36px 30px;border-radius:2px;
+  position:relative;overflow:hidden;
+  transition:all 0.4s;
+}
+.ac-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;
+  height:3px;background:var(--red);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform 0.4s;
+}
+.ac-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(12,26,58,0.1);border-color:transparent}
+.ac-card:hover::before{transform:scaleX(1)}
+.ac-icon{
+  width:54px;height:54px;border-radius:8px;
+  background:rgba(12,26,58,0.06);
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;margin-bottom:22px;
+  transition:background 0.3s;
+}
+.ac-card:hover .ac-icon{background:var(--red)}
+.ac-card h4{font-size:17px;font-weight:600;color:var(--navy);margin-bottom:10px}
+.ac-card p{font-size:14px;color:var(--text-muted);line-height:1.7}
+
+/* ── PROGRAMS ── */
+.programs-section{background:var(--white)}
+.programs-section-inner{max-width:1140px;margin:0 auto}
+.programs-header{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:40px;align-items:flex-end;margin-bottom:56px;
+}
+.prog-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:var(--light-gray);
+  border:1px solid var(--light-gray);
+}
+.prog-card{
+  background:var(--white);
+  padding:36px 24px;
+  position:relative;overflow:hidden;
+  transition:all 0.4s;cursor:pointer;
+}
+.prog-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;
+  height:3px;background:var(--red);
+  transform:scaleX(0);transform-origin:center;
+  transition:transform 0.4s;
+}
+.prog-card:hover{background:var(--navy);transform:none}
+.prog-card:hover::after{transform:scaleX(1)}
+.prog-img{
+  width:100%;height:160px;
+  background:linear-gradient(135deg,var(--light-gray),var(--mid-gray));
+  border-radius:2px;margin-bottom:22px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  font-size:40px;
+  transition:background 0.4s;
+}
+.prog-card:hover .prog-img{background:linear-gradient(135deg,var(--navy-light),var(--navy-mid))}
+.prog-label{
+  font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--red);margin-bottom:6px;display:block;
+  transition:color 0.3s;
+}
+.prog-card:hover .prog-label{color:rgba(192,33,31,0.7)}
+.prog-card h4{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;font-weight:700;color:var(--navy);
+  margin-bottom:10px;line-height:1.2;
+  transition:color 0.3s;
+}
+.prog-card:hover h4{color:#fff}
+.prog-card p{font-size:13px;color:var(--text-muted);line-height:1.65;transition:color 0.3s}
+.prog-card:hover p{color:rgba(255,255,255,0.55)}
+.prog-link{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--red);font-size:12px;font-weight:600;
+  margin-top:18px;text-decoration:none;letter-spacing:0.5px;
+  transition:gap 0.3s,color 0.3s;
+}
+.prog-card:hover .prog-link{color:rgba(192,33,31,0.8)}
+.prog-link:hover{gap:10px}
+
+/* ── CONTACT STRIP ── */
+.contact-strip{
+  background:linear-gradient(135deg,var(--red-dark),var(--red),var(--red-light));
+  padding:70px 6%;
+  position:relative;overflow:hidden;
+}
+.contact-strip::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.07)' stroke-width='1'%3E%3Cpath d='M30 0v60M0 30h60'/%3E%3C/g%3E%3C/svg%3E");
+}
+.cs-inner{
+  max-width:1140px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:32px;position:relative;z-index:1;
+}
+.cs-text h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:36px;font-weight:700;color:#fff;margin-bottom:8px;
+}
+.cs-text p{font-size:15px;color:rgba(255,255,255,0.8);max-width:480px;line-height:1.7}
+.cs-contacts{display:flex;gap:24px;flex-wrap:wrap}
+.cs-contact{
+  display:flex;align-items:center;gap:14px;
+  background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.2);
+  padding:14px 22px;border-radius:3px;
+  color:#fff;text-decoration:none;
+  transition:all 0.3s;
+}
+.cs-contact:hover{background:rgba(255,255,255,0.2);transform:translateY(-2px)}
+.cs-contact-icon{font-size:20px}
+.cs-contact-body p{font-size:11px;opacity:0.7;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px}
+.cs-contact-body strong{font-size:16px;font-weight:600}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--navy);color:#fff;
+  padding:72px 6% 0;
+}
+.footer-grid{
+  max-width:1140px;margin:0 auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:56px;padding-bottom:56px;
+}
+.fb p{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.8;margin:18px 0 22px;max-width:260px}
+.socials{display:flex;gap:10px}
+.soc{
+  width:36px;height:36px;border-radius:50%;
+  border:1px solid rgba(255,255,255,0.15);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,0.55);font-size:12px;font-weight:700;
+  text-decoration:none;transition:all 0.3s;
+}
+.soc:hover{background:var(--red);border-color:var(--red);color:#fff}
+.fc h4{
+  font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;
+  color:#fff;margin-bottom:18px;
+  padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.fc ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.fc ul a{
+  color:rgba(255,255,255,0.5);text-decoration:none;font-size:13.5px;
+  transition:all 0.3s;display:flex;align-items:center;gap:6px;
+}
+.fc ul a::before{content:'→';font-size:10px;color:var(--red)}
+.fc ul a:hover{color:#fff;padding-left:4px}
+.footer-bottom{
+  max-width:1140px;margin:0 auto;
+  border-top:1px solid rgba(255,255,255,0.07);
+  padding:22px 0;
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:12.5px;color:rgba(255,255,255,0.35);
+}
+.footer-bottom a{color:var(--red-light);text-decoration:none}
+.footer-red-line{
+  height:3px;
+  background:linear-gradient(90deg,transparent,var(--red) 30%,var(--red) 70%,transparent);
+  opacity:0.5;max-width:1140px;margin:0 auto 0;
+}
+.footer-trust{
+  background:rgba(0,0,0,0.25);
+  padding:14px 6%;text-align:center;
+  border-top:1px solid rgba(255,255,255,0.04);
+}
+.footer-trust p{font-size:11.5px;color:rgba(255,255,255,0.3);letter-spacing:0.5px}
+.footer-trust span{color:rgba(192,33,31,0.55)}
+
+/* RESP */
+@media(max-width:960px){
+  .intro-grid,.mission-grid,.philosophy-inner{grid-template-columns:1fr;gap:48px}
+  .academic-grid{grid-template-columns:1fr 1fr}
+  .prog-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .programs-header,.cs-inner{grid-template-columns:1fr}
+  nav ul{display:none}
+}
+@media(max-width:600px){
+  .academic-grid,.prog-grid,.footer-grid,.mission-pillars{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="logo">
+    <div class="logo-mark">NC</div>
+    <div class="logo-words">
+      <span>Noor College</span>
+      <small>School of Nursing</small>
+    </div>
+  </a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#" style="color:#fff;border-bottom:1px solid var(--red-light)">About Us</a></li>
+    <li><a href="#programs-section">Programs</a></li>
+    <li><a href="#">Facilities</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#contact-strip" class="btn-nav">Apply Now</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="ph-bg"></div>
+  <div class="ph-grid"></div>
+  <div class="ph-diagonal"></div>
+  <div class="ph-shape ph-shape1"></div>
+  <div class="ph-shape ph-shape2"></div>
+  <div class="ph-shape ph-shape3"></div>
+  <div class="ph-line"></div>
+
+  <div class="ph-content">
+    <div class="breadcrumb">
+      <a href="index.html">Noor College</a>
+      <span>›</span>
+      <span>About Us</span>
+    </div>
+    <h1>Empowering the<br><em>Future</em> of Healthcare.</h1>
+    <p class="ph-sub">A proud initiative of the Noor Education Trust — committed to shaping compassionate, skilled, and globally ready nursing professionals from the heart of Bangalore.</p>
+  </div>
+</div>
+
+<!-- INTRO / WHO WE ARE -->
+<section class="intro">
+  <div class="intro-grid">
+    <div class="intro-img r">
+      <div class="trust-badge">
+        <div class="tb-icon">🏛️</div>
+        <div>
+          <p>RGUHS Affiliated</p>
+          <small>Est. Bangalore</small>
+        </div>
+      </div>
+      <div class="intro-img-main">
+        <div class="img-placeholder">
+          <div class="img-placeholder-icon">🏥</div>
+          <p class="img-placeholder-text">Noor College Campus</p>
+        </div>
+      </div>
+      <div class="bracket bracket-tl"></div>
+      <div class="bracket bracket-br"></div>
+      <div class="intro-stat">
+        <strong>576<span style="font-size:28px">+</span></strong>
+        <span>Students Enrolled</span>
+      </div>
+    </div>
+
+    <div class="intro-text r d2">
+      <span class="tag">Who We Are</span>
+      <h2 class="headline">Noor College &<br><em>School of Nursing</em></h2>
+      <p>Located in the vibrant city of Bangalore, Noor College & School of Nursing is a proud initiative of the <strong>Noor Education Trust</strong>. Established with a vision to deliver quality education in health sciences, the institution has emerged as a trusted name in nursing and pharmaceutical studies across Karnataka.</p>
+      <p>We are affiliated to <strong>Rajiv Gandhi University of Health Sciences (RGUHS)</strong> and equipped with state-of-the-art infrastructure, modern laboratories, a digital library, and strong hospital partnerships that offer students real-time clinical exposure and hands-on learning.</p>
+      <p>At Noor, we integrate <strong>academic excellence</strong> with strong moral values, community responsibility, and innovative learning — because great nurses are built not just in classrooms, but through character.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission">
+  <div class="mission-grid">
+    <div class="r">
+      <span class="tag">Our Mission</span>
+      <h2 class="headline">Transforming Lives<br><em>Through Learning.</em></h2>
+      <p class="lead">Our mission is to prepare compassionate, skilled, and industry-ready healthcare professionals equipped to meet global standards of the medical and nursing profession.</p>
+    </div>
+    <div class="r d2">
+      <div class="mission-quote">
+        "We integrate academic excellence with strong moral values, community responsibility, and innovative learning — shaping tomorrow's healthcare leaders today."
+      </div>
+      <div class="mission-pillars">
+        <div class="pillar">
+          <span class="pillar-num">01</span>
+          <h4>Discipline</h4>
+          <p>Instilling a culture of commitment, punctuality and professional conduct in every student.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">02</span>
+          <h4>Quality</h4>
+          <p>Delivering education that meets and exceeds national and global healthcare standards.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">03</span>
+          <h4>Innovation</h4>
+          <p>Embracing modern methods, technology and research-driven approaches to nursing.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">04</span>
+          <h4>Service</h4>
+          <p>Nurturing a deep sense of duty, compassion, and service to humanity in all graduates.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <div class="philosophy-inner container">
+    <div class="philosophy-text r">
+      <span class="tag">Our Philosophy</span>
+      <h2 class="headline">Nurturing More Than<br><em>Professionals</em></h2>
+      <p class="lead">We believe in nurturing not just qualified professionals, but responsible citizens and lifelong learners. Our education system is built on the pillars of discipline, quality, innovation, and service to humanity.</p>
+      <blockquote>
+        "We aim to create an atmosphere that inspires learning, builds confidence, and fosters leadership in every student."
+      </blockquote>
+      <p style="font-size:15px;color:var(--text-muted);line-height:1.85">With a team of highly qualified faculty from leading nursing institutions across India, Noor College provides a curriculum that blends theoretical knowledge with practical application. Our affiliations with reputed hospitals across Bangalore offer students real-time clinical exposure.</p>
+    </div>
+    <div class="r d2">
+      <div class="philosophy-img">
+        <div class="img-placeholder">
+          <div class="img-placeholder-icon" style="font-size:72px">📖</div>
+          <p class="img-placeholder-text" style="color:rgba(255,255,255,0.25);font-size:11px;letter-spacing:3px;text-transform:uppercase">Our Philosophy</p>
+        </div>
+        <div class="phil-overlay">
+          <p>Every student who walks through our doors carries the potential to change lives. We nurture that potential with care, rigour, and compassion.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACADEMIC EXCELLENCE -->
+<section class="academic">
+  <div class="academic-inner">
+    <div class="r" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:flex-end;margin-bottom:0">
+      <div>
+        <span class="tag">Academic Excellence</span>
+        <h2 class="headline">Built on a Foundation<br>of <em>Excellence</em></h2>
+      </div>
+      <p class="lead">Three pillars that define the Noor academic experience — connecting theory, practice, and purpose.</p>
+    </div>
+    <div class="academic-grid">
+      <div class="ac-card r d1">
+        <div class="ac-icon">👩‍🏫</div>
+        <h4>Expert Faculty</h4>
+        <p>Our team comprises highly qualified educators drawn from premier nursing institutions and hospitals across India, bringing real-world expertise into every classroom.</p>
+      </div>
+      <div class="ac-card r d2">
+        <div class="ac-icon">🔬</div>
+        <h4>Blended Curriculum</h4>
+        <p>A rigorous curriculum that fuses deep theoretical knowledge with hands-on practical training — preparing students for every dimension of modern healthcare.</p>
+      </div>
+      <div class="ac-card r d3">
+        <div class="ac-icon">🏥</div>
+        <h4>Hospital Partnerships</h4>
+        <p>Affiliations with leading hospitals across Bangalore provide students with invaluable clinical postings and real-time patient care exposure throughout their studies.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="programs-section" id="programs-section">
+  <div class="programs-section-inner">
+    <div class="programs-header r">
+      <div>
+        <span class="tag">Education for Everyone</span>
+        <h2 class="headline">Our Nursing <em>Programs</em></h2>
+      </div>
+      <p class="lead">Four nationally recognised programs designed to take you from passionate beginner to healthcare leader.</p>
+    </div>
+    <div class="prog-grid r">
+      <div class="prog-card">
+        <div class="prog-img">🎓</div>
+        <span class="prog-label">Diploma</span>
+        <h4>GNM</h4>
+        <p>The General Nursing and Midwifery program is a highly sought-after diploma course preparing skilled nursing professionals.</p>
+        <a href="#contact-strip" class="prog-link">Enquire →</a>
+      </div>
+      <div class="prog-card">
+        <div class="prog-img">📚</div>
+        <span class="prog-label">4 Year UG</span>
+        <h4>B.Sc Nursing</h4>
+        <p>Equips students with medical knowledge and practical training, preparing them for a rewarding career in healthcare.</p>
+        <a href="#contact-strip" class="prog-link">Enquire →</a>
+      </div>
+      <div class="prog-card">
+        <div class="prog-img">🏥</div>
+        <span class="prog-label">2 Year PG</span>
+        <h4>PB B.Sc Nursing</h4>
+        <p>Designed for registered nurses seeking to enhance qualifications and move into higher roles in healthcare leadership.</p>
+        <a href="#contact-strip" class="prog-link">Enquire →</a>
+      </div>
+      <div class="prog-card">
+        <div class="prog-img">🔬</div>
+        <span class="prog-label">2 Year Masters</span>
+        <h4>M.Sc Nursing</h4>
+        <p>Enhances critical thinking and specialised care skills, preparing nurses for educator, administrator and expert clinician roles.</p>
+        <a href="#contact-strip" class="prog-link">Enquire →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT STRIP -->
+<div class="contact-strip" id="contact-strip">
+  <div class="cs-inner">
+    <div class="cs-text r">
+      <h3>Reach Out to Noor College</h3>
+      <p>At Noor College & School of Nursing, we offer a comprehensive range of nursing programs designed to equip students with the knowledge, skills, and clinical expertise necessary for a successful healthcare career.</p>
+    </div>
+    <div class="cs-contacts r d2">
+      <a href="tel:+919845026920" class="cs-contact">
+        <div class="cs-contact-icon">📞</div>
+        <div class="cs-contact-body">
+          <p>Call Us</p>
+          <strong>+91 98450 26920</strong>
+        </div>
+      </a>
+      <a href="mailto:info@noorcollege.com" class="cs-contact">
+        <div class="cs-contact-icon">✉️</div>
+        <div class="cs-contact-body">
+          <p>Email Us</p>
+          <strong>info@noorcollege.com</strong>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-red-line"></div>
+  <div class="footer-grid" style="padding-top:60px">
+    <div class="fb">
+      <a href="index.html" class="logo" style="margin-bottom:4px;display:inline-flex">
+        <div class="logo-mark">NC</div>
+        <div class="logo-words">
+          <span>Noor College</span>
+          <small>School of Nursing</small>
+        </div>
+      </a>
+      <p>Dedicated to producing healthcare professionals who serve with compassion, competence and character — under the Noor Education Trust, Bangalore.</p>
+      <div class="socials">
+        <a href="#" class="soc">f</a>
+        <a href="#" class="soc">in</a>
+        <a href="#" class="soc">tw</a>
+        <a href="#" class="soc">yt</a>
+      </div>
+    </div>
+    <div class="fc">
+      <h4>Programs</h4>
+      <ul>
+        <li><a href="#">GNM Diploma</a></li>
+        <li><a href="#">B.Sc Nursing</a></li>
+        <li><a href="#">Post Basic B.Sc</a></li>
+        <li><a href="#">M.Sc Nursing</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Facilities</a></li>
+        <li><a href="#">Campus Life</a></li>
+        <li><a href="#contact-strip">Admissions</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Accreditation</h4>
+      <ul>
+        <li><a href="#">RGUHS Affiliated</a></li>
+        <li><a href="#">INC Approved</a></li>
+        <li><a href="#">KNC Registered</a></li>
+      </ul>
+      <div style="margin-top:22px;display:flex;flex-direction:column;gap:8px">
+        <span style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:5px 12px;border-radius:20px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.45)">Noor Education Trust</span>
+        <span style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:5px 12px;border-radius:20px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.45)">Est. Bangalore</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Noor College & School of Nursing. All rights reserved.</p>
+    <p>Under <a href="#">Noor Education Trust</a> · Affiliated to <a href="#">RGUHS</a></p>
+  </div>
+  <div class="footer-trust">
+    <p>Compassion · Competence · <span>Character</span> — Bhoopasandra Main Road, Bangalore, Karnataka</p>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.r').forEach(el => obs.observe(el));
+
+// Navbar shrink on scroll
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('nav');
+  nav.style.height = window.scrollY > 60 ? '58px' : '70px';
+  nav.style.background = window.scrollY > 60
+    ? 'rgba(12,26,58,0.99)'
+    : 'rgba(12,26,58,0.97)';
+});
+</script>
+</body>
+</html>
