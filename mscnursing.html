@@ -481,6 +481,95 @@ nav ul a:hover::after{width:100%}
     .btn-primary, .btn-outline, .btn-white { width: 100%; justify-content: center; }
     .mobile-menu { top: 72px; }
   }
+
+/* Footer logo aliases */
+.logo-icon{
+  width:42px;height:42px;border-radius:50%;
+  background:linear-gradient(135deg,var(--red),var(--red-dark));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:#fff;
+  box-shadow:0 0 0 2px rgba(192,33,31,0.4);
+  flex-shrink:0;
+}
+.logo-text span{display:block;font-size:14px;font-weight:600;color:#fff}
+.logo-text small{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid-gray)}
+.section-inner{max-width:1200px;margin:0 auto}
+
+/* Strong mobile responsiveness */
+img,video,iframe{max-width:100%;height:auto}
+main{min-width:0}
+.sidebar{min-width:0}
+.exam-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:16px}
+.exam-table{min-width:680px;margin-top:0}
+
+@media (max-width: 1200px){
+  .page-body{grid-template-columns:minmax(0,1fr) 300px;gap:40px}
+  .spec-grid{grid-template-columns:repeat(3,1fr)}
+  .career-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media (max-width: 1024px){
+  nav{padding:0 4%}
+  .page-hero,.pinnacle-banner,.spec-section,.page-body,.contact-strip,footer{padding-left:4%;padding-right:4%}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+  .spec-header{grid-template-columns:1fr;gap:20px}
+  .pb-inner{flex-wrap:wrap}
+  .pb-item{flex:1 1 50%}
+}
+
+@media (max-width: 960px){
+  nav{height:72px}
+  #navMenu{top:72px;padding:18px 4% 22px;gap:10px;box-shadow:0 18px 40px rgba(0,0,0,0.28);z-index:250}
+  #navMenu li{width:100%}
+  #navMenu li a,.mobile-program-toggle{display:block;width:100%;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.08)}
+  .btn-nav{display:inline-flex !important;width:auto !important;border-bottom:none !important;margin-top:10px}
+  .page-hero{min-height:auto;padding:110px 16px 52px;align-items:center}
+  .ph-content{max-width:100%}
+  .ph-content h1{font-size:clamp(34px,10vw,56px);line-height:1.05}
+  .ph-sub{font-size:15px;line-height:1.7;max-width:100%}
+  .breadcrumb{font-size:10px;flex-wrap:wrap;margin-bottom:18px}
+  .quick-pills{gap:10px;margin-top:24px}
+  .qpill{font-size:12px;padding:8px 14px}
+  .page-body{grid-template-columns:1fr;gap:36px;padding:56px 16px}
+  .sidebar{position:static;top:auto}
+  .phd-path,.arc,.spark,.ph-slice{display:none}
+  .spec-section,.contact-strip{padding:56px 16px}
+  .spec-grid{grid-template-columns:repeat(2,1fr)}
+  .subject-grid,.clinical-grid,.facilities-grid,.career-grid,.why-grid{grid-template-columns:1fr 1fr}
+  .key-row{grid-template-columns:repeat(2,1fr)}
+  .research-box{padding:24px;gap:18px;flex-direction:column}
+  .rm-item{flex-wrap:wrap}
+  .rm-icon{padding:0 24px 20px 88px}
+  .cs-inner{flex-direction:column;align-items:flex-start;gap:24px}
+  .cs-actions{width:100%;flex-direction:column}
+  .cs-btn{width:100%;justify-content:flex-start}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:10px}
+  .footer-accredit{gap:10px}
+}
+
+@media (max-width: 640px){
+  .page-hero{padding:104px 16px 42px}
+  .course-badge{font-size:10px;letter-spacing:1.5px;padding:7px 14px}
+  .pinnacle-banner{padding-left:0;padding-right:0}
+  .pb-inner{display:grid;grid-template-columns:1fr}
+  .pb-item{padding:18px 16px;border-right:none;border-bottom:1px solid rgba(255,255,255,0.06)}
+  .pb-item:last-child{border-bottom:none}
+  .spec-grid,.subject-grid,.clinical-grid,.facilities-grid,.career-grid,.why-grid,.footer-grid,.key-row{grid-template-columns:1fr}
+  .curriculum-years{overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
+  .curriculum-years::-webkit-scrollbar{display:none}
+  .year-tab{white-space:nowrap;flex-shrink:0;padding:12px 22px}
+  .content-section h2{font-size:30px}
+  .content-section p,.spec-sub,.cs-text p{font-size:14px;line-height:1.75}
+  .conclusion-box{padding:28px 22px}
+  .conclusion-box p{font-size:15px;line-height:1.8}
+  .toc,.sidebar-card-body,.sidebar-card-head,.contact-card{padding-left:18px;padding-right:18px}
+  .apply-card{padding:24px 20px}
+  .contact-card a{font-size:14px;word-break:break-word}
+  .logo-words span,.logo-text span{font-size:13px}
+  .logo-words small,.logo-text small{font-size:9px;letter-spacing:1.5px}
+  .footer-socials{flex-wrap:wrap}
+}
+
 </style>
 </head>
 <body>
@@ -777,7 +866,7 @@ nav ul a:hover::after{width:100%}
       <span class="cs-tag">Assessment</span>
       <h2>Examination & <em>Evaluation</em></h2>
       <p>Assessment across four semesters combines internal continuous evaluation with university examinations and a compulsory dissertation viva-voce — ensuring graduates are evaluated at the highest academic and clinical standards.</p>
-      <table class="exam-table">
+      <div class="exam-table-wrap"><table class="exam-table">
         <thead>
           <tr><th>Component</th><th>Weightage</th><th>Details</th></tr>
         </thead>
@@ -803,7 +892,7 @@ nav ul a:hover::after{width:100%}
             <td>Minimum 50% required separately in theory, practicals, and dissertation</td>
           </tr>
         </tbody>
-      </table>
+      </table></div>
     </div>
     <div class="sec-divider"></div>
 
