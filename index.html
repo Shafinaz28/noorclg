@@ -113,8 +113,8 @@
       inset:0;
       background:
         radial-gradient(ellipse 80% 60% at 60% 40%, rgba(192,33,31,0.18) 0%, transparent 70%),
-        radial-gradient(ellipse 60% 80% at 10% 80%, rgba(25,47,90,0.8) 0%, transparent 60%),
-        linear-gradient(135deg, #0D1B3E 0%, #1A2F5A 50%, #0D1B3E 100%);
+        radial-gradient(ellipse 60% 80% at 10% 80%, rgba(25,47,90,0.55) 0%, transparent 60%),
+        linear-gradient(135deg, rgba(13,27,62,0.25) 0%, rgba(26,47,90,0.22) 50%, rgba(13,27,62,0.25) 100%);
       animation:bgShift 8s ease-in-out infinite alternate;
     }
 
@@ -194,6 +194,154 @@
     @keyframes orbFloat{
       0%,100%{transform:translateY(0) scale(1)}
       50%{transform:translateY(-20px) scale(1.05)}
+    }
+
+
+    .hero-slider{
+      position:absolute;
+      inset:0;
+      z-index:0;
+      overflow:hidden;
+    }
+
+    .hero-slide{
+      position:absolute;
+      inset:0;
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      opacity:0;
+      visibility:hidden;
+      transform:scale(1.08);
+      transition:opacity 1.2s ease, transform 6s ease, visibility 1.2s ease;
+      will-change:opacity, transform;
+    }
+
+    .hero-slide.active{
+      opacity:1;
+      visibility:visible;
+      transform:scale(1);
+    }
+
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg, rgba(12,26,58,0.78) 0%, rgba(12,26,58,0.64) 45%, rgba(192,33,31,0.30) 100%);
+      z-index:1;
+      pointer-events:none;
+    }
+
+    .hero-bg-anim{
+      z-index:0;
+      mix-blend-mode:screen;
+      opacity:.28;
+      pointer-events:none;
+    }
+
+    .hero-lines,
+    .orb{
+      z-index:1;
+    }
+
+    .hero-content,
+    .scroll-ind,
+    .hero-dots{
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-dots{
+      position:absolute;
+      bottom:90px;
+      left:50%;
+      transform:translateX(-50%);
+      display:flex;
+      gap:10px;
+      z-index:2;
+    }
+
+    .hero-dot{
+      width:12px;
+      height:12px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,0.8);
+      background:rgba(255,255,255,0.25);
+      cursor:pointer;
+      transition:all .3s ease;
+    }
+
+    .hero-dot.active{
+      background:var(--red-light);
+      border-color:var(--red-light);
+      transform:scale(1.08);
+      box-shadow:0 0 0 4px rgba(224,53,51,0.18);
+    }
+
+    .hero-content{
+      text-align:center;
+      max-width:860px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+
+    /* GALLERY */
+    .gallery{
+      background:var(--white);
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+      margin-top:56px;
+    }
+
+    .gallery-card{
+      position:relative;
+      min-height:280px;
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow:0 10px 35px rgba(13,27,62,0.12);
+      background:#e5e7eb;
+    }
+
+    .gallery-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .5s ease;
+    }
+
+    .gallery-card:hover img{
+      transform:scale(1.08);
+    }
+
+    .gallery-card::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(12,26,58,0.78) 0%, rgba(12,26,58,0.08) 55%, rgba(12,26,58,0.02) 100%);
+    }
+
+    .gallery-content{
+      position:absolute;
+      left:20px;
+      right:20px;
+      bottom:18px;
+      z-index:1;
+      color:#fff;
+    }
+
+    .gallery-content h3{
+      font-family:'Playfair Display',serif;
+      font-size:22px;
+      margin-bottom:8px;
+    }
+
+    .gallery-content p{
+      font-size:13px;
+      line-height:1.6;
+      color:rgba(255,255,255,0.82);
     }
 
    @media(max-width:768px){
@@ -1308,6 +1456,10 @@ margin-top:20px;
         grid-template-columns:1fr 1fr;
       }
 
+      .gallery-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
       .footer-grid{
         grid-template-columns:1fr 1fr;
       }
@@ -1328,6 +1480,10 @@ margin-top:20px;
 
       .hero-content{
         padding:90px 18px 70px;
+      }
+
+      .hero-dots{
+        bottom:78px;
       }
 
       .hero p{
@@ -1360,7 +1516,8 @@ margin-top:20px;
 
       .why-grid,
       .facilities-grid,
-      .stats-inner{
+      .stats-inner,
+      .gallery-grid{
         grid-template-columns:1fr;
       }
 
@@ -1420,6 +1577,12 @@ margin-top:20px;
 
   <!-- HERO -->
   <section class="hero">
+    <div class="hero-slider">
+      <div class="hero-slide active" style="background-image:url('assets/confference.jpg');"></div>
+      <div class="hero-slide" style="background-image:url('assets/clgimg.jpg');"></div>
+      <div class="hero-slide" style="background-image:url('assets/clgimg3.jpg');"></div>
+    </div>
+    <div class="hero-overlay"></div>
     <div class="hero-bg-anim"></div>
 
     <div class="hero-lines">
@@ -1443,6 +1606,12 @@ margin-top:20px;
         <a href="ourcourse.html" class="btn-primary">Explore Programs →</a>
         <a href="about.html" class="btn-outline">Learn More</a>
       </div>
+    </div>
+
+    <div class="hero-dots">
+      <button class="hero-dot active" type="button" aria-label="Show hero image 1"></button>
+      <button class="hero-dot" type="button" aria-label="Show hero image 2"></button>
+      <button class="hero-dot" type="button" aria-label="Show hero image 3"></button>
     </div>
 
     <div class="scroll-ind">Scroll</div>
@@ -1710,6 +1879,69 @@ margin-top:20px;
     </div>
   </section>
 
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="section-inner">
+      <div class="reveal" style="text-align:center;max-width:850px;margin:0 auto 56px auto;">
+        <div class="section-tag">Campus Gallery</div>
+        <h2 class="section-title">Moments from Our <em>Campus</em></h2>
+        <p class="section-sub" style="margin:18px auto 0 auto;">
+          A glimpse into the learning spaces, clinical exposure, student life, and vibrant environment at Noor College & School of Nursing.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-card reveal">
+          <img src="assets/classrooms.jpg" alt="Nursing students in classroom">
+          <div class="gallery-content">
+            <h3>Interactive Classrooms</h3>
+            <p>Engaging academic sessions designed to build strong foundations in nursing education.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card reveal">
+          <img src="assets/img1.jpg" alt="Clinical training at Noor College">
+          <div class="gallery-content">
+            <h3>Clinical Training</h3>
+            <p>Hands-on hospital and lab exposure that prepares students for real-world healthcare practice.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card reveal">
+          <img src="assets/confference.jpg" alt="Library and study environment">
+          <div class="gallery-content">
+            <h3>Study & Research</h3>
+            <p>Supportive learning spaces with access to digital resources and focused study environments.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card reveal">
+          <img src="assets/studentimg.jpg" alt="Campus events and student life">
+          <div class="gallery-content">
+            <h3>Student Life</h3>
+            <p>A vibrant campus atmosphere that encourages confidence, teamwork, and holistic development.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card reveal">
+          <img src="assets/img2.jpg" alt="Nursing laboratory facilities">
+          <div class="gallery-content">
+            <h3>Advanced Labs</h3>
+            <p>Modern laboratory infrastructure for practical learning, skill building, and academic excellence.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card reveal">
+          <img src="assets/clgoutsideimgbus.jpg" alt="Noor College campus building">
+          <div class="gallery-content">
+            <h3>Campus Environment</h3>
+            <p>A safe, welcoming, and growth-focused space for aspiring healthcare professionals.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ADMISSION CTA -->
   <section class="admission">
     <div class="admission-inner reveal">
@@ -1874,6 +2106,48 @@ margin-top:20px;
     if (ribbon) {
       statsObs.observe(ribbon);
     }
+
+
+    // Hero auto image slider
+    window.addEventListener('load', () => {
+      const heroSlides = document.querySelectorAll('.hero-slide');
+      const heroDots = document.querySelectorAll('.hero-dot');
+      let heroIndex = 0;
+      let heroInterval;
+
+      function showHeroSlide(index) {
+        heroSlides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+
+        heroDots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+
+        heroIndex = index;
+      }
+
+      function startHeroSlider() {
+        if (heroSlides.length < 2) return;
+        clearInterval(heroInterval);
+        heroInterval = setInterval(() => {
+          const nextIndex = (heroIndex + 1) % heroSlides.length;
+          showHeroSlide(nextIndex);
+        }, 3500);
+      }
+
+      if (heroSlides.length) {
+        showHeroSlide(0);
+        startHeroSlider();
+      }
+
+      heroDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          showHeroSlide(index);
+          startHeroSlider();
+        });
+      });
+    });
 
     // Form button feedback
     const enquiryForm = document.querySelector('.contact-form form');
