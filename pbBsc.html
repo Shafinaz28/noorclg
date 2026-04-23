@@ -1,910 +1,1379 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GNM – Diploma in General Nursing & Midwifery | Noor College</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --red:#C0211F;--red-light:#E03533;--red-dark:#8B1614;
-  --navy:#0C1A3A;--navy-mid:#172D5C;--navy-light:#1E3A70;
-  --white:#FFFFFF;--off-white:#F7F6F2;--light-gray:#E8EAF0;
-  --mid-gray:#B8BCC8;--text-muted:#64748B;--gold:#C9963A;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;color:var(--navy);background:var(--white);overflow-x:hidden}
-img,video,iframe{max-width:100%;height:auto}
-.section-inner{max-width:1140px;margin:0 auto}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post Basic B.Sc Nursing | Noor College & School of Nursing</title>
 
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:200;
-  height:70px;display:flex;align-items:center;justify-content:space-between;
-  padding:0 6%;
-  background:rgba(12,26,58,0.97);backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(192,33,31,0.3);
-  transition:height 0.3s,background 0.3s;
-}
-.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo-mark,
-.logo-icon{
-  width:42px;height:42px;border-radius:50%;
-  background:linear-gradient(135deg,var(--red),var(--red-dark));
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:#fff;
-  box-shadow:0 0 0 2px rgba(192,33,31,0.4);
-  flex-shrink:0;
-}
-.logo-words span,
-.logo-text span{display:block;font-size:14px;font-weight:600;color:#fff}
-.logo-words small,
-.logo-text small{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid-gray)}
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-.menu-toggle{
-  display:none;
-  background:none;
-  border:none;
-  color:#fff;
-  font-size:30px;
-  cursor:pointer;
-  line-height:1;
-}
+  <style>
+    :root{
+      --red:#C0211F;
+      --red-light:#E03533;
+      --red-dark:#8B1614;
+      --navy:#0C1A3A;
+      --navy-mid:#172D5C;
+      --navy-light:#1E3A70;
+      --white:#FFFFFF;
+      --off-white:#F7F6F2;
+      --light-gray:#E8EAF0;
+      --mid-gray:#B8BCC8;
+      --text-muted:#64748B;
+      --gold:#C9963A;
+    }
 
-nav ul{list-style:none;display:flex;gap:32px;align-items:center}
-nav ul a{
-  color:rgba(255,255,255,0.75);text-decoration:none;font-size:12.5px;
-  font-weight:500;letter-spacing:0.8px;text-transform:uppercase;
-  position:relative;padding-bottom:3px;transition:color 0.3s;
-}
-nav ul a::after{
-  content:'';
-  position:absolute;bottom:0;left:0;
-  width:0;height:1.5px;background:var(--red-light);transition:width 0.3s
-}
-nav ul a:hover{color:#fff}
-nav ul a:hover::after{width:100%}
-.btn-nav{
-  background:var(--red)!important;color:#fff!important;padding:8px 22px!important;
-  border-radius:3px;font-weight:600!important;transition:background 0.3s!important
-}
-.btn-nav:hover{background:var(--red-light)!important}
-.btn-nav::after{display:none!important}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
 
-/* dropdown */
-.dropdown{position:relative}
-.dropdown > a{display:inline-flex;align-items:center;gap:6px}
-.dropdown-menu{
-  position:absolute;
-  top:calc(100% + 14px);
-  left:0;
-  min-width:250px;
-  background:#10224b;
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:6px;
-  padding:10px 0;
-  display:none;
-  box-shadow:0 18px 40px rgba(0,0,0,0.28);
-  z-index:100;
-}
-.dropdown:hover .dropdown-menu{display:block}
-.dropdown-menu li{list-style:none}
-.dropdown-menu a{
-  display:block;
-  padding:12px 18px;
-  color:rgba(255,255,255,0.82);
-  font-size:12px;
-  letter-spacing:0.8px;
-}
-.dropdown-menu a:hover{
-  color:#fff;
-  background:rgba(255,255,255,0.05);
-}
-.dropdown-menu a::after{display:none!important}
+    body{
+      font-family:'DM Sans',sans-serif;
+      color:var(--navy);
+      background:var(--white);
+      overflow-x:hidden;
+      padding-top:78px;
+    }
 
-.mobile-program-toggle{
-  display:none;
-  width:100%;
-  background:none;
-  border:none;
-  color:rgba(255,255,255,0.75);
-  font-size:12.5px;
-  font-weight:500;
-  letter-spacing:0.8px;
-  text-transform:uppercase;
-  text-align:left;
-  padding:0;
-  cursor:pointer;
-}
-.mobile-submenu{display:none}
+    @media (max-width:992px){
+      body{padding-top:74px}
+    }
 
-/* Other course links */
-.other-link{
-  display:flex;align-items:center;gap:10px;padding:11px 0;
-  border-bottom:1px solid var(--light-gray);text-decoration:none;
-  color:var(--navy);font-size:14px;font-weight:500;transition:all 0.3s
-}
-.other-link:last-child{border-bottom:none}
-.other-link::before{content:'→';font-size:11px;color:var(--red)}
-.other-link:hover{color:var(--red);padding-left:4px}
+    img,video,iframe{max-width:100%;height:auto}
+    main{min-width:0}
+    .sidebar{min-width:0}
+    .section-inner{max-width:1140px;margin:0 auto}
+    .exam-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:16px}
+    .exam-table{min-width:680px;margin-top:0}
 
-/* ── HERO ── */
-.page-hero{
-  min-height:74vh;background:var(--navy);
-  position:relative;overflow:hidden;
-  display:flex;align-items:flex-end;
-  padding:0 6% 80px;padding-top:70px;
-}
-.ph-bg{
-  position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse 55% 65% at 72% 28%,rgba(192,33,31,0.28) 0%,transparent 62%),
-    radial-gradient(ellipse 45% 55% at 8% 88%,rgba(30,58,112,0.65) 0%,transparent 58%),
-    linear-gradient(148deg,#0C1A3A 0%,#172D5C 52%,#0C1A3A 100%);
-}
-.ph-grid{
-  position:absolute;inset:0;
-  background-image:linear-gradient(rgba(255,255,255,0.032) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.032) 1px,transparent 1px);
-  background-size:72px 72px;
-  animation:gridDrift 22s linear infinite;
-}
-@keyframes gridDrift{from{background-position:0 0}to{background-position:72px 72px}}
-.ph-slice{
-  position:absolute;top:0;right:0;bottom:0;width:42%;
-  background:linear-gradient(135deg,transparent 28%,rgba(192,33,31,0.09) 100%);
-  clip-path:polygon(22% 0,100% 0,100% 100%,0 100%)
-}
+    .other-link{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:11px 0;
+      border-bottom:1px solid var(--light-gray);
+      text-decoration:none;
+      color:var(--navy);
+      font-size:14px;
+      font-weight:500;
+      transition:all 0.3s
+    }
 
-/* Geometric decorations */
-.geo{position:absolute;pointer-events:none}
-.geo1{width:280px;height:280px;border-radius:50%;right:7%;top:10%;border:1px solid rgba(192,33,31,0.17);animation:geoFloat 7s ease-in-out infinite}
-.geo2{width:140px;height:140px;border-radius:50%;right:21%;top:36%;background:rgba(192,33,31,0.06);animation:geoFloat 7s ease-in-out infinite;animation-delay:2s}
-.geo3{width:70px;height:70px;border-radius:50%;right:33%;top:56%;border:1px solid rgba(255,255,255,0.07);animation:geoFloat 7s ease-in-out infinite;animation-delay:4.5s}
-.geo4{width:50px;height:50px;right:14%;bottom:18%;border:1px solid rgba(192,33,31,0.25);transform:rotate(45deg);animation:geoSpin 12s linear infinite}
-@keyframes geoFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-16px) rotate(5deg)}}
-@keyframes geoSpin{from{transform:rotate(45deg)}to{transform:rotate(405deg)}}
+    .other-link:last-child{border-bottom:none}
+    .other-link::before{content:'→';font-size:11px;color:var(--red)}
+    .other-link:hover{color:var(--red);padding-left:4px}
 
-.ph-content{position:relative;z-index:2;max-width:820px}
-.breadcrumb{
-  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
-  font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;
-  color:rgba(255,255,255,0.38);margin-bottom:24px
-}
-.breadcrumb::before{content:'';width:28px;height:1px;background:var(--red);margin-right:4px}
-.breadcrumb a{color:rgba(255,255,255,0.38);text-decoration:none;transition:color 0.3s}
-.breadcrumb a:hover{color:var(--red-light)}
-.breadcrumb .sep{color:rgba(255,255,255,0.22)}
-.breadcrumb .cur{color:var(--red-light)}
+    /* HERO */
+    .page-hero{
+      min-height:100vh;
+      background:var(--navy);
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:60px 20px;
+      text-align:center;
+    }
 
-.course-badge{
-  display:inline-flex;align-items:center;gap:10px;
-  background:rgba(192,33,31,0.18);border:1px solid rgba(192,33,31,0.4);
-  color:#F4A0A0;padding:7px 20px;border-radius:30px;
-  font-size:11.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
-  margin-bottom:22px;
-}
-.course-badge::before{
-  content:'';width:7px;height:7px;background:var(--red-light);
-  border-radius:50%;animation:pulse 2s infinite
-}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.4)}}
+    .ph-bg{
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(ellipse 55% 65% at 72% 28%,rgba(192,33,31,0.28) 0%,transparent 62%),
+        radial-gradient(ellipse 45% 55% at 8% 88%,rgba(30,58,112,0.65) 0%,transparent 58%),
+        linear-gradient(148deg,#0C1A3A 0%,#172D5C 52%,#0C1A3A 100%);
+    }
 
-.ph-content h1{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(36px,6.2vw,76px);font-weight:700;color:#fff;
-  line-height:1.0;letter-spacing:-1px;
-  animation:fadeUp 0.9s ease 0.2s both;
-}
-.ph-content h1 em{color:var(--red-light);font-style:italic}
-.ph-sub{
-  font-size:16.5px;color:rgba(255,255,255,0.6);font-weight:300;
-  max-width:560px;line-height:1.75;margin-top:16px;
-  animation:fadeUp 0.9s ease 0.4s both
-}
-.quick-pills{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px;animation:fadeUp 0.9s ease 0.6s both}
-.qpill{
-  display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.15);padding:8px 18px;border-radius:30px;
-  font-size:12.5px;color:rgba(255,255,255,0.85);font-weight:500
-}
-.qpill-icon{font-size:14px}
-@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+    .ph-grid{
+      position:absolute;
+      inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.032) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,0.032) 1px,transparent 1px);
+      background-size:72px 72px;
+      animation:gridDrift 22s linear infinite;
+    }
 
-/* ── LAYOUT ── */
-.page-body{
-  max-width:1200px;margin:0 auto;padding:80px 6%;
-  display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:60px;align-items:start
-}
-main{min-width:0}
-.sidebar{position:sticky;top:90px;min-width:0}
+    @keyframes gridDrift{
+      from{background-position:0 0;}
+      to{background-position:72px 72px;}
+    }
 
-/* Sidebar cards */
-.sidebar-card{background:var(--white);border:1px solid var(--light-gray);border-radius:2px;overflow:hidden;margin-bottom:20px}
-.sidebar-card-head{background:var(--navy);padding:20px 24px}
-.sidebar-card-head h4{font-size:12.5px;font-weight:600;color:#fff;letter-spacing:1px;text-transform:uppercase}
-.sidebar-card-body{padding:20px 24px}
-.info-row{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--light-gray)}
-.info-row:last-child{border-bottom:none}
-.info-icon{font-size:16px;flex-shrink:0;margin-top:1px}
-.info-label{font-size:10.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:2px}
-.info-val{font-size:14px;color:var(--navy);font-weight:500;line-height:1.45}
+    .ph-slice{
+      position:absolute;
+      top:0;
+      right:0;
+      bottom:0;
+      width:42%;
+      background:linear-gradient(135deg,transparent 28%,rgba(192,33,31,0.09) 100%);
+      clip-path:polygon(22% 0,100% 0,100% 100%,0 100%);
+    }
 
-.apply-card{background:linear-gradient(135deg,var(--red-dark),var(--red));border-radius:2px;padding:28px 24px;position:relative;overflow:hidden}
-.apply-card::before{content:'';position:absolute;top:-20px;right:-20px;width:100px;height:100px;border-radius:50%;background:rgba(255,255,255,0.06)}
-.apply-card h4{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:8px}
-.apply-card p{font-size:13px;color:rgba(255,255,255,0.8);line-height:1.6;margin-bottom:20px}
-.apply-btn{display:block;width:100%;padding:13px;background:#fff;color:var(--red);border-radius:3px;font-size:14px;font-weight:700;text-align:center;text-decoration:none;transition:all 0.3s}
-.apply-btn:hover{background:var(--off-white);transform:translateY(-1px)}
+    .geo{position:absolute;pointer-events:none}
+    .geo1{
+      width:280px;height:280px;border-radius:50%;
+      right:7%;top:10%;
+      border:1px solid rgba(192,33,31,0.17);
+      animation:geoFloat 7s ease-in-out infinite
+    }
+    .geo2{
+      width:140px;height:140px;border-radius:50%;
+      right:21%;top:36%;
+      background:rgba(192,33,31,0.06);
+      animation:geoFloat 7s ease-in-out infinite;
+      animation-delay:2s
+    }
+    .geo3{
+      width:70px;height:70px;border-radius:50%;
+      right:33%;top:56%;
+      border:1px solid rgba(255,255,255,0.07);
+      animation:geoFloat 7s ease-in-out infinite;
+      animation-delay:4.5s
+    }
+    .geo4{
+      width:50px;height:50px;
+      right:14%;bottom:18%;
+      border:1px solid rgba(192,33,31,0.25);
+      transform:rotate(45deg);
+      animation:geoSpin 12s linear infinite
+    }
 
-.contact-card{background:var(--navy);border-radius:2px;padding:22px 24px;margin-top:20px}
-.contact-card p{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:8px}
-.contact-card a{display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none;font-size:16px;font-weight:600;transition:color 0.3s;margin-bottom:8px;word-break:break-word}
-.contact-card a:hover{color:var(--red-light)}
+    @keyframes geoFloat{
+      0%,100%{transform:translateY(0) rotate(0deg)}
+      50%{transform:translateY(-16px) rotate(5deg)}
+    }
 
-.toc{background:var(--off-white);border:1px solid var(--light-gray);border-radius:2px;padding:20px 24px;margin-bottom:20px}
-.toc h4{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:14px}
-.toc ul{list-style:none;display:flex;flex-direction:column;gap:6px}
-.toc ul a{font-size:13.5px;color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:8px;padding:4px 0;transition:all 0.2s}
-.toc ul a::before{content:'';width:14px;height:1.5px;background:var(--red);flex-shrink:0;transition:width 0.3s}
-.toc ul a:hover{color:var(--red);padding-left:4px}
-.toc ul a:hover::before{width:22px}
+    @keyframes geoSpin{
+      from{transform:rotate(45deg)}
+      to{transform:rotate(405deg)}
+    }
 
-/* ── MAIN CONTENT ── */
-.content-section{margin-bottom:64px}
-.content-section:last-child{margin-bottom:0}
-.cs-tag{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:10px}
-.cs-tag::before{content:'—  ';opacity:0.5}
-.content-section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,40px);font-weight:700;color:var(--navy);line-height:1.15;margin-bottom:18px}
-.content-section h2 em{color:var(--red);font-style:italic}
-.content-section p{font-size:15.5px;color:var(--text-muted);line-height:1.85;margin-bottom:16px}
+    .ph-content{
+      position:relative;
+      z-index:2;
+      max-width:920px;
+      width:100%;
+      margin:auto;
+    }
 
-.sec-divider{height:1px;background:linear-gradient(90deg,var(--red),var(--light-gray),transparent);margin:0 0 64px;opacity:0.6}
+    .breadcrumb{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:20px;
+      font-size:12px;
+      letter-spacing:1px;
+      text-transform:uppercase;
+    }
 
-/* Objectives */
-.obj-list{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:8px}
-.obj-list li{display:flex;align-items:flex-start;gap:14px;font-size:15px;color:#374151;line-height:1.6;padding:14px 18px;background:var(--off-white);border-left:3px solid var(--red);border-radius:0 2px 2px 0}
-.obj-list li::before{content:'✦';color:var(--red);font-size:12px;margin-top:3px;flex-shrink:0}
+    .breadcrumb a{
+      color:rgba(255,255,255,0.60);
+      text-decoration:none;
+    }
 
-/* Curriculum */
-.curriculum-years{
-  display:flex;gap:0;border-bottom:2px solid var(--light-gray);
-  overflow-x:auto;overflow-y:hidden;
-  scrollbar-width:none;
-}
-.curriculum-years::-webkit-scrollbar{display:none}
-.year-tab{
-  padding:12px 26px;font-size:13px;font-weight:600;color:var(--text-muted);
-  cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
-  transition:all 0.3s;letter-spacing:0.5px;background:none;border-top:none;
-  border-left:none;border-right:none;font-family:'DM Sans',sans-serif;
-  white-space:nowrap;flex-shrink:0
-}
-.year-tab.active{color:var(--red);border-bottom-color:var(--red)}
-.year-tab:hover{color:var(--navy)}
-.year-panel{display:none;padding-top:28px}
-.year-panel.active{display:block}
-.subject-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.subject-item{display:flex;align-items:center;gap:12px;padding:14px 18px;background:var(--white);border:1px solid var(--light-gray);border-radius:2px;font-size:14px;color:var(--navy);font-weight:500;transition:all 0.3s}
-.subject-item:hover{border-color:rgba(192,33,31,0.3);background:rgba(192,33,31,0.02);transform:translateX(3px)}
-.subject-dot{width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0}
+    .breadcrumb a:hover{color:#fff}
+    .sep{color:var(--red-light)}
+    .cur{color:#ffffff}
 
-/* Clinical training */
-.hours-badge{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:#fff;padding:16px 28px;border-radius:2px;margin-top:20px;flex-wrap:wrap}
-.hours-badge strong{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:var(--red-light)}
-.hours-badge span{font-size:13px;line-height:1.4}
+    .course-badge{
+      display:inline-block;
+      padding:9px 20px;
+      border-radius:40px;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.14);
+      color:#fff;
+      font-size:12px;
+      letter-spacing:1.2px;
+      text-transform:uppercase;
+      margin-bottom:24px;
+    }
 
-.clinical-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
-.clinical-card{background:var(--white);border:1px solid var(--light-gray);border-radius:2px;padding:22px 20px;transition:all 0.3s;position:relative;overflow:hidden}
-.clinical-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform 0.4s}
-.clinical-card:hover{box-shadow:0 8px 24px rgba(12,26,58,0.08);transform:translateY(-3px)}
-.clinical-card:hover::before{transform:scaleX(1)}
-.clinical-icon{font-size:28px;margin-bottom:10px;display:block}
-.clinical-card h4{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:6px}
-.clinical-card p{font-size:13px;color:var(--text-muted);line-height:1.6}
+    .page-hero h1{
+      font-family:'Cormorant Garamond', serif;
+      font-size:clamp(40px,6vw,76px);
+      line-height:1;
+      font-weight:700;
+      color:#fff;
+      margin-bottom:22px;
+    }
 
-/* Exam table */
-.exam-table{width:100%;border-collapse:collapse;margin-top:16px;min-width:680px}
-.exam-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.exam-table th{background:var(--navy);color:#fff;padding:12px 16px;text-align:left;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase}
-.exam-table td{padding:13px 16px;border-bottom:1px solid var(--light-gray);font-size:14px;color:var(--navy)}
-.exam-table tr:last-child td{border-bottom:none}
-.exam-table tr:nth-child(even) td{background:var(--off-white)}
-.pct{font-weight:700;color:var(--red)}
+    .page-hero h1 em{
+      color:var(--red-light);
+      font-style:italic;
+    }
 
-/* Internship timeline */
-.internship-list{list-style:none;position:relative;margin-top:8px}
-.internship-list::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:2px;background:var(--light-gray)}
-.internship-item{display:flex;gap:20px;align-items:flex-start;padding:0 0 28px 0;position:relative}
-.internship-item:last-child{padding-bottom:0}
-.i-dot{width:42px;height:42px;border-radius:50%;flex-shrink:0;background:var(--white);border:2px solid var(--red);display:flex;align-items:center;justify-content:center;font-size:15px;position:relative;z-index:1}
-.i-dur{font-size:12px;font-weight:600;color:var(--red);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
-.i-title{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:4px}
-.i-desc{font-size:13.5px;color:var(--text-muted);line-height:1.6}
+    .ph-sub{
+      max-width:760px;
+      margin:0 auto 32px;
+      color:rgba(255,255,255,0.76);
+      font-size:17px;
+      line-height:1.8;
+    }
 
-/* Facilities */
-.facilities-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
-.fac-card{background:var(--off-white);border:1px solid var(--light-gray);border-radius:2px;padding:22px 20px;display:flex;gap:16px;align-items:flex-start;transition:all 0.3s}
-.fac-card:hover{background:var(--white);box-shadow:0 6px 20px rgba(12,26,58,0.07);transform:translateY(-2px)}
-.fac-icon{font-size:26px;flex-shrink:0}
-.fac-card h4{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:4px}
-.fac-card p{font-size:13px;color:var(--text-muted);line-height:1.55}
+    .quick-pills{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+    }
 
-/* Career grid */
-.career-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
-.career-card{background:var(--off-white);border:1px solid var(--light-gray);border-radius:2px;padding:24px 18px;text-align:center;transition:all 0.35s;cursor:default}
-.career-card:hover{background:var(--navy);border-color:var(--navy);transform:translateY(-4px)}
-.career-icon{font-size:32px;margin-bottom:10px;display:block}
-.career-card h4{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:6px;transition:color 0.3s}
-.career-card p{font-size:12.5px;color:var(--text-muted);line-height:1.6;transition:color 0.3s}
-.career-card:hover h4,.career-card:hover p{color:rgba(255,255,255,0.82)}
+    .qpill{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:12px 18px;
+      border-radius:40px;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.14);
+      color:#fff;
+      font-size:13px;
+    }
 
-/* Why choose */
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--light-gray);border:1px solid var(--light-gray);margin-top:8px}
-.why-item{background:var(--white);padding:24px 22px;display:flex;gap:14px;align-items:flex-start;transition:background 0.3s}
-.why-item:hover{background:var(--off-white)}
-.why-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:rgba(192,33,31,0.15);line-height:1;flex-shrink:0;margin-top:-4px;transition:color 0.3s}
-.why-item:hover .why-num{color:rgba(192,33,31,0.28)}
-.why-item h4{font-size:14.5px;font-weight:600;color:var(--navy);margin-bottom:5px}
-.why-item p{font-size:13px;color:var(--text-muted);line-height:1.6}
+    .qpill-icon{
+      color:var(--red-light);
+    }
 
-/* Conclusion */
-.conclusion-box{background:linear-gradient(135deg,var(--navy),var(--navy-mid));border-radius:2px;padding:40px 44px;position:relative;overflow:hidden;margin-top:8px}
-.conclusion-box::before{content:'"';position:absolute;top:-15px;right:24px;font-family:'Cormorant Garamond',serif;font-size:130px;font-weight:700;color:rgba(192,33,31,0.15);line-height:1}
-.conclusion-box p{font-size:17px;color:rgba(255,255,255,0.85);line-height:1.85;font-style:italic;position:relative;z-index:1}
+    /* PAGE BODY */
+    .page-body{
+      max-width:1200px;
+      margin:0 auto;
+      padding:80px 6%;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) 320px;
+      gap:60px;
+      align-items:start
+    }
 
-/* Highlight stat row */
-.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--light-gray);border:1px solid var(--light-gray);margin:28px 0}
-.stat-cell{background:var(--white);padding:24px 20px;text-align:center}
-.stat-cell strong{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;color:var(--navy);display:block;line-height:1}
-.stat-cell strong span{color:var(--red)}
-.stat-cell small{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted)}
+    .sidebar{position:sticky;top:90px}
 
-/* Reveal */
-.r{opacity:0;transform:translateY(30px);transition:opacity 0.65s ease,transform 0.65s ease}
-.r.on{opacity:1;transform:translateY(0)}
-.r.d1{transition-delay:0.08s}.r.d2{transition-delay:0.16s}.r.d3{transition-delay:0.24s}
+    .sidebar-card{
+      background:var(--white);
+      border:1px solid var(--light-gray);
+      border-radius:2px;
+      overflow:hidden;
+      margin-bottom:20px
+    }
 
-/* ── CONTACT STRIP ── */
-.contact-strip{background:linear-gradient(135deg,var(--red-dark) 0%,var(--red) 55%,var(--red-light) 100%);padding:72px 6%;position:relative;overflow:hidden}
-.contact-strip::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.07)' stroke-width='1'%3E%3Cpath d='M30 0v60M0 30h60'/%3E%3C/g%3E%3C/svg%3E")}
-.cs-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;position:relative;z-index:1}
-.cs-text h3{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3.5vw,40px);font-weight:700;color:#fff;margin-bottom:10px}
-.cs-text p{font-size:15px;color:rgba(255,255,255,0.8);max-width:500px;line-height:1.75}
-.cs-actions{display:flex;gap:16px;flex-wrap:wrap}
-.cs-btn{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.14);border:1.5px solid rgba(255,255,255,0.3);padding:16px 24px;border-radius:3px;color:#fff;text-decoration:none;transition:all 0.3s}
-.cs-btn:hover{background:rgba(255,255,255,0.24);transform:translateY(-2px)}
-.cs-btn-icon{font-size:20px}
-.cs-btn p{font-size:10.5px;opacity:0.7;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:2px}
-.cs-btn strong{font-size:16px;font-weight:600;word-break:break-word}
+    .sidebar-card-head{
+      background:var(--navy);
+      padding:20px 24px
+    }
 
-/* ── FOOTER ── */
-footer {
-  background: var(--navy); color: var(--white);
-  padding: 80px 5% 0;
-}
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 60px; }
-.footer-brand p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.8; margin: 20px 0 24px; max-width: 280px; }
-.footer-socials { display: flex; gap: 10px; flex-wrap:wrap; }
-.social-btn {
-  width: 38px; height: 38px; border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.15);
-  display: flex; align-items: center; justify-content: center;
-  color: rgba(255,255,255,0.6); font-size: 14px; text-decoration: none;
-  transition: all 0.3s; font-weight: 600;
-}
-.social-btn:hover { background: var(--red); border-color: var(--red); color: var(--white); }
-.footer-col h4 {
-  font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--white); margin-bottom: 20px;
-  padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.footer-col ul li a {
-  color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px;
-  transition: all 0.3s; display: flex; align-items: center; gap: 6px;
-}
-.footer-col ul li a::before { content: '→'; font-size: 11px; color: var(--red); }
-.footer-col ul li a:hover { color: var(--white); padding-left: 4px; }
-.footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.08);
-  padding: 24px 0;
-  display: flex; align-items: center; justify-content: space-between;
-  font-size: 13px; color: rgba(255,255,255,0.4);
-  gap:16px;flex-wrap:wrap;
-}
-.footer-bottom a { color: var(--red-light); text-decoration: none; }
-.footer-accredit {
-  display: flex; align-items: center; gap: 16px; flex-wrap:wrap;
-}
-.accredit-badge {
-  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-  padding: 6px 14px; border-radius: 30px; font-size: 11px;
-  color: rgba(255,255,255,0.5); letter-spacing: 1px; text-transform: uppercase;
-}
-.footer-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--red), transparent);
-  margin: 0 0 0;
-  opacity: 0.4;
-}
-.trust-bar {
-  background: var(--navy-mid);
-  padding: 16px 5%; text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.05);
-}
-.trust-bar p { font-size: 12px; color: rgba(255,255,255,0.35); letter-spacing: 1px; }
-.trust-bar span { color: rgba(192,33,31,0.6); }
+    .sidebar-card-head h4{
+      font-size:12.5px;
+      font-weight:600;
+      color:#fff;
+      letter-spacing:1px;
+      text-transform:uppercase
+    }
 
-/* ── RESPONSIVE ── */
-@media (max-width: 1180px){
-  .page-body{
-    grid-template-columns:minmax(0,1fr) 300px;
-    gap:40px;
-  }
-  .career-grid{grid-template-columns:repeat(2,1fr)}
-}
+    .sidebar-card-body{padding:20px 24px}
 
-@media(max-width:1024px){
-  nav{padding:0 4%}
-  .page-hero,.page-body,.contact-strip,footer{
-    padding-left:4%;
-    padding-right:4%;
-  }
-  .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
-}
+    .info-row{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      padding:10px 0;
+      border-bottom:1px solid var(--light-gray)
+    }
 
-@media(max-width:960px){
-  .menu-toggle{display:block}
-  #navMenu{
-    position:absolute;
-    top:70px;
-    left:0;
-    right:0;
-    background:#0C1A3A;
-    display:none;
-    flex-direction:column;
-    align-items:flex-start;
-    gap:14px;
-    padding:18px 16px 24px;
-    border-top:1px solid rgba(255,255,255,0.08);
-    box-shadow:0 14px 30px rgba(0,0,0,0.18);
-  }
-  #navMenu.show{display:flex}
-  #navMenu li{width:100%}
-  #navMenu li a,
-  .mobile-program-toggle{
-    display:block;
-    width:100%;
-    padding:10px 0;
-  }
-  .dropdown > a{display:none}
-  .mobile-program-toggle{display:block}
-  .mobile-submenu{
-    display:none;
-    margin-top:12px;
-    padding-left:12px;
-    border-left:2px solid rgba(192,33,31,0.35);
-  }
-  .mobile-submenu.show{display:block}
-  .mobile-submenu li{margin-bottom:10px}
-  .dropdown-menu{display:none!important}
-  .btn-nav{
-    width:100%;
-    text-align:center;
-  }
+    .info-row:last-child{border-bottom:none}
+    .info-icon{font-size:16px;flex-shrink:0;margin-top:1px}
+    .info-label{font-size:10.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:2px}
+    .info-val{font-size:14px;color:var(--navy);font-weight:500;line-height:1.45}
 
-  .page-hero{
-    min-height:auto;
-    padding:110px 16px 50px;
-    align-items:center;
-  }
-  .ph-slice{width:60%}
-  .ph-content{max-width:100%}
-  .ph-content h1{
-    font-size:clamp(34px,10vw,54px);
-    line-height:1.05;
-    letter-spacing:-0.8px;
-  }
-  .ph-sub{
-    font-size:15px;
-    line-height:1.7;
-    max-width:100%;
-  }
-  .breadcrumb{
-    font-size:10px;
-    margin-bottom:18px;
-  }
-  .geo1{width:150px;height:150px;right:5%;top:10%}
-  .geo2{width:80px;height:80px;right:18%;top:38%}
-  .geo3{width:42px;height:42px;right:32%;top:58%}
-  .geo4{width:34px;height:34px;right:10%;bottom:14%}
+    .apply-card{
+      background:linear-gradient(135deg,var(--red-dark),var(--red));
+      border-radius:2px;
+      padding:28px 24px;
+      position:relative;
+      overflow:hidden
+    }
 
-  .quick-pills{
-    gap:10px;
-    margin-top:24px;
-  }
-  .qpill{
-    font-size:12px;
-    padding:8px 14px;
-  }
+    .apply-card::before{
+      content:'';
+      position:absolute;
+      top:-20px;
+      right:-20px;
+      width:100px;
+      height:100px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.06)
+    }
 
-  .page-body{
-    grid-template-columns:1fr;
-    gap:36px;
-    padding:56px 16px;
-  }
-  .sidebar{
-    position:static;
-  }
+    .apply-card h4{
+      font-family:'Cormorant Garamond',serif;
+      font-size:22px;
+      font-weight:700;
+      color:#fff;
+      margin-bottom:8px
+    }
 
-  .subject-grid,
-  .clinical-grid,
-  .facilities-grid,
-  .why-grid,
-  .career-grid{
-    grid-template-columns:1fr 1fr;
-  }
+    .apply-card p{
+      font-size:13px;
+      color:rgba(255,255,255,0.8);
+      line-height:1.6;
+      margin-bottom:20px
+    }
 
-  .stat-row{
-    grid-template-columns:1fr;
-  }
+    .apply-btn{
+      display:block;
+      width:100%;
+      padding:13px;
+      background:#fff;
+      color:var(--red);
+      border-radius:3px;
+      font-size:14px;
+      font-weight:700;
+      text-align:center;
+      text-decoration:none;
+      transition:all 0.3s
+    }
 
-  .contact-strip{
-    padding:56px 16px;
-  }
-  .cs-inner{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:24px;
-  }
-  .cs-actions{
-    width:100%;
-    flex-direction:column;
-  }
-  .cs-btn{
-    width:100%;
-    padding:14px 18px;
-  }
+    .apply-btn:hover{
+      background:var(--off-white);
+      transform:translateY(-1px)
+    }
 
-  footer{
-    padding:56px 16px 0;
-  }
-  .footer-grid{
-    grid-template-columns:1fr;
-    gap:28px;
-    padding-bottom:32px;
-  }
-  .footer-brand p{max-width:100%}
-  .footer-bottom{
-    padding:18px 0 24px;
-    flex-direction:column;
-    align-items:flex-start;
-    gap:10px;
-  }
-  .footer-accredit{gap:10px}
-}
+    .contact-card{
+      background:var(--navy);
+      border-radius:2px;
+      padding:22px 24px;
+      margin-top:20px
+    }
 
-@media(max-width:768px){
-  .content-section{margin-bottom:48px}
-  .sec-divider{margin:0 0 48px}
-  .subject-grid,
-  .clinical-grid,
-  .facilities-grid,
-  .why-grid,
-  .career-grid{
-    grid-template-columns:1fr;
-  }
-  .subject-item:hover{transform:none}
-  .clinical-card:hover,
-  .fac-card:hover,
-  .career-card:hover{
-    transform:none;
-  }
-  .conclusion-box{
-    padding:28px 22px;
-  }
-  .conclusion-box::before{
-    font-size:84px;
-    top:-8px;
-    right:12px;
-  }
-  .conclusion-box p{
-    font-size:15px;
-    line-height:1.8;
-  }
-}
+    .contact-card p{
+      font-size:12px;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      color:rgba(255,255,255,0.45);
+      margin-bottom:8px
+    }
 
-@media(max-width:600px){
-  .page-hero{
-    padding-top:100px;
-    padding-bottom:42px;
-  }
-  .ph-grid{
-    background-size:42px 42px;
-  }
-  .course-badge{
-    font-size:10px;
-    letter-spacing:1.4px;
-    padding:7px 14px;
-  }
-  .qpill{
-    width:100%;
-    justify-content:flex-start;
-  }
-  .sidebar-card-head,
-  .sidebar-card-body,
-  .toc{
-    padding-left:18px;
-    padding-right:18px;
-  }
-  .apply-card,
-  .contact-card{
-    padding:22px 18px;
-  }
-  .hours-badge{
-    width:100%;
-    padding:14px 18px;
-  }
-  .hours-badge strong{font-size:30px}
-  .exam-table{min-width:620px}
-  .internship-list::before{left:16px}
-  .internship-item{gap:14px}
-  .i-dot{
-    width:34px;height:34px;font-size:13px;
-  }
-  .logo-words span,
-  .logo-text span{font-size:12px}
-  .logo-words small,
-  .logo-text small{
-    font-size:9px;
-    letter-spacing:1.3px;
-  }
-}
+    .contact-card a{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      color:#fff;
+      text-decoration:none;
+      font-size:16px;
+      font-weight:600;
+      transition:color 0.3s;
+      margin-bottom:8px;
+      word-break:break-word
+    }
 
-@media(max-width:380px){
-  .ph-content h1{font-size:30px}
-  .page-body{padding:46px 14px}
-  .content-section p,
-  .obj-list li{
-    font-size:14px;
-  }
-  .toc,
-  .sidebar-card-body,
-  .sidebar-card-head{
-    padding-left:16px;
-    padding-right:16px;
-  }
-  .apply-card,
-  .contact-card{
-    padding:18px 16px;
-  }
-  .cs-btn strong{
-    font-size:14px;
-  }
-}
-</style>
+    .contact-card a:hover{color:var(--red-light)}
+
+    .toc{
+      background:var(--off-white);
+      border:1px solid var(--light-gray);
+      border-radius:2px;
+      padding:20px 24px;
+      margin-bottom:20px
+    }
+
+    .toc h4{
+      font-size:11px;
+      font-weight:600;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:var(--text-muted);
+      margin-bottom:14px
+    }
+
+    .toc ul{
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:6px
+    }
+
+    .toc ul a{
+      font-size:13.5px;
+      color:var(--navy);
+      text-decoration:none;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:4px 0;
+      transition:all 0.2s
+    }
+
+    .toc ul a::before{
+      content:'';
+      width:14px;
+      height:1.5px;
+      background:var(--red);
+      flex-shrink:0;
+      transition:width 0.3s
+    }
+
+    .toc ul a:hover{
+      color:var(--red);
+      padding-left:4px
+    }
+
+    .toc ul a:hover::before{width:22px}
+
+    /* MAIN CONTENT */
+    .content-section{margin-bottom:64px}
+    .content-section:last-child{margin-bottom:0}
+
+    .cs-tag{
+      display:inline-block;
+      font-size:10.5px;
+      font-weight:600;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      color:var(--red);
+      margin-bottom:10px
+    }
+
+    .cs-tag::before{content:'—  ';opacity:0.5}
+
+    .content-section h2{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(26px,3vw,40px);
+      font-weight:700;
+      color:var(--navy);
+      line-height:1.15;
+      margin-bottom:18px
+    }
+
+    .content-section h2 em{color:var(--red);font-style:italic}
+
+    .content-section p{
+      font-size:15.5px;
+      color:var(--text-muted);
+      line-height:1.85;
+      margin-bottom:16px
+    }
+
+    .sec-divider{
+      height:1px;
+      background:linear-gradient(90deg,var(--red),var(--light-gray),transparent);
+      margin:0 0 64px;
+      opacity:0.6
+    }
+
+    .obj-list{
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      margin-top:8px
+    }
+
+    .obj-list li{
+      display:flex;
+      align-items:flex-start;
+      gap:14px;
+      font-size:15px;
+      color:#374151;
+      line-height:1.6;
+      padding:14px 18px;
+      background:var(--off-white);
+      border-left:3px solid var(--red);
+      border-radius:0 2px 2px 0
+    }
+
+    .obj-list li::before{
+      content:'✦';
+      color:var(--red);
+      font-size:12px;
+      margin-top:3px;
+      flex-shrink:0
+    }
+
+    .curriculum-years{
+      display:flex;
+      gap:0;
+      border-bottom:2px solid var(--light-gray);
+      overflow-x:auto;
+      overflow-y:hidden;
+      scrollbar-width:none;
+    }
+
+    .curriculum-years::-webkit-scrollbar{display:none}
+
+    .year-tab{
+      padding:12px 26px;
+      font-size:13px;
+      font-weight:600;
+      color:var(--text-muted);
+      cursor:pointer;
+      border-bottom:2px solid transparent;
+      margin-bottom:-2px;
+      transition:all 0.3s;
+      letter-spacing:0.5px;
+      background:none;
+      border-top:none;
+      border-left:none;
+      border-right:none;
+      font-family:'DM Sans',sans-serif;
+      white-space:nowrap;
+      flex-shrink:0
+    }
+
+    .year-tab.active{
+      color:var(--red);
+      border-bottom-color:var(--red)
+    }
+
+    .year-tab:hover{color:var(--navy)}
+    .year-panel{display:none;padding-top:28px}
+    .year-panel.active{display:block}
+
+    .subject-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px
+    }
+
+    .subject-item{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:14px 18px;
+      background:var(--white);
+      border:1px solid var(--light-gray);
+      border-radius:2px;
+      font-size:14px;
+      color:var(--navy);
+      font-weight:500;
+      transition:all 0.3s
+    }
+
+    .subject-item:hover{
+      border-color:rgba(192,33,31,0.3);
+      background:rgba(192,33,31,0.02);
+      transform:translateX(3px)
+    }
+
+    .subject-dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--red);
+      flex-shrink:0
+    }
+
+    .hours-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:var(--navy);
+      color:#fff;
+      padding:16px 28px;
+      border-radius:2px;
+      margin-top:20px;
+      flex-wrap:wrap
+    }
+
+    .hours-badge strong{
+      font-family:'Cormorant Garamond',serif;
+      font-size:36px;
+      font-weight:700;
+      color:var(--red-light)
+    }
+
+    .hours-badge span{
+      font-size:13px;
+      line-height:1.4
+    }
+
+    .clinical-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-top:24px
+    }
+
+    .clinical-card{
+      background:var(--white);
+      border:1px solid var(--light-gray);
+      border-radius:2px;
+      padding:22px 20px;
+      transition:all 0.3s;
+      position:relative;
+      overflow:hidden
+    }
+
+    .clinical-card::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      height:2px;
+      background:var(--red);
+      transform:scaleX(0);
+      transform-origin:left;
+      transition:transform 0.4s
+    }
+
+    .clinical-card:hover{
+      box-shadow:0 8px 24px rgba(12,26,58,0.08);
+      transform:translateY(-3px)
+    }
+
+    .clinical-card:hover::before{transform:scaleX(1)}
+    .clinical-icon{font-size:28px;margin-bottom:10px;display:block}
+    .clinical-card h4{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:6px}
+    .clinical-card p{font-size:13px;color:var(--text-muted);line-height:1.6}
+
+    .exam-table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:16px;
+      min-width:680px
+    }
+
+    .exam-table th{
+      background:var(--navy);
+      color:#fff;
+      padding:12px 16px;
+      text-align:left;
+      font-size:12px;
+      font-weight:600;
+      letter-spacing:1.5px;
+      text-transform:uppercase
+    }
+
+    .exam-table td{
+      padding:13px 16px;
+      border-bottom:1px solid var(--light-gray);
+      font-size:14px;
+      color:var(--navy)
+    }
+
+    .exam-table tr:last-child td{border-bottom:none}
+    .exam-table tr:nth-child(even) td{background:var(--off-white)}
+    .pct{font-weight:700;color:var(--red)}
+
+    .internship-list{
+      list-style:none;
+      position:relative;
+      margin-top:8px
+    }
+
+    .internship-list::before{
+      content:'';
+      position:absolute;
+      left:20px;
+      top:0;
+      bottom:0;
+      width:2px;
+      background:var(--light-gray)
+    }
+
+    .internship-item{
+      display:flex;
+      gap:20px;
+      align-items:flex-start;
+      padding:0 0 28px 0;
+      position:relative
+    }
+
+    .internship-item:last-child{padding-bottom:0}
+
+    .i-dot{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      flex-shrink:0;
+      background:var(--white);
+      border:2px solid var(--red);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:15px;
+      position:relative;
+      z-index:1
+    }
+
+    .i-dur{
+      font-size:12px;
+      font-weight:600;
+      color:var(--red);
+      letter-spacing:1px;
+      text-transform:uppercase;
+      margin-bottom:4px
+    }
+
+    .i-title{
+      font-size:15px;
+      font-weight:600;
+      color:var(--navy);
+      margin-bottom:4px
+    }
+
+    .i-desc{
+      font-size:13.5px;
+      color:var(--text-muted);
+      line-height:1.6
+    }
+
+    .facilities-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-top:8px
+    }
+
+    .fac-card{
+      background:var(--off-white);
+      border:1px solid var(--light-gray);
+      border-radius:2px;
+      padding:22px 20px;
+      display:flex;
+      gap:16px;
+      align-items:flex-start;
+      transition:all 0.3s
+    }
+
+    .fac-card:hover{
+      background:var(--white);
+      box-shadow:0 6px 20px rgba(12,26,58,0.07);
+      transform:translateY(-2px)
+    }
+
+    .fac-icon{font-size:26px;flex-shrink:0}
+    .fac-card h4{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:4px}
+    .fac-card p{font-size:13px;color:var(--text-muted);line-height:1.55}
+
+    .career-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin-top:8px
+    }
+
+    .career-card{
+      background:var(--off-white);
+      border:1px solid var(--light-gray);
+      border-radius:2px;
+      padding:24px 18px;
+      text-align:center;
+      transition:all 0.35s;
+      cursor:default
+    }
+
+    .career-card:hover{
+      background:var(--navy);
+      border-color:var(--navy);
+      transform:translateY(-4px)
+    }
+
+    .career-icon{font-size:32px;margin-bottom:10px;display:block}
+    .career-card h4{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:6px;transition:color 0.3s}
+    .career-card p{font-size:12.5px;color:var(--text-muted);line-height:1.6;transition:color 0.3s}
+    .career-card:hover h4,.career-card:hover p{color:rgba(255,255,255,0.82)}
+
+    .why-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1px;
+      background:var(--light-gray);
+      border:1px solid var(--light-gray);
+      margin-top:8px
+    }
+
+    .why-item{
+      background:var(--white);
+      padding:24px 22px;
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      transition:background 0.3s
+    }
+
+    .why-item:hover{background:var(--off-white)}
+    .why-num{
+      font-family:'Cormorant Garamond',serif;
+      font-size:36px;
+      font-weight:700;
+      color:rgba(192,33,31,0.15);
+      line-height:1;
+      flex-shrink:0;
+      margin-top:-4px;
+      transition:color 0.3s
+    }
+
+    .why-item:hover .why-num{color:rgba(192,33,31,0.28)}
+    .why-item h4{font-size:14.5px;font-weight:600;color:var(--navy);margin-bottom:5px}
+    .why-item p{font-size:13px;color:var(--text-muted);line-height:1.6}
+
+    .conclusion-box{
+      background:linear-gradient(135deg,var(--navy),var(--navy-mid));
+      border-radius:2px;
+      padding:40px 44px;
+      position:relative;
+      overflow:hidden;
+      margin-top:8px
+    }
+
+    .conclusion-box::before{
+      content:'"';
+      position:absolute;
+      top:-15px;
+      right:24px;
+      font-family:'Cormorant Garamond',serif;
+      font-size:130px;
+      font-weight:700;
+      color:rgba(192,33,31,0.15);
+      line-height:1
+    }
+
+    .conclusion-box p{
+      font-size:17px;
+      color:rgba(255,255,255,0.85);
+      line-height:1.85;
+      font-style:italic;
+      position:relative;
+      z-index:1
+    }
+
+    .stat-row{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1px;
+      background:var(--light-gray);
+      border:1px solid var(--light-gray);
+      margin:28px 0
+    }
+
+    .stat-cell{
+      background:var(--white);
+      padding:24px 20px;
+      text-align:center
+    }
+
+    .stat-cell strong{
+      font-family:'Cormorant Garamond',serif;
+      font-size:44px;
+      font-weight:700;
+      color:var(--navy);
+      display:block;
+      line-height:1
+    }
+
+    .stat-cell strong span{color:var(--red)}
+    .stat-cell small{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted)}
+
+    .r{opacity:0;transform:translateY(30px);transition:opacity 0.65s ease,transform 0.65s ease}
+    .r.on{opacity:1;transform:translateY(0)}
+    .r.d1{transition-delay:0.08s}.r.d2{transition-delay:0.16s}.r.d3{transition-delay:0.24s}
+
+    /* CONTACT STRIP */
+    .contact-strip{
+      background:linear-gradient(135deg,var(--red-dark) 0%,var(--red) 55%,var(--red-light) 100%);
+      padding:72px 6%;
+      position:relative;
+      overflow:hidden
+    }
+
+    .contact-strip::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.07)' stroke-width='1'%3E%3Cpath d='M30 0v60M0 30h60'/%3E%3C/g%3E%3C/svg%3E")
+    }
+
+    .cs-inner{
+      max-width:1140px;
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:40px;
+      flex-wrap:wrap;
+      position:relative;
+      z-index:1
+    }
+
+    .cs-text h3{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(24px,3.5vw,40px);
+      font-weight:700;
+      color:#fff;
+      margin-bottom:10px
+    }
+
+    .cs-text p{
+      font-size:15px;
+      color:rgba(255,255,255,0.8);
+      max-width:500px;
+      line-height:1.75
+    }
+
+    .cs-actions{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap
+    }
+
+    .cs-btn{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      background:rgba(255,255,255,0.14);
+      border:1.5px solid rgba(255,255,255,0.3);
+      padding:16px 24px;
+      border-radius:3px;
+      color:#fff;
+      text-decoration:none;
+      transition:all 0.3s
+    }
+
+    .cs-btn:hover{
+      background:rgba(255,255,255,0.24);
+      transform:translateY(-2px)
+    }
+
+    .cs-btn-icon{font-size:20px}
+    .cs-btn p{font-size:10.5px;opacity:0.7;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:2px}
+    .cs-btn strong{font-size:16px;font-weight:600;word-break:break-word}
+
+    /* RESPONSIVE */
+    @media (max-width: 1180px){
+      .page-body{
+        grid-template-columns:minmax(0,1fr) 300px;
+        gap:40px;
+      }
+      .career-grid{grid-template-columns:repeat(2,1fr)}
+    }
+
+    @media(max-width:1024px){
+      .page-hero,.page-body,.contact-strip{
+        padding-left:4%;
+        padding-right:4%;
+      }
+    }
+
+    @media(max-width:960px){
+      .page-hero{
+        min-height:auto;
+        padding:110px 16px 50px;
+        align-items:center;
+      }
+
+      .ph-slice{width:60%}
+      .ph-content{max-width:100%}
+      .page-hero h1{
+        font-size:clamp(34px,10vw,54px);
+        line-height:1.05;
+        letter-spacing:-0.8px;
+      }
+
+      .ph-sub{
+        font-size:15px;
+        line-height:1.7;
+        max-width:100%;
+      }
+
+      .breadcrumb{
+        font-size:10px;
+        margin-bottom:18px;
+      }
+
+      .geo1{width:150px;height:150px;right:5%;top:10%}
+      .geo2{width:80px;height:80px;right:18%;top:38%}
+      .geo3{width:42px;height:42px;right:32%;top:58%}
+      .geo4{width:34px;height:34px;right:10%;bottom:14%}
+
+      .quick-pills{
+        gap:10px;
+        margin-top:24px;
+      }
+
+      .qpill{
+        font-size:12px;
+        padding:8px 14px;
+      }
+
+      .page-body{
+        grid-template-columns:1fr;
+        gap:36px;
+        padding:56px 16px;
+      }
+
+      .sidebar{position:static}
+
+      .subject-grid,
+      .clinical-grid,
+      .facilities-grid,
+      .why-grid,
+      .career-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .stat-row{
+        grid-template-columns:1fr;
+      }
+
+      .contact-strip{
+        padding:56px 16px;
+      }
+
+      .cs-inner{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:24px;
+      }
+
+      .cs-actions{
+        width:100%;
+        flex-direction:column;
+      }
+
+      .cs-btn{
+        width:100%;
+        padding:14px 18px;
+      }
+    }
+
+    @media(max-width:768px){
+      .page-hero{
+        padding:90px 16px 60px;
+      }
+
+      .page-hero h1{
+        font-size:42px;
+      }
+
+      .ph-sub{
+        font-size:15px;
+        line-height:1.7;
+      }
+
+      .quick-pills{
+        flex-direction:column;
+        gap:10px;
+      }
+
+      .qpill{
+        width:100%;
+        justify-content:center;
+      }
+
+      .course-badge{
+        font-size:11px;
+      }
+
+      .content-section{margin-bottom:48px}
+      .sec-divider{margin:0 0 48px}
+      .subject-grid,
+      .clinical-grid,
+      .facilities-grid,
+      .why-grid,
+      .career-grid{
+        grid-template-columns:1fr;
+      }
+
+      .subject-item:hover{transform:none}
+      .clinical-card:hover,
+      .fac-card:hover,
+      .career-card:hover{transform:none}
+
+      .conclusion-box{
+        padding:28px 22px;
+      }
+
+      .conclusion-box::before{
+        font-size:84px;
+        top:-8px;
+        right:12px;
+      }
+
+      .conclusion-box p{
+        font-size:15px;
+        line-height:1.8;
+      }
+    }
+
+    @media(max-width:600px){
+      .page-hero{
+        padding-top:100px;
+        padding-bottom:42px;
+      }
+
+      .ph-grid{
+        background-size:42px 42px;
+      }
+
+      .course-badge{
+        font-size:10px;
+        letter-spacing:1.4px;
+        padding:7px 14px;
+      }
+
+      .qpill{
+        width:100%;
+        justify-content:flex-start;
+      }
+
+      .sidebar-card-head,
+      .sidebar-card-body,
+      .toc{
+        padding-left:18px;
+        padding-right:18px;
+      }
+
+      .apply-card,
+      .contact-card{
+        padding:22px 18px;
+      }
+
+      .hours-badge{
+        width:100%;
+        padding:14px 18px;
+      }
+
+      .hours-badge strong{font-size:30px}
+      .exam-table{min-width:620px}
+      .internship-list::before{left:16px}
+      .internship-item{gap:14px}
+
+      .i-dot{
+        width:34px;height:34px;font-size:13px;
+      }
+    }
+
+    @media(max-width:380px){
+      .ph-content h1{font-size:30px}
+      .page-body{padding:46px 14px}
+      .content-section p,
+      .obj-list li{
+        font-size:14px;
+      }
+      .toc,
+      .sidebar-card-body,
+      .sidebar-card-head{
+        padding-left:16px;
+        padding-right:16px;
+      }
+      .apply-card,
+      .contact-card{
+        padding:18px 16px;
+      }
+      .cs-btn strong{
+        font-size:14px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="nav">
-  <a href="index.html" class="logo">
-    <div class="logo-mark">NC</div>
-    <div class="logo-words">
-      <span>Noor College</span>
-      <small>School of Nursing</small>
-    </div>
-  </a>
-
-  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-  <ul id="navMenu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Us</a></li>
-
-    <li class="dropdown">
-      
-
-      <button class="mobile-program-toggle" onclick="togglePrograms(event)">
-        Programs ▾
-      </button>
-
-      <ul class="dropdown-menu">
-        <li><a href="ourcourse.html">All Programs</a></li>
-        <li><a href="gnm.html">GNM</a></li>
-        <li><a href="bscnursing.html">B.Sc Nursing</a></li>
-        <li><a href="pbBsc.html">Post Basic B.Sc</a></li>
-        <li><a href="mscnursing.html">M.Sc Nursing</a></li>
-      </ul>
-
-      <ul class="mobile-submenu" id="mobileProgramsMenu">
-        <li><a href="ourcourse.html">All Programs</a></li>
-        <li><a href="gnm.html">GNM</a></li>
-        <li><a href="bscnursing.html">B.Sc Nursing</a></li>
-        <li><a href="pbBsc.html">Post Basic B.Sc</a></li>
-        <li><a href="mscnursing.html">M.Sc Nursing</a></li>
-      </ul>
-    </li>
-
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="contact.html" class="btn-nav">Apply Now</a></li>
-  </ul>
-</nav>
+<div id="header"></div>
 
 <!-- HERO -->
 <div class="page-hero">
   <div class="ph-bg"></div>
   <div class="ph-grid"></div>
   <div class="ph-slice"></div>
+
   <div class="geo geo1"></div>
   <div class="geo geo2"></div>
   <div class="geo geo3"></div>
   <div class="geo geo4"></div>
+
   <div class="ph-content">
+
     <div class="breadcrumb">
       <a href="index.html">Noor College</a>
       <span class="sep">›</span>
-      <a href="courses.html">Our Courses</a>
+      <a href="ourcourse.html">Our Courses</a>
       <span class="sep">›</span>
-      <span class="cur">B.Sc Nursing</span>
+      <span class="cur">Post Basic B.Sc Nursing</span>
     </div>
-    <div class="course-badge">4 Year Undergraduate Programme</div>
-    <h1>Bachelor of Science<br>in <em>Nursing</em></h1>
-    <p class="ph-sub">A four-year undergraduate programme approved by the Indian Nursing Council — shaping professional nurses, clinical leaders, and evidence-based healthcare providers ready to serve India and the world.</p>
+
+    <div class="course-badge">
+      2 Year Undergraduate Programme
+    </div>
+
+    <h1>
+      Post Basic <br>
+      <em>B.Sc Nursing</em>
+    </h1>
+
+    <p class="ph-sub">
+      A two-year undergraduate programme for registered GNM nurses who want to upgrade their qualifications, strengthen professional skills, and move into advanced clinical, academic, and leadership roles.
+    </p>
+
     <div class="quick-pills">
-      <div class="qpill"><span class="qpill-icon">📅</span> 4 Years (+ Internship)</div>
-      <div class="qpill"><span class="qpill-icon">🏛️</span> INC & State Council Approved</div>
-      <div class="qpill"><span class="qpill-icon">⏱️</span> 40 Hrs / Week</div>
-      <div class="qpill"><span class="qpill-icon">🏥</span> 4,000+ Clinical Hours</div>
+      <div class="qpill">
+        <span class="qpill-icon"><i class="fa-regular fa-calendar"></i></span>
+        2 Years
+      </div>
+
+      <div class="qpill">
+        <span class="qpill-icon"><i class="fa-solid fa-building-columns"></i></span>
+        INC Recognised
+      </div>
+
+      <div class="qpill">
+        <span class="qpill-icon"><i class="fa-regular fa-clock"></i></span>
+        40 Hrs / Week
+      </div>
+
+      <div class="qpill">
+        <span class="qpill-icon"><i class="fa-solid fa-user-nurse"></i></span>
+        For Registered GNM Nurses
+      </div>
     </div>
+
   </div>
 </div>
 
 <!-- PAGE BODY -->
 <div class="page-body">
 
-  <!-- MAIN CONTENT -->
   <main>
 
-    <!-- About -->
     <div class="content-section r" id="about">
       <span class="cs-tag">About the Programme</span>
-      <h2>What is <em>B.Sc Nursing?</em></h2>
-      <p>The Bachelor of Science in Nursing (B.Sc. Nursing) is a four-year undergraduate programme approved by the <strong>Indian Nursing Council (INC)</strong> and State Nursing Council. This degree prepares students to become professional nurses, leaders, and healthcare providers equipped with strong clinical skills, evidence-based knowledge, and ethical values.</p>
-      <p>The course integrates theory, laboratory training, and extensive clinical exposure, ensuring graduates are competent to serve in hospitals, community healthcare, research, and education — both in India and abroad.</p>
+      <h2>What is <em>PB B.Sc Nursing?</em></h2>
+      <p>The Post Basic B.Sc. Nursing (PB B.Sc. Nursing) is a two-year undergraduate programme designed for registered nurses who already hold a GNM diploma and want to upgrade their education and professional competence.</p>
+      <p>Recognized by the Indian Nursing Council (INC), the course builds on existing clinical experience and prepares graduates for senior nursing roles, nursing education, healthcare administration, and higher studies. </p>
+
       <div class="stat-row">
         <div class="stat-cell">
-          <strong>4<span>yrs</span></strong>
-          <small>Programme Duration</small>
+          <strong>2<span>yrs</span></strong>
+          <small>Course Length</small>
         </div>
         <div class="stat-cell">
-          <strong>4,000<span>+</span></strong>
-          <small>Clinical Hours</small>
+          <strong>40</strong>
+          <small>Hours / Week</small>
         </div>
         <div class="stat-cell">
           <strong>INC</strong>
-          <small>Approved & Recognised</small>
+          <small>Recognised Programme</small>
         </div>
       </div>
     </div>
+
     <div class="sec-divider"></div>
 
-    <!-- Objectives -->
     <div class="content-section r" id="objectives">
       <span class="cs-tag">Programme Goals</span>
       <h2>Programme <em>Objectives</em></h2>
-      <p>Graduates of the B.Sc. Nursing programme at Noor College will be equipped to:</p>
+      <p>Graduates of PB B.Sc. Nursing will be able to:</p>
       <ul class="obj-list">
-        <li>Deliver professional nursing care using scientific principles and evidence-based practices.</li>
-        <li>Function as clinicians, educators, and administrators in healthcare institutions.</li>
-        <li>Promote preventive, promotive, curative, and rehabilitative health services.</li>
-        <li>Apply leadership and management skills in clinical and community settings.</li>
-        <li>Engage in nursing research and evidence-based practice to improve patient outcomes.</li>
-        <li>Pursue higher education — M.Sc. Nursing, Nurse Practitioner programmes, and Ph.D.</li>
+        <li>Upgrade their professional competence as bedside nurses, nurse educators, and administrators.</li>
+        <li>Provide comprehensive nursing care using advanced clinical knowledge.</li>
+        <li>Take up leadership and supervisory roles in healthcare organizations.</li>
+        <li>Promote community health and evidence-based nursing practices.</li>
+        <li>Pursue higher education such as M.Sc. Nursing, Nurse Practitioner programmes, or Ph.D.</li>
       </ul>
+      <p>These objectives are directly reflected in your uploaded PB B.Sc content brief. </p>
     </div>
+
     <div class="sec-divider"></div>
 
-    <!-- Curriculum -->
     <div class="content-section r" id="curriculum">
       <span class="cs-tag">Academic Structure</span>
       <h2>Curriculum <em>Overview</em></h2>
-      <p>A rigorous four-year curriculum structured to build knowledge progressively — from foundational sciences in year one to advanced clinical specialties, research, and leadership in the final year.</p>
+      <p>The curriculum is structured across two academic years, combining nursing science, community health, administration, education, research, and internship training. </p>
+
       <div class="curriculum-years">
-        <button class="year-tab active" onclick="showYear('y1',this)">Year 1</button>
-        <button class="year-tab" onclick="showYear('y2',this)">Year 2</button>
-        <button class="year-tab" onclick="showYear('y3',this)">Year 3</button>
-        <button class="year-tab" onclick="showYear('y4',this)">Year 4</button>
+        <button class="year-tab active" onclick="showYear('y1',this)">First Year</button>
+        <button class="year-tab" onclick="showYear('y2',this)">Second Year</button>
       </div>
+
       <div class="year-panel active" id="y1">
         <div class="subject-grid">
-          <div class="subject-item"><div class="subject-dot"></div>Anatomy & Physiology</div>
-          <div class="subject-item"><div class="subject-dot"></div>Biochemistry & Nutrition</div>
-          <div class="subject-item"><div class="subject-dot"></div>Microbiology</div>
+          <div class="subject-item"><div class="subject-dot"></div>Nursing Foundation</div>
+          <div class="subject-item"><div class="subject-dot"></div>Nutrition & Dietetics</div>
+          <div class="subject-item"><div class="subject-dot"></div>Biochemistry & Biophysics</div>
           <div class="subject-item"><div class="subject-dot"></div>Psychology</div>
-          <div class="subject-item"><div class="subject-dot"></div>Nursing Foundations</div>
-          <div class="subject-item"><div class="subject-dot"></div>English & Computer Applications</div>
+          <div class="subject-item"><div class="subject-dot"></div>Microbiology</div>
+          <div class="subject-item"><div class="subject-dot"></div>Maternal Nursing</div>
+          <div class="subject-item"><div class="subject-dot"></div>Child Health Nursing</div>
+          <div class="subject-item"><div class="subject-dot"></div>Medical-Surgical Nursing</div>
+          <div class="subject-item"><div class="subject-dot"></div>English</div>
         </div>
       </div>
+
       <div class="year-panel" id="y2">
         <div class="subject-grid">
           <div class="subject-item"><div class="subject-dot"></div>Sociology</div>
-          <div class="subject-item"><div class="subject-dot"></div>Pharmacology, Pathology & Genetics</div>
-          <div class="subject-item"><div class="subject-dot"></div>Medical-Surgical Nursing I</div>
-          <div class="subject-item"><div class="subject-dot"></div>Community Health Nursing I</div>
-          <div class="subject-item"><div class="subject-dot"></div>Communication & Educational Technology</div>
-        </div>
-      </div>
-      <div class="year-panel" id="y3">
-        <div class="subject-grid">
-          <div class="subject-item"><div class="subject-dot"></div>Medical-Surgical Nursing II</div>
-          <div class="subject-item"><div class="subject-dot"></div>Child Health Nursing (Pediatrics)</div>
-          <div class="subject-item"><div class="subject-dot"></div>Mental Health Nursing (Psychiatry)</div>
-          <div class="subject-item"><div class="subject-dot"></div>Nursing Research & Statistics</div>
-        </div>
-      </div>
-      <div class="year-panel" id="y4">
-        <div class="subject-grid">
-          <div class="subject-item"><div class="subject-dot"></div>Midwifery & Obstetric Nursing</div>
-          <div class="subject-item"><div class="subject-dot"></div>Community Health Nursing II</div>
-          <div class="subject-item"><div class="subject-dot"></div>Nursing Management & Leadership</div>
-          <div class="subject-item"><div class="subject-dot"></div>Comprehensive Hospital Internship</div>
-          <div class="subject-item"><div class="subject-dot"></div>Community-Based Postings</div>
+          <div class="subject-item"><div class="subject-dot"></div>Community Health Nursing</div>
+          <div class="subject-item"><div class="subject-dot"></div>Mental Health Nursing</div>
+          <div class="subject-item"><div class="subject-dot"></div>Introduction to Nursing Education</div>
+          <div class="subject-item"><div class="subject-dot"></div>Introduction to Nursing Administration</div>
+          <div class="subject-item"><div class="subject-dot"></div>Introduction to Nursing Research & Statistics</div>
+          <div class="subject-item"><div class="subject-dot"></div>Internship (Hospital & Community Postings)</div>
         </div>
       </div>
     </div>
+
     <div class="sec-divider"></div>
 
-    <!-- Clinical Training -->
     <div class="content-section r" id="clinical">
       <span class="cs-tag">Hands-On Learning</span>
       <h2>Clinical <em>Training</em></h2>
-      <p>B.Sc. Nursing students at Noor College complete over <strong>4,000 hours</strong> of supervised clinical practice across multiple specialties — including night duties, rotational postings, and a comprehensive supervised internship ensuring real-world readiness.</p>
+
+      <p>Students receive extensive clinical exposure in multi-specialty hospitals and community settings, with a focus on advanced bedside care, public health, and leadership-based nursing practice. </p>
+
       <div class="hours-badge">
-        <strong>4,000+</strong>
-        <span>Hours of supervised<br>clinical practice</span>
+        <strong>Clinical</strong>
+        <span>Hospital + community<br>based practical training</span>
       </div>
+
       <div class="clinical-grid">
+
         <div class="clinical-card">
-          <span class="clinical-icon">🏥</span>
-          <h4>Medical-Surgical Units</h4>
-          <p>Critical care, emergency medicine, and general surgical ward nursing — pre- and post-operative care, medication management and patient monitoring.</p>
+          <span class="clinical-icon"><i class="fa-solid fa-hospital"></i></span>
+          <h4>Medical-Surgical Nursing</h4>
+          <p>Advanced bedside care, critical care exposure, and OT-related training in hospital settings.</p>
         </div>
+
         <div class="clinical-card">
-          <span class="clinical-icon">🤱</span>
-          <h4>Maternity & Obstetrics</h4>
-          <p>Antenatal monitoring, conducting supervised deliveries, intranatal care, postnatal support and obstetric emergency management.</p>
+          <span class="clinical-icon"><i class="fa-solid fa-person-pregnant"></i></span>
+          <h4>Obstetrics & Gynecology</h4>
+          <p>Antenatal, intranatal, and postnatal nursing care with deeper maternal health exposure.</p>
         </div>
+
         <div class="clinical-card">
-          <span class="clinical-icon">👶</span>
-          <h4>Pediatrics</h4>
-          <p>Infant, child, and adolescent healthcare — neonatal care, immunisation, pediatric emergency, and family-centred nursing.</p>
+          <span class="clinical-icon"><i class="fa-solid fa-baby"></i></span>
+          <h4>Pediatrics & Child Health</h4>
+          <p>Neonatal and pediatric nursing support, growth monitoring, and child-focused care.</p>
         </div>
+
         <div class="clinical-card">
-          <span class="clinical-icon">🧠</span>
-          <h4>Psychiatry & Mental Health</h4>
-          <p>Therapeutic communication, mental health assessment, patient safety planning, and rehabilitation nursing in psychiatric units.</p>
+          <span class="clinical-icon"><i class="fa-solid fa-brain"></i></span>
+          <h4>Psychiatric Nursing</h4>
+          <p>Mental health nursing practice, patient support, and therapeutic care in psychiatric units.</p>
         </div>
+
         <div class="clinical-card">
-          <span class="clinical-icon">🏘️</span>
+          <span class="clinical-icon"><i class="fa-solid fa-house-medical"></i></span>
           <h4>Community Health Nursing</h4>
-          <p>Rural postings, school health programmes, public health campaigns, maternal health outreach, and community-based interventions.</p>
+          <p>Rural postings, health education programmes, and public health service exposure.</p>
         </div>
+
         <div class="clinical-card">
-          <span class="clinical-icon">🌙</span>
-          <h4>Night Duties & Rotations</h4>
-          <p>Mandatory rotational night duties and ward postings to ensure comprehensive, round-the-clock clinical competence and real-world confidence.</p>
+          <span class="clinical-icon"><i class="fa-solid fa-user-doctor"></i></span>
+          <h4>Integrated Practice</h4>
+          <p>Clinical training is closely linked to theory, helping nurses move into stronger professional and supervisory roles.</p>
         </div>
+
       </div>
     </div>
+
     <div class="sec-divider"></div>
 
-    <!-- Examination -->
     <div class="content-section r" id="examination">
       <span class="cs-tag">Assessment</span>
       <h2>Examination & <em>Evaluation</em></h2>
-      <p>Assessment combines continuous internal evaluation with university examinations, ensuring comprehensive evaluation of both theoretical knowledge and practical nursing competence across all four years.</p>
+      <p>Assessment is based on internal evaluation and university examinations, with separate passing requirements for theory and practicals. Attendance requirements are also clearly defined. </p>
+
       <div class="exam-table-wrap">
         <table class="exam-table">
           <thead>
@@ -918,247 +1387,277 @@ footer {
             <tr>
               <td>Internal Assessment</td>
               <td><span class="pct">25%</span></td>
-              <td>Assignments, seminars, clinical performance and viva</td>
+              <td>Assignments, seminars, and clinical performance</td>
             </tr>
             <tr>
               <td>University Examination</td>
               <td><span class="pct">75%</span></td>
-              <td>Theory and practical examinations per RGUHS norms</td>
+              <td>Theory and practical examinations</td>
             </tr>
             <tr>
-              <td>Passing – Theory & Practicals</td>
+              <td>Passing Criteria</td>
               <td><span class="pct">50%</span></td>
-              <td>Minimum 50% required separately in theory and practicals</td>
+              <td>Minimum 50% in theory and practicals separately</td>
             </tr>
             <tr>
               <td>Theory Attendance</td>
               <td><span class="pct">75%</span></td>
-              <td>Minimum attendance required to appear for university exams</td>
+              <td>Minimum required to appear for exams</td>
             </tr>
             <tr>
               <td>Clinical Attendance</td>
               <td><span class="pct">100%</span></td>
-              <td>Full clinical attendance is mandatory throughout the programme</td>
+              <td>Full attendance required in clinical training</td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
+
     <div class="sec-divider"></div>
 
-    <!-- Internship -->
     <div class="content-section r" id="internship">
-      <span class="cs-tag">Final Year</span>
+      <span class="cs-tag">Final Semester</span>
       <h2>Internship <em>Programme</em></h2>
-      <p>The final year internship is a comprehensive, supervised training programme spanning six clinical departments. It is designed to consolidate all four years of learning into real, independent nursing practice — building graduate-level competence and professional confidence.</p>
+      <p>The final semester internship develops leadership and clinical decision-making skills through structured hospital and community postings. </p>
+
       <ul class="internship-list">
         <li class="internship-item">
-          <div class="i-dot">🏥</div>
+          <div class="i-dot"><i class="fa-solid fa-hospital"></i></div>
           <div>
-            <p class="i-dur">12 Weeks</p>
+            <p class="i-dur">8 Weeks</p>
             <p class="i-title">Medical-Surgical Nursing</p>
-            <p class="i-desc">Comprehensive surgical and medical ward postings — patient assessment, critical care, wound management, drug administration and post-operative recovery nursing.</p>
+            <p class="i-desc">Advanced patient care, bedside nursing, and clinical supervision practice.</p>
           </div>
         </li>
+
         <li class="internship-item">
-          <div class="i-dot">🤱</div>
+          <div class="i-dot"><i class="fa-solid fa-person-pregnant"></i></div>
           <div>
-            <p class="i-dur">12 Weeks</p>
+            <p class="i-dur">8 Weeks</p>
             <p class="i-title">Midwifery & Gynecology</p>
-            <p class="i-desc">Full antenatal, intranatal, and postnatal care — conducting supervised deliveries, managing obstetric emergencies, and gynecological nursing procedures.</p>
+            <p class="i-desc">Maternal care, women’s health nursing, and supervised obstetric practice.</p>
           </div>
         </li>
+
         <li class="internship-item">
-          <div class="i-dot">👶</div>
+          <div class="i-dot"><i class="fa-solid fa-baby"></i></div>
           <div>
-            <p class="i-dur">8 Weeks</p>
+            <p class="i-dur">4 Weeks</p>
             <p class="i-title">Pediatrics</p>
-            <p class="i-desc">Infant, child and adolescent nursing — neonatal care, immunisation, growth monitoring, pediatric emergency, and family education.</p>
+            <p class="i-desc">Child-focused nursing care and pediatric clinical exposure.</p>
           </div>
         </li>
+
         <li class="internship-item">
-          <div class="i-dot">🏘️</div>
+          <div class="i-dot"><i class="fa-solid fa-house-medical"></i></div>
           <div>
-            <p class="i-dur">8 Weeks</p>
+            <p class="i-dur">4 Weeks</p>
             <p class="i-title">Community Health Nursing</p>
-            <p class="i-desc">Field postings at PHCs, school health programmes, health camps, maternal health outreach, and rural community nursing.</p>
+            <p class="i-desc">Community postings, rural nursing, and public health service training.</p>
           </div>
         </li>
+
         <li class="internship-item">
-          <div class="i-dot">🧠</div>
+          <div class="i-dot"><i class="fa-solid fa-brain"></i></div>
           <div>
             <p class="i-dur">4 Weeks</p>
             <p class="i-title">Psychiatry</p>
-            <p class="i-desc">Mental health unit postings — therapeutic communication, patient safety, mental health assessment, and psychiatric rehabilitation.</p>
+            <p class="i-desc">Mental health care, support systems, and therapeutic psychiatric nursing practice.</p>
           </div>
         </li>
+
         <li class="internship-item">
-          <div class="i-dot">📋</div>
+          <div class="i-dot"><i class="fa-solid fa-clipboard-list"></i></div>
           <div>
             <p class="i-dur">4 Weeks</p>
-            <p class="i-title">Nursing Management & Leadership</p>
-            <p class="i-desc">Ward management, team leadership, healthcare administration, quality assurance, and professional nursing management practices.</p>
+            <p class="i-title">Nursing Education & Administration</p>
+            <p class="i-desc">Leadership, supervision, educational exposure, and nursing management.</p>
           </div>
         </li>
       </ul>
     </div>
+
     <div class="sec-divider"></div>
 
-    <!-- Facilities -->
     <div class="content-section r" id="facilities">
       <span class="cs-tag">Infrastructure</span>
       <h2>Our <em>Facilities</em></h2>
-      <p>Noor College is equipped with everything a B.Sc. Nursing student needs for a world-class education — from smart classrooms to simulation laboratories and an affiliated teaching hospital.</p>
+
+      <p>According to your uploaded course brief, the institution provides modern classrooms, skill labs, digital resources, hospital exposure, qualified faculty, hostel facilities, and career support. </p>
+
       <div class="facilities-grid">
+
         <div class="fac-card">
-          <div class="fac-icon">🖥️</div>
+          <div class="fac-icon"><i class="fa-solid fa-display"></i></div>
           <div>
             <h4>Modern Classrooms</h4>
-            <p>Smart classrooms with digital learning tools, projectors, and interactive teaching aids.</p>
+            <p>Classrooms with AV teaching aids and a focused academic environment.</p>
           </div>
         </div>
+
         <div class="fac-card">
-          <div class="fac-icon">🔬</div>
+          <div class="fac-icon"><i class="fa-solid fa-microscope"></i></div>
           <div>
             <h4>Nursing Laboratories</h4>
-            <p>Fundamentals lab, nutrition lab, community health lab, and a simulation lab for hands-on skills training.</p>
+            <p>Fully equipped nursing laboratories and skill simulation facilities.</p>
           </div>
         </div>
+
         <div class="fac-card">
-          <div class="fac-icon">📚</div>
+          <div class="fac-icon"><i class="fa-solid fa-book-open-reader"></i></div>
           <div>
             <h4>Digital Library</h4>
-            <p>Updated journals, reference books, HELINET access, and international e-resources for nursing research.</p>
+            <p>Updated journals, reference resources, and e-learning materials.</p>
           </div>
         </div>
+
         <div class="fac-card">
-          <div class="fac-icon">🏥</div>
+          <div class="fac-icon"><i class="fa-solid fa-hospital"></i></div>
           <div>
-            <h4>Teaching Hospital</h4>
-            <p>Affiliated multi-specialty teaching hospital with 100+ beds for comprehensive clinical training.</p>
+            <h4>Affiliated Parent Hospital</h4>
+            <p>Multi-specialty hospital exposure for structured clinical learning.</p>
           </div>
         </div>
+
         <div class="fac-card">
-          <div class="fac-icon">👩‍🏫</div>
+          <div class="fac-icon"><i class="fa-solid fa-user-graduate"></i></div>
           <div>
-            <h4>Expert Faculty</h4>
-            <p>Highly experienced nursing educators and doctors with advanced qualifications and clinical expertise.</p>
+            <h4>Experienced Faculty</h4>
+            <p>Faculty with expertise in advanced nursing practices and student mentoring.</p>
           </div>
         </div>
+
         <div class="fac-card">
-          <div class="fac-icon">🏠</div>
+          <div class="fac-icon"><i class="fa-solid fa-house"></i></div>
           <div>
-            <h4>Hostel Facilities</h4>
-            <p>Separate comfortable accommodation for boys and girls with security, amenities, and a conducive study environment.</p>
+            <h4>Hostel & Career Support</h4>
+            <p>Separate hostel facilities and career counseling with placement assistance.</p>
           </div>
         </div>
+
       </div>
     </div>
+
     <div class="sec-divider"></div>
 
-    <!-- Career Opportunities -->
     <div class="content-section r" id="careers">
       <span class="cs-tag">After Graduation</span>
       <h2>Career <em>Opportunities</em></h2>
-      <p>B.Sc. Nursing graduates enjoy prestigious global career opportunities across hospitals, research, education, administration, and international healthcare systems.</p>
+
+      <p>PB B.Sc. Nursing graduates are eligible for senior clinical, academic, administrative, community, and global nursing roles. Higher studies are also a major progression pathway. :contentReference[oaicite:8]{index=8}</p>
+
       <div class="career-grid">
+
         <div class="career-card">
-          <span class="career-icon">🏥</span>
-          <h4>Staff Nurse / Specialist</h4>
-          <p>ICU, OT, Pediatrics, Obstetrics, Psychiatry in leading hospitals</p>
+          <span class="career-icon"><i class="fa-solid fa-hospital"></i></span>
+          <h4>Clinical Nurse Specialist / Staff Nurse</h4>
+          <p>Hospitals, specialty units, and advanced bedside care environments.</p>
         </div>
+
         <div class="career-card">
-          <span class="career-icon">🏘️</span>
+          <span class="career-icon"><i class="fa-solid fa-book-open-reader"></i></span>
+          <h4>Nursing Educator / Lecturer</h4>
+          <p>Teaching roles in nursing schools and colleges.</p>
+        </div>
+
+        <div class="career-card">
+          <span class="career-icon"><i class="fa-solid fa-briefcase-medical"></i></span>
+          <h4>Nurse Administrator / Manager</h4>
+          <p>Healthcare institutions, ward supervision, and operational leadership.</p>
+        </div>
+
+        <div class="career-card">
+          <span class="career-icon"><i class="fa-solid fa-house-medical"></i></span>
           <h4>Community Health Nurse</h4>
-          <p>PHCs, health missions, NGOs and public health programmes</p>
+          <p>PHCs, NGOs, health missions, and community-focused programmes.</p>
         </div>
+
         <div class="career-card">
-          <span class="career-icon">📚</span>
-          <h4>Nurse Educator</h4>
-          <p>Lecturer and tutor roles in nursing colleges and institutions</p>
+          <span class="career-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+          <h4>Higher Studies</h4>
+          <p>M.Sc. Nursing, Nurse Practitioner programmes, and Ph.D.</p>
         </div>
+
         <div class="career-card">
-          <span class="career-icon">🗂️</span>
-          <h4>Nurse Administrator</h4>
-          <p>Ward managers, nursing supervisors, hospital administrators</p>
-        </div>
-        <div class="career-card">
-          <span class="career-icon">🔬</span>
-          <h4>Research Nurse</h4>
-          <p>Clinical research, public health specialist, evidence-based practice</p>
-        </div>
-        <div class="career-card">
-          <span class="career-icon">✈️</span>
+          <span class="career-icon"><i class="fa-solid fa-plane-departure"></i></span>
           <h4>International Careers</h4>
-          <p>NCLEX (USA), MOH, HAAD, DHA licensing for global nursing opportunities</p>
+          <p>Licensing pathways such as NCLEX, HAAD, DHA, MOH and more.</p>
         </div>
+
       </div>
     </div>
+
     <div class="sec-divider"></div>
 
-    <!-- Why Choose Us -->
     <div class="content-section r" id="why">
       <span class="cs-tag">Why Noor College</span>
       <h2>Why Choose <em>Us?</em></h2>
+
       <div class="why-grid">
         <div class="why-item">
           <div class="why-num">01</div>
           <div>
-            <h4>INC & State Council Approved</h4>
-            <p>Our B.Sc. Nursing programme is fully approved by the Indian Nursing Council and State Nursing Council — ensuring a nationally and globally credible degree.</p>
+            <h4>INC & State Council Recognition</h4>
+            <p>Recognized by the Indian Nursing Council and State Nursing Council.</p>
           </div>
         </div>
+
         <div class="why-item">
           <div class="why-num">02</div>
           <div>
-            <h4>Balanced Curriculum</h4>
-            <p>Theory, laboratory work, and 4,000+ hours of hospital exposure — all integrated across four years for thorough, well-rounded nursing education.</p>
+            <h4>Focused Career-Upgradation Curriculum</h4>
+            <p>The programme is designed specifically for GNM nurses upgrading into degree-level nursing practice.</p>
           </div>
         </div>
+
         <div class="why-item">
           <div class="why-num">03</div>
           <div>
-            <h4>Strong Hospital Affiliations</h4>
-            <p>Extensive clinical training at affiliated multi-specialty hospitals, ensuring students gain real-world exposure from year one.</p>
+            <h4>Strong Clinical Tie-Ups</h4>
+            <p>Practical training with reputed hospitals and structured clinical postings.</p>
           </div>
         </div>
+
         <div class="why-item">
           <div class="why-num">04</div>
           <div>
-            <h4>Expert Faculty</h4>
-            <p>Experienced educators with advanced qualifications and clinical backgrounds, using modern teaching methods for optimal learning outcomes.</p>
+            <h4>Experienced Faculty</h4>
+            <p>Supportive educators with advanced nursing expertise and academic guidance.</p>
           </div>
         </div>
+
         <div class="why-item">
           <div class="why-num">05</div>
           <div>
-            <h4>Leadership & Global Standards</h4>
-            <p>Focus on ethical practice, leadership development, and global nursing standards — preparing graduates for careers across India and abroad.</p>
+            <h4>Career-Focused Learning</h4>
+            <p>Strong pathway to leadership roles, teaching, and global opportunities.</p>
           </div>
         </div>
+
         <div class="why-item">
           <div class="why-num">06</div>
           <div>
-            <h4>Placement Support</h4>
-            <p>Dedicated career counselling and placement assistance helping graduates secure positions in top hospitals in India and international healthcare systems.</p>
+            <h4>Placement & Higher Education Guidance</h4>
+            <p>Support for career progression, postgraduate study, and professional growth.</p>
           </div>
         </div>
       </div>
+      <p style="margin-top:16px">These “Why Choose Us” points are taken directly from your uploaded PB B.Sc content notes. :contentReference[oaicite:9]{index=9}</p>
     </div>
+
     <div class="sec-divider"></div>
 
-    <!-- Conclusion -->
     <div class="content-section r" id="conclusion">
-      <span class="cs-tag">Your Future Starts Here</span>
-      <h2>A Prestigious, <em>Global</em> Career in Nursing</h2>
+      <span class="cs-tag">Advance Your Career</span>
+      <h2>The Right Step After <em>GNM</em></h2>
       <div class="conclusion-box">
-        <p>"The B.Sc. Nursing programme opens doors to a prestigious, respected, and rewarding profession in healthcare. Graduates emerge as skilled professionals, leaders, and compassionate caregivers — prepared to excel in hospitals, communities, education, and research worldwide. By choosing this programme, students take their first step toward a successful and global career in nursing."</p>
+        <p>"The Post Basic B.Sc. Nursing programme is the ideal pathway for registered nurses to advance their qualifications, expand career horizons, and become leaders in nursing and healthcare. By upgrading from GNM to PB B.Sc., nurses enhance their clinical skills, professional credibility, and global career opportunities."</p>
       </div>
     </div>
 
   </main>
 
-  <!-- SIDEBAR -->
   <aside class="sidebar">
 
     <div class="toc r">
@@ -1177,196 +1676,155 @@ footer {
     </div>
 
     <div class="sidebar-card r d1">
-      <div class="sidebar-card-head"><h4>Programme Details</h4></div>
+      <div class="sidebar-card-head">
+        <h4>Programme Details</h4>
+      </div>
+
       <div class="sidebar-card-body">
+
         <div class="info-row">
-          <span class="info-icon">📅</span>
-          <div><p class="info-label">Duration</p><p class="info-val">4 Years (including internship)</p></div>
+          <span class="info-icon"><i class="fa-regular fa-calendar"></i></span>
+          <div>
+            <p class="info-label">Duration</p>
+            <p class="info-val">2 Years</p>
+          </div>
         </div>
+
         <div class="info-row">
-          <span class="info-icon">⏱️</span>
-          <div><p class="info-label">Weekly Hours</p><p class="info-val">40 hours (theory + labs + clinical)</p></div>
+          <span class="info-icon"><i class="fa-regular fa-clock"></i></span>
+          <div>
+            <p class="info-label">Weekly Hours</p>
+            <p class="info-val">40 hours (theory, labs, clinical training)</p>
+          </div>
         </div>
+
         <div class="info-row">
-          <span class="info-icon">🎓</span>
-          <div><p class="info-label">Eligibility</p><p class="info-val">10+2 Science (PCB) · Min 45% · English compulsory</p></div>
+          <span class="info-icon"><i class="fa-solid fa-user-graduate"></i></span>
+          <div>
+            <p class="info-label">Eligibility</p>
+            <p class="info-val">GNM diploma + 10+2 + RN/RM registration</p>
+          </div>
         </div>
+
         <div class="info-row">
-          <span class="info-icon">🧑‍⚕️</span>
-          <div><p class="info-label">Age Limit</p><p class="info-val">Minimum 17 years (by 31st Dec of admission year)</p></div>
+          <span class="info-icon"><i class="fa-solid fa-building-columns"></i></span>
+          <div>
+            <p class="info-label">Recognition</p>
+            <p class="info-val">INC Recognised · State Nursing Council</p>
+          </div>
         </div>
+
         <div class="info-row">
-          <span class="info-icon">🏛️</span>
-          <div><p class="info-label">Approval</p><p class="info-val">INC Approved · State Nursing Council · RGUHS</p></div>
+          <span class="info-icon"><i class="fa-solid fa-file-medical"></i></span>
+          <div>
+            <p class="info-label">Medical Fitness</p>
+            <p class="info-val">Candidate must be medically fit</p>
+          </div>
         </div>
+
         <div class="info-row">
-          <span class="info-icon">🏥</span>
-          <div><p class="info-label">Clinical Hours</p><p class="info-val">4,000+ supervised hours</p></div>
+          <span class="info-icon"><i class="fa-solid fa-scale-balanced"></i></span>
+          <div>
+            <p class="info-label">Reservation</p>
+            <p class="info-val">As per government norms</p>
+          </div>
         </div>
-        <div class="info-row">
-          <span class="info-icon">📋</span>
-          <div><p class="info-label">Medical Fitness</p><p class="info-val">Certificate of medical fitness required</p></div>
-        </div>
+
       </div>
     </div>
 
     <div class="apply-card r d2">
-      <h4>Apply for B.Sc Nursing</h4>
-      <p>Take the first step toward a global nursing career. Enquire now — seats are limited for the upcoming batch.</p>
+      <h4>Apply for PB B.Sc Nursing</h4>
+      <p>Upgrade from GNM to degree-level nursing and expand your career opportunities in India and abroad.</p>
       <a href="#contact-strip" class="apply-btn">Enquire Now →</a>
     </div>
 
     <div class="contact-card r d3">
       <p>Speak with our admissions team</p>
-      <a href="tel:+919845026920">📞 +91 98450 26920</a>
-      <a href="mailto:info@noorcollege.com" style="font-size:14px;color:rgba(255,255,255,0.55)">✉️ info@noorcollege.com</a>
+
+      <a href="tel:+919845026920">
+        <i class="fa-solid fa-phone"></i>
+        +91 98450 26920
+      </a>
+
+      <a href="mailto:info@noorcollege.com" style="font-size:14px; color:rgba(255,255,255,0.55);">
+        <i class="fa-solid fa-envelope"></i>
+        info@noorcollege.com
+      </a>
     </div>
 
     <div class="sidebar-card r d2" style="margin-top:20px">
       <div class="sidebar-card-head"><h4>Other Programs</h4></div>
       <div class="sidebar-card-body" style="padding:12px 24px">
         <a href="gnm.html" class="other-link">GNM Diploma</a>
-        <a href="#" class="other-link">Post Basic B.Sc Nursing</a>
-        <a href="#" class="other-link">M.Sc Nursing (2 Years)</a>
+        <a href="bscnursing.html" class="other-link">B.Sc Nursing</a>
+        <a href="mscnursing.html" class="other-link">M.Sc Nursing</a>
       </div>
     </div>
 
   </aside>
 </div>
 
-<!-- CONTACT STRIP -->
 <div class="contact-strip" id="contact-strip">
-  <div class="cs-inner">
+  <div class="cs-inner" style="max-width:1100px; margin:0 auto; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:30px;">
+
     <div class="cs-text r">
-      <h3>Interested in B.Sc Nursing?</h3>
-      <p>At Noor College & School of Nursing, our B.Sc. Nursing programme is designed to build globally competitive, compassionate nursing professionals. Reach out today to begin your journey.</p>
+      <h3>Interested in PB B.Sc Nursing?</h3>
+      <p style="max-width:760px; margin:0 auto;">
+        At Noor College &amp; School of Nursing, the Post Basic B.Sc. Nursing programme helps registered nurses strengthen their qualifications, grow into senior roles, and prepare for postgraduate education and global opportunities.
+      </p>
     </div>
-    <div class="cs-actions r d2">
+
+    <div class="cs-actions r d2" style="display:flex; justify-content:center; align-items:center; gap:18px; flex-wrap:wrap;">
+
       <a href="tel:+919845026920" class="cs-btn">
-        <div class="cs-btn-icon">📞</div>
-        <div><p>Call Us</p><strong>+91 98450 26920</strong></div>
+        <div class="cs-btn-icon">
+          <i class="fa-solid fa-phone"></i>
+        </div>
+        <div>
+          <p>Call Us</p>
+          <strong>+91 98450 26920</strong>
+        </div>
       </a>
+
       <a href="mailto:info@noorcollege.com" class="cs-btn">
-        <div class="cs-btn-icon">✉️</div>
-        <div><p>Email Us</p><strong>info@noorcollege.com</strong></div>
+        <div class="cs-btn-icon">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+        <div>
+          <p>Email Us</p>
+          <strong>info@noorcollege.com</strong>
+        </div>
       </a>
+
     </div>
+
   </div>
 </div>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-divider"></div>
-  <div class="section-inner">
-    <div class="footer-grid" style="padding-top:60px;">
-      <div class="footer-brand">
-        <a href="#" class="logo">
-          <div class="logo-icon">NC</div>
-          <div class="logo-text">
-            <span>Noor College</span>
-            <small>School of Nursing</small>
-          </div>
-        </a>
-        <p>Producing compassionate, competent nursing professionals guided by values of dignity, discipline, and dedication. Affiliated to RGUHS, Bangalore.</p>
-        <div class="footer-socials">
-          <a href="#" class="social-btn">f</a>
-          <a href="#" class="social-btn">in</a>
-          <a href="#" class="social-btn">tw</a>
-          <a href="#" class="social-btn">yt</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Programs</h4>
-        <ul>
-          <li><a href="gnm.html">GNM Diploma</a></li>
-          <li><a href="bscnursing.html">B.Sc Nursing</a></li>
-          <li><a href="pbBsc.html">Post Basic B.Sc</a></li>
-          <li><a href="mscnursing.html">M.Sc Nursing</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Accreditation</h4>
-        <ul>
-          <li><a href="#">RGUHS Affiliated</a></li>
-          <li><a href="#">INC Approved</a></li>
-          <li><a href="#">Karnataka Nursing Council</a></li>
-        </ul>
-        <div style="margin-top:24px;">
-          <div class="accredit-badge" style="margin-bottom:8px;">Est. Bangalore</div>
-          <div class="accredit-badge">Noor Education Trust</div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2025 Noor College & School of Nursing. All rights reserved.</p>
-      <div class="footer-accredit">
-        <span>Under <a href="#">Noor Education Trust</a></span>
-        <span>|</span>
-        <span>Affiliated to <a href="#">RGUHS</a></span>
-      </div>
-    </div>
-  </div>
-</footer>
+<div id="footer"></div>
+
+<script src="load.js"></script>
 
 <script>
-// Year tab switcher
-function showYear(id, btn) {
-  document.querySelectorAll('.year-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.year-tab').forEach(t => t.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  btn.classList.add('active');
-}
-
-function toggleMenu() {
-  document.getElementById('navMenu').classList.toggle('show');
-}
-
-function togglePrograms(event) {
-  event.preventDefault();
-  event.stopPropagation();
-  document.getElementById('mobileProgramsMenu').classList.toggle('show');
-}
-
-// close mobile menu on link click
-document.querySelectorAll('#navMenu a').forEach(link => {
-  link.addEventListener('click', () => {
-    document.getElementById('navMenu').classList.remove('show');
-    document.getElementById('mobileProgramsMenu').classList.remove('show');
-  });
-});
-
-// close on outside click
-document.addEventListener('click', function(e){
-  const nav = document.getElementById('nav');
-  const menu = document.getElementById('navMenu');
-  if (!nav.contains(e.target)) {
-    menu.classList.remove('show');
-    document.getElementById('mobileProgramsMenu').classList.remove('show');
+  function showYear(id, btn) {
+    document.querySelectorAll('.year-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.year-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
   }
-});
 
-// Scroll reveal
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); }
-  });
-}, { threshold: 0.08 });
-document.querySelectorAll('.r').forEach(el => obs.observe(el));
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('on');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
 
-// Navbar shrink
-window.addEventListener('scroll', () => {
-  const nav = document.getElementById('nav');
-  nav.style.height = window.scrollY > 60 ? '58px' : '70px';
-  nav.style.background = window.scrollY > 60 ? 'rgba(12,26,58,1)' : 'rgba(12,26,58,0.97)';
-});
+  document.querySelectorAll('.r').forEach(el => obs.observe(el));
 </script>
+
 </body>
 </html>

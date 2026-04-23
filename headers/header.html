@@ -1,0 +1,327 @@
+<!-- header.html -->
+<nav id="nav">
+  <a href="index.html" class="logo">
+    <img src="assets/logo1.png" alt="Noor College Logo">
+    <div class="logo-words">
+      <span>Noor College</span>
+      <small>School of Nursing</small>
+    </div>
+  </a>
+
+  <button class="menu-toggle" type="button" onclick="toggleMenu()" aria-label="Open Menu">
+    ☰
+  </button>
+
+  <ul id="navMenu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+
+    <li class="dropdown">
+      <a href="ourcourse.html">
+        Programs⌄
+      </a>
+
+      <ul class="dropdown-menu">
+        <li><a href="ourcourse.html">All Programs</a></li>
+        <li><a href="gnm.html">GNM</a></li>
+        <li><a href="bscnursing.html">B.Sc Nursing</a></li>
+        <li><a href="pbBsc.html">Post Basic B.Sc</a></li>
+        <li><a href="mscnursing.html">M.Sc Nursing</a></li>
+      </ul>
+
+      <button class="mobile-program-toggle" type="button" onclick="togglePrograms(event)">
+        <span>Programs</span>
+        <span>⌄</span>
+      </button>
+
+      <ul class="mobile-submenu" id="mobileProgramsMenu">
+        <li><a href="ourcourse.html">All Programs</a></li>
+        <li><a href="gnm.html">GNM</a></li>
+        <li><a href="bscnursing.html">B.Sc Nursing</a></li>
+        <li><a href="pbBsc.html">Post Basic B.Sc</a></li>
+        <li><a href="mscnursing.html">M.Sc Nursing</a></li>
+      </ul>
+    </li>
+
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html#contact-form" class="btn-nav">Apply Now</a></li>
+  </ul>
+</nav>
+
+<style>
+:root{
+  --red:#C0211F;
+  --red-light:#E03533;
+  --red-dark:#8B1614;
+  --navy:#0C1A3A;
+  --navy-mid:#172D5C;
+  --navy-light:#1E3A70;
+  --white:#FFFFFF;
+  --off-white:#F7F6F2;
+  --light-gray:#E8EAF0;
+  --mid-gray:#B8BCC8;
+  --text-muted:#64748B;
+  --gold:#C9963A;
+}
+
+#nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:78px;
+  padding:0 6%;
+  background:var(--white);
+  border-bottom:1px solid var(--light-gray);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  z-index:999;
+  box-shadow:0 4px 18px rgba(0,0,0,0.04);
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  text-decoration:none;
+  min-width:0;
+}
+
+.logo img{
+  height:54px;
+  width:auto;
+  object-fit:contain;
+  display:block;
+}
+
+.logo-words span{
+  display:block;
+  color:var(--navy);
+  font-size:16px;
+  font-weight:700;
+  line-height:1.1;
+}
+
+.logo-words small{
+  display:block;
+  color:var(--text-muted);
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-top:3px;
+  line-height:1.2;
+}
+
+#navMenu{
+  display:flex;
+  align-items:center;
+  gap:30px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+#navMenu li{
+  position:relative;
+}
+
+#navMenu li a{
+  color:var(--navy);
+  text-decoration:none;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.6px;
+  text-transform:uppercase;
+  transition:.3s ease;
+  padding:6px 0;
+  position:relative;
+  display:inline-block;
+}
+
+#navMenu li a:hover{
+  color:var(--red);
+}
+
+#navMenu li a.active{
+  color:var(--red);
+}
+
+#navMenu li a.active::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-4px;
+  width:100%;
+  height:2px;
+  background:var(--red);
+  border-radius:2px;
+}
+
+.btn-nav{
+  background:linear-gradient(135deg,var(--red),var(--navy-light));
+  color:#fff !important;
+  padding:11px 20px !important;
+  border-radius:6px;
+  font-size:12px !important;
+  font-weight:700 !important;
+}
+
+.btn-nav:hover{
+  background:linear-gradient(135deg,var(--red-light),var(--navy));
+}
+
+.dropdown > a{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.dropdown-menu{
+  position:absolute;
+  top:120%;
+  left:0;
+  min-width:230px;
+  background:var(--white);
+  border:1px solid var(--light-gray);
+  border-radius:8px;
+  padding:10px 0;
+  list-style:none;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(10px);
+  transition:.3s ease;
+  box-shadow:0 15px 35px rgba(0,0,0,.08);
+  z-index:1000;
+}
+
+.dropdown:hover .dropdown-menu{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+.dropdown-menu li a{
+  display:block;
+  padding:12px 18px;
+  color:var(--navy) !important;
+  font-size:13px !important;
+  text-transform:none !important;
+}
+
+.dropdown-menu li a:hover{
+  background:#f7f8fc;
+  color:var(--red) !important;
+}
+
+.menu-toggle{
+  display:none;
+  background:none;
+  border:none;
+  font-size:30px;
+  color:var(--navy);
+  cursor:pointer;
+  padding:4px 8px;
+  line-height:1;
+}
+
+.mobile-program-toggle,
+.mobile-submenu{
+  display:none;
+}
+
+@media (max-width:992px){
+  #nav{
+    height:74px;
+    padding:0 18px;
+  }
+
+  .menu-toggle{
+    display:block !important;
+  }
+
+  .logo img{
+    height:42px;
+  }
+
+  .logo-words span{
+    font-size:13px;
+  }
+
+  .logo-words small{
+    font-size:8px;
+    letter-spacing:1px;
+  }
+
+  #navMenu{
+    position:absolute;
+    top:74px;
+    left:0;
+    width:100%;
+    background:var(--white);
+    flex-direction:column;
+    align-items:flex-start;
+    gap:0;
+    display:none;
+    padding:15px 20px 25px;
+    border-top:1px solid var(--light-gray);
+    box-shadow:0 12px 24px rgba(0,0,0,0.05);
+  }
+
+  #navMenu.show{
+    display:flex;
+  }
+
+  #navMenu li{
+    width:100%;
+  }
+
+  #navMenu li a{
+    display:block;
+    width:100%;
+    padding:14px 0;
+    border-bottom:1px solid #f0f0f0;
+  }
+
+  .dropdown > a,
+  .dropdown-menu{
+    display:none !important;
+  }
+
+  .mobile-program-toggle{
+    display:flex;
+    justify-content:space-between;
+    width:100%;
+    padding:14px 0;
+    background:none;
+    border:none;
+    color:var(--navy);
+    font-size:13px;
+    font-weight:600;
+    text-transform:uppercase;
+    cursor:pointer;
+    border-bottom:1px solid #f0f0f0;
+  }
+
+  .mobile-submenu{
+    display:none;
+    list-style:none;
+    width:100%;
+    padding-left:12px;
+  }
+
+  .mobile-submenu.show{
+    display:block;
+  }
+
+  .mobile-submenu li a{
+    font-size:13px !important;
+    padding:12px 0 !important;
+  }
+
+  .btn-nav{
+    margin-top:14px;
+    text-align:center;
+  }
+}
+</style>

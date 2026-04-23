@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Noor College & School of Nursing</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
     :root{
@@ -22,12 +24,19 @@
 
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
+
     body{
       font-family:'DM Sans',sans-serif;
       color:var(--navy);
       background:var(--white);
       overflow-x:hidden;
+      padding-top:78px;
     }
+
+    @media (max-width:992px){
+      body{padding-top:74px}
+    }
+
     img,video,iframe{max-width:100%;height:auto}
 
     .section-inner{
@@ -35,215 +44,193 @@
       margin:0 auto;
     }
 
-    /* NAV */
-    nav{
-      position:fixed;
-      top:0;left:0;right:0;
-      z-index:200;
-      height:70px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:0 6%;
-      background:rgba(12,26,58,0.97);
-      backdrop-filter:blur(16px);
-      border-bottom:1px solid rgba(192,33,31,0.3);
-      transition:height 0.3s,background 0.3s;
-    }
-    .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-    .logo-mark,
-    .logo-icon{
-      width:42px;height:42px;border-radius:50%;
-      background:linear-gradient(135deg,var(--red),var(--red-dark));
-      display:flex;align-items:center;justify-content:center;
-      font-family:'Cormorant Garamond',serif;
-      font-size:17px;font-weight:700;color:#fff;
-      box-shadow:0 0 0 2px rgba(192,33,31,0.4);
-      flex-shrink:0;
-    }
-    .logo-words span,
-    .logo-text span{display:block;font-size:14px;font-weight:600;color:#fff}
-    .logo-words small,
-    .logo-text small{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid-gray)}
-
-    .menu-toggle{
-      display:none;
-      background:none;
-      border:none;
-      color:#fff;
-      font-size:30px;
-      cursor:pointer;
-      line-height:1;
-    }
-
-    nav ul{list-style:none;display:flex;gap:32px;align-items:center}
-    nav ul a{
-      color:rgba(255,255,255,0.75);
-      text-decoration:none;
-      font-size:12.5px;
-      font-weight:500;
-      letter-spacing:0.8px;
-      text-transform:uppercase;
-      position:relative;
-      padding-bottom:3px;
-      transition:color 0.3s;
-    }
-    nav ul a::after{
-      content:'';
-      position:absolute;
-      bottom:0;left:0;
-      width:0;height:1.5px;
-      background:var(--red-light);
-      transition:width 0.3s;
-    }
-    nav ul a:hover,
-    nav ul a.active{color:#fff}
-    nav ul a:hover::after,
-    nav ul a.active::after{width:100%}
-
-    .btn-nav{
-      background:var(--red)!important;
-      color:#fff!important;
-      padding:8px 22px!important;
-      border-radius:3px;
-      font-weight:600!important;
-      transition:background 0.3s!important;
-    }
-    .btn-nav:hover{background:var(--red-light)!important}
-    .btn-nav::after{display:none!important}
-
-    .dropdown{position:relative}
-    .dropdown > a{display:inline-flex;align-items:center;gap:6px}
-    .dropdown-menu{
-      position:absolute;
-      top:calc(100% + 14px);
-      left:0;
-      min-width:240px;
-      background:#10224b;
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius:6px;
-      padding:10px 0;
-      display:none;
-      box-shadow:0 18px 40px rgba(0,0,0,0.28);
-      z-index:100;
-    }
-    .dropdown:hover .dropdown-menu{display:block}
-    .dropdown-menu li{list-style:none}
-    .dropdown-menu a{
-      display:block;
-      padding:12px 18px;
-      color:rgba(255,255,255,0.82);
-      font-size:12px;
-      letter-spacing:0.8px;
-    }
-    .dropdown-menu a:hover{
-      color:#fff;
-      background:rgba(255,255,255,0.05);
-    }
-    .dropdown-menu a::after{display:none!important}
-
-    .mobile-program-toggle{
-      display:none;
-      width:100%;
-      background:none;
-      border:none;
-      color:rgba(255,255,255,0.75);
-      font-size:12.5px;
-      font-weight:500;
-      letter-spacing:0.8px;
-      text-transform:uppercase;
-      text-align:left;
-      padding:0;
-      cursor:pointer;
-    }
-    .mobile-submenu{display:none}
-
     /* HERO */
     .page-hero{
-      min-height:55vh;
+      min-height:100vh;
       background:var(--navy);
       position:relative;
       overflow:hidden;
       display:flex;
-      align-items:flex-end;
-      padding:0 6% 80px;
-      padding-top:70px;
+      align-items:center;
+      justify-content:center;
+      padding:60px 20px;
+      text-align:center;
     }
+
     .ph-bg{
-      position:absolute;inset:0;
+      position:absolute;
+      inset:0;
       background:
         radial-gradient(ellipse 65% 75% at 75% 35%,rgba(192,33,31,0.22) 0%,transparent 65%),
         radial-gradient(ellipse 50% 60% at 5% 85%,rgba(30,58,112,0.7) 0%,transparent 60%),
         linear-gradient(150deg,#0C1A3A 0%,#172D5C 55%,#0C1A3A 100%);
     }
+
     .ph-grid{
-      position:absolute;inset:0;
+      position:absolute;
+      inset:0;
       background-image:
         linear-gradient(rgba(255,255,255,0.035) 1px,transparent 1px),
         linear-gradient(90deg,rgba(255,255,255,0.035) 1px,transparent 1px);
       background-size:72px 72px;
       animation:gridDrift 22s linear infinite;
     }
+
     @keyframes gridDrift{
       from{background-position:0 0}
       to{background-position:72px 72px}
     }
+
     .ph-accent{
-      position:absolute;top:0;right:0;bottom:0;width:42%;
+      position:absolute;
+      top:0;
+      right:0;
+      bottom:0;
+      width:42%;
       background:linear-gradient(135deg,transparent 35%,rgba(192,33,31,0.07) 100%);
       clip-path:polygon(25% 0,100% 0,100% 100%,0 100%);
     }
+
     .ring{
-      position:absolute;border-radius:50%;pointer-events:none;
+      position:absolute;
+      border-radius:50%;
+      pointer-events:none;
       animation:ringFloat 7s ease-in-out infinite;
     }
-    .ring1{width:220px;height:220px;right:10%;top:15%;border:1px solid rgba(192,33,31,0.2)}
-    .ring2{width:110px;height:110px;right:22%;top:40%;background:rgba(192,33,31,0.06);animation-delay:2.5s}
-    .ring3{width:55px;height:55px;right:34%;top:58%;border:1px solid rgba(255,255,255,0.08);animation-delay:5s}
+
+    .ring1{
+      width:220px;
+      height:220px;
+      right:10%;
+      top:15%;
+      border:1px solid rgba(192,33,31,0.2);
+    }
+
+    .ring2{
+      width:110px;
+      height:110px;
+      right:22%;
+      top:40%;
+      background:rgba(192,33,31,0.06);
+      animation-delay:2.5s;
+    }
+
+    .ring3{
+      width:55px;
+      height:55px;
+      right:34%;
+      top:58%;
+      border:1px solid rgba(255,255,255,0.08);
+      animation-delay:5s;
+    }
+
     @keyframes ringFloat{
       0%,100%{transform:translateY(0) rotate(0deg)}
       50%{transform:translateY(-14px) rotate(6deg)}
     }
 
-    .ph-content{position:relative;z-index:2;max-width:900px}
-    .breadcrumb{
-      display:flex;align-items:center;gap:8px;flex-wrap:wrap;
-      font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;
-      color:rgba(255,255,255,0.38);margin-bottom:26px;
+    .ph-content{
+      position:relative;
+      z-index:2;
+      max-width:900px;
+      width:100%;
+      margin:auto;
     }
-    .breadcrumb::before{content:'';width:28px;height:1px;background:var(--red);margin-right:4px}
-    .breadcrumb a{color:rgba(255,255,255,0.38);text-decoration:none;transition:color 0.3s}
-    .breadcrumb a:hover{color:var(--red-light)}
-    .breadcrumb .sep{color:rgba(255,255,255,0.25)}
-    .breadcrumb .cur{color:var(--red-light)}
+
+    .breadcrumb{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+      font-size:11.5px;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      color:rgba(255,255,255,0.38);
+      margin-bottom:26px;
+    }
+
+    .breadcrumb::before{
+      content:'';
+      width:28px;
+      height:1px;
+      background:var(--red);
+      margin-right:4px;
+    }
+
+    .breadcrumb a{
+      color:rgba(255,255,255,0.38);
+      text-decoration:none;
+    }
+
+    .breadcrumb a:hover{
+      color:var(--red-light);
+    }
+
+    .breadcrumb .sep{
+      color:rgba(255,255,255,0.25);
+    }
+
+    .breadcrumb .cur{
+      color:var(--red-light);
+    }
 
     .ph-content h1{
-      font-family:'Cormorant Garamond',serif;
+      font-family:'Cormorant Garamond', serif;
       font-size:clamp(42px,7vw,84px);
-      font-weight:700;color:#fff;
-      line-height:1.0;letter-spacing:-1.5px;
+      font-weight:700;
+      color:#fff;
+      line-height:1;
+      letter-spacing:-1.5px;
       animation:fadeUp 0.9s ease 0.2s both;
     }
-    .ph-content h1 em{color:var(--red-light);font-style:italic}
+
+    .ph-content h1 em{
+      color:var(--red-light);
+      font-style:italic;
+    }
+
     .ph-sub{
-      font-size:17px;color:rgba(255,255,255,0.58);font-weight:300;
-      max-width:560px;line-height:1.75;margin-top:18px;
+      font-size:17px;
+      color:rgba(255,255,255,0.58);
+      font-weight:300;
+      max-width:620px;
+      line-height:1.75;
+      margin:18px auto 0;
       animation:fadeUp 0.9s ease 0.4s both;
     }
+
     .ph-bar{
-      width:0;height:3px;
+      width:0;
+      height:3px;
       background:linear-gradient(90deg,var(--red),var(--red-light));
-      margin-top:32px;border-radius:2px;
+      margin:32px auto 0;
+      border-radius:2px;
       animation:barGrow 1s ease 0.8s both;
     }
-    @keyframes barGrow{from{width:0}to{width:80px}}
-    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 
-    /* MAIN SECTION */
+    @keyframes barGrow{
+      from{width:0}
+      to{width:80px}
+    }
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(28px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* CONTACT SECTION */
     .contact-section{
       padding:90px 6%;
       background:var(--white);
     }
+
     .contact-inner{
       max-width:1140px;
       margin:0 auto;
@@ -266,6 +253,7 @@
       background:var(--navy);
       padding:22px 26px;
     }
+
     .card-head h2{
       color:#fff;
       font-size:12px;
@@ -274,7 +262,10 @@
       text-transform:uppercase;
     }
 
-    .info-body{padding:30px 26px}
+    .info-body{
+      padding:30px 26px;
+    }
+
     .info-block{
       display:flex;
       gap:16px;
@@ -282,21 +273,31 @@
       padding:18px 0;
       border-bottom:1px solid var(--light-gray);
     }
-    .info-block:last-child{border-bottom:none}
+
+    .info-block:last-child{
+      border-bottom:none;
+    }
+
     .info-icon{
-      width:48px;height:48px;border-radius:50%;
+      width:48px;
+      height:48px;
+      border-radius:50%;
       background:rgba(192,33,31,0.1);
       color:var(--red);
-      display:flex;align-items:center;justify-content:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
       font-size:20px;
       flex-shrink:0;
     }
+
     .info-block h3{
       font-family:'Cormorant Garamond',serif;
       font-size:28px;
       color:var(--navy);
       margin-bottom:6px;
     }
+
     .info-block p,
     .info-block a{
       font-size:15px;
@@ -305,18 +306,26 @@
       text-decoration:none;
       word-break:break-word;
     }
-    .info-block a:hover{color:var(--red)}
 
-    .form-body{padding:30px 26px}
+    .info-block a:hover{
+      color:var(--red);
+    }
+
+    .form-body{
+      padding:30px 26px;
+    }
+
     .form-title{
       margin-bottom:22px;
     }
+
     .form-title h2{
       font-family:'Cormorant Garamond',serif;
       font-size:40px;
       color:var(--navy);
       margin-bottom:6px;
     }
+
     .form-title p{
       font-size:15px;
       color:var(--text-muted);
@@ -328,18 +337,25 @@
       grid-template-columns:1fr 1fr;
       gap:16px;
     }
+
     .form-group{
       position:relative;
     }
-    .form-group.full{grid-column:1 / -1}
+
+    .form-group.full{
+      grid-column:1 / -1;
+    }
+
     .form-group .input-icon{
       position:absolute;
-      top:15px;left:16px;
+      top:15px;
+      left:16px;
       font-size:16px;
       color:var(--red);
       opacity:0.9;
       pointer-events:none;
     }
+
     .form-group input,
     .form-group textarea{
       width:100%;
@@ -353,11 +369,13 @@
       outline:none;
       transition:border-color 0.25s, background 0.25s;
     }
+
     .form-group textarea{
       min-height:150px;
       resize:vertical;
       padding-top:14px;
     }
+
     .form-group input:focus,
     .form-group textarea:focus{
       border-color:rgba(192,33,31,0.5);
@@ -379,257 +397,144 @@
       cursor:pointer;
       transition:background 0.3s, transform 0.2s;
     }
+
     .submit-btn:hover{
       background:var(--red-light);
       transform:translateY(-1px);
     }
 
-    /* FOOTER */
-    footer {
-      background: var(--navy);
-      color: var(--white);
-      padding: 80px 5% 0;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 60px;
-      padding-bottom: 60px;
-    }
-    .footer-brand p {
-      font-size: 14px;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.8;
-      margin: 20px 0 24px;
-      max-width: 280px;
-    }
-    .footer-socials { display: flex; gap: 10px; flex-wrap:wrap; }
-    .social-btn {
-      width: 38px; height: 38px; border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.15);
-      display: flex; align-items: center; justify-content: center;
-      color: rgba(255,255,255,0.6); font-size: 14px; text-decoration: none;
-      transition: all 0.3s; font-weight: 600;
-    }
-    .social-btn:hover { background: var(--red); border-color: var(--red); color: var(--white); }
-    .footer-col h4 {
-      font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
-      color: var(--white); margin-bottom: 20px;
-      padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .footer-col ul li a {
-      color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px;
-      transition: all 0.3s; display: flex; align-items: center; gap: 6px;
-    }
-    .footer-col ul li a::before { content: '→'; font-size: 11px; color: var(--red); }
-    .footer-col ul li a:hover { color: var(--white); padding-left: 4px; }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding: 24px 0;
-      display: flex; align-items: center; justify-content: space-between;
-      font-size: 13px; color: rgba(255,255,255,0.4);
-      gap:16px;
-      flex-wrap:wrap;
-    }
-    .footer-bottom a { color: var(--red-light); text-decoration: none; }
-    .footer-accredit {
-      display: flex; align-items: center; gap: 16px;
-      flex-wrap:wrap;
-    }
-    .accredit-badge {
-      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-      padding: 6px 14px; border-radius: 30px; font-size: 11px;
-      color: rgba(255,255,255,0.5); letter-spacing: 1px; text-transform: uppercase;
-    }
-    .footer-divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--red), transparent);
-      margin: 0 0 0;
-      opacity: 0.4;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 1100px){
+    @media (max-width:1100px){
       .contact-inner{
         grid-template-columns:1fr;
       }
     }
 
-    @media (max-width: 1024px){
-      nav{padding:0 4%}
-      .page-hero,
-      .contact-section,
-      footer{
-        padding-left:4%;
-        padding-right:4%;
-      }
-      .footer-grid{
-        grid-template-columns:1fr 1fr;
-        gap:36px;
-      }
-    }
-
-    @media (max-width: 960px){
-      nav{
-        padding:0 16px;
-      }
-
-      .menu-toggle{
-        display:block;
-      }
-
-      #navMenu{
-        position:absolute;
-        top:70px;
-        left:0;
-        right:0;
-        background:#0C1A3A;
-        display:none;
-        flex-direction:column;
-        align-items:flex-start;
-        gap:14px;
-        padding:18px 16px 24px;
-        border-top:1px solid rgba(255,255,255,0.08);
-        box-shadow:0 14px 30px rgba(0,0,0,0.18);
-      }
-      #navMenu.show{display:flex}
-      #navMenu li{width:100%}
-      #navMenu li a,
-      .mobile-program-toggle{
-        display:block;
-        width:100%;
-        padding:10px 0;
-      }
-
-      .dropdown > a{display:none}
-      .mobile-program-toggle{display:block}
-      .mobile-submenu{
-        display:none;
-        margin-top:12px;
-        padding-left:12px;
-        border-left:2px solid rgba(192,33,31,0.35);
-      }
-      .mobile-submenu.show{display:block}
-      .mobile-submenu li{margin-bottom:10px}
-      .dropdown-menu{display:none!important}
-
-      .btn-nav{
-        width:100%;
-        text-align:center;
-      }
-
+    @media (max-width:960px){
       .page-hero{
         min-height:auto;
         padding:110px 16px 50px;
         align-items:center;
       }
-      .ph-accent{width:60%}
-      .ph-content{max-width:100%}
+
+      .ph-accent{
+        width:60%;
+      }
+
+      .ph-content{
+        max-width:100%;
+      }
+
       .ph-content h1{
         font-size:clamp(34px,10vw,54px);
         line-height:1.05;
         letter-spacing:-0.8px;
       }
+
       .ph-sub{
         font-size:15px;
         line-height:1.7;
         max-width:100%;
       }
+
       .breadcrumb{
         font-size:10px;
         margin-bottom:18px;
       }
-      .ring1{width:150px;height:150px;right:5%;top:10%}
-      .ring2{width:80px;height:80px;right:18%;top:38%}
-      .ring3{width:42px;height:42px;right:32%;top:58%}
+
+      .ring1{
+        width:150px;
+        height:150px;
+        right:5%;
+        top:10%;
+      }
+
+      .ring2{
+        width:80px;
+        height:80px;
+        right:18%;
+        top:38%;
+      }
+
+      .ring3{
+        width:42px;
+        height:42px;
+        right:32%;
+        top:58%;
+      }
 
       .contact-section{
         padding:60px 16px;
       }
+
       .contact-inner{
         gap:24px;
       }
+
       .card-head,
       .info-body,
       .form-body{
         padding-left:20px;
         padding-right:20px;
       }
+
       .form-title h2{
         font-size:34px;
       }
-
-      footer{
-        padding:56px 16px 0;
-      }
-      .footer-grid{
-        grid-template-columns:1fr;
-        gap:28px;
-        padding-bottom:32px;
-      }
-      .footer-brand p{max-width:100%}
-      .footer-bottom{
-        padding:18px 0 24px;
-        flex-direction:column;
-        align-items:flex-start;
-        gap:10px;
-      }
-      .footer-accredit{
-        gap:10px;
-      }
     }
 
-    @media (max-width: 768px){
+    @media (max-width:768px){
       .form-grid{
         grid-template-columns:1fr;
       }
+
       .form-group.full{
         grid-column:auto;
       }
     }
 
-    @media (max-width: 600px){
+    @media (max-width:600px){
       .info-block{
         gap:12px;
       }
+
       .info-icon{
         width:42px;
         height:42px;
         font-size:18px;
       }
+
       .info-block h3{
         font-size:24px;
       }
+
       .info-block p,
       .info-block a,
       .form-title p{
         font-size:14px;
       }
+
       .submit-btn{
         width:100%;
         justify-content:center;
       }
-      .logo-words span,
-      .logo-text span{
-        font-size:12px;
-      }
-      .logo-words small,
-      .logo-text small{
-        font-size:9px;
-        letter-spacing:1.3px;
-      }
     }
 
-    @media (max-width: 380px){
-      .ph-content h1{font-size:30px}
-      .form-title h2{font-size:28px}
+    @media (max-width:380px){
+      .ph-content h1{
+        font-size:30px;
+      }
+
+      .form-title h2{
+        font-size:28px;
+      }
+
       .card-head,
       .info-body,
       .form-body{
         padding-left:16px;
         padding-right:16px;
       }
+
       .submit-btn{
         font-size:13px;
         padding:13px 18px;
@@ -639,57 +544,13 @@
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav id="nav">
-    <a href="index.html" class="logo">
-      <div class="logo-mark">NC</div>
-      <div class="logo-words">
-        <span>Noor College</span>
-        <small>School of Nursing</small>
-      </div>
-    </a>
+  <div id="header"></div>
 
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-    <ul id="navMenu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-
-      <li class="dropdown">
-        
-
-        <button class="mobile-program-toggle" onclick="togglePrograms(event)">
-          Programs ▾
-        </button>
-
-        <ul class="dropdown-menu">
-          <li><a href="ourcourse.html">All Programs</a></li>
-          <li><a href="gnm.html">GNM</a></li>
-          <li><a href="bscnursing.html">B.Sc Nursing</a></li>
-          <li><a href="pbBsc.html">Post Basic B.Sc</a></li>
-          <li><a href="mscnursing.html">M.Sc Nursing</a></li>
-        </ul>
-
-        <ul class="mobile-submenu" id="mobileProgramsMenu">
-          <li><a href="ourcourse.html">All Programs</a></li>
-          <li><a href="gnm.html">GNM</a></li>
-          <li><a href="bscnursing.html">B.Sc Nursing</a></li>
-          <li><a href="pbBsc.html">Post Basic B.Sc</a></li>
-          <li><a href="mscnursing.html">M.Sc Nursing</a></li>
-        </ul>
-      </li>
-
-      
-      <li><a href="contact.html" class="active">Contact</a></li>
-      <li><a href="#contact-form" class="btn-nav">Apply Now</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO -->
   <div class="page-hero">
     <div class="ph-bg"></div>
     <div class="ph-grid"></div>
     <div class="ph-accent"></div>
+
     <div class="ring ring1"></div>
     <div class="ring ring2"></div>
     <div class="ring ring3"></div>
@@ -700,25 +561,31 @@
         <span class="sep">›</span>
         <span class="cur">Contact</span>
       </div>
+
       <h1>Contact <em>Us</em></h1>
-      <p class="ph-sub">Reach out to Noor College & School of Nursing for admissions, course details, campus information, and general enquiries.</p>
+
+      <p class="ph-sub">
+        Reach out to Noor College &amp; School of Nursing for admissions,
+        course details, campus information, and general enquiries.
+      </p>
+
       <div class="ph-bar"></div>
     </div>
   </div>
 
-  <!-- CONTACT SECTION -->
   <section class="contact-section">
     <div class="contact-inner">
 
-      <!-- LEFT -->
       <div class="info-card">
         <div class="card-head">
           <h2>Contact Information</h2>
         </div>
-        <div class="info-body">
 
+        <div class="info-body">
           <div class="info-block">
-            <div class="info-icon">📍</div>
+            <div class="info-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
             <div>
               <h3>Address</h3>
               <p>4MM3+768, SH 104, Razack Palya, Bengaluru, Karnataka 562149</p>
@@ -726,7 +593,9 @@
           </div>
 
           <div class="info-block">
-            <div class="info-icon">📞</div>
+            <div class="info-icon">
+              <i class="fa-solid fa-phone"></i>
+            </div>
             <div>
               <h3>Contact</h3>
               <p><a href="tel:+919845026920">Mobile: +91 9845026920</a></p>
@@ -735,21 +604,25 @@
           </div>
 
           <div class="info-block">
-            <div class="info-icon">⏰</div>
+            <div class="info-icon">
+              <i class="fa-regular fa-clock"></i>
+            </div>
             <div>
               <h3>Support</h3>
-              <p>We are here to assist you with course details, admissions, and any other questions you may have.</p>
+              <p>
+                We are here to assist you with course details, admissions,
+                and any other questions you may have.
+              </p>
             </div>
           </div>
-
         </div>
       </div>
 
-      <!-- RIGHT -->
       <div class="form-card" id="contact-form">
         <div class="card-head">
           <h2>Send Us a Message</h2>
         </div>
+
         <div class="form-body">
           <div class="form-title">
             <h2>Questions?</h2>
@@ -758,30 +631,42 @@
 
           <form>
             <div class="form-grid">
+
               <div class="form-group">
-                <span class="input-icon">👤</span>
+                <span class="input-icon">
+                  <i class="fa-regular fa-user"></i>
+                </span>
                 <input type="text" placeholder="Name" required>
               </div>
 
               <div class="form-group">
-                <span class="input-icon">✉️</span>
+                <span class="input-icon">
+                  <i class="fa-regular fa-envelope"></i>
+                </span>
                 <input type="email" placeholder="Email" required>
               </div>
 
               <div class="form-group">
-                <span class="input-icon">📝</span>
+                <span class="input-icon">
+                  <i class="fa-regular fa-pen-to-square"></i>
+                </span>
                 <input type="text" placeholder="Subject" required>
               </div>
 
               <div class="form-group">
-                <span class="input-icon">📞</span>
+                <span class="input-icon">
+                  <i class="fa-solid fa-phone"></i>
+                </span>
                 <input type="tel" placeholder="Phone" required>
               </div>
 
               <div class="form-group full">
-                <span class="input-icon">💬</span>
+                <span class="input-icon">
+                  <i class="fa-regular fa-comment-dots"></i>
+                </span>
                 <textarea placeholder="Message" required></textarea>
               </div>
+
             </div>
 
             <button type="submit" class="submit-btn">
@@ -794,98 +679,27 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-divider"></div>
-    <div class="section-inner">
-      <div class="footer-grid" style="padding-top:60px;">
-        <div class="footer-brand">
-          <a href="#" class="logo">
-            <div class="logo-icon">NC</div>
-            <div class="logo-text">
-              <span>Noor College</span>
-              <small>School of Nursing</small>
-            </div>
-          </a>
-          <p>Producing compassionate, competent nursing professionals guided by values of dignity, discipline, and dedication. Affiliated to RGUHS, Bangalore.</p>
-          <div class="footer-socials">
-            <a href="#" class="social-btn">f</a>
-            <a href="#" class="social-btn">in</a>
-            <a href="#" class="social-btn">tw</a>
-            <a href="#" class="social-btn">yt</a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Programs</h4>
-          <ul>
-            <li><a href="gnm.html">GNM Diploma</a></li>
-            <li><a href="bscnursing.html">B.Sc Nursing</a></li>
-            <li><a href="pbBsc.html">Post Basic B.Sc</a></li>
-            <li><a href="mscnursing.html">M.Sc Nursing</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Accreditation</h4>
-          <ul>
-            <li><a href="#">RGUHS Affiliated</a></li>
-            <li><a href="#">INC Approved</a></li>
-            <li><a href="#">Karnataka Nursing Council</a></li>
-          </ul>
-          <div style="margin-top:24px;">
-            <div class="accredit-badge" style="margin-bottom:8px;">Est. Bangalore</div>
-            <div class="accredit-badge">Noor Education Trust</div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2025 Noor College & School of Nursing. All rights reserved.</p>
-        <div class="footer-accredit">
-          <span>Under <a href="#">Noor Education Trust</a></span>
-          <span>|</span>
-          <span>Affiliated to <a href="#">RGUHS</a></span>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <div id="footer"></div>
+
+  <script src="load.js"></script>
 
   <script>
-    function toggleMenu() {
-      document.getElementById('navMenu').classList.toggle('show');
-    }
+    const form = document.querySelector("form");
+    const submitBtn = document.querySelector(".submit-btn");
 
-    function togglePrograms(event) {
-      event.preventDefault();
-      document.getElementById('mobileProgramsMenu').classList.toggle('show');
-    }
+    if (form && submitBtn) {
+      form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        submitBtn.textContent = "✓ Message Sent";
+        submitBtn.style.background = "#15803d";
 
-    document.querySelectorAll('#navMenu a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('navMenu').classList.remove('show');
+        setTimeout(() => {
+          submitBtn.textContent = "Send Message →";
+          submitBtn.style.background = "";
+          form.reset();
+        }, 2500);
       });
-    });
-
-    document.addEventListener('click', function(e){
-      const nav = document.getElementById('nav');
-      const menu = document.getElementById('navMenu');
-      if (!nav.contains(e.target)) {
-        menu.classList.remove('show');
-        document.getElementById('mobileProgramsMenu').classList.remove('show');
-      }
-    });
-
-    window.addEventListener('scroll', () => {
-      const nav = document.getElementById('nav');
-      nav.style.height = window.scrollY > 60 ? '58px' : '70px';
-      nav.style.background = window.scrollY > 60 ? 'rgba(12,26,58,1)' : 'rgba(12,26,58,0.97)';
-    });
+    }
   </script>
 
 </body>

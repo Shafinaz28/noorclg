@@ -1,0 +1,338 @@
+<!-- footer.html -->
+<footer class="site-footer">
+
+<style>
+.site-footer{
+  background:#0C1A3A;
+  color:#fff;
+  margin:0;
+  padding:0;
+  font-family:'DM Sans',sans-serif;
+}
+
+.site-footer *{
+  box-sizing:border-box;
+}
+
+.site-footer a{
+  text-decoration:none;
+}
+
+/* Divider */
+.footer-divider{
+  height:1px;
+  background:linear-gradient(90deg,transparent,#C0211F,transparent);
+  opacity:.45;
+}
+
+/* Wrapper */
+.footer-wrap{
+  max-width:1180px;
+  margin:auto;
+  padding:0 5%;
+}
+
+/* Grid */
+.footer-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:55px;
+  padding:65px 0;
+}
+
+/* Logo */
+.footer-logo-row{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:18px;
+}
+
+.footer-logo{
+  width:56px;
+  height:56px;
+  object-fit:contain;
+  flex-shrink:0;
+  background:#fff;
+  border-radius:50%;
+  padding:4px;
+}
+
+.footer-logo-text span{
+  display:block;
+  font-size:18px;
+  font-weight:700;
+  color:#fff;
+  line-height:1.1;
+}
+
+.footer-logo-text small{
+  display:block;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#B8BCC8;
+  margin-top:3px;
+}
+
+.footer-brand p{
+  color:rgba(255,255,255,.65);
+  font-size:14px;
+  line-height:1.8;
+  margin-bottom:22px;
+  max-width:320px;
+}
+
+/* Social */
+.footer-social{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.social-btn{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.14);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:rgba(255,255,255,.7);
+  transition:.3s;
+  font-size:14px;
+}
+
+.social-btn:hover{
+  background:#C0211F;
+  border-color:#C0211F;
+  color:#fff;
+}
+
+/* Column */
+.footer-col h4{
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:18px;
+  padding-bottom:12px;
+  border-bottom:1px solid rgba(255,255,255,.09);
+}
+
+.footer-col ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.footer-col ul li{
+  margin-bottom:11px;
+}
+
+.footer-col ul li a{
+  color:rgba(255,255,255,.62);
+  font-size:14px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  transition:.3s;
+}
+
+.footer-col ul li a::before{
+  content:"→";
+  color:#C0211F;
+  font-size:11px;
+}
+
+.footer-col ul li a:hover{
+  color:#fff;
+  padding-left:5px;
+}
+
+/* Badge */
+.footer-badge{
+  display:inline-block;
+  padding:7px 14px;
+  border-radius:30px;
+  font-size:11px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.65);
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  margin-bottom:10px;
+}
+
+/* Bottom */
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:22px 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.footer-bottom p{
+  margin:0;
+  font-size:13px;
+  color:rgba(255,255,255,.45);
+}
+
+.footer-bottom-right{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  color:rgba(255,255,255,.45);
+  font-size:13px;
+}
+
+.footer-bottom-right a{
+  color:#E03533;
+}
+
+.footer-bottom-right a:hover{
+  color:#fff;
+}
+
+/* Tablet */
+@media(max-width:992px){
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+    gap:35px;
+  }
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .footer-wrap{
+    padding:0 20px;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:28px;
+    padding:42px 0;
+  }
+
+  .footer-brand p{
+    max-width:100%;
+  }
+
+  .footer-logo{
+    width:48px;
+    height:48px;
+  }
+
+  .footer-logo-text span{
+    font-size:16px;
+  }
+
+  .footer-logo-text small{
+    font-size:9px;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .footer-bottom-right{
+    flex-direction:column;
+    gap:6px;
+  }
+}
+</style>
+
+<div class="footer-divider"></div>
+
+<div class="footer-wrap">
+
+  <div class="footer-grid">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+
+      <a href="index.html" class="footer-logo-row">
+
+        <img src="assets/logo1.png" alt="Noor College Logo" class="footer-logo">
+
+        <div class="footer-logo-text">
+          <span>Noor College</span>
+          <small>School of Nursing</small>
+        </div>
+
+      </a>
+
+      <p>
+        Producing compassionate, competent nursing professionals guided by values of dignity, discipline, and dedication. Affiliated to RGUHS, Bangalore.
+      </p>
+
+      <div class="footer-social">
+        <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+
+    </div>
+
+    <!-- Programs -->
+    <div class="footer-col">
+      <h4>Programs</h4>
+      <ul>
+        <li><a href="gnm.html">GNM Diploma</a></li>
+        <li><a href="bscnursing.html">B.Sc Nursing</a></li>
+        <li><a href="pbBsc.html">Post Basic B.Sc</a></li>
+        <li><a href="mscnursing.html">M.Sc Nursing</a></li>
+      </ul>
+    </div>
+
+    <!-- Links -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="ourcourse.html">Courses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Accreditation -->
+    <div class="footer-col">
+      <h4>Accreditation</h4>
+      <ul>
+        <li><a href="#">RGUHS Affiliated</a></li>
+        <li><a href="#">INC Approved</a></li>
+        <li><a href="#">Karnataka Nursing Council</a></li>
+      </ul>
+
+      <div style="margin-top:18px;">
+        <div class="footer-badge">Est. Bangalore</div><br>
+        <div class="footer-badge">Noor Education Trust</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+
+    <p>
+      © 2025 Noor College & School of Nursing. All rights reserved.
+    </p>
+
+    <div class="footer-bottom-right">
+      <span>Under <a href="#">Noor Education Trust</a></span>
+      <span>|</span>
+      <span>Affiliated to <a href="#">RGUHS</a></span>
+    </div>
+
+  </div>
+
+</div>
+
+</footer>

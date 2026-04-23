@@ -1,1238 +1,1897 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GNM – Diploma in General Nursing & Midwifery | Noor College</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --red:#C0211F;--red-light:#E03533;--red-dark:#8B1614;
-  --navy:#0C1A3A;--navy-mid:#172D5C;--navy-light:#1E3A70;
-  --white:#FFFFFF;--off-white:#F7F6F2;--light-gray:#E8EAF0;
-  --mid-gray:#B8BCC8;--text-muted:#64748B;--gold:#C9963A;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;color:var(--navy);background:var(--white);overflow-x:hidden}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noor College & School of Nursing | Home</title>
 
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:200;
-  height:70px;display:flex;align-items:center;justify-content:space-between;
-  padding:0 6%;
-  background:rgba(12,26,58,0.97);backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(192,33,31,0.3);
-  transition:height 0.3s,background 0.3s;
-}
-.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo-mark{
-  width:42px;height:42px;border-radius:50%;
-  background:linear-gradient(135deg,var(--red),var(--red-dark));
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:#fff;
-  box-shadow:0 0 0 2px rgba(192,33,31,0.4);
-}
-.logo-words span{display:block;font-size:14px;font-weight:600;color:#fff}
-.logo-words small{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid-gray)}
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
-.menu-toggle{
-  display:none;
-  background:none;
-  border:none;
-  color:#fff;
-  font-size:30px;
-  cursor:pointer;
-  line-height:1;
+  <style>
+    :root{
+      --red:#C0211F;
+      --red-light:#E03533;
+      --red-dark:#8B1614;
+      --navy:#0C1A3A;
+      --navy-mid:#172D5C;
+      --navy-light:#1E3A70;
+      --white:#FFFFFF;
+      --off-white:#F7F6F2;
+      --light-gray:#E8EAF0;
+      --mid-gray:#B8BCC8;
+      --text-muted:#64748B;
+      --gold:#C9963A;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'DM Sans',sans-serif;
+      color:var(--navy);
+      background:var(--white);
+      overflow-x:hidden;
+      padding-top:78px;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    section{
+      padding:100px 5%;
+    }
+
+    .section-inner{
+      max-width:1100px;
+      margin:0 auto;
+    }
+
+    .section-tag{
+      display:inline-block;
+      font-size:11px;
+      font-weight:600;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      color:var(--red);
+      margin-bottom:12px;
+      padding:4px 0;
+      position:relative;
+    }
+
+    .section-tag::before{
+      content:'——  ';
+      opacity:0.5;
+    }
+
+    .section-title{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(28px,4vw,46px);
+      font-weight:700;
+      color:var(--navy);
+      line-height:1.2;
+      margin-bottom:16px;
+    }
+
+    .section-title em{
+      color:var(--red);
+      font-style:normal;
+    }
+
+    .section-sub{
+      font-size:17px;
+      color:var(--text-muted);
+      line-height:1.8;
+      max-width:580px;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(40px);
+      transition:opacity .7s ease,transform .7s ease;
+    }
+
+    .reveal.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* HERO */
+    .hero{
+      min-height:calc(100vh - 78px);
+      background:var(--navy);
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .hero-bg-anim{
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(ellipse 80% 60% at 60% 40%, rgba(192,33,31,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 80% at 10% 80%, rgba(25,47,90,0.8) 0%, transparent 60%),
+        linear-gradient(135deg, #0D1B3E 0%, #1A2F5A 50%, #0D1B3E 100%);
+      animation:bgShift 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes bgShift{
+      from{background-position:0% 50%}
+      to{background-position:100% 50%}
+    }
+
+    .hero-lines{
+      position:absolute;
+      inset:0;
+      overflow:hidden;
+      pointer-events:none;
+    }
+
+    .hero-line{
+      position:absolute;
+      background:rgba(192,33,31,0.15);
+      animation:lineMove 12s linear infinite;
+    }
+
+    .hero-line:nth-child(1){width:1px;height:40%;top:-10%;left:15%;animation-delay:0s}
+    .hero-line:nth-child(2){width:1px;height:60%;top:-20%;left:35%;animation-delay:2s;animation-duration:15s}
+    .hero-line:nth-child(3){width:1px;height:30%;top:-5%;left:65%;animation-delay:4s;animation-duration:10s}
+    .hero-line:nth-child(4){width:1px;height:50%;top:-15%;left:82%;animation-delay:1s;animation-duration:13s}
+    .hero-line:nth-child(5){width:60%;height:1px;left:-10%;top:30%;animation:lineH 18s linear infinite;animation-delay:3s}
+    .hero-line:nth-child(6){width:40%;height:1px;left:-5%;top:65%;animation:lineH 22s linear infinite;animation-delay:6s}
+
+    @keyframes lineMove{
+      0%{transform:translateY(0);opacity:0}
+      10%{opacity:1}
+      90%{opacity:1}
+      100%{transform:translateY(120vh);opacity:0}
+    }
+
+    @keyframes lineH{
+      0%{transform:translateX(0);opacity:0}
+      10%{opacity:1}
+      90%{opacity:1}
+      100%{transform:translateX(130vw);opacity:0}
+    }
+
+    .orb{
+      position:absolute;
+      border-radius:50%;
+      pointer-events:none;
+      animation:orbFloat 6s ease-in-out infinite;
+    }
+
+    .orb1{
+      width:300px;
+      height:300px;
+      right:-50px;
+      top:10%;
+      background:radial-gradient(circle, rgba(192,33,31,0.25) 0%, transparent 70%);
+      animation-delay:0s;
+    }
+
+    .orb2{
+      width:200px;
+      height:200px;
+      left:5%;
+      bottom:20%;
+      background:radial-gradient(circle, rgba(212,168,67,0.15) 0%, transparent 70%);
+      animation-delay:2s;
+    }
+
+    .orb3{
+      width:150px;
+      height:150px;
+      right:25%;
+      bottom:15%;
+      background:radial-gradient(circle, rgba(192,33,31,0.2) 0%, transparent 70%);
+      animation-delay:4s;
+    }
+
+    @keyframes orbFloat{
+      0%,100%{transform:translateY(0) scale(1)}
+      50%{transform:translateY(-20px) scale(1.05)}
+    }
+
+   @media(max-width:768px){
+
+.hero{
+min-height:auto !important;
+padding:35px 0 25px;
 }
 
-nav ul{list-style:none;display:flex;gap:32px;align-items:center}
-nav ul a{
-  color:rgba(255,255,255,0.75);text-decoration:none;font-size:12.5px;
-  font-weight:500;letter-spacing:0.8px;text-transform:uppercase;
-  position:relative;padding-bottom:3px;transition:color 0.3s;
+.hero-content{
+padding:30px 18px;
 }
-nav ul a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;background:var(--red-light);transition:width 0.3s}
-nav ul a:hover{color:#fff}
-nav ul a:hover::after{width:100%}
-.btn-nav{background:var(--red)!important;color:#fff!important;padding:8px 22px!important;border-radius:3px;font-weight:600!important;transition:background 0.3s!important}
-.btn-nav:hover{background:var(--red-light)!important}
-.btn-nav::after{display:none!important}
 
-/* dropdown */
-.dropdown{position:relative}
-.dropdown > a{display:inline-flex;align-items:center;gap:6px}
-.dropdown-menu{
-  position:absolute;
-  top:calc(100% + 14px);
-  left:0;
-  min-width:250px;
-  background:#10224b;
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:6px;
-  padding:10px 0;
-  display:none;
-  box-shadow:0 18px 40px rgba(0,0,0,0.28);
+.scroll-ind{
+position:static;
+transform:none;
+margin-top:20px;
 }
-.dropdown:hover .dropdown-menu{display:block}
-.dropdown-menu li{list-style:none}
-.dropdown-menu a{
-  display:block;
-  padding:12px 18px;
-  color:rgba(255,255,255,0.82);
-  font-size:12px;
-  letter-spacing:0.8px;
-}
-.dropdown-menu a:hover{
-  color:#fff;
-  background:rgba(255,255,255,0.05);
-}
-.dropdown-menu a::after{display:none!important}
 
-.mobile-program-toggle{
-  display:none;
+}
+
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:rgba(192,33,31,0.2);
+      border:1px solid rgba(192,33,31,0.5);
+      color:#F4A0A0;
+      padding:6px 18px;
+      border-radius:30px;
+      font-size:12px;
+      font-weight:500;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      margin-bottom:28px;
+      animation:fadeInUp .8s ease .3s both;
+    }
+
+    .hero-badge::before{
+      content:'';
+      width:6px;
+      height:6px;
+      background:var(--red-light);
+      border-radius:50%;
+      animation:pulse 2s infinite;
+    }
+
+    @keyframes pulse{
+      0%,100%{opacity:1;transform:scale(1)}
+      50%{opacity:.5;transform:scale(1.4)}
+    }
+
+    .hero h1{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(36px,6vw,72px);
+      font-weight:700;
+      color:var(--white);
+      line-height:1.1;
+      margin-bottom:24px;
+      animation:fadeInUp .8s ease .5s both;
+    }
+
+    .hero h1 em{
+      color:var(--red-light);
+      font-style:normal;
+    }
+
+    .hero p{
+      font-size:18px;
+      color:rgba(255,255,255,0.72);
+      line-height:1.8;
+      max-width:680px;
+      margin:0 auto 40px;
+      font-weight:300;
+      animation:fadeInUp .8s ease .7s both;
+    }
+
+    .hero-btns{
+      display:flex;
+      gap:16px;
+      justify-content:center;
+      flex-wrap:wrap;
+      animation:fadeInUp .8s ease .9s both;
+    }
+
+    .btn-primary,
+    .btn-outline,
+    .btn-white{
+      text-decoration:none;
+      transition:all .3s ease;
+    }
+
+    .btn-primary{
+      background:var(--red);
+      color:var(--white);
+      padding:16px 40px;
+      border-radius:4px;
+      font-size:15px;
+      font-weight:600;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:2px solid var(--red);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .btn-primary::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg, transparent 30%, rgba(255,255,255,0.15) 50%, transparent 70%);
+      transform:translateX(-100%);
+      transition:transform .5s;
+    }
+
+    .btn-primary:hover::before{
+      transform:translateX(100%);
+    }
+
+    .btn-primary:hover{
+      background:var(--red-light);
+      border-color:var(--red-light);
+      transform:translateY(-2px);
+      box-shadow:0 8px 30px rgba(192,33,31,0.4);
+    }
+
+    .btn-outline{
+      background:transparent;
+      color:var(--white);
+      padding:16px 40px;
+      border-radius:4px;
+      font-size:15px;
+      font-weight:500;
+      border:2px solid rgba(255,255,255,0.3);
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .btn-outline:hover{
+      border-color:var(--white);
+      background:rgba(255,255,255,0.08);
+      transform:translateY(-2px);
+    }
+
+    .btn-white{
+      background:var(--white);
+      color:var(--red);
+      padding:18px 48px;
+      border-radius:4px;
+      font-size:16px;
+      font-weight:700;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      box-shadow:0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .btn-white:hover{
+      transform:translateY(-3px);
+      box-shadow:0 12px 40px rgba(0,0,0,0.3);
+    }
+
+    .scroll-ind{
+      position:absolute;
+      bottom:30px;
+      left:50%;
+      transform:translateX(-50%);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:8px;
+      color:rgba(255,255,255,0.4);
+      font-size:11px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      animation:bounce 2s infinite;
+      z-index:2;
+    }
+
+    .scroll-ind::after{
+      content:'';
+      width:1px;
+      height:40px;
+      background:linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+    }
+
+    @keyframes bounce{
+      0%,100%{transform:translateX(-50%) translateY(0)}
+      50%{transform:translateX(-50%) translateY(6px)}
+    }
+
+    @keyframes fadeInUp{
+      from{opacity:0;transform:translateY(30px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+
+    /* STATS */
+    .stats-ribbon{
+      background:var(--white);
+      border-bottom:1px solid var(--light-gray);
+      position:relative;
+      z-index:10;
+      box-shadow:0 4px 30px rgba(13,27,62,0.1);
+    }
+
+    .stats-inner{
+      max-width:1100px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+    }
+
+    .stat-item{
+      padding:36px 24px;
+      text-align:center;
+      border-right:1px solid var(--light-gray);
+      position:relative;
+      overflow:hidden;
+      transition:background .3s;
+    }
+
+    .stat-item:last-child{
+      border-right:none;
+    }
+
+    .stat-item:hover{
+      background:var(--off-white);
+    }
+
+    .stat-item::before{
+      content:'';
+      position:absolute;
+      bottom:0;
+      left:50%;
+      transform:translateX(-50%);
+      width:0;
+      height:3px;
+      background:var(--red);
+      transition:width .4s;
+    }
+
+    .stat-item:hover::before{
+      width:60%;
+    }
+
+    .stat-num{
+      font-family:'Playfair Display',serif;
+      font-size:42px;
+      font-weight:700;
+      color:var(--navy);
+      line-height:1;
+      display:block;
+      margin-bottom:4px;
+    }
+
+    .stat-num span{
+      color:var(--red);
+    }
+
+    .stat-label{
+      font-size:12px;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      color:var(--text-muted);
+      font-weight:500;
+    }
+
+    /* ABOUT */
+    .about{
+      background:var(--off-white);
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:80px;
+      align-items:center;
+    }
+
+    .about-img-wrap{
+      position:relative;
+    }
+
+    .about-img-main{
+      width:100%;
+      height:480px;
+      background:#f3f4f6;
+      border-radius:2px;
+      overflow:hidden;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+  .about-img-main img{
   width:100%;
-  background:none;
-  border:none;
-  color:rgba(255,255,255,0.75);
-  font-size:12.5px;
-  font-weight:500;
-  letter-spacing:0.8px;
-  text-transform:uppercase;
-  text-align:left;
-  padding:0;
-  cursor:pointer;
+  height:100%;
+  object-fit:cover; /* ✅ fills properly */
+  object-position:center;
+  display:block;
 }
-.mobile-submenu{display:none}
-/* Other course links */
-.other-link{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid var(--light-gray);text-decoration:none;color:var(--navy);font-size:14px;font-weight:500;transition:all 0.3s}
-.other-link:last-child{border-bottom:none}
-.other-link::before{content:'→';font-size:11px;color:var(--red)}
-.other-link:hover{color:var(--red);padding-left:4px}
 
-@media(max-width:960px){
-  .menu-toggle{display:block}
-  #navMenu{
-    position:absolute;
-    top:70px;
-    left:0;
-    right:0;
-    background:#0C1A3A;
-    display:none;
-    flex-direction:column;
-    align-items:flex-start;
-    gap:16px;
-    padding:20px 6%;
-    border-top:1px solid rgba(255,255,255,0.06);
-  }
-  #navMenu.show{display:flex}
-  #navMenu li{width:100%}
-  #navMenu li a{padding-bottom:0}
-  .dropdown > a{display:none}
-  .mobile-program-toggle{
-    display:block;
-    width:100%;
-  }
-  .mobile-submenu{
-    display:none;
-    margin-top:12px;
-    padding-left:12px;
-    border-left:2px solid rgba(192,33,31,0.35);
-  }
-  .mobile-submenu.show{display:block}
-  .mobile-submenu li{margin-bottom:10px}
-  .dropdown-menu{display:none!important}
+    .about-img-accent{
+      position:absolute;
+      bottom:-72px;
+      right:-24px;
+      width:180px;
+      height:180px;
+      background:var(--red);
+      border-radius:2px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      color:var(--white);
+      padding:20px;
+      box-shadow:0 20px 40px rgba(192,33,31,0.3);
+    }
 
-  .page-body{grid-template-columns:1fr;gap:48px}
-  .sidebar{position:static}
-  .clinical-grid,.subject-grid,.career-grid{grid-template-columns:1fr 1fr}
-  .why-grid{grid-template-columns:1fr}
-  .footer-top{grid-template-columns:1fr 1fr}
+    .about-img-accent strong{
+      font-size:48px;
+      font-family:'Playfair Display',serif;
+      font-weight:700;
+    }
+
+    .about-img-accent span{
+      font-size:12px;
+      text-align:center;
+      letter-spacing:1px;
+      opacity:.9;
+    }
+
+    .about-img-line{
+      position:absolute;
+      top:-16px;
+      left:-16px;
+      width:80px;
+      height:80px;
+      border-top:3px solid var(--red);
+      border-left:3px solid var(--red);
+    }
+
+    .about-points{
+      list-style:none;
+      margin-top:32px;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+
+    .about-points li{
+      display:flex;
+      align-items:flex-start;
+      gap:14px;
+      font-size:15px;
+      line-height:1.6;
+      color:#374151;
+    }
+
+    .about-points li::before{
+      content:'';
+      min-width:20px;
+      height:20px;
+      border-radius:50%;
+      background:var(--red);
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 5l2.5 2.5 4-4' stroke='white' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-size:12px;
+      background-repeat:no-repeat;
+      background-position:center;
+      margin-top:2px;
+      flex-shrink:0;
+    }
+
+    .about-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      background:rgba(192,33,31,0.08);
+      color:var(--red);
+      border:1px solid rgba(192,33,31,0.2);
+      padding:4px 14px;
+      border-radius:30px;
+      font-size:12px;
+      font-weight:600;
+      margin-bottom:16px;
+      letter-spacing:.5px;
+    }
+
+    /* PROGRAMS */
+    .programs{
+      background:var(--white);
+    }
+
+    .programs-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:24px;
+      margin-top:56px;
+    }
+
+    .program-card{
+      border:1px solid var(--light-gray);
+      border-radius:2px;
+      padding:40px 36px;
+      position:relative;
+      overflow:hidden;
+      transition:all .4s;
+      cursor:pointer;
+      background:var(--white);
+    }
+
+    .program-card::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      height:3px;
+      background:var(--red);
+      transform:scaleX(0);
+      transform-origin:left;
+      transition:transform .4s;
+    }
+
+    .program-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 20px 50px rgba(13,27,62,0.12);
+      border-color:transparent;
+    }
+
+    .program-card:hover::before{
+      transform:scaleX(1);
+    }
+
+    .program-num{
+      font-family:'Playfair Display',serif;
+      font-size:60px;
+      font-weight:700;
+      color:var(--light-gray);
+      line-height:1;
+      position:absolute;
+      top:20px;
+      right:24px;
+      transition:color .3s;
+    }
+
+    .program-card:hover .program-num{
+      color:rgba(192,33,31,0.1);
+    }
+
+    .program-icon{
+      width:52px;
+      height:52px;
+      border-radius:50%;
+      background:rgba(192,33,31,0.1);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:22px;
+      margin-bottom:20px;
+      transition:background .3s,color .3s;
+      color:var(--red);
+    }
+
+    .program-card:hover .program-icon{
+      background:var(--red);
+      color:#fff;
+    }
+
+    .program-card h3{
+      font-family:'Playfair Display',serif;
+      font-size:22px;
+      font-weight:700;
+      color:var(--navy);
+      margin-bottom:6px;
+      position:relative;
+      z-index:1;
+    }
+
+    .program-duration{
+      font-size:12px;
+      color:var(--red);
+      font-weight:600;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      margin-bottom:16px;
+      position:relative;
+      z-index:1;
+    }
+
+    .program-card p{
+      font-size:14px;
+      color:var(--text-muted);
+      line-height:1.7;
+      position:relative;
+      z-index:1;
+    }
+
+    .program-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      color:var(--red);
+      font-size:13px;
+      font-weight:600;
+      margin-top:20px;
+      text-decoration:none;
+      transition:gap .3s;
+      position:relative;
+      z-index:1;
+    }
+
+    .program-link:hover{
+      gap:10px;
+    }
+
+    /* WHY */
+    .why{
+      background:var(--navy);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .why::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:radial-gradient(ellipse 60% 80% at 80% 50%, rgba(192,33,31,0.15) 0%, transparent 70%);
+    }
+
+    .why .section-title{color:#fff}
+    .why .section-sub{color:rgba(255,255,255,0.6)}
+    .why .section-tag{color:#F4A0A0}
+
+    .why-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.05);
+      margin-top:56px;
+      position:relative;
+      z-index:1;
+    }
+
+    .why-item{
+      background:rgba(255,255,255,0.02);
+      padding:40px 32px;
+      transition:background .3s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .why-item:hover{
+      background:rgba(255,255,255,0.05);
+    }
+
+    .why-item::after{
+      content:'';
+      position:absolute;
+      bottom:0;
+      left:0;
+      right:0;
+      height:2px;
+      background:linear-gradient(90deg, var(--red), transparent);
+      transform:scaleX(0);
+      transform-origin:left;
+      transition:transform .4s;
+    }
+
+    .why-item:hover::after{
+      transform:scaleX(1);
+    }
+
+    .why-icon{
+      width:48px;
+      height:48px;
+      margin-bottom:20px;
+      background:rgba(192,33,31,0.2);
+      border-radius:8px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:20px;
+      color:#fff;
+    }
+
+    .why-item h4{
+      font-size:16px;
+      font-weight:600;
+      color:#fff;
+      margin-bottom:10px;
+    }
+
+    .why-item p{
+      font-size:14px;
+      color:rgba(255,255,255,0.55);
+      line-height:1.7;
+    }
+
+    /* FACILITIES */
+    .facilities{
+      background:var(--off-white);
+    }
+
+    .facilities-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+      margin-top:56px;
+    }
+
+    .facility-card{
+      background:var(--white);
+      border:1px solid var(--light-gray);
+      border-radius:2px;
+      padding:32px 28px;
+      display:flex;
+      gap:20px;
+      align-items:flex-start;
+      transition:all .3s;
+    }
+
+    .facility-card:hover{
+      box-shadow:0 8px 30px rgba(13,27,62,0.08);
+      transform:translateY(-3px);
+      border-color:rgba(192,33,31,0.2);
+    }
+
+    .fac-icon{
+      font-size:28px;
+      flex-shrink:0;
+      width:56px;
+      height:56px;
+      background:rgba(13,27,62,0.05);
+      border-radius:8px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--navy);
+    }
+
+    .fac-title{
+      font-size:15px;
+      font-weight:600;
+      color:var(--navy);
+      margin-bottom:6px;
+    }
+
+    .fac-desc{
+      font-size:13px;
+      color:var(--text-muted);
+      line-height:1.6;
+    }
+
+    /* CAMPUS */
+    .campus{
+      background:var(--white);
+    }
+
+    .campus-inner{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:80px;
+      align-items:center;
+    }
+
+    .campus-img{
+  height:500px; /* fixed height */
+  border-radius:2px;
+  position:relative;
+  overflow:hidden;
 }
-@media(max-width:600px){
-  .clinical-grid,.subject-grid,.career-grid,.why-grid{grid-template-columns:1fr}
-  .footer-top{grid-template-columns:1fr}
+
+    .campus-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center; /* important */
+  display:block;
 }
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    background: var(--navy);
-    position: relative; overflow: hidden;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .hero-bg-anim {
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(ellipse 80% 60% at 60% 40%, rgba(192,33,31,0.18) 0%, transparent 70%),
-      radial-gradient(ellipse 60% 80% at 10% 80%, rgba(25,47,90,0.8) 0%, transparent 60%),
-      linear-gradient(135deg, #0D1B3E 0%, #1A2F5A 50%, #0D1B3E 100%);
-    animation: bgShift 8s ease-in-out infinite alternate;
-  }
-  @keyframes bgShift {
-    from { background-position: 0% 50%; }
-    to { background-position: 100% 50%; }
-  }
-  /* Animated geometric lines */
-  .hero-lines {
-    position: absolute; inset: 0; overflow: hidden;
-    pointer-events: none;
-  }
-  .hero-line {
-    position: absolute; background: rgba(192,33,31,0.15);
-    animation: lineMove 12s linear infinite;
-  }
-  .hero-line:nth-child(1) { width: 1px; height: 40%; top: -10%; left: 15%; animation-delay: 0s; }
-  .hero-line:nth-child(2) { width: 1px; height: 60%; top: -20%; left: 35%; animation-delay: 2s; animation-duration: 15s; }
-  .hero-line:nth-child(3) { width: 1px; height: 30%; top: -5%; left: 65%; animation-delay: 4s; animation-duration: 10s; }
-  .hero-line:nth-child(4) { width: 1px; height: 50%; top: -15%; left: 82%; animation-delay: 1s; animation-duration: 13s; }
-  .hero-line:nth-child(5) { width: 60%; height: 1px; left: -10%; top: 30%; animation: lineH 18s linear infinite; animation-delay: 3s; }
-  .hero-line:nth-child(6) { width: 40%; height: 1px; left: -5%; top: 65%; animation: lineH 22s linear infinite; animation-delay: 6s; }
-  @keyframes lineMove { 0% { transform: translateY(0); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(120vh); opacity: 0; } }
-  @keyframes lineH { 0% { transform: translateX(0); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateX(130vw); opacity: 0; } }
+.campus-img img{
+  transition: transform 0.5s ease;
+}
 
-  /* Floating orbs */
-  .orb {
-    position: absolute; border-radius: 50%; pointer-events: none;
-    animation: orbFloat 6s ease-in-out infinite;
-  }
-  .orb1 { width: 300px; height: 300px; right: -50px; top: 10%; background: radial-gradient(circle, rgba(192,33,31,0.25) 0%, transparent 70%); animation-delay: 0s; }
-  .orb2 { width: 200px; height: 200px; left: 5%; bottom: 20%; background: radial-gradient(circle, rgba(212,168,67,0.15) 0%, transparent 70%); animation-delay: 2s; }
-  .orb3 { width: 150px; height: 150px; right: 25%; bottom: 15%; background: radial-gradient(circle, rgba(192,33,31,0.2) 0%, transparent 70%); animation-delay: 4s; }
-  @keyframes orbFloat { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-20px) scale(1.05); } }
+.campus-img:hover img{
+  transform: scale(1.05);
+}
 
-  .hero-content {
-    position: relative; z-index: 2;
-    max-width: 900px; margin: 0 auto; padding: 120px 5% 80px;
-    text-align: center;
-  }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(192,33,31,0.2); border: 1px solid rgba(192,33,31,0.5);
-    color: #F4A0A0; padding: 6px 18px; border-radius: 30px;
-    font-size: 12px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
-    margin-bottom: 28px;
-    animation: fadeInUp 0.8s ease 0.3s both;
-  }
-  .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--red-light); border-radius: 50%; animation: pulse 2s infinite; }
-  @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.4); } }
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(36px, 6vw, 72px);
-    font-weight: 700; color: var(--white); line-height: 1.1;
-    margin-bottom: 24px;
-    animation: fadeInUp 0.8s ease 0.5s both;
-  }
-  .hero h1 em { color: var(--red-light); font-style: normal; }
-  .hero p {
-    font-size: 18px; color: rgba(255,255,255,0.72); line-height: 1.8;
-    max-width: 680px; margin: 0 auto 40px;
-    font-weight: 300;
-    animation: fadeInUp 0.8s ease 0.7s both;
-  }
-  .hero-btns {
-    display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
-    animation: fadeInUp 0.8s ease 0.9s both;
-  }
-  .btn-primary {
-    background: var(--red); color: var(--white);
-    padding: 16px 40px; border-radius: 4px;
-    font-size: 15px; font-weight: 600; text-decoration: none;
-    display: inline-flex; align-items: center; gap: 8px;
-    transition: all 0.3s; border: 2px solid var(--red);
-    position: relative; overflow: hidden;
-  }
-  .btn-primary::before {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(135deg, transparent 30%, rgba(255,255,255,0.15) 50%, transparent 70%);
-    transform: translateX(-100%); transition: transform 0.5s;
-  }
-  .btn-primary:hover::before { transform: translateX(100%); }
-  .btn-primary:hover { background: var(--red-light); border-color: var(--red-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(192,33,31,0.4); }
-  .btn-outline {
-    background: transparent; color: var(--white);
-    padding: 16px 40px; border-radius: 4px;
-    font-size: 15px; font-weight: 500; text-decoration: none;
-    border: 2px solid rgba(255,255,255,0.3);
-    transition: all 0.3s;
-    display: inline-flex; align-items: center; gap: 8px;
-  }
-  .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+    .campus-img::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(13,27,62,0.6) 0%, transparent 50%);
+    }
 
-  /* Scroll indicator */
-  .scroll-ind {
-    position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
-    display: flex; flex-direction: column; align-items: center; gap: 8px;
-    color: rgba(255,255,255,0.4); font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
-    animation: bounce 2s infinite;
-  }
-  .scroll-ind::after { content: ''; width: 1px; height: 40px; background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent); }
-  @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(6px); } }
+    .campus-caption{
+      position:absolute;
+      bottom:24px;
+      left:24px;
+      right:24px;
+      z-index:2;
+      color:#fff;
+    }
 
-  @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .campus-caption strong{
+      font-size:18px;
+      font-family:'Playfair Display',serif;
+      display:block;
+      margin-bottom:4px;
+    }
 
-  /* ── STATS RIBBON ── */
-  .stats-ribbon {
-    background: var(--white); border-bottom: 1px solid var(--light-gray);
-    position: relative; z-index: 10;
-    box-shadow: 0 4px 30px rgba(13,27,62,0.1);
-  }
-  .stats-inner {
-    max-width: 1100px; margin: 0 auto;
-    display: grid; grid-template-columns: repeat(4, 1fr);
-  }
-  .stat-item {
-    padding: 36px 24px; text-align: center;
-    border-right: 1px solid var(--light-gray);
-    position: relative; overflow: hidden;
-    transition: background 0.3s;
-  }
-  .stat-item:last-child { border-right: none; }
-  .stat-item:hover { background: var(--off-white); }
-  .stat-item::before {
-    content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
-    width: 0; height: 3px; background: var(--red);
-    transition: width 0.4s;
-  }
-  .stat-item:hover::before { width: 60%; }
-  .stat-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 42px; font-weight: 700; color: var(--navy);
-    line-height: 1;
-    display: block; margin-bottom: 4px;
-  }
-  .stat-num span { color: var(--red); }
-  .stat-label { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-gray); font-weight: 500; }
+    .campus-caption span{
+      font-size:13px;
+      opacity:.7;
+    }
 
-  /* ── SECTION COMMONS ── */
-  section { padding: 100px 5%; }
-  .section-inner { max-width: 1100px; margin: 0 auto; }
-  .section-tag {
-    display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 3px;
-    text-transform: uppercase; color: var(--red);
-    margin-bottom: 12px; padding: 4px 0;
-    position: relative;
-  }
-  .section-tag::before { content: '——  '; opacity: 0.5; }
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(28px, 4vw, 46px); font-weight: 700;
-    color: var(--navy); line-height: 1.2; margin-bottom: 16px;
-  }
-  .section-title em { color: var(--red); font-style: normal; }
-  .section-sub { font-size: 17px; color: var(--text-gray); line-height: 1.8; max-width: 580px; }
-  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
+    .vision-card{
+      background:linear-gradient(135deg, var(--navy), var(--navy-mid));
+      color:#fff;
+      padding:40px;
+      border-radius:2px;
+      margin-top:32px;
+      position:relative;
+      overflow:hidden;
+    }
 
-  /* ── ABOUT ── */
-  .about { background: var(--off-white); }
-  .about-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 80px; align-items: center;
-  }
-  .about-img-wrap {
-    position: relative;
-  }
-  .about-img-main {
-    width: 100%; height: 480px;
-    background: linear-gradient(135deg, var(--navy-mid), var(--navy));
-    border-radius: 2px; overflow: hidden; position: relative;
-  }
-  .about-img-main img { width: 100%; height: 100%; object-fit: cover; }
-  .about-img-main-placeholder {
-    width: 100%; height: 100%;
-    background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy) 100%);
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 12px;
-  }
-  .img-label {
-    font-size: 13px; color: rgba(255,255,255,0.5); letter-spacing: 2px; text-transform: uppercase;
-  }
-  .img-icon { font-size: 48px; }
-  .about-img-accent {
-    position: absolute; bottom: -24px; right: -24px;
-    width: 180px; height: 180px;
-    background: var(--red); border-radius: 2px;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    color: var(--white); padding: 20px;
-    box-shadow: 0 20px 40px rgba(192,33,31,0.3);
-  }
-  .about-img-accent strong { font-size: 48px; font-family: 'Playfair Display', serif; font-weight: 700; }
-  .about-img-accent span { font-size: 12px; text-align: center; letter-spacing: 1px; opacity: 0.9; }
-  .about-img-line {
-    position: absolute; top: -16px; left: -16px;
-    width: 80px; height: 80px;
-    border-top: 3px solid var(--red); border-left: 3px solid var(--red);
-  }
-  .about-points { list-style: none; margin-top: 32px; display: flex; flex-direction: column; gap: 16px; }
-  .about-points li {
-    display: flex; align-items: flex-start; gap: 14px;
-    font-size: 15px; line-height: 1.6; color: #374151;
-  }
-  .about-points li::before {
-    content: ''; min-width: 20px; height: 20px; border-radius: 50%;
-    background: var(--red); display: flex; align-items: center; justify-content: center;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 5l2.5 2.5 4-4' stroke='white' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-size: 12px; background-repeat: no-repeat; background-position: center;
-    margin-top: 2px; flex-shrink: 0;
-  }
-  .about-tag {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: rgba(192,33,31,0.08); color: var(--red);
-    border: 1px solid rgba(192,33,31,0.2);
-    padding: 4px 14px; border-radius: 30px; font-size: 12px; font-weight: 600; margin-bottom: 16px;
-    letter-spacing: 0.5px;
-  }
+    .vision-card::before{
+      content:'"';
+      position:absolute;
+      top:-10px;
+      right:20px;
+      font-size:120px;
+      font-family:'Playfair Display',serif;
+      color:rgba(192,33,31,0.2);
+      line-height:1;
+    }
 
-  /* ── PROGRAMS ── */
-  .programs { background: var(--white); }
-  .programs-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 24px; margin-top: 56px;
-  }
-  .program-card {
-    border: 1px solid var(--light-gray); border-radius: 2px;
-    padding: 40px 36px; position: relative; overflow: hidden;
-    transition: all 0.4s; cursor: pointer;
-    background: var(--white);
-  }
-  .program-card::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0;
-    height: 3px; background: var(--red);
-    transform: scaleX(0); transform-origin: left;
-    transition: transform 0.4s;
-  }
-  .program-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(13,27,62,0.12); border-color: transparent; }
-  .program-card:hover::before { transform: scaleX(1); }
-  .program-num {
-    font-family: 'Playfair Display', serif; font-size: 60px; font-weight: 700;
-    color: var(--light-gray); line-height: 1; position: absolute; top: 20px; right: 24px;
-    transition: color 0.3s;
-  }
-  .program-card:hover .program-num { color: rgba(192,33,31,0.1); }
-  .program-icon {
-    width: 52px; height: 52px; border-radius: 50%;
-    background: rgba(192,33,31,0.1); display: flex; align-items: center; justify-content: center;
-    font-size: 22px; margin-bottom: 20px;
-    transition: background 0.3s;
-  }
-  .program-card:hover .program-icon { background: var(--red); }
-  .program-card h3 {
-    font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
-    color: var(--navy); margin-bottom: 6px;
-  }
-  .program-duration {
-    font-size: 12px; color: var(--red); font-weight: 600; letter-spacing: 1px;
-    text-transform: uppercase; margin-bottom: 16px;
-  }
-  .program-card p { font-size: 14px; color: var(--text-gray); line-height: 1.7; }
-  .program-link {
-    display: inline-flex; align-items: center; gap: 6px;
-    color: var(--red); font-size: 13px; font-weight: 600; margin-top: 20px;
-    text-decoration: none; transition: gap 0.3s;
-  }
-  .program-link:hover { gap: 10px; }
+    .vision-card h4{
+      font-size:13px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:#F4A0A0;
+      margin-bottom:16px;
+      position:relative;
+      z-index:1;
+    }
 
-  /* ── WHY NOOR ── */
-  .why { background: var(--navy); overflow: hidden; position: relative; }
-  .why::before {
-    content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(192,33,31,0.15) 0%, transparent 70%);
-  }
-  .why .section-title { color: var(--white); }
-  .why .section-sub { color: rgba(255,255,255,0.6); }
-  .why .section-tag { color: #F4A0A0; }
-  .why-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 1px; background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.05);
-    margin-top: 56px; position: relative; z-index: 1;
-  }
-  .why-item {
-    background: rgba(255,255,255,0.02); padding: 40px 32px;
-    transition: background 0.3s;
-    position: relative; overflow: hidden;
-  }
-  .why-item:hover { background: rgba(255,255,255,0.05); }
-  .why-item::after {
-    content: ''; position: absolute; bottom: 0; left: 0; right: 0;
-    height: 2px; background: linear-gradient(90deg, var(--red), transparent);
-    transform: scaleX(0); transform-origin: left;
-    transition: transform 0.4s;
-  }
-  .why-item:hover::after { transform: scaleX(1); }
-  .why-icon {
-    width: 48px; height: 48px; margin-bottom: 20px;
-    background: rgba(192,33,31,0.2); border-radius: 8px;
-    display: flex; align-items: center; justify-content: center; font-size: 20px;
-  }
-  .why-item h4 { font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 10px; }
-  .why-item p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+    .vision-card p{
+      font-size:16px;
+      line-height:1.8;
+      color:rgba(255,255,255,0.85);
+      font-style:italic;
+      position:relative;
+      z-index:1;
+    }
 
-  /* ── FACILITIES ── */
-  .facilities { background: var(--off-white); }
-  .facilities-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 20px; margin-top: 56px;
-  }
-  .facility-card {
-    background: var(--white); border: 1px solid var(--light-gray);
-    border-radius: 2px; padding: 32px 28px;
-    display: flex; gap: 20px; align-items: flex-start;
-    transition: all 0.3s;
-  }
-  .facility-card:hover { box-shadow: 0 8px 30px rgba(13,27,62,0.08); transform: translateY(-3px); border-color: rgba(192,33,31,0.2); }
-  .fac-icon {
-    font-size: 28px; flex-shrink: 0;
-    width: 56px; height: 56px; background: rgba(13,27,62,0.05);
-    border-radius: 8px; display: flex; align-items: center; justify-content: center;
-  }
-  .fac-title { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
-  .fac-desc { font-size: 13px; color: var(--text-gray); line-height: 1.6; }
+    /* ADMISSION */
+    .admission{
+      background:linear-gradient(135deg, var(--red-dark) 0%, var(--red) 50%, var(--red-light) 100%);
+      padding:100px 5%;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
 
-  /* ── CAMPUS ── */
-  .campus { background: var(--white); }
-  .campus-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-  .campus-img {
-    height: 500px; background: linear-gradient(135deg, var(--navy-mid), var(--navy));
-    border-radius: 2px; position: relative; overflow: hidden;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .campus-img::after {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(13,27,62,0.6) 0%, transparent 50%);
-  }
-  .campus-caption {
-    position: absolute; bottom: 24px; left: 24px; right: 24px; z-index: 2;
-    color: var(--white);
-  }
-  .campus-caption strong { font-size: 18px; font-family: 'Playfair Display', serif; display: block; margin-bottom: 4px; }
-  .campus-caption span { font-size: 13px; opacity: 0.7; }
-  .campus-placeholder {
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 16px; color: rgba(255,255,255,0.4); font-size: 14px; letter-spacing: 2px; text-transform: uppercase;
-    width: 100%; height: 100%;
-  }
-  .campus-placeholder-icon { font-size: 56px; }
-  .vision-card {
-    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
-    color: var(--white); padding: 40px; border-radius: 2px;
-    margin-top: 32px; position: relative; overflow: hidden;
-  }
-  .vision-card::before {
-    content: '"'; position: absolute; top: -10px; right: 20px;
-    font-size: 120px; font-family: 'Playfair Display', serif;
-    color: rgba(192,33,31,0.2); line-height: 1;
-  }
-  .vision-card h4 { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: #F4A0A0; margin-bottom: 16px; }
-  .vision-card p { font-size: 16px; line-height: 1.8; color: rgba(255,255,255,0.85); font-style: italic; }
+    .admission::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.06)' stroke-width='1'%3E%3Cpath d='M30 0v60M0 30h60'/%3E%3C/g%3E%3C/svg%3E");
+    }
 
-  /* ── ADMISSION CTA ── */
-  .admission {
-    background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 50%, var(--red-light) 100%);
-    padding: 100px 5%; text-align: center; position: relative; overflow: hidden;
-  }
-  .admission::before {
-    content: ''; position: absolute; inset: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.06)' stroke-width='1'%3E%3Cpath d='M30 0v60M0 30h60'/%3E%3C/g%3E%3C/svg%3E");
-  }
-  .admission-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
-  .admission h2 {
-    font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 48px);
-    color: var(--white); margin-bottom: 20px; font-weight: 700;
-  }
-  .admission p { font-size: 18px; color: rgba(255,255,255,0.85); margin-bottom: 40px; line-height: 1.7; }
-  .btn-white {
-    background: var(--white); color: var(--red);
-    padding: 18px 48px; border-radius: 4px;
-    font-size: 16px; font-weight: 700; text-decoration: none;
-    display: inline-flex; align-items: center; gap: 10px;
-    transition: all 0.3s;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  }
-  .btn-white:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+    .admission-inner{
+      position:relative;
+      z-index:1;
+      max-width:700px;
+      margin:0 auto;
+    }
 
-  /* ── CONTACT ── */
-  .contact { background: var(--off-white); }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 56px; }
-  .contact-info h3 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--navy); margin-bottom: 24px; }
-  .contact-item {
-    display: flex; gap: 16px; align-items: flex-start;
-    margin-bottom: 24px; padding-bottom: 24px;
-    border-bottom: 1px solid var(--light-gray);
-  }
-  .contact-item:last-child { border-bottom: none; }
-  .c-icon {
-    width: 44px; height: 44px; background: var(--red); border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px; flex-shrink: 0;
-    color: white;
-  }
-  .c-icon svg { width: 20px; height: 20px; }
-  .c-label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-gray); margin-bottom: 4px; }
-  .c-val { font-size: 15px; color: var(--navy); font-weight: 500; line-height: 1.5; }
-  .contact-form { background: var(--white); padding: 40px; border: 1px solid var(--light-gray); border-radius: 2px; }
-  .contact-form h3 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 24px; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
-  .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
-  .form-group label { font-size: 12px; font-weight: 600; letter-spacing: 0.5px; color: var(--navy); text-transform: uppercase; }
-  .form-group input, .form-group select, .form-group textarea {
-    padding: 12px 16px; border: 1px solid var(--mid-gray); border-radius: 2px;
-    font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--navy);
-    background: var(--white); transition: border-color 0.3s;
-    outline: none;
-  }
-  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-    border-color: var(--red);
-    box-shadow: 0 0 0 3px rgba(192,33,31,0.1);
-  }
-  .form-group textarea { resize: vertical; min-height: 100px; }
-  .form-submit {
-    width: 100%; padding: 14px; background: var(--navy); color: var(--white);
-    border: none; border-radius: 2px; font-family: 'DM Sans', sans-serif;
-    font-size: 15px; font-weight: 600; cursor: pointer; letter-spacing: 0.5px;
-    transition: all 0.3s;
-  }
-  .form-submit:hover { background: var(--red); transform: translateY(-1px); }
+    .admission h2{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(28px,4vw,48px);
+      color:#fff;
+      margin-bottom:20px;
+      font-weight:700;
+    }
 
-  /* ── FOOTER ── */
-  footer {
-    background: var(--navy); color: var(--white);
-    padding: 80px 5% 0;
-  }
-  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 60px; }
-  .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.8; margin: 20px 0 24px; max-width: 280px; }
-  .footer-socials { display: flex; gap: 10px; }
-  .social-btn {
-    width: 38px; height: 38px; border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.15);
-    display: flex; align-items: center; justify-content: center;
-    color: rgba(255,255,255,0.6); font-size: 14px; text-decoration: none;
-    transition: all 0.3s; font-weight: 600;
-  }
-  .social-btn:hover { background: var(--red); border-color: var(--red); color: var(--white); }
-  .footer-col h4 {
-    font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
-    color: var(--white); margin-bottom: 20px;
-    padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-  .footer-col ul li a {
-    color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px;
-    transition: all 0.3s; display: flex; align-items: center; gap: 6px;
-  }
-  .footer-col ul li a::before { content: '→'; font-size: 11px; color: var(--red); }
-  .footer-col ul li a:hover { color: var(--white); padding-left: 4px; }
-  .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.08);
-    padding: 24px 0;
-    display: flex; align-items: center; justify-content: space-between;
-    font-size: 13px; color: rgba(255,255,255,0.4);
-  }
-  .footer-bottom a { color: var(--red-light); text-decoration: none; }
-  .footer-accredit {
-    display: flex; align-items: center; gap: 16px;
-  }
-  .accredit-badge {
-    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-    padding: 6px 14px; border-radius: 30px; font-size: 11px;
-    color: rgba(255,255,255,0.5); letter-spacing: 1px; text-transform: uppercase;
-  }
-  .footer-divider {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--red), transparent);
-    margin: 0 0 0;
-    opacity: 0.4;
-  }
-  /* Trust bar */
-  .trust-bar {
-    background: var(--navy-mid);
-    padding: 16px 5%; text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.05);
-  }
-  .trust-bar p { font-size: 12px; color: rgba(255,255,255,0.35); letter-spacing: 1px; }
-  .trust-bar span { color: rgba(192,33,31,0.6); }
+    .admission p{
+      font-size:18px;
+      color:rgba(255,255,255,0.85);
+      margin-bottom:40px;
+      line-height:1.7;
+    }
 
-  /* ── SCROLL ANIMATIONS ── */
-  @media (max-width: 900px) {
-    .about-grid, .campus-inner, .contact-grid { grid-template-columns: 1fr; }
-    .programs-grid { grid-template-columns: 1fr; }
-    .why-grid { grid-template-columns: 1fr 1fr; }
-    .facilities-grid { grid-template-columns: 1fr 1fr; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-    .stats-inner { grid-template-columns: 1fr 1fr; }
-  }
-  @media (max-width: 980px) {
-    .nav-right ul { display: none; }
-    .menu-toggle { display: inline-flex; }
-  }
-  @media (min-width: 981px) {
-    .mobile-menu { display: none !important; }
-  }
-  @media (max-width: 768px) {
-    .programs .reveal[style*='display:grid'],
-    .why .section-inner > div[style*='display:grid'] { grid-template-columns: 1fr !important; }
-    .stats-ribbon { margin-top: 0; }
-  }
-  @media (max-width: 600px) {
-    .why-grid, .facilities-grid, .stats-inner { grid-template-columns: 1fr; }
-    .form-row { grid-template-columns: 1fr; }
-    .footer-grid { grid-template-columns: 1fr; }
-    .hero-btns { flex-direction: column; }
-    .btn-primary, .btn-outline, .btn-white { width: 100%; justify-content: center; }
-    .mobile-menu { top: 72px; }
-  }
-</style>
+    /* CONTACT */
+    .contact{
+      background:var(--off-white);
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:32px;
+      align-items:stretch;
+      margin-top:56px;
+    }
+
+    .contact-info,
+    .contact-form{
+      height:100%;
+    }
+
+    .contact-info h3{
+      font-family:'Playfair Display',serif;
+      font-size:26px;
+      font-weight:700;
+      color:var(--navy);
+      margin-bottom:24px;
+    }
+
+    .contact-item{
+      display:flex;
+      gap:16px;
+      align-items:flex-start;
+      margin-bottom:24px;
+      padding-bottom:24px;
+      border-bottom:1px solid var(--light-gray);
+    }
+
+    .contact-item:last-child{
+      border-bottom:none;
+    }
+
+    .c-icon{
+      width:44px;
+      height:44px;
+      background:var(--red);
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:18px;
+      flex-shrink:0;
+      color:#fff;
+    }
+
+    .c-label{
+      font-size:11px;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      color:var(--text-muted);
+      margin-bottom:4px;
+    }
+
+    .c-val{
+      font-size:15px;
+      color:var(--navy);
+      font-weight:500;
+      line-height:1.5;
+    }
+
+    .contact-form{
+      background:var(--white);
+      padding:40px;
+      border:1px solid var(--light-gray);
+      border-radius:2px;
+    }
+
+    .contact-form h3{
+      font-family:'Playfair Display',serif;
+      font-size:22px;
+      font-weight:700;
+      color:var(--navy);
+      margin-bottom:24px;
+    }
+
+    .form-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-bottom:16px;
+    }
+
+    .form-group{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      margin-bottom:16px;
+    }
+
+    .form-group label{
+      font-size:12px;
+      font-weight:600;
+      letter-spacing:.5px;
+      color:var(--navy);
+      text-transform:uppercase;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea{
+      padding:12px 16px;
+      border:1px solid var(--mid-gray);
+      border-radius:2px;
+      font-family:'DM Sans',sans-serif;
+      font-size:14px;
+      color:var(--navy);
+      background:var(--white);
+      transition:border-color .3s, box-shadow .3s;
+      outline:none;
+      width:100%;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus{
+      border-color:var(--red);
+      box-shadow:0 0 0 3px rgba(192,33,31,0.1);
+    }
+
+    .form-group textarea{
+      resize:vertical;
+      min-height:100px;
+    }
+
+    .form-submit{
+      width:100%;
+      padding:14px;
+      background:var(--navy);
+      color:#fff;
+      border:none;
+      border-radius:2px;
+      font-family:'DM Sans',sans-serif;
+      font-size:15px;
+      font-weight:600;
+      cursor:pointer;
+      letter-spacing:.5px;
+      transition:all .3s;
+    }
+
+    .form-submit:hover{
+      background:var(--red);
+      transform:translateY(-1px);
+    }
+
+    /* FOOTER */
+    footer{
+      background:var(--navy);
+      color:#fff;
+      padding:80px 5% 0;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr 1fr;
+      gap:60px;
+      padding-bottom:60px;
+    }
+
+    .footer-brand p{
+      font-size:14px;
+      color:rgba(255,255,255,0.55);
+      line-height:1.8;
+      margin:20px 0 24px;
+      max-width:280px;
+    }
+
+    .footer-socials{
+      display:flex;
+      gap:10px;
+    }
+
+    .social-btn{
+      width:38px;
+      height:38px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,0.15);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:rgba(255,255,255,0.6);
+      font-size:14px;
+      text-decoration:none;
+      transition:all .3s;
+      font-weight:600;
+    }
+
+    .social-btn:hover{
+      background:var(--red);
+      border-color:var(--red);
+      color:#fff;
+    }
+
+    .footer-col h4{
+      font-size:13px;
+      font-weight:600;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:#fff;
+      margin-bottom:20px;
+      padding-bottom:12px;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-col ul{
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .footer-col ul li a{
+      color:rgba(255,255,255,0.55);
+      text-decoration:none;
+      font-size:14px;
+      transition:all .3s;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+
+    .footer-col ul li a::before{
+      content:'→';
+      font-size:11px;
+      color:var(--red);
+    }
+
+    .footer-col ul li a:hover{
+      color:#fff;
+      padding-left:4px;
+    }
+
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,0.08);
+      padding:24px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      font-size:13px;
+      color:rgba(255,255,255,0.4);
+    }
+
+    .footer-bottom a{
+      color:var(--red-light);
+      text-decoration:none;
+    }
+
+    .footer-accredit{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .accredit-badge{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.1);
+      padding:6px 14px;
+      border-radius:30px;
+      font-size:11px;
+      color:rgba(255,255,255,0.5);
+      letter-spacing:1px;
+      text-transform:uppercase;
+    }
+
+    .footer-divider{
+      height:1px;
+      background:linear-gradient(90deg, transparent, var(--red), transparent);
+      opacity:.4;
+    }
+
+    .trust-bar{
+      background:var(--navy-mid);
+      padding:16px 5%;
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,0.05);
+    }
+
+    .trust-bar p{
+      font-size:12px;
+      color:rgba(255,255,255,0.35);
+      letter-spacing:1px;
+    }
+
+    .trust-bar span{
+      color:rgba(192,33,31,0.6);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px){
+      .about-grid,
+      .campus-inner,
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+
+      .programs-grid{
+        grid-template-columns:1fr;
+      }
+
+      .why-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .facilities-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .stats-inner{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px){
+      body{
+        padding-top:74px;
+      }
+
+      section{
+        padding:80px 18px;
+      }
+
+      .hero-content{
+        padding:90px 18px 70px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
+
+      .about-grid,
+      .campus-inner{
+        gap:50px;
+      }
+
+      .about-img-main{
+        height:360px;
+      }
+
+      .about-img-accent{
+        width:140px;
+        height:140px;
+        right:-10px;
+        bottom:-62px;
+      }
+
+      .about-img-accent strong{
+        font-size:34px;
+      }
+
+      .contact-form{
+        padding:28px 20px;
+      }
+
+      .why-grid,
+      .facilities-grid,
+      .stats-inner{
+        grid-template-columns:1fr;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 600px){
+      .hero-btns{
+        flex-direction:column;
+      }
+
+      .btn-primary,
+      .btn-outline,
+      .btn-white{
+        width:100%;
+        justify-content:center;
+      }
+
+      .form-row{
+        grid-template-columns:1fr;
+      }
+
+      .campus-img{
+        min-height:340px;
+      }
+
+      .stat-item{
+        border-right:none;
+        border-bottom:1px solid var(--light-gray);
+      }
+
+      .stat-item:last-child{
+        border-bottom:none;
+      }
+
+      .footer-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+    .hero-content{
+  text-align:center;
+}
+
+.hero-badge{
+  display:inline-block;
+  margin:0 auto 18px;
+  text-align:center;
+}
+  </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="nav">
-  <a href="index.html" class="logo">
-    <div class="logo-mark">NC</div>
-    <div class="logo-words">
-      <span>Noor College</span>
-      <small>School of Nursing</small>
+  <div id="header"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-anim"></div>
+
+    <div class="hero-lines">
+      <div class="hero-line"></div>
+      <div class="hero-line"></div>
+      <div class="hero-line"></div>
+      <div class="hero-line"></div>
+      <div class="hero-line"></div>
+      <div class="hero-line"></div>
     </div>
-  </a>
 
-  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
 
-  <ul id="navMenu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Us</a></li>
+    <div class="hero-content">
+      <div class="hero-badge">Noor Education Trust — Est. Bangalore</div>
+      <h1>Shaping the <em>Future</em> of Healthcare</h1>
+      <p>At Noor College & School of Nursing, we build compassionate, competent, and principled nursing professionals ready for the evolving demands of modern healthcare.</p>
+      <div class="hero-btns">
+        <a href="ourcourse.html" class="btn-primary">Explore Programs →</a>
+        <a href="about.html" class="btn-outline">Learn More</a>
+      </div>
+    </div>
 
-    <li class="dropdown">
-      <a href="ourcourse.html">Programs ▾</a>
+    <div class="scroll-ind">Scroll</div>
+  </section>
 
-      <button class="mobile-program-toggle" onclick="togglePrograms(event)">
-        Programs ▾
-      </button>
-
-      <ul class="dropdown-menu">
-        <li><a href="ourcourse.html">All Programs</a></li>
-        <li><a href="gnm.html">GNM</a></li>
-        <li><a href="bscnursing.html">B.Sc Nursing</a></li>
-        <li><a href="pbBsc.html">Post Basic B.Sc</a></li>
-        <li><a href="mscnursing.html">M.Sc Nursing</a></li>
-      </ul>
-
-      <ul class="mobile-submenu" id="mobileProgramsMenu">
-        <li><a href="ourcourse.html">All Programs</a></li>
-        <li><a href="gnm.html">GNM</a></li>
-        <li><a href="bscnursing.html">B.Sc Nursing</a></li>
-        <li><a href="pbBsc.html">Post Basic B.Sc</a></li>
-        <li><a href="mscnursing.html">M.Sc Nursing</a></li>
-      </ul>
-    </li>
-
-    
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="contact.html" class="btn-nav">Apply Now</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg-anim"></div>
-  <div class="hero-lines">
-    <div class="hero-line"></div>
-    <div class="hero-line"></div>
-    <div class="hero-line"></div>
-    <div class="hero-line"></div>
-    <div class="hero-line"></div>
-    <div class="hero-line"></div>
-  </div>
-  <div class="orb orb1"></div>
-  <div class="orb orb2"></div>
-  <div class="orb orb3"></div>
-
-  <div class="hero-content">
-    <div class="hero-badge">Noor Education Trust — Est. Bangalore</div>
-    <h1>Shaping the <em>Future</em><br>of Healthcare</h1>
-    <p>At Noor College & School of Nursing, we build compassionate, competent, and principled nursing professionals ready for the evolving demands of modern healthcare.</p>
-    <div class="hero-btns">
-      <a href="ourcourse.html" class="btn-primary">Explore Programs →</a>
-      <a href="about.html" class="btn-outline">Learn More</a>
+  <!-- STATS -->
+  <div class="stats-ribbon">
+    <div class="stats-inner">
+      <div class="stat-item reveal">
+        <span class="stat-num">576<span>+</span></span>
+        <span class="stat-label">Enrolled Learners</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-num">4</span>
+        <span class="stat-label">Nursing Programs</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-num">152</span>
+        <span class="stat-label">Success Events</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-num">411<span>+</span></span>
+        <span class="stat-label">Active Students</span>
+      </div>
     </div>
   </div>
-  <div class="scroll-ind">Scroll</div>
-</section>
 
-<!-- STATS RIBBON -->
-<div class="stats-ribbon">
-  <div class="stats-inner">
-    <div class="stat-item reveal">
-      <span class="stat-num">576<span>+</span></span>
-      <span class="stat-label">Enrolled Learners</span>
-    </div>
-    <div class="stat-item reveal">
-      <span class="stat-num">4</span>
-      <span class="stat-label">Nursing Programs</span>
-    </div>
-    <div class="stat-item reveal">
-      <span class="stat-num">152</span>
-      <span class="stat-label">Success Events</span>
-    </div>
-    <div class="stat-item reveal">
-      <span class="stat-num">411<span>+</span></span>
-      <span class="stat-label">Active Students</span>
-    </div>
-  </div>
-</div>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="section-inner">
-    <div class="about-grid">
-      <div class="about-img-wrap reveal">
-        <div class="about-img-main">
-          <div class="about-img-main-placeholder">
-            <div class="img-icon">🏛️</div>
-            <p class="img-label">Noor College Campus</p>
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-img-wrap reveal">
+          <div class="about-img-main">
+            <img src="assets/clgimg.jpg" alt="Noor College Campus">
           </div>
+
+          <div class="about-img-accent">
+            <strong>RGUHS</strong>
+            <span>Affiliated University</span>
+          </div>
+
+          <div class="about-img-line"></div>
         </div>
-        <div class="about-img-accent">
-          <strong>RGUHS</strong>
-          <span>Affiliated University</span>
+
+        <div class="reveal">
+          <div class="about-tag">About Noor</div>
+          <div class="section-tag">Our Story</div>
+          <h2 class="section-title">Compassion,<br><em>Competence</em> & Character</h2>
+
+          <p style="color:#6B7280;line-height:1.8;margin-bottom:8px;">
+            Located at Bhoopasandra Main Road, Bangalore, Noor College & School of Nursing is a proud institution under the <strong>Noor Education Trust</strong> — committed to academic excellence and holistic development in the healthcare field.
+          </p>
+
+          <p style="color:#6B7280;line-height:1.8;margin-bottom:28px;">
+            We are affiliated to <strong>Rajiv Gandhi University of Health Sciences (RGUHS)</strong> and equipped with state-of-the-art infrastructure, experienced faculty, and hospital partnerships that prepare students for real-world nursing practice.
+          </p>
+
+          <ul class="about-points">
+            <li>Affiliated to RGUHS – Rajiv Gandhi University of Health Sciences</li>
+            <li>Modern labs, digital library & high-tech computer centre</li>
+            <li>Hospital partnerships for hands-on clinical training</li>
+            <li>Affordable fee structure with transport facilities</li>
+            <li>Strong focus on values, discipline & personal growth</li>
+          </ul>
         </div>
-        <div class="about-img-line"></div>
-      </div>
-      <div class="reveal">
-        <div class="about-tag">About Noor</div>
-        <div class="section-tag">Our Story</div>
-        <h2 class="section-title">Compassion,<br><em>Competence</em> & Character</h2>
-        <p style="color:#6B7280;line-height:1.8;margin-bottom:8px;">Located at Bhoopasandra Main Road, Bangalore, Noor College & School of Nursing is a proud institution under the <strong>Noor Education Trust</strong> — committed to academic excellence and holistic development in the healthcare field.</p>
-        <p style="color:#6B7280;line-height:1.8;margin-bottom:28px;">We are affiliated to <strong>Rajiv Gandhi University of Health Sciences (RGUHS)</strong> and equipped with state-of-the-art infrastructure, experienced faculty, and hospital partnerships that prepare students for real-world nursing practice.</p>
-        <ul class="about-points">
-          <li>Affiliated to RGUHS – Rajiv Gandhi University of Health Sciences</li>
-          <li>Modern labs, digital library & high-tech computer centre</li>
-          <li>Hospital partnerships for hands-on clinical training</li>
-          <li>Affordable fee structure with transport facilities</li>
-          <li>Strong focus on values, discipline & personal growth</li>
-        </ul>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PROGRAMS -->
-<section class="programs" id="programs">
-  <div class="section-inner">
-    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:flex-end;margin-bottom:56px;">
-      <div>
+  <!-- PROGRAMS -->
+  <section class="programs" id="programs">
+    <div class="section-inner">
+      <div class="reveal" style="text-align:center;max-width:850px;margin:0 auto 56px auto;">
         <div class="section-tag">Academic Excellence</div>
         <h2 class="section-title">Our Nursing <em>Programs</em></h2>
+        <p class="section-sub" style="margin:18px auto 0 auto;">
+          Discover world-class nursing education programs designed to shape compassionate, skilled, and future-ready healthcare professionals.
+        </p>
       </div>
-      <p class="section-sub">Discover world-class nursing education programs designed to shape compassionate, skilled, and future-ready healthcare professionals.</p>
-    </div>
-    <div class="programs-grid">
-      <div class="program-card reveal">
-        <span class="program-num">01</span>
-        <div class="program-icon">🎓</div>
-        <h3>General Nursing & Midwifery</h3>
-        <p class="program-duration">Diploma Program</p>
-        <p>A highly sought-after diploma course aimed at preparing students to become skilled nursing professionals with expertise in general nursing and midwifery care.</p>
-        <a href="#contact" class="program-link">Learn More →</a>
-      </div>
-      <div class="program-card reveal">
-        <span class="program-num">02</span>
-        <div class="program-icon">📚</div>
-        <h3>B.Sc Nursing</h3>
-        <p class="program-duration">4 Year Undergraduate</p>
-        <p>Structured to prepare competent nursing professionals with a strong foundation in theory and clinical skills for modern healthcare environments.</p>
-        <a href="#contact" class="program-link">Learn More →</a>
-      </div>
-      <div class="program-card reveal">
-        <span class="program-num">03</span>
-        <div class="program-icon">🏥</div>
-        <h3>Post Basic B.Sc Nursing</h3>
-        <p class="program-duration">2 Year Program</p>
-        <p>Designed for registered nurses seeking to enhance qualifications and advance into higher professional roles and leadership in healthcare.</p>
-        <a href="#contact" class="program-link">Learn More →</a>
-      </div>
-      <div class="program-card reveal">
-        <span class="program-num">04</span>
-        <div class="program-icon">🔬</div>
-        <h3>M.Sc Nursing</h3>
-        <p class="program-duration">2 Year Postgraduate</p>
-        <p>A postgraduate program offering specialization and advanced knowledge for leadership roles in nursing education, administration, and research.</p>
-        <a href="#contact" class="program-link">Learn More →</a>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- WHY NOOR -->
-<section class="why" id="why">
-  <div class="section-inner">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:flex-end;margin-bottom:0;">
-      <div class="reveal">
+      <div class="programs-grid">
+        <div class="program-card reveal">
+          <span class="program-num">01</span>
+          <div class="program-icon"><i class="fas fa-user-nurse"></i></div>
+          <h3>General Nursing & Midwifery</h3>
+          <p class="program-duration">Diploma Program</p>
+          <p>A highly sought-after diploma course aimed at preparing students to become skilled nursing professionals with expertise in general nursing and midwifery care.</p>
+          <a href="#contact" class="program-link">Learn More →</a>
+        </div>
+
+        <div class="program-card reveal">
+          <span class="program-num">02</span>
+          <div class="program-icon"><i class="fas fa-book-medical"></i></div>
+          <h3>B.Sc Nursing</h3>
+          <p class="program-duration">4 Year Undergraduate</p>
+          <p>Structured to prepare competent nursing professionals with a strong foundation in theory and clinical skills for modern healthcare environments.</p>
+          <a href="#contact" class="program-link">Learn More →</a>
+        </div>
+
+        <div class="program-card reveal">
+          <span class="program-num">03</span>
+          <div class="program-icon"><i class="fas fa-hospital-user"></i></div>
+          <h3>Post Basic B.Sc Nursing</h3>
+          <p class="program-duration">2 Year Program</p>
+          <p>Designed for registered nurses seeking to enhance qualifications and advance into higher professional roles and leadership in healthcare.</p>
+          <a href="#contact" class="program-link">Learn More →</a>
+        </div>
+
+        <div class="program-card reveal">
+          <span class="program-num">04</span>
+          <div class="program-icon"><i class="fas fa-flask"></i></div>
+          <h3>M.Sc Nursing</h3>
+          <p class="program-duration">2 Year Postgraduate</p>
+          <p>A postgraduate program offering specialization and advanced knowledge for leadership roles in nursing education, administration, and research.</p>
+          <a href="#contact" class="program-link">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="why" id="why">
+    <div class="section-inner">
+      <div class="reveal" style="text-align:center;max-width:850px;margin:0 auto 56px auto;">
         <div class="section-tag" style="color:#F4A0A0">Why Choose Us</div>
-        <h2 class="section-title" style="color:#fff">Why Choose <em>Noor?</em></h2>
+        <h2 class="section-title" style="color:#fff;">Why Choose <em>Noor?</em></h2>
+        <p class="section-sub" style="margin:18px auto 0 auto;">
+          Six compelling reasons why thousands of students choose Noor College to launch their nursing careers.
+        </p>
       </div>
-      <p class="section-sub reveal">Six compelling reasons why thousands of students choose Noor College to launch their nursing careers.</p>
-    </div>
-    <div class="why-grid reveal">
-      <div class="why-item">
-        <div class="why-icon">🎓</div>
-        <h4>RGUHS Affiliated</h4>
-        <p>Affiliated to Rajiv Gandhi University of Health Sciences — ensuring nationally recognised degrees with credibility.</p>
-      </div>
-      <div class="why-item">
-        <div class="why-icon">🔬</div>
-        <h4>State-of-the-Art Infrastructure</h4>
-        <p>Modern labs in Microbiology, Nutrition, Community Health, and more, plus a fully equipped digital library.</p>
-      </div>
-      <div class="why-item">
-        <div class="why-icon">👨‍⚕️</div>
-        <h4>Expert Faculty</h4>
-        <p>Our experienced faculty members come from premier nursing institutions and healthcare organisations across India.</p>
-      </div>
-      <div class="why-item">
-        <div class="why-icon">🏨</div>
-        <h4>Hospital Partnerships</h4>
-        <p>Clinical practice at partnered hospitals gives students real-world exposure essential to nursing excellence.</p>
-      </div>
-      <div class="why-item">
-        <div class="why-icon">💰</div>
-        <h4>Affordable Education</h4>
-        <p>Competitive fee structure with transportation facilities ensuring quality nursing education is within reach.</p>
-      </div>
-      <div class="why-item">
-        <div class="why-icon">🌟</div>
-        <h4>Holistic Development</h4>
-        <p>Beyond academics — strong emphasis on values, discipline, character, and personal growth for every student.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- FACILITIES -->
-<section class="facilities" id="facilities">
-  <div class="section-inner">
-    <div style="text-align:center;margin-bottom:56px;" class="reveal">
-      <div class="section-tag">World-Class</div>
-      <h2 class="section-title">Facilities at a <em>Glance</em></h2>
-      <p class="section-sub" style="margin:0 auto;">Everything you need for an immersive, well-rounded nursing education experience.</p>
-    </div>
-    <div class="facilities-grid">
-      <div class="facility-card reveal">
-        <div class="fac-icon">🧪</div>
-        <div>
-          <p class="fac-title">Advanced Laboratories</p>
-          <p class="fac-desc">Microbiology, Nutrition, Community Health and specialised nursing labs with latest equipment.</p>
+      <div class="why-grid reveal">
+        <div class="why-item">
+          <div class="why-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h4>RGUHS Affiliated</h4>
+          <p>Affiliated to Rajiv Gandhi University of Health Sciences — ensuring nationally recognised degrees with credibility.</p>
         </div>
-      </div>
-      <div class="facility-card reveal">
-        <div class="fac-icon">📚</div>
-        <div>
-          <p class="fac-title">Digital Library</p>
-          <p class="fac-desc">HELINET access with national & international journals, e-resources and research databases.</p>
-        </div>
-      </div>
-      <div class="facility-card reveal">
-        <div class="fac-icon">🏠</div>
-        <div>
-          <p class="fac-title">Hostel Accommodation</p>
-          <p class="fac-desc">Boys' hostel with basic amenities, security, and a safe comfortable living environment.</p>
-        </div>
-      </div>
-      <div class="facility-card reveal">
-        <div class="fac-icon">🚌</div>
-        <div>
-          <p class="fac-title">Transportation</p>
-          <p class="fac-desc">Dedicated bus service for clinical postings, religious visits, and daily commuting needs.</p>
-        </div>
-      </div>
-      <div class="facility-card reveal">
-        <div class="fac-icon">🎤</div>
-        <div>
-          <p class="fac-title">Auditorium</p>
-          <p class="fac-desc">600-seat auditorium with exam-ready infrastructure for events, ceremonies and academic functions.</p>
-        </div>
-      </div>
-      <div class="facility-card reveal">
-        <div class="fac-icon">🏅</div>
-        <div>
-          <p class="fac-title">Sports Facilities</p>
-          <p class="fac-desc">Indoor and outdoor sports facilities supporting physical wellness and team-building activities.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- CAMPUS -->
-<section class="campus" id="campus">
-  <div class="section-inner">
-    <div class="campus-inner">
-      <div class="campus-img reveal">
-        <div class="campus-placeholder">
-          <div class="campus-placeholder-icon">🏫</div>
-          <p>Noor College Campus</p>
+        <div class="why-item">
+          <div class="why-icon"><i class="fas fa-microscope"></i></div>
+          <h4>State-of-the-Art Infrastructure</h4>
+          <p>Modern labs in Microbiology, Nutrition, Community Health, and more, plus a fully equipped digital library.</p>
         </div>
-        <div class="campus-caption">
-          <strong>Vibrant Campus Life</strong>
-          <span>Bhoopasandra Main Road, Bangalore</span>
+
+        <div class="why-item">
+          <div class="why-icon"><i class="fas fa-user-doctor"></i></div>
+          <h4>Expert Faculty</h4>
+          <p>Our experienced faculty members come from premier nursing institutions and healthcare organisations across India.</p>
         </div>
-      </div>
-      <div class="reveal">
-        <div class="section-tag">Life at Noor</div>
-        <h2 class="section-title">A Campus Built<br>for <em>Growth</em></h2>
-        <p style="color:#6B7280;line-height:1.8;margin-bottom:24px;">Our campus provides a vibrant and secure environment with spacious classrooms, modern laboratories, a library with HELINET access, high-tech computer center, boys' hostel, hygienic cafeteria serving North & South Indian food, and sports facilities.</p>
-        <p style="color:#6B7280;line-height:1.8;margin-bottom:32px;">Everything is designed to nurture both academic excellence and personal growth — fostering the next generation of compassionate healthcare leaders.</p>
-        <div class="vision-card">
-          <h4>Our Vision</h4>
-          <p>"To produce professionally competent, ethically sound, and socially responsible nurses and healthcare professionals who will serve with dedication, dignity, and compassion."</p>
+
+        <div class="why-item">
+          <div class="why-icon"><i class="fas fa-hospital"></i></div>
+          <h4>Hospital Partnerships</h4>
+          <p>Clinical practice at partnered hospitals gives students real-world exposure essential to nursing excellence.</p>
+        </div>
+
+        <div class="why-item">
+          <div class="why-icon"><i class="fas fa-hand-holding-dollar"></i></div>
+          <h4>Affordable Education</h4>
+          <p>Competitive fee structure with transportation facilities ensuring quality nursing education is within reach.</p>
+        </div>
+
+        <div class="why-item">
+          <div class="why-icon"><i class="fas fa-star"></i></div>
+          <h4>Holistic Development</h4>
+          <p>Beyond academics — strong emphasis on values, discipline, character, and personal growth for every student.</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ADMISSION CTA -->
-<section class="admission">
-  <div class="admission-inner reveal">
-    <h2>Begin Your Nursing Journey Today</h2>
-    <p>Join hundreds of students who have chosen Noor College to launch their healthcare careers. Applications now open for the upcoming academic year.</p>
-    <a href="#contact" class="btn-white">Apply for Admission →</a>
-  </div>
-</section>
+  <!-- FACILITIES -->
+  <section class="facilities" id="facilities">
+    <div class="section-inner">
+      <div style="text-align:center;margin-bottom:56px;" class="reveal">
+        <div class="section-tag">World-Class</div>
+        <h2 class="section-title">Facilities at a <em>Glance</em></h2>
+        <p class="section-sub" style="margin:0 auto;">
+          Everything you need for an immersive, well-rounded nursing education experience.
+        </p>
+      </div>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="section-inner">
-    <div class="reveal" style="margin-bottom:0">
-      <div class="section-tag">Get In Touch</div>
-      <h2 class="section-title">Contact <em>Us</em></h2>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-info reveal">
-        <h3>We're Here to Help</h3>
-        <div class="contact-item">
-          <div class="c-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          </div>
+      <div class="facilities-grid">
+        <div class="facility-card reveal">
+          <div class="fac-icon"><i class="fas fa-flask"></i></div>
           <div>
-            <p class="c-label">Address</p>
-            <p class="c-val">Bhoopasandra Main Road,<br>Bangalore, Karnataka</p>
+            <p class="fac-title">Advanced Laboratories</p>
+            <p class="fac-desc">Microbiology, Nutrition, Community Health and specialised nursing labs with latest equipment.</p>
           </div>
         </div>
-        <div class="contact-item">
-          <div class="c-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-          </div>
-          <div>
-            <p class="c-label">Phone</p>
-            <p class="c-val">+91 80 XXXX XXXX</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="c-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          </div>
-          <div>
-            <p class="c-label">Email</p>
-            <p class="c-val">admissions@noorcollege.edu.in</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="c-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <div>
-            <p class="c-label">Affiliation</p>
-            <p class="c-val">Rajiv Gandhi University of<br>Health Sciences (RGUHS)</p>
-          </div>
-        </div>
-      </div>
-      <div class="contact-form reveal">
-        <h3>Enquire Now</h3>
-        <div class="form-row">
-          <div class="form-group">
-            <label>First Name</label>
-            <input type="text" placeholder="Your first name">
-          </div>
-          <div class="form-group">
-            <label>Last Name</label>
-            <input type="text" placeholder="Your last name">
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" placeholder="your@email.com">
-        </div>
-        <div class="form-group">
-          <label>Phone Number</label>
-          <input type="tel" placeholder="+91 00000 00000">
-        </div>
-        <div class="form-group">
-          <label>Program of Interest</label>
-          <select>
-            <option value="">Select a program</option>
-            <option>General Nursing & Midwifery (GNM)</option>
-            <option>B.Sc Nursing (4 Years)</option>
-            <option>Post Basic B.Sc Nursing (2 Years)</option>
-            <option>M.Sc Nursing (2 Years)</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea placeholder="Any questions or special requirements..."></textarea>
-        </div>
-        <button class="form-submit">Submit Enquiry →</button>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-divider"></div>
-  <div class="section-inner">
-    <div class="footer-grid" style="padding-top:60px;">
-      <div class="footer-brand">
-        <a href="#" class="logo">
-          <div class="logo-icon">NC</div>
-          <div class="logo-text">
-            <span>Noor College</span>
-            <small>School of Nursing</small>
+        <div class="facility-card reveal">
+          <div class="fac-icon"><i class="fas fa-book-open"></i></div>
+          <div>
+            <p class="fac-title">Digital Library</p>
+            <p class="fac-desc">HELINET access with national & international journals, e-resources and research databases.</p>
           </div>
-        </a>
-        <p>Producing compassionate, competent nursing professionals guided by values of dignity, discipline, and dedication. Affiliated to RGUHS, Bangalore.</p>
-        <div class="footer-socials">
-          <a href="#" class="social-btn">f</a>
-          <a href="#" class="social-btn">in</a>
-          <a href="#" class="social-btn">tw</a>
-          <a href="#" class="social-btn">yt</a>
         </div>
-      </div>
-      <div class="footer-col">
-        <h4>Programs</h4>
-        <ul>
-          <li><a href="gnm.html">GNM Diploma</a></li>
-          <li><a href="bscnursing.html">B.Sc Nursing</a></li>
-          <li><a href="pbBsc.html">Post Basic B.Sc</a></li>
-          <li><a href="mscnursing.html">M.Sc Nursing</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Accreditation</h4>
-        <ul>
-          <li><a href="#">RGUHS Affiliated</a></li>
-          <li><a href="#">INC Approved</a></li>
-          <li><a href="#">Karnataka Nursing Council</a></li>
-        </ul>
-        <div style="margin-top:24px;">
-          <div class="accredit-badge" style="margin-bottom:8px;">Est. Bangalore</div>
-          <div class="accredit-badge">Noor Education Trust</div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2025 Noor College & School of Nursing. All rights reserved.</p>
-      <div class="footer-accredit">
-        <span>Under <a href="#">Noor Education Trust</a></span>
-        <span>|</span>
-        <span>Affiliated to <a href="#">RGUHS</a></span>
-      </div>
-    </div>
-  </div>
-  
-</footer>
 
-<script>
-  // Intersection Observer for scroll reveals
-  const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
+        <div class="facility-card reveal">
+          <div class="fac-icon"><i class="fas fa-house"></i></div>
+          <div>
+            <p class="fac-title">Hostel Accommodation</p>
+            <p class="fac-desc">Boys' hostel with basic amenities, security, and a safe comfortable living environment.</p>
+          </div>
+        </div>
+
+        <div class="facility-card reveal">
+          <div class="fac-icon"><i class="fas fa-bus"></i></div>
+          <div>
+            <p class="fac-title">Transportation</p>
+            <p class="fac-desc">Dedicated bus service for clinical postings, religious visits, and daily commuting needs.</p>
+          </div>
+        </div>
+
+        <div class="facility-card reveal">
+          <div class="fac-icon"><i class="fas fa-microphone-lines"></i></div>
+          <div>
+            <p class="fac-title">Auditorium</p>
+            <p class="fac-desc">600-seat auditorium with exam-ready infrastructure for events, ceremonies and academic functions.</p>
+          </div>
+        </div>
+
+        <div class="facility-card reveal">
+          <div class="fac-icon"><i class="fas fa-medal"></i></div>
+          <div>
+            <p class="fac-title">Sports Facilities</p>
+            <p class="fac-desc">Indoor and outdoor sports facilities supporting physical wellness and team-building activities.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAMPUS -->
+  <section class="campus" id="campus">
+    <div class="section-inner">
+      <div class="campus-inner">
+        <div class="campus-img reveal">
+          <img src="assets/clgimg1.jpg" alt="Noor College Campus">
+          <div class="campus-caption">
+            <strong>Vibrant Campus Life</strong>
+            <span>Bhoopasandra Main Road, Bangalore</span>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="section-tag">Life at Noor</div>
+          <h2 class="section-title">A Campus Built<br>for <em>Growth</em></h2>
+
+          <p style="color:#6B7280;line-height:1.8;margin-bottom:24px;">
+            Our campus provides a vibrant and secure environment with spacious classrooms, modern laboratories, a library with HELINET access, high-tech computer center, boys' hostel, hygienic cafeteria serving North & South Indian food, and sports facilities.
+          </p>
+
+          <p style="color:#6B7280;line-height:1.8;margin-bottom:32px;">
+            Everything is designed to nurture both academic excellence and personal growth — fostering the next generation of compassionate healthcare leaders.
+          </p>
+
+          <div class="vision-card">
+            <h4>Our Vision</h4>
+            <p>"To produce professionally competent, ethically sound, and socially responsible nurses and healthcare professionals who will serve with dedication, dignity, and compassion."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADMISSION CTA -->
+  <section class="admission">
+    <div class="admission-inner reveal">
+      <h2>Begin Your Nursing Journey Today</h2>
+      <p>Join hundreds of students who have chosen Noor College to launch their healthcare careers. Applications now open for the upcoming academic year.</p>
+      <a href="#contact" class="btn-white">Apply for Admission →</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <div class="reveal" style="text-align:center;margin-bottom:50px;">
+        <div class="section-tag">Get In Touch</div>
+        <h2 class="section-title">Contact <em>Us</em></h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h3>We're Here to Help</h3>
+
+          <div class="contact-item">
+            <div class="c-icon"><i class="fas fa-location-dot"></i></div>
+            <div>
+              <p class="c-label">Address</p>
+              <p class="c-val">Bhoopasandra Main Road,<br>Bangalore, Karnataka</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="c-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <p class="c-label">Phone</p>
+              <p class="c-val">+91 80 XXXX XXXX</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="c-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <p class="c-label">Email</p>
+              <p class="c-val">admissions@noorcollege.edu.in</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="c-icon"><i class="fas fa-shield-halved"></i></div>
+            <div>
+              <p class="c-label">Affiliation</p>
+              <p class="c-val">Rajiv Gandhi University of<br>Health Sciences (RGUHS)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form reveal" id="contact-form">
+          <h3>Enquire Now</h3>
+
+          <form>
+            <div class="form-row">
+              <div class="form-group">
+                <label><i class="fas fa-user"></i> First Name</label>
+                <input type="text" placeholder="Your first name">
+              </div>
+
+              <div class="form-group">
+                <label><i class="fas fa-user"></i> Last Name</label>
+                <input type="text" placeholder="Your last name">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label><i class="fas fa-envelope"></i> Email Address</label>
+              <input type="email" placeholder="your@email.com">
+            </div>
+
+            <div class="form-group">
+              <label><i class="fas fa-phone"></i> Phone Number</label>
+              <input type="tel" placeholder="+91 00000 00000">
+            </div>
+
+            <div class="form-group">
+              <label><i class="fas fa-graduation-cap"></i> Program of Interest</label>
+              <select>
+                <option value="">Select a program</option>
+                <option>General Nursing & Midwifery (GNM)</option>
+                <option>B.Sc Nursing (4 Years)</option>
+                <option>Post Basic B.Sc Nursing (2 Years)</option>
+                <option>M.Sc Nursing (2 Years)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label><i class="fas fa-message"></i> Message</label>
+              <textarea placeholder="Any questions or special requirements..."></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">Submit Enquiry →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <script src="load.js"></script>
+
+  <script>
+    // Reveal animation
+    const reveals = document.querySelectorAll('.reveal');
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const siblings = entry.target.parentElement ? Array.from(entry.target.parentElement.children) : [];
+          const index = siblings.indexOf(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, 80 * ((index >= 0 ? index : 0) % 4));
+
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    reveals.forEach(el => io.observe(el));
+
+    // Animated stats
+    function animateCount(item, target, suffix = '') {
+      const numberEl = item.querySelector('.stat-num');
+      let count = 0;
+      const step = Math.ceil(target / 60);
+
+      const timer = setInterval(() => {
+        count = Math.min(count + step, target);
+        numberEl.innerHTML = count + '<span>' + suffix + '</span>';
+
+        if (count >= target) {
+          clearInterval(timer);
+        }
+      }, 30);
+    }
+
+    const statsObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const items = document.querySelectorAll('.stat-item');
+          const data = [
+            { v: 576, s: '+' },
+            { v: 4, s: '' },
+            { v: 152, s: '' },
+            { v: 411, s: '+' }
+          ];
+
+          items.forEach((item, i) => animateCount(item, data[i].v, data[i].s));
+          statsObs.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+
+    const ribbon = document.querySelector('.stats-ribbon');
+    if (ribbon) {
+      statsObs.observe(ribbon);
+    }
+
+    // Form button feedback
+    const enquiryForm = document.querySelector('.contact-form form');
+    const submitBtn = document.querySelector('.form-submit');
+
+    if (enquiryForm && submitBtn) {
+      enquiryForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        submitBtn.textContent = '✓ Enquiry Submitted';
+        submitBtn.style.background = '#16a34a';
+
         setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, 80 * (Array.from(entry.target.parentElement.children).indexOf(entry.target) % 4));
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => io.observe(el));
-
-  // Animated counters
-  function animateCount(el, target, suffix = '') {
-    let count = 0;
-    const step = Math.ceil(target / 60);
-    const timer = setInterval(() => {
-      count = Math.min(count + step, target);
-      el.querySelector('.stat-num').innerHTML = count + '<span>' + suffix + '</span>';
-      if (count >= target) clearInterval(timer);
-    }, 30);
-  }
-  const statsObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const items = document.querySelectorAll('.stat-item');
-        const data = [{v:576,s:'+'},{v:4,s:''},{v:152,s:''},{v:411,s:'+'}];
-        items.forEach((item, i) => animateCount(item, data[i].v, data[i].s));
-        statsObs.disconnect();
-      }
-    });
-  }, { threshold: 0.3 });
-  const ribbon = document.querySelector('.stats-ribbon');
-  if (ribbon) statsObs.observe(ribbon);
-
-  // Form submit feedback
-  const submitBtn = document.querySelector('.form-submit');
-  if (submitBtn) {
-    submitBtn.addEventListener('click', () => {
-      submitBtn.textContent = '✓ Enquiry Submitted!';
-      submitBtn.style.background = '#1A2F5A';
-      setTimeout(() => {
-        submitBtn.textContent = 'Submit Enquiry →';
-        submitBtn.style.background = '';
-      }, 3000);
-    });
-  }
-
-</script>
-<script>
-// Year tab switcher
-function showYear(id, btn) {
-  document.querySelectorAll('.year-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.year-tab').forEach(t => t.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  btn.classList.add('active');
-}
-
-function toggleMenu() {
-  document.getElementById('navMenu').classList.toggle('show');
-}
-
-function togglePrograms(event) {
-  event.preventDefault();
-  document.getElementById('mobileProgramsMenu').classList.toggle('show');
-}
-
-// Scroll reveal
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); }
-  });
-}, { threshold: 0.08 });
-document.querySelectorAll('.r').forEach(el => obs.observe(el));
-
-// Navbar shrink
-window.addEventListener('scroll', () => {
-  const nav = document.getElementById('nav');
-  nav.style.height = window.scrollY > 60 ? '58px' : '70px';
-  nav.style.background = window.scrollY > 60 ? 'rgba(12,26,58,1)' : 'rgba(12,26,58,0.97)';
-});
-</script>
+          submitBtn.textContent = 'Submit Enquiry →';
+          submitBtn.style.background = '';
+          enquiryForm.reset();
+        }, 2500);
+      });
+    }
+  </script>
 </body>
 </html>
