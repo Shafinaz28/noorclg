@@ -3,7 +3,7 @@
   <div class="site-topbar">
     <div class="site-topbar__inner">
       <div class="site-topbar__left">
-        <a href="tel:+919845026920">+91 98450 26920</a>
+        <a href="tel:9845026920">9845026920</a>
         <a href="mailto:info@noorcollege.com">info@noorcollege.com</a>
       </div>
       <div class="site-topbar__social">
@@ -30,7 +30,7 @@
 
         <li class="dropdown">
           <a href="programs.html" class="nav-link nav-link--programs">
-            <span>Programs</span>
+            <span>Department</span>
            
           </a>
 
@@ -120,7 +120,7 @@
           </ul>
 
           <button class="mobile-program-toggle" type="button" onclick="togglePrograms(event)">
-            <span>Programs</span>
+            <span>Department</span>
             <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
 
@@ -215,6 +215,7 @@
           <a href="contact.html#contact-form" class="btn-nav">Apply Now</a>
         </li>
         <li class="mobile-social-row">
+          <a href="tel:9845026920" class="mobile-phone">9845026920</a>
           <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
           <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
           <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
@@ -325,6 +326,14 @@
   gap:24px;
 }
 
+.department-page .site-nav__inner{
+  min-height:90px;
+}
+
+.department-page .logo img{
+  height:60px;
+}
+
 .logo{
   display:flex;
   align-items:center;
@@ -412,14 +421,12 @@
   border-radius:2px;
 }
 
-/* Programs parent: always accent red; active adds underline */
 .nav-link--programs{
-  color:var(--red) !important;
   gap:8px;
 }
 
 .nav-link--programs:hover{
-  color:var(--red-dark) !important;
+  color:var(--red);
 }
 
 .nav-link--programs .nav-chevron{
@@ -810,7 +817,7 @@
   .mobile-social-row{
     display:flex;
     align-items:center;
-    justify-content:flex-start;
+    justify-content:center;
     gap:10px;
     padding-top:14px;
   }
@@ -827,6 +834,16 @@
     text-decoration:none;
     font-size:13px;
     background:#fff;
+  }
+
+  .mobile-social-row .mobile-phone{
+    width:auto;
+    height:32px;
+    border-radius:999px;
+    padding:0 12px;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.02em;
   }
 
   .mobile-social-row a:hover{

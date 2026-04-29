@@ -89,13 +89,7 @@ window.addEventListener("resize", applyHeaderOffset);
 function setActiveNav() {
   let page = window.location.pathname.split("/").pop();
   if (!page) page = "index.html";
-
-  document.querySelectorAll("#navMenu a.active").forEach(a => {
-    a.classList.remove("active");
-    a.removeAttribute("aria-current");
-  });
-
-  const programsPages = [
+  const departmentPages = [
     "programs.html",
     "ourcourse.html",
     "management.html",
@@ -124,16 +118,21 @@ function setActiveNav() {
     "mscnursing.html",
   ];
 
-  const programLink = document.querySelector(".nav-link--programs");
-  if (programsPages.includes(page) && programLink) {
-    programLink.classList.add("active");
-    programLink.setAttribute("aria-current", "page");
-    return;
+  document.body.classList.remove("department-page");
+  if (departmentPages.includes(page)) {
+    document.body.classList.add("department-page");
   }
 
-  document.querySelectorAll("#navMenu > li > a.nav-link").forEach(link => {
+  document.querySelectorAll("#navMenu a.active").forEach(a => {
+    a.classList.remove("active");
+    a.removeAttribute("aria-current");
+  });
+
+  document.querySelectorAll("#navMenu a[href]").forEach(link => {
     const href = link.getAttribute("href")?.split("#")[0];
-    if (href && href === page) {
+    if (!href) return;
+    const hrefPage = href.split("/").pop();
+    if (hrefPage === page) {
       link.classList.add("active");
       link.setAttribute("aria-current", "page");
     }
