@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="../" />
+  <title>B.Pharmacy | Noor College</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{--red:#C0211F;--navy:#0C1A3A;--navy-mid:#172D5C;--off:#F7F6F2;--line:#E8EAF0;--muted:#64748B}
+    *{box-sizing:border-box;margin:0;padding:0} body{font-family:'DM Sans',sans-serif;color:var(--navy);padding-top:78px}
+    @media (max-width:992px){body{padding-top:74px}}
+    .wrap{max-width:1140px;margin:0 auto;padding:0 20px}.hero{min-height:58vh;background:linear-gradient(145deg,var(--navy),var(--navy-mid));color:#fff;display:flex;align-items:flex-end;padding:120px 0 70px}
+    .crumb{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:14px}.crumb a{color:rgba(255,255,255,.75);text-decoration:none}
+    h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,70px);line-height:1}.sub{max-width:760px;color:rgba(255,255,255,.82);margin-top:14px;line-height:1.8}
+    section{padding:80px 0}.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px}@media (max-width:900px){.grid{grid-template-columns:1fr}}
+    .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px}.card h2{font-family:'Cormorant Garamond',serif;font-size:36px;margin-bottom:10px}.card p{color:var(--muted);line-height:1.85}
+    .img{height:280px;border-radius:14px;overflow:hidden}.img img{width:100%;height:100%;object-fit:cover}
+    .facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}.fact{background:var(--off);border:1px solid var(--line);border-radius:10px;padding:14px}
+    .fact small{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:1.1px}.fact strong{font-size:14px}
+    .hl{margin-top:16px;list-style:none}.hl li{position:relative;padding-left:20px;margin-bottom:10px;color:#334155}.hl li::before{content:'✓';position:absolute;left:0;color:var(--red)}
+    .cta{margin-top:24px;display:inline-flex;gap:10px;align-items:center;background:var(--navy);color:#fff;text-decoration:none;padding:12px 18px;border-radius:8px}.cta:hover{background:var(--red)}
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+  <section class="hero"><div class="wrap"><div class="crumb"><a href="index.html">Home</a> / <a href="pharmacy.html">Pharmacy</a> / B.Pharmacy</div><h1>Bachelor of <em>Pharmacy</em></h1><p class="sub">A 4-year undergraduate degree with strong foundations in pharmaceutics, pharmacology, medicinal chemistry, and clinical pharmacy.</p></div></section>
+  <section><div class="wrap grid"><div class="card"><h2>Program Overview</h2><p>B.Pharmacy prepares students for professional roles across pharmaceutical industries, hospitals, and community pharmacy by combining scientific theory with practical training.</p><ul class="hl"><li>Comprehensive curriculum in core pharmaceutical sciences</li><li>Practical lab exposure and formulation-based learning</li><li>Drug safety, quality, and patient-care orientation</li><li>Progression to M.Pharm, Pharm.D, and research pathways</li></ul><a class="cta" href="contact.html#contact-form">Apply for Admission <span>→</span></a></div><div><div class="img"><img src="assets/classrooms.jpg" alt="B.Pharmacy students" /></div><div class="facts"><div class="fact"><small>Duration</small><strong>4 Years</strong></div><div class="fact"><small>Level</small><strong>Undergraduate</strong></div><div class="fact"><small>Eligibility</small><strong>10+2 / Equivalent</strong></div><div class="fact"><small>Mode</small><strong>Regular</strong></div></div></div></div></section>
+  <div id="footer"></div>
+  <script src="load.js"></script>
+</body>
+</html>

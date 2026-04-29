@@ -1,54 +1,232 @@
 <!-- header.html -->
-<nav id="nav">
-  <a href="index.html" class="logo">
-    <img src="assets/logo1.png" alt="Noor College Logo">
-    <div class="logo-words">
-      <span>Noor College</span>
-      <small>School of Nursing</small>
+<header class="site-header">
+  <div class="site-topbar">
+    <div class="site-topbar__inner">
+      <div class="site-topbar__left">
+        <a href="tel:+919845026920">+91 98450 26920</a>
+        <a href="mailto:info@noorcollege.com">info@noorcollege.com</a>
+      </div>
+      <div class="site-topbar__social">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+      </div>
     </div>
-  </a>
-
-  <button class="menu-toggle" type="button" onclick="toggleMenu()" aria-label="Open Menu">
-    ☰
-  </button>
-
-  <ul id="navMenu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Us</a></li>
-
-    <li class="dropdown">
-      <a href="ourcourse.html">
-        Programs⌄
+  </div>
+  <nav id="nav" class="site-nav" aria-label="Main navigation">
+    <div class="site-nav__inner">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.png" alt="Noor College Logo">
+        
       </a>
 
-      <ul class="dropdown-menu">
-        <li><a href="ourcourse.html">All Programs</a></li>
-        <li><a href="gnm.html">GNM</a></li>
-        <li><a href="bscnursing.html">B.Sc Nursing</a></li>
-        <li><a href="pbBsc.html">Post Basic B.Sc</a></li>
-        <li><a href="mscnursing.html">M.Sc Nursing</a></li>
-      </ul>
-
-      <button class="mobile-program-toggle" type="button" onclick="togglePrograms(event)">
-        <span>Programs</span>
-        <span>⌄</span>
+      <button class="menu-toggle" type="button" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false">
+        <span class="menu-toggle__bars" aria-hidden="true"></span>
       </button>
 
-      <ul class="mobile-submenu" id="mobileProgramsMenu">
-        <li><a href="ourcourse.html">All Programs</a></li>
-        <li><a href="gnm.html">GNM</a></li>
-        <li><a href="bscnursing.html">B.Sc Nursing</a></li>
-        <li><a href="pbBsc.html">Post Basic B.Sc</a></li>
-        <li><a href="mscnursing.html">M.Sc Nursing</a></li>
-      </ul>
-    </li>
+      <ul id="navMenu" class="site-nav__menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
 
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="contact.html#contact-form" class="btn-nav">Apply Now</a></li>
-  </ul>
-</nav>
+        <li class="dropdown">
+          <a href="programs.html" class="nav-link nav-link--programs">
+            <span>Programs</span>
+           
+          </a>
+
+          <ul class="dropdown-menu">
+            <li class="programs-all-link"><a href="programs.html">All Programs</a></li>
+
+            <li class="program-group">
+              <div class="program-group-head">
+                <a class="program-group-link" href="ourcourse/ourcourse.html">Nursing</a>
+                <button class="program-group-toggle" type="button" data-target="desk-nursing" aria-expanded="false" aria-label="Toggle Nursing courses" onclick="toggleProgramGroup(event, 'desk-nursing')"></button>
+              </div>
+              <ul class="program-group-list" id="desk-nursing">
+                <li><a href="ourcourse/gnm.html">GNM</a></li>
+                <li><a href="ourcourse/bscnursing.html">B.Sc Nursing</a></li>
+                <li><a href="ourcourse/pbBsc.html">Post Basic B.Sc</a></li>
+                <li><a href="ourcourse/mscnursing.html">M.Sc Nursing</a></li>
+              </ul>
+            </li>
+
+            <li class="program-group">
+              <div class="program-group-head">
+                <a class="program-group-link" href="manegemnet/management.html">Management</a>
+                <button class="program-group-toggle" type="button" data-target="desk-management" aria-expanded="false" aria-label="Toggle Management courses" onclick="toggleProgramGroup(event, 'desk-management')"></button>
+              </div>
+              <ul class="program-group-list" id="desk-management">
+                <li><a href="manegemnet/bcom.html">B.Com</a></li>
+                <li><a href="manegemnet/bba.html">BBA</a></li>
+                <li><a href="manegemnet/bbaaviation.html">BBA Aviation</a></li>
+                <li><a href="manegemnet/bcomlogistics.html">B.Com Logistics</a></li>
+                <li><a href="manegemnet/bca.html">BCA</a></li>
+              </ul>
+            </li>
+
+            <li class="program-group">
+              <div class="program-group-head">
+                <a class="program-group-link" href="phrmacy/pharmacy.html">Pharmacy</a>
+                <button class="program-group-toggle" type="button" data-target="desk-pharmacy" aria-expanded="false" aria-label="Toggle Pharmacy courses" onclick="toggleProgramGroup(event, 'desk-pharmacy')"></button>
+              </div>
+              <ul class="program-group-list" id="desk-pharmacy">
+                <li><a href="phrmacy/bpharmacy.html">B.Pharmacy</a></li>
+                <li><a href="phrmacy/dpharmacy.html">D.Pharmacy</a></li>
+              </ul>
+            </li>
+
+            <li class="program-group">
+              <div class="program-group-head">
+                <a class="program-group-link" href="alliedhealth/alliedhealth.html">Allied Health Sciences</a>
+                <button class="program-group-toggle" type="button" data-target="desk-allied" aria-expanded="false" aria-label="Toggle Allied Health Sciences courses" onclick="toggleProgramGroup(event, 'desk-allied')"></button>
+              </div>
+              <ul class="program-group-list" id="desk-allied">
+                <li><a href="alliedhealth/bscatott.html">B.Sc AT &amp; OTT</a></li>
+                <li><a href="alliedhealth/bscmit-radiology.html">B.Sc MIT / Radiology</a></li>
+                <li><a href="alliedhealth/bscmlt.html">B.Sc MLT</a></li>
+                <li><a href="alliedhealth/bsccct.html">B.Sc CCT</a></li>
+              </ul>
+            </li>
+
+            <li class="program-group">
+              <div class="program-group-head">
+                <a class="program-group-link" href="physiotherapy/physiotherapy.html">Physiotherapy</a>
+                <button class="program-group-toggle" type="button" data-target="desk-physio" aria-expanded="false" aria-label="Toggle Physiotherapy courses" onclick="toggleProgramGroup(event, 'desk-physio')"></button>
+              </div>
+              <ul class="program-group-list" id="desk-physio">
+                <li><a href="physiotherapy/bpt.html">BPT</a></li>
+              </ul>
+            </li>
+
+            <li class="program-group">
+              <div class="program-group-head">
+                <a class="program-group-link" href="occupationaltherapy/occupationaltherapy.html">Occupational Therapy</a>
+                <button class="program-group-toggle" type="button" data-target="desk-ot" aria-expanded="false" aria-label="Toggle Occupational Therapy courses" onclick="toggleProgramGroup(event, 'desk-ot')"></button>
+              </div>
+              <ul class="program-group-list" id="desk-ot">
+                <li><a href="occupationaltherapy/bot.html">BOT</a></li>
+              </ul>
+            </li>
+
+            <li class="program-group">
+              <div class="program-group-head">
+                <a class="program-group-link" href="hospitaladministration/hospitaladministration.html">Hospital Administration</a>
+                <button class="program-group-toggle" type="button" data-target="desk-ha" aria-expanded="false" aria-label="Toggle Hospital Administration courses" onclick="toggleProgramGroup(event, 'desk-ha')"></button>
+              </div>
+              <ul class="program-group-list" id="desk-ha">
+                <li><a href="hospitaladministration/bha.html">BHA</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <button class="mobile-program-toggle" type="button" onclick="togglePrograms(event)">
+            <span>Programs</span>
+            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+
+          <ul class="mobile-submenu" id="mobileProgramsMenu">
+            <li class="programs-all-link"><a href="programs.html">All Programs</a></li>
+
+            <li class="program-group">
+              <div class="program-group-head">
+                <a class="program-group-link" href="ourcourse/ourcourse.html">Nursing</a>
+                <button class="program-group-toggle" type="button" data-target="mob-nursing" aria-expanded="false" aria-label="Toggle Nursing courses" onclick="toggleProgramGroup(event, 'mob-nursing')"></button>
+              </div>
+              <ul class="program-group-list" id="mob-nursing">
+                <li><a href="ourcourse/gnm.html">GNM</a></li>
+                <li><a href="ourcourse/bscnursing.html">B.Sc Nursing</a></li>
+                <li><a href="ourcourse/pbBsc.html">Post Basic B.Sc</a></li>
+                <li><a href="ourcourse/mscnursing.html">M.Sc Nursing</a></li>
+              </ul>
+            </li>
+
+            <li class="program-group">
+              <div class="program-group-head">
+                <a class="program-group-link" href="manegemnet/management.html">Management</a>
+                <button class="program-group-toggle" type="button" data-target="mob-management" aria-expanded="false" aria-label="Toggle Management courses" onclick="toggleProgramGroup(event, 'mob-management')"></button>
+              </div>
+              <ul class="program-group-list" id="mob-management">
+                <li><a href="manegemnet/bcom.html">B.Com</a></li>
+                <li><a href="manegemnet/bba.html">BBA</a></li>
+                <li><a href="manegemnet/bbaaviation.html">BBA Aviation</a></li>
+                <li><a href="manegemnet/bcomlogistics.html">B.Com Logistics</a></li>
+                <li><a href="manegemnet/bca.html">BCA</a></li>
+              </ul>
+            </li>
+
+            <li class="program-group">
+              <div class="program-group-head">
+                <a class="program-group-link" href="phrmacy/pharmacy.html">Pharmacy</a>
+                <button class="program-group-toggle" type="button" data-target="mob-pharmacy" aria-expanded="false" aria-label="Toggle Pharmacy courses" onclick="toggleProgramGroup(event, 'mob-pharmacy')"></button>
+              </div>
+              <ul class="program-group-list" id="mob-pharmacy">
+                <li><a href="phrmacy/bpharmacy.html">B.Pharmacy</a></li>
+                <li><a href="phrmacy/dpharmacy.html">D.Pharmacy</a></li>
+              </ul>
+            </li>
+
+            <li class="program-group">
+              <div class="program-group-head">
+                <a class="program-group-link" href="alliedhealth/alliedhealth.html">Allied Health Sciences</a>
+                <button class="program-group-toggle" type="button" data-target="mob-allied" aria-expanded="false" aria-label="Toggle Allied Health Sciences courses" onclick="toggleProgramGroup(event, 'mob-allied')"></button>
+              </div>
+              <ul class="program-group-list" id="mob-allied">
+                <li><a href="alliedhealth/bscatott.html">B.Sc AT &amp; OTT</a></li>
+                <li><a href="alliedhealth/bscmit-radiology.html">B.Sc MIT / Radiology</a></li>
+                <li><a href="alliedhealth/bscmlt.html">B.Sc MLT</a></li>
+                <li><a href="alliedhealth/bsccct.html">B.Sc CCT</a></li>
+              </ul>
+            </li>
+
+            <li class="program-group">
+              <div class="program-group-head">
+                <a class="program-group-link" href="physiotherapy/physiotherapy.html">Physiotherapy</a>
+                <button class="program-group-toggle" type="button" data-target="mob-physio" aria-expanded="false" aria-label="Toggle Physiotherapy courses" onclick="toggleProgramGroup(event, 'mob-physio')"></button>
+              </div>
+              <ul class="program-group-list" id="mob-physio">
+                <li><a href="physiotherapy/bpt.html">BPT</a></li>
+              </ul>
+            </li>
+
+            <li class="program-group">
+              <div class="program-group-head">
+                <a class="program-group-link" href="occupationaltherapy/occupationaltherapy.html">Occupational Therapy</a>
+                <button class="program-group-toggle" type="button" data-target="mob-ot" aria-expanded="false" aria-label="Toggle Occupational Therapy courses" onclick="toggleProgramGroup(event, 'mob-ot')"></button>
+              </div>
+              <ul class="program-group-list" id="mob-ot">
+                <li><a href="occupationaltherapy/bot.html">BOT</a></li>
+              </ul>
+            </li>
+
+            <li class="program-group">
+              <div class="program-group-head">
+                <a class="program-group-link" href="hospitaladministration/hospitaladministration.html">Hospital Administration</a>
+                <button class="program-group-toggle" type="button" data-target="mob-ha" aria-expanded="false" aria-label="Toggle Hospital Administration courses" onclick="toggleProgramGroup(event, 'mob-ha')"></button>
+              </div>
+              <ul class="program-group-list" id="mob-ha">
+                <li><a href="hospitaladministration/bha.html">BHA</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li class="site-nav__cta-wrap">
+          <a href="contact.html#contact-form" class="btn-nav">Apply Now</a>
+        </li>
+        <li class="mobile-social-row">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
 
 <style>
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+
 :root{
   --red:#C0211F;
   --red-light:#E03533;
@@ -64,20 +242,87 @@
   --gold:#C9963A;
 }
 
-#nav{
+.site-header{
   position:fixed;
   top:0;
   left:0;
-  width:100%;
-  height:78px;
-  padding:0 6%;
-  background:var(--white);
-  border-bottom:1px solid var(--light-gray);
+  right:0;
+  z-index:999;
+}
+
+.site-topbar{
+  background:var(--navy);
+  color:#fff;
+  border-bottom:1px solid rgba(255,255,255,0.12);
+}
+
+.site-topbar__inner{
+  max-width:1400px;
+  margin:0 auto;
+  padding:7px clamp(18px,4vw,56px);
   display:flex;
   align-items:center;
   justify-content:space-between;
-  z-index:999;
-  box-shadow:0 4px 18px rgba(0,0,0,0.04);
+  gap:14px;
+}
+
+.site-topbar__left{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.site-topbar__left a{
+  color:rgba(255,255,255,0.9);
+  text-decoration:none;
+  font-size:11px;
+  letter-spacing:0.04em;
+}
+
+.site-topbar__left a:hover{
+  color:#fff;
+}
+
+.site-topbar__social{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.site-topbar__social a{
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,0.28);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:11px;
+}
+
+.site-topbar__social a:hover{
+  background:var(--red);
+  border-color:var(--red);
+}
+
+.site-nav{
+  background:var(--white);
+  border-bottom:1px solid var(--light-gray);
+  box-shadow:0 2px 20px rgba(12,26,58,0.06);
+}
+
+.site-nav__inner{
+  max-width:1400px;
+  margin:0 auto;
+  padding:0 clamp(18px,4vw,56px);
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
 }
 
 .logo{
@@ -86,6 +331,7 @@
   gap:14px;
   text-decoration:none;
   min-width:0;
+  flex-shrink:0;
 }
 
 .logo img{
@@ -113,116 +359,267 @@
   line-height:1.2;
 }
 
-#navMenu{
+.site-nav__menu{
   display:flex;
   align-items:center;
-  gap:30px;
+  gap:clamp(20px,2.8vw,40px);
   list-style:none;
   margin:0;
   padding:0;
 }
 
-#navMenu li{
+.site-nav__menu > li{
   position:relative;
 }
 
-#navMenu li a{
+.site-nav__menu .nav-link{
   color:var(--navy);
   text-decoration:none;
-  font-size:13px;
+  font-size:12px;
   font-weight:600;
-  letter-spacing:.6px;
+  letter-spacing:0.14em;
   text-transform:uppercase;
-  transition:.3s ease;
-  padding:6px 0;
+  transition:color .2s ease;
+  padding:10px 0;
   position:relative;
-  display:inline-block;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
 }
 
-#navMenu li a:hover{
+.site-nav__menu .nav-link:hover{
   color:var(--red);
 }
 
-#navMenu li a.active{
+.site-nav__menu .nav-link:focus-visible{
+  outline:2px solid var(--red);
+  outline-offset:4px;
+  border-radius:2px;
+}
+
+.site-nav__menu .nav-link.active{
   color:var(--red);
 }
 
-#navMenu li a.active::after{
+.site-nav__menu .nav-link.active::after{
   content:'';
   position:absolute;
   left:0;
-  bottom:-4px;
-  width:100%;
-  height:2px;
+  right:0;
+  bottom:2px;
+  height:3px;
   background:var(--red);
   border-radius:2px;
 }
 
+/* Programs parent: always accent red; active adds underline */
+.nav-link--programs{
+  color:var(--red) !important;
+  gap:8px;
+}
+
+.nav-link--programs:hover{
+  color:var(--red-dark) !important;
+}
+
+.nav-link--programs .nav-chevron{
+  font-size:9px;
+  opacity:0.95;
+  margin-top:1px;
+}
+
 .btn-nav{
-  background:linear-gradient(135deg,var(--red),var(--navy-light));
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(90deg,var(--red) 0%,var(--navy) 100%);
   color:#fff !important;
-  padding:11px 20px !important;
-  border-radius:6px;
-  font-size:12px !important;
+  padding:12px 26px !important;
+  border-radius:10px;
+  font-size:11px !important;
   font-weight:700 !important;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border:none;
+  box-shadow:0 4px 14px rgba(192,33,31,0.25);
+  transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
 }
 
 .btn-nav:hover{
-  background:linear-gradient(135deg,var(--red-light),var(--navy));
+  filter:brightness(1.05);
+  box-shadow:0 6px 20px rgba(12,26,58,0.2);
+  transform:translateY(-1px);
 }
 
-.dropdown > a{
-  display:flex;
-  align-items:center;
-  gap:8px;
+.btn-nav:focus-visible{
+  outline:2px solid var(--navy);
+  outline-offset:3px;
+}
+
+.site-nav__cta-wrap{
+  margin-left:4px;
+}
+
+.dropdown > .nav-link--programs{
+  padding-right:2px;
 }
 
 .dropdown-menu{
   position:absolute;
-  top:120%;
-  left:0;
-  min-width:230px;
+  top:calc(100% + 6px);
+  left:50%;
+  transform:translateX(-50%) translateY(8px);
+  min-width:360px;
+  max-height:72vh;
+  overflow:auto;
   background:var(--white);
   border:1px solid var(--light-gray);
-  border-radius:8px;
-  padding:10px 0;
+  border-radius:12px;
+  padding:8px 0;
   list-style:none;
+  margin:0;
   opacity:0;
   visibility:hidden;
-  transform:translateY(10px);
-  transition:.3s ease;
-  box-shadow:0 15px 35px rgba(0,0,0,.08);
+  transition:opacity .25s ease, visibility .25s ease, transform .25s ease;
+  box-shadow:0 16px 40px rgba(12,26,58,0.12);
   z-index:1000;
 }
 
-.dropdown:hover .dropdown-menu{
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu,
+.dropdown.open .dropdown-menu{
   opacity:1;
   visibility:visible;
-  transform:translateY(0);
+  transform:translateX(-50%) translateY(0);
 }
 
 .dropdown-menu li a{
   display:block;
-  padding:12px 18px;
+  padding:11px 22px;
   color:var(--navy) !important;
-  font-size:13px !important;
+  font-size:14px !important;
+  font-weight:500;
+  letter-spacing:0.02em;
   text-transform:none !important;
+  text-decoration:none;
+  transition:background .15s ease, color .15s ease;
 }
 
 .dropdown-menu li a:hover{
-  background:#f7f8fc;
+  background:var(--off-white);
   color:var(--red) !important;
+}
+
+.programs-all-link a{
+  font-weight:700 !important;
+  border-bottom:1px solid var(--light-gray);
+}
+
+.program-group{
+  border-bottom:1px solid #f1f3f8;
+}
+
+.program-group:last-child{
+  border-bottom:none;
+}
+
+.program-group-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.program-group-link{
+  display:block;
+  flex:1;
+  padding:11px 22px;
+  color:var(--navy);
+  text-decoration:none;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:0.02em;
+  white-space:normal;
+}
+
+.program-group-link:hover{
+  color:var(--red);
+}
+
+.program-group-toggle{
+  width:40px;
+  height:36px;
+  border:none;
+  background:transparent;
+  color:var(--navy);
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:0;
+  padding:0;
+  margin-right:10px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.program-group-toggle::after{
+  content:'+';
+  color:var(--red);
+  font-size:16px;
+  line-height:1;
+}
+
+.program-group-toggle[aria-expanded="true"]::after{
+  content:'−';
+}
+
+.program-group-list{
+  display:none;
+  list-style:none;
+  margin:0;
+  padding:0 0 6px;
+  background:#fbfcff;
+}
+
+.program-group-list.show{
+  display:block;
+}
+
+.program-group-list li a{
+  padding:9px 28px 9px 34px;
+  font-size:13px !important;
+  color:#334155 !important;
 }
 
 .menu-toggle{
   display:none;
-  background:none;
-  border:none;
-  font-size:30px;
-  color:var(--navy);
+  flex-shrink:0;
+  width:44px;
+  height:44px;
+  align-items:center;
+  justify-content:center;
+  background:transparent;
+  border:1px solid var(--light-gray);
+  border-radius:10px;
   cursor:pointer;
-  padding:4px 8px;
-  line-height:1;
+  color:var(--navy);
+  padding:0;
+  transition:border-color .2s ease, background .2s ease;
+}
+
+.menu-toggle:hover{
+  background:var(--off-white);
+  border-color:var(--mid-gray);
+}
+
+.menu-toggle__bars{
+  display:block;
+  width:20px;
+  height:2px;
+  background:var(--navy);
+  border-radius:1px;
+  box-shadow:0 -6px 0 var(--navy), 0 6px 0 var(--navy);
 }
 
 .mobile-program-toggle,
@@ -230,14 +627,39 @@
   display:none;
 }
 
+.mobile-social-row{
+  display:none;
+}
+
 @media (max-width:992px){
-  #nav{
-    height:74px;
+  .site-topbar{
+    display:none;
+  }
+
+  .site-topbar__inner{
+    padding:6px 18px;
+  }
+
+  .site-topbar__left{
+    gap:10px;
+  }
+
+  .site-topbar__left a{
+    font-size:10px;
+  }
+
+  .site-topbar__social a{
+    width:22px;
+    height:22px;
+  }
+
+  .site-nav__inner{
+    min-height:74px;
     padding:0 18px;
   }
 
   .menu-toggle{
-    display:block !important;
+    display:flex;
   }
 
   .logo img{
@@ -253,61 +675,82 @@
     letter-spacing:1px;
   }
 
-  #navMenu{
+  .site-nav__menu{
     position:absolute;
-    top:74px;
+    top:100%;
     left:0;
+    right:0;
     width:100%;
     background:var(--white);
     flex-direction:column;
-    align-items:flex-start;
+    align-items:stretch;
     gap:0;
     display:none;
-    padding:15px 20px 25px;
+    padding:12px 20px 24px;
     border-top:1px solid var(--light-gray);
-    box-shadow:0 12px 24px rgba(0,0,0,0.05);
+    box-shadow:0 16px 32px rgba(12,26,58,0.08);
   }
 
-  #navMenu.show{
+  .site-nav__menu.show{
     display:flex;
   }
 
-  #navMenu li{
+  .site-nav__menu > li{
     width:100%;
   }
 
-  #navMenu li a{
-    display:block;
+  .site-nav__menu .nav-link{
+    display:flex;
     width:100%;
     padding:14px 0;
     border-bottom:1px solid #f0f0f0;
+    letter-spacing:0.12em;
   }
 
-  .dropdown > a,
+  .site-nav__menu .nav-link.active::after{
+    display:none;
+  }
+
+  .site-nav__menu .nav-link.active{
+    border-left:3px solid var(--red);
+    padding-left:12px;
+  }
+
+  .dropdown > .nav-link--programs{
+    display:none !important;
+  }
+
   .dropdown-menu{
     display:none !important;
   }
 
   .mobile-program-toggle{
     display:flex;
+    align-items:center;
     justify-content:space-between;
     width:100%;
     padding:14px 0;
     background:none;
     border:none;
-    color:var(--navy);
-    font-size:13px;
+    color:var(--red);
+    font-size:12px;
     font-weight:600;
+    letter-spacing:0.12em;
     text-transform:uppercase;
     cursor:pointer;
     border-bottom:1px solid #f0f0f0;
+  }
+
+  .mobile-program-toggle i{
+    font-size:10px;
   }
 
   .mobile-submenu{
     display:none;
     list-style:none;
     width:100%;
-    padding-left:12px;
+    margin:0;
+    padding:0 0 8px 0;
   }
 
   .mobile-submenu.show{
@@ -315,13 +758,80 @@
   }
 
   .mobile-submenu li a{
+    font-size:14px !important;
+    padding:10px 0 !important;
+    color:var(--navy) !important;
+    text-decoration:none;
+    display:block;
+    border-bottom:1px solid #f5f5f5;
+  }
+
+  .mobile-submenu .programs-all-link a{
+    padding-left:0 !important;
+  }
+
+  .mobile-submenu .program-group-toggle{
+    width:36px;
+    height:34px;
+    margin-right:0;
+    font-size:14px;
+  }
+
+  .mobile-submenu .program-group-list{
+    background:transparent;
+    padding:0 0 8px 12px;
+  }
+
+  .mobile-submenu .program-group-link{
+    padding:12px 0;
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    border-bottom:1px solid #f0f0f0;
+    white-space:normal;
+  }
+
+  .mobile-submenu .program-group-list li a{
     font-size:13px !important;
-    padding:12px 0 !important;
+    padding:9px 0 !important;
+  }
+
+  .site-nav__cta-wrap{
+    margin-left:0;
+    margin-top:8px;
+    padding-top:4px;
   }
 
   .btn-nav{
-    margin-top:14px;
+    width:100%;
     text-align:center;
+  }
+
+  .mobile-social-row{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:10px;
+    padding-top:14px;
+  }
+
+  .mobile-social-row a{
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    border:1px solid var(--light-gray);
+    color:var(--navy);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:13px;
+    background:#fff;
+  }
+
+  .mobile-social-row a:hover{
+    border-color:var(--red);
+    color:var(--red);
   }
 }
 </style>

@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="../" />
+  <title>Physiotherapy Programs | Noor College</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --red: #c0211f;
+      --red-light: #e03533;
+      --red-dark: #8b1614;
+      --navy: #0c1a3a;
+      --navy-mid: #172d5c;
+      --navy-light: #1e3a70;
+      --white: #ffffff;
+      --off-white: #f7f6f2;
+      --light-gray: #e8eaf0;
+      --mid-gray: #b8bcc8;
+      --text-muted: #64748b;
+      --gold: #c9963a;
+      --shadow: 0 20px 50px rgba(0, 0, 0, .08);
+      --container: 1140px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--navy);
+      background: var(--white);
+      overflow-x: hidden;
+      padding-top: 78px
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    a {
+      color: inherit
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 10px
+    }
+
+    .tag::before {
+      content: '—  ';
+      opacity: .5
+    }
+
+    h2.hl {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(30px, 4vw, 50px);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.1;
+      margin-bottom: 16px
+    }
+
+    h2.hl em {
+      color: var(--red);
+      font-style: italic
+    }
+
+    .lead {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.85;
+      max-width: 680px
+    }
+
+    .r {
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity .65s ease, transform .65s ease
+    }
+
+    .r.on {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .r.d1 {
+      transition-delay: .08s
+    }
+
+    .page-hero {
+      min-height: 58vh;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 6% 80px
+    }
+
+    .ph-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 65% 75% at 75% 35%, rgba(192, 33, 31, .22) 0%, transparent 65%), radial-gradient(ellipse 50% 60% at 5% 85%, rgba(30, 58, 112, .7) 0%, transparent 60%), linear-gradient(150deg, #0c1a3a 0%, #172d5c 55%, #0c1a3a 100%)
+    }
+
+    .ph-grid {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
+      background-size: 72px 72px;
+      animation: gridDrift 22s linear infinite
+    }
+
+    @keyframes gridDrift {
+      from {
+        background-position: 0 0
+      }
+
+      to {
+        background-position: 72px 72px
+      }
+    }
+
+    .ph-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .38);
+      margin-bottom: 26px;
+      flex-wrap: wrap
+    }
+
+    .breadcrumb::before {
+      content: '';
+      width: 28px;
+      height: 1px;
+      background: var(--red);
+      margin-right: 4px
+    }
+
+    .breadcrumb a {
+      text-decoration: none;
+      color: rgba(255, 255, 255, .38)
+    }
+
+    .breadcrumb .sep {
+      color: rgba(255, 255, 255, .25)
+    }
+
+    .breadcrumb .cur {
+      color: var(--red-light)
+    }
+
+    .ph-content h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(44px, 7.5vw, 88px);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      letter-spacing: -1.5px
+    }
+
+    .ph-content h1 em {
+      color: var(--red-light);
+      font-style: italic
+    }
+
+    .ph-sub {
+      font-size: 17px;
+      color: rgba(255, 255, 255, .58);
+      font-weight: 300;
+      max-width: 720px;
+      line-height: 1.75;
+      margin: 18px auto 0
+    }
+
+    .ph-bar {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--red-light));
+      margin: 32px auto 0;
+      border-radius: 2px
+    }
+
+    .intro-strip {
+      padding: 90px 6%;
+      background: var(--off-white);
+      border-bottom: 1px solid var(--light-gray)
+    }
+
+    .intro-strip-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px
+    }
+
+    .intro-head h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 700;
+      line-height: 1.15
+    }
+
+    .intro-head em {
+      color: var(--red);
+      font-style: italic
+    }
+
+    .intro-text {
+      max-width: 650px;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 1.8;
+      color: var(--text-muted);
+      font-size: 16px
+    }
+
+    .strip-stat {
+      display: flex;
+      gap: 50px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 10px
+    }
+
+    .sstat {
+      text-align: center
+    }
+
+    .sstat strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--red);
+      line-height: 1
+    }
+
+    .sstat small {
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted)
+    }
+
+    .courses-section {
+      padding: 90px 20px;
+      background: #fff
+    }
+
+    .courses-inner {
+      max-width: 1200px;
+      margin: auto
+    }
+
+    .courses-header {
+      text-align: center;
+      max-width: 800px;
+      margin: auto auto 55px
+    }
+
+    .courses-header .lead {
+      max-width: 720px;
+      margin: auto;
+      text-align: center
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 26px
+    }
+
+    .course-card {
+      border: 1px solid var(--light-gray);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+      transition: .3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%
+    }
+
+    .course-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow)
+    }
+
+    .course-img {
+      height: 240px;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(135deg, #11214a 0%, #1f3e7d 100%)
+    }
+
+    .course-real-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .course-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(12, 26, 58, .72), rgba(12, 26, 58, .12));
+      pointer-events: none
+    }
+
+    .duration-pill {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 2;
+      background: rgba(255, 255, 255, .96);
+      color: var(--navy);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .5px
+    }
+
+    .course-img-label {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      z-index: 2;
+      color: #fff;
+      font-size: 12px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      font-weight: 600;
+      line-height: 1.4;
+      max-width: 70%
+    }
+
+    .course-num {
+      position: absolute;
+      right: 16px;
+      bottom: 10px;
+      z-index: 2;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 62px;
+      line-height: 1;
+      color: rgba(255, 255, 255, .88);
+      font-weight: 700
+    }
+
+    .course-body {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      flex: 1
+    }
+
+    .course-tag {
+      font-size: 11px;
+      color: var(--red);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px
+    }
+
+    .course-body h3 {
+      font-size: 30px;
+      line-height: 1.2;
+      margin-bottom: 14px;
+      font-family: 'Cormorant Garamond', serif
+    }
+
+    .course-body p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 18px
+    }
+
+    .highlights {
+      padding: 0;
+      margin: 0 0 25px;
+      list-style: none
+    }
+
+    .highlights li {
+      padding-left: 22px;
+      position: relative;
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #334155;
+      line-height: 1.6
+    }
+
+    .highlights li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--red);
+      font-weight: bold
+    }
+
+    .course-cta {
+      margin-top: auto;
+      background: var(--navy);
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      padding: 14px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%
+    }
+
+    .course-cta:hover {
+      background: var(--red)
+    }
+
+    .compare {
+      background: var(--off-white);
+      padding: 100px 6%
+    }
+
+    .compare-inner {
+      max-width: 1140px;
+      margin: 0 auto
+    }
+
+    .compare-head {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center
+    }
+
+    .compare-table-wrap {
+      overflow-x: auto;
+      margin-top: 48px;
+      border-radius: 12px
+    }
+
+    table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+      background: var(--white);
+      border: 1px solid var(--light-gray)
+    }
+
+    thead tr {
+      background: var(--navy)
+    }
+
+    thead th {
+      padding: 18px 20px;
+      text-align: left;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .75)
+    }
+
+    thead th:first-child {
+      color: #fff;
+      border-right: 2px solid var(--red)
+    }
+
+    tbody tr {
+      border-bottom: 1px solid var(--light-gray)
+    }
+
+    tbody td {
+      padding: 16px 20px;
+      font-size: 14px;
+      color: var(--navy)
+    }
+
+    tbody td:first-child {
+      font-weight: 600;
+      font-size: 15px;
+      border-right: 1px solid var(--light-gray)
+    }
+
+    .tag-pill {
+      display: inline-block;
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .5px
+    }
+
+    .tag-ug {
+      background: rgba(192, 33, 31, .1);
+      color: var(--red)
+    }
+
+    .contact-strip {
+      background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 55%, var(--red-light) 100%);
+      padding: 80px 6%
+    }
+
+    .cs-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      gap: 30px
+    }
+
+    .cs-text h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(26px, 3.5vw, 42px);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px
+    }
+
+    .cs-text p {
+      font-size: 15px;
+      color: rgba(255, 255, 255, .8);
+      max-width: 650px;
+      line-height: 1.75
+    }
+
+    .cs-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center
+    }
+
+    .cs-btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(255, 255, 255, .14);
+      border: 1.5px solid rgba(255, 255, 255, .3);
+      padding: 16px 26px;
+      border-radius: 10px;
+      color: #fff;
+      text-decoration: none
+    }
+
+    @media (max-width:768px) {
+      .course-grid {
+        grid-template-columns: 1fr
+      }
+
+      .course-img {
+        height: 210px
+      }
+
+      .courses-section,
+      .compare,
+      .contact-strip,
+      .intro-strip {
+        padding: 60px 18px
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header"></div>
+  <section class="page-hero">
+    <div class="ph-bg"></div>
+    <div class="ph-grid"></div>
+    <div class="ph-content">
+      <div class="breadcrumb"><a href="index.html">Noor College</a><span class="sep">›</span><span
+          class="cur">Physiotherapy</span></div>
+      <h1>Our <em>Physiotherapy</em> Program</h1>
+      <p class="ph-sub">Build expertise in physical rehabilitation, therapeutic exercise, and patient-centered care
+        through our professional physiotherapy pathway.</p>
+      <div class="ph-bar"></div>
+    </div>
+  </section>
+  <section class="intro-strip">
+    <div class="intro-strip-inner">
+      <div class="r intro-head"><span class="tag">Education for Everyone</span>
+        <h2>Physiotherapy Program for <em>Future Clinicians</em></h2>
+      </div>
+      <p class="r d2 intro-text">Our BPT program is designed to develop strong anatomy knowledge, clinical assessment
+        ability, and rehabilitation skills for modern healthcare practice.</p>
+      <div class="strip-stat r d1">
+        <div class="sstat"><strong>1</strong><small>Program</small></div>
+        <div class="sstat"><strong>4</strong><small>Years</small></div>
+        <div class="sstat"><strong>BPT</strong><small>Career Ready</small></div>
+      </div>
+    </div>
+  </section>
+  <section class="courses-section" id="programs">
+    <div class="courses-inner">
+      <div class="courses-header r"><span class="tag">Our Program</span>
+        <h2 class="hl">We offer the following program</h2>
+        <p class="lead">A comprehensive physiotherapy program that prepares students for rehabilitation, mobility care,
+          and evidence-based therapeutic practice.</p>
+      </div>
+      <div class="course-grid">
+        <article class="course-card r">
+          <div class="course-img"><img src="assets/studentimg.jpg" alt="BPT Course" class="course-real-img" />
+            <div class="duration-pill">4 Year Undergraduate</div>
+            <p class="course-img-label">Bachelor of Physiotherapy</p><span class="course-num">01</span>
+          </div>
+          <div class="course-body"><span class="course-tag">BPT · 4 Years</span>
+            <h3>Bachelor of<br />Physiotherapy</h3>
+            <p>BPT trains students in physical therapy techniques, patient assessment, and rehabilitation planning for
+              orthopedic, neurological, and sports-related conditions.</p>
+            <ul class="highlights">
+              <li>Strong foundation in human anatomy and biomechanics</li>
+              <li>Hands-on rehabilitation and therapeutic exercise training</li>
+              <li>Clinical rotations in hospitals and rehabilitation settings</li>
+              <li>Career pathways in hospitals, sports clinics, and wellness centers</li>
+            </ul><a href="physiotherapy/bpt.html" class="course-cta"><span>Click here for more
+                information</span><span>→</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="compare">
+    <div class="compare-inner">
+      <div class="compare-head r"><span class="tag">At a Glance</span>
+        <h2 class="hl">Program <em>Snapshot</em></h2>
+        <p class="lead">Quick details to understand the BPT program path.</p>
+      </div>
+      <div class="compare-table-wrap r d1">
+        <table>
+          <thead>
+            <tr>
+              <th>Program</th>
+              <th>Duration</th>
+              <th>Level</th>
+              <th>Eligibility</th>
+              <th>Career Roles</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BPT</td>
+              <td>4 Years</td>
+              <td><span class="tag-pill tag-ug">Undergraduate</span></td>
+              <td>10+2 or equivalent</td>
+              <td>Physiotherapist, Rehab Therapist, Sports Rehab Assistant</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  <section class="contact-strip" id="contact-strip">
+    <div class="cs-inner">
+      <div class="cs-text r">
+        <h3>Ready to Begin Your Physiotherapy Journey?</h3>
+        <p>Start your path in physiotherapy with practical learning and clinical exposure. Contact us today to get
+          admission details.</p>
+      </div>
+      <div class="cs-actions r d1"><a href="tel:+919845026920" class="cs-btn">
+          <div class="cs-btn-icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="cs-btn-body">
+            <p>Call Us</p><strong>+91 98450 26920</strong>
+          </div>
+        </a><a href="mailto:info@noorcollege.com" class="cs-btn">
+          <div class="cs-btn-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="cs-btn-body">
+            <p>Email Us</p><strong>info@noorcollege.com</strong>
+          </div>
+        </a></div>
+    </div>
+  </section>
+  <div id="footer"></div>
+  <script src="load.js"></script>
+  <script>const items = document.querySelectorAll('.r'); if ('IntersectionObserver' in window) { const obs = new IntersectionObserver((entries) => { entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('on'); obs.unobserve(entry.target); } }) }, { threshold: 0.08 }); items.forEach((el) => obs.observe(el)); } else { items.forEach((el) => el.classList.add('on')); }</script>
+</body>
+
+</html>

@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Courses | Noor College & School of Nursing</title>
+  <base href="../" />
+  <title>Programs | Noor College & School of Nursing</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -102,6 +103,7 @@
     .r.d2{transition-delay:.16s;}
     .r.d3{transition-delay:.24s;}
     .r.d4{transition-delay:.32s;}
+    .r.d5{transition-delay:.40s;}
 
     /* HERO */
     .page-hero{
@@ -375,6 +377,13 @@
       height:100%;
     }
 
+    .course-card-hit{
+      position:absolute;
+      inset:0;
+      z-index:2;
+      text-decoration:none;
+    }
+
     .course-card:hover{
       transform:translateY(-6px);
       box-shadow:var(--shadow);
@@ -447,6 +456,8 @@
       display:flex;
       flex-direction:column;
       flex:1;
+      position:relative;
+      z-index:3;
     }
 
     .course-tag{
@@ -891,10 +902,10 @@
       <div class="breadcrumb">
         <a href="index.html">Noor College</a>
         <span class="sep">›</span>
-        <span class="cur">Our Courses</span>
+        <span class="cur">Programs</span>
       </div>
-      <h1>Our <em>Courses</em></h1>
-      <p class="ph-sub">Four nationally recognised nursing programs — each designed to shape compassionate, skilled, and globally ready healthcare professionals.</p>
+      <h1>Our <em>Programs</em></h1>
+      <p class="ph-sub">Five nationally recognised pathways — four core nursing programs plus hospital and healthcare management — each designed to shape skilled, ethical, and career-ready healthcare professionals.</p>
       <div class="ph-bar"></div>
     </div>
   </section>
@@ -903,16 +914,16 @@
     <div class="intro-strip-inner">
       <div class="r intro-head">
         <span class="tag">Education for Everyone</span>
-        <h2>Nursing Programs Built for <em>Every Ambition</em></h2>
+        <h2>Management Programs Built for <em>Every Ambition</em></h2>
       </div>
 
       <p class="r d2 intro-text">
-        At Noor College &amp; School of Nursing, we offer a comprehensive range of programs designed to equip students with the knowledge, skills and clinical expertise for a successful healthcare career.
+        Our management programs are designed to build business knowledge, analytical thinking, communication, and leadership skills for modern corporate and service industries.
       </p>
 
       <div class="strip-stat r d3">
         <div class="sstat">
-          <strong>4</strong>
+          <strong>5</strong>
           <small>Programs</small>
         </div>
         <div class="sstat">
@@ -920,8 +931,8 @@
           <small>Students</small>
         </div>
         <div class="sstat">
-          <strong>RGUHS</strong>
-          <small>Affiliated</small>
+          <strong>UG</strong>
+          <small>Career Ready</small>
         </div>
       </div>
     </div>
@@ -933,31 +944,32 @@
         <span class="tag">Our Programs</span>
         <h2 class="hl">We offer the following programs</h2>
         <p class="lead">
-          Each program is carefully structured to blend theoretical rigour with hands-on clinical practice at our partner hospitals across Bangalore.
+          These five programs combine strong academic foundations with practical industry exposure, preparing students for careers in business, logistics, technology, and aviation services.
         </p>
       </div>
 
       <div class="course-grid">
         <article class="course-card r">
+          <a href="bcom.html" class="course-card-hit" aria-label="Open B.Com program"></a>
           <div class="course-img">
-            <img src="assets/gnm.jpg" alt="GNM Course" class="course-real-img" />
-            <div class="duration-pill">Diploma Program</div>
-            <p class="course-img-label">General Nursing &amp; Midwifery</p>
+            <img src="assets/clgimg1.jpg" alt="B.Com Course" class="course-real-img" />
+            <div class="duration-pill">3 Year Undergraduate</div>
+            <p class="course-img-label">Bachelor of Commerce</p>
             <span class="course-num">01</span>
           </div>
           <div class="course-body">
-            <span class="course-tag">GNM · Diploma</span>
-            <h3>General Nursing<br />&amp; Midwifery</h3>
+            <span class="course-tag">B.Com · 3 Years</span>
+            <h3>Bachelor of<br />Commerce</h3>
             <p>
-              The General Nursing and Midwifery (GNM) program at Noor College is a highly sought-after diploma course aimed at preparing students to become skilled nursing professionals with expertise in general nursing and midwifery care.
+              B.Com provides a strong foundation in accounting, finance, taxation, and business law to prepare students for careers in commerce, banking, and corporate operations.
             </p>
             <ul class="highlights">
-              <li>Comprehensive training in general nursing fundamentals</li>
-              <li>Clinical postings at partner hospitals across Bangalore</li>
-              <li>Midwifery and maternal care specialisation</li>
-              <li>Affiliated to RGUHS — nationally recognised qualification</li>
+              <li>Core subjects in accounting, economics, and business law</li>
+              <li>Practical understanding of taxation and financial reporting</li>
+              <li>Builds strong analytical and numerical decision skills</li>
+              <li>Prepares for CA, M.Com, MBA, and banking careers</li>
             </ul>
-            <a href="gnm.html" class="course-cta">
+            <a href="bcom.html" class="course-cta">
               <span>Click here for more information</span>
               <span>→</span>
             </a>
@@ -965,25 +977,26 @@
         </article>
 
         <article class="course-card r d1">
+          <a href="bbaaviation.html" class="course-card-hit" aria-label="Open BBA Aviation program"></a>
           <div class="course-img">
-            <img src="assets/bsc.jpg" alt="B.Sc Nursing" class="course-real-img" />
-            <div class="duration-pill">4 Year Undergraduate</div>
-            <p class="course-img-label">Bachelor of Science in Nursing</p>
+            <img src="assets/classrooms.jpg" alt="BBA Aviation Course" class="course-real-img" />
+            <div class="duration-pill">3 Year Undergraduate</div>
+            <p class="course-img-label">Business + Aviation Operations</p>
             <span class="course-num">02</span>
           </div>
           <div class="course-body">
-            <span class="course-tag">B.Sc Nursing · 4 Years</span>
-            <h3>Bachelor of Science<br />in Nursing</h3>
+            <span class="course-tag">BBA Aviation · 3 Years</span>
+            <h3>BBA in<br />Aviation</h3>
             <p>
-              B.Sc Nursing equips students with comprehensive medical knowledge and extensive practical training, preparing them for a rewarding, impactful career in modern healthcare environments across India and globally.
+              BBA Aviation blends management fundamentals with airline and airport operations, preparing students for fast-growing careers in aviation and travel services.
             </p>
             <ul class="highlights">
-              <li>Strong foundation in nursing theory and clinical practice</li>
-              <li>4-year structured program with integrated clinical rotations</li>
-              <li>Access to advanced labs — microbiology, nutrition, community health</li>
-              <li>HELINET digital library access with international journals</li>
+              <li>Exposure to airport ground handling and customer operations</li>
+              <li>Aviation management, safety, and service process basics</li>
+              <li>Communication and professional grooming focus</li>
+              <li>Career pathways in airlines, airports, and hospitality support</li>
             </ul>
-            <a href="bscnursing.html" class="course-cta">
+            <a href="bbaaviation.html" class="course-cta">
               <span>Click here for more information</span>
               <span>→</span>
             </a>
@@ -991,25 +1004,26 @@
         </article>
 
         <article class="course-card r d2">
+          <a href="bba.html" class="course-card-hit" aria-label="Open BBA program"></a>
           <div class="course-img">
-            <img src="assets/pbbsc.jpg" alt="Post Basic B.Sc Nursing" class="course-real-img" />
-            <div class="duration-pill">2 Year Program</div>
-            <p class="course-img-label">Post Basic B.Sc Nursing</p>
+            <img src="assets/studentimg.jpg" alt="BBA Course" class="course-real-img" />
+            <div class="duration-pill">3 Year Undergraduate</div>
+            <p class="course-img-label">Business Administration</p>
             <span class="course-num">03</span>
           </div>
           <div class="course-body">
-            <span class="course-tag">PB B.Sc Nursing · 2 Years</span>
-            <h3>Post Basic<br />B.Sc Nursing</h3>
+            <span class="course-tag">BBA · 3 Years</span>
+            <h3>Bachelor of Business<br />Administration</h3>
             <p>
-              Designed for registered nurses seeking to enhance their qualifications and move into higher professional roles in healthcare. This 2-year program bridges practical nursing experience with advanced academic credentials.
+              BBA develops core management and leadership capabilities through a practical curriculum in marketing, HR, finance, and entrepreneurship.
             </p>
             <ul class="highlights">
-              <li>Exclusively for registered nurses with GNM qualification</li>
-              <li>Accelerated pathway to bachelor-level credentials</li>
-              <li>Advanced clinical skills and leadership training</li>
-              <li>Opens pathway to M.Sc Nursing and beyond</li>
+              <li>Strong base in management principles and business strategy</li>
+              <li>Skill-building in communication, leadership, and teamwork</li>
+              <li>Project and case-based learning for real business scenarios</li>
+              <li>Ideal pathway to MBA and management careers</li>
             </ul>
-            <a href="pbBsc.html" class="course-cta">
+            <a href="bba.html" class="course-cta">
               <span>Click here for more information</span>
               <span>→</span>
             </a>
@@ -1017,25 +1031,53 @@
         </article>
 
         <article class="course-card r d3">
+          <a href="bcomlogistics.html" class="course-card-hit" aria-label="Open B.Com Logistics program"></a>
           <div class="course-img">
-            <img src="assets/msc.jpg" alt="M.Sc Nursing" class="course-real-img" />
-            <div class="duration-pill">2 Year Masters</div>
-            <p class="course-img-label">Master of Science in Nursing</p>
+            <img src="assets/clgoutsideimgbus.jpg" alt="B.Com Logistics Course" class="course-real-img" />
+            <div class="duration-pill">3 Year Undergraduate</div>
+            <p class="course-img-label">Commerce + Supply Chain</p>
             <span class="course-num">04</span>
           </div>
           <div class="course-body">
-            <span class="course-tag">M.Sc Nursing · 2 Years</span>
-            <h3>Master of Science<br />in Nursing</h3>
+            <span class="course-tag">B.Com Logistics · 3 Years</span>
+            <h3>B.Com in<br />Logistics</h3>
             <p>
-              M.Sc Nursing enhances critical thinking and specialised care skills, preparing nurses for educator, administrator, and expert clinician roles. The program offers specialisation and advanced knowledge for leadership in nursing and research.
+              B.Com Logistics combines commerce subjects with logistics, transport, and supply chain knowledge for careers in warehousing, shipping, and operations.
             </p>
             <ul class="highlights">
-              <li>Specialisation tracks: Medical-Surgical, Community, Paediatric &amp; more</li>
-              <li>Research methodology and evidence-based practice</li>
-              <li>Prepares for nurse educator and administrator roles</li>
-              <li>Pathway to doctoral studies and academic careers</li>
+              <li>Supply chain, inventory, and distribution management basics</li>
+              <li>Commerce and finance fundamentals for logistics operations</li>
+              <li>Industry-oriented curriculum with operational focus</li>
+              <li>Career opportunities in shipping, e-commerce, and transport</li>
             </ul>
-            <a href="mscnursing.html" class="course-cta">
+            <a href="bcomlogistics.html" class="course-cta">
+              <span>Click here for more information</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="course-card r d5">
+          <a href="bca.html" class="course-card-hit" aria-label="Open BCA program"></a>
+          <div class="course-img">
+            <img src="assets/img1.jpg" alt="BCA Course" class="course-real-img" />
+            <div class="duration-pill">3 Year Undergraduate</div>
+            <p class="course-img-label">Computer Applications</p>
+            <span class="course-num">05</span>
+          </div>
+          <div class="course-body">
+            <span class="course-tag">BCA · 3 Years</span>
+            <h3>Bachelor of Computer<br />Applications</h3>
+            <p>
+              BCA equips students with software, programming, and IT fundamentals required for careers in application development, testing, and technology support.
+            </p>
+            <ul class="highlights">
+              <li>Programming, database, and web development fundamentals</li>
+              <li>Hands-on learning with software tools and practical labs</li>
+              <li>Builds logical thinking and problem-solving capability</li>
+              <li>Pathway to MCA, software roles, and IT services</li>
+            </ul>
+            <a href="bca.html" class="course-cta">
               <span>Click here for more information</span>
               <span>→</span>
             </a>
@@ -1066,32 +1108,39 @@
           </thead>
           <tbody>
             <tr>
-              <td>General Nursing &amp; Midwifery (GNM)</td>
-              <td>3 Years + 6 months internship</td>
-              <td><span class="tag-pill tag-diploma">Diploma</span></td>
-              <td>10+2 with Science / any stream (varies)</td>
-              <td>Staff Nurse, Midwife, Ward Manager</td>
-            </tr>
-            <tr>
-              <td>B.Sc Nursing</td>
-              <td>4 Years</td>
+              <td>B.Com</td>
+              <td>3 Years</td>
               <td><span class="tag-pill tag-ug">Undergraduate</span></td>
-              <td>10+2 with PCB, 45%+ marks</td>
-              <td>Staff Nurse, Nurse Educator, Hospital Admin</td>
+              <td>10+2 or equivalent</td>
+              <td>Accountant, Banking Associate, Commerce Executive</td>
             </tr>
             <tr>
-              <td>Post Basic B.Sc Nursing</td>
-              <td>2 Years</td>
-              <td><span class="tag-pill tag-pg">Post Basic</span></td>
-              <td>GNM + Registered Nurse, 1yr experience</td>
-              <td>Senior Nurse, Specialist, Charge Nurse</td>
+              <td>BBA Aviation</td>
+              <td>3 Years</td>
+              <td><span class="tag-pill tag-ug">Undergraduate</span></td>
+              <td>10+2 or equivalent</td>
+              <td>Airport Operations, Ground Staff, Aviation Coordinator</td>
             </tr>
             <tr>
-              <td>M.Sc Nursing</td>
-              <td>2 Years</td>
-              <td><span class="tag-pill tag-masters">Masters</span></td>
-              <td>B.Sc Nursing, 55%+ marks</td>
-              <td>Nurse Educator, Researcher, Department Head</td>
+              <td>BBA</td>
+              <td>3 Years</td>
+              <td><span class="tag-pill tag-ug">Undergraduate</span></td>
+              <td>10+2 or equivalent</td>
+              <td>Management Trainee, Marketing Executive, HR Associate</td>
+            </tr>
+            <tr>
+              <td>B.Com Logistics</td>
+              <td>3 Years</td>
+              <td><span class="tag-pill tag-ug">Undergraduate</span></td>
+              <td>10+2 or equivalent</td>
+              <td>Logistics Executive, Supply Chain Assistant, Operations Staff</td>
+            </tr>
+            <tr>
+              <td>BCA</td>
+              <td>3 Years</td>
+              <td><span class="tag-pill tag-ug">Undergraduate</span></td>
+              <td>10+2 or equivalent</td>
+              <td>Software Support, Junior Developer, IT Operations</td>
             </tr>
           </tbody>
         </table>
@@ -1102,9 +1151,9 @@
   <section class="contact-strip" id="contact-strip">
     <div class="cs-inner">
       <div class="cs-text r">
-        <h3>Ready to Begin Your Nursing Journey?</h3>
+        <h3>Ready to Begin Your Management Journey?</h3>
         <p>
-          At Noor College &amp; School of Nursing, we offer nursing programs designed to equip students with the knowledge, skills and clinical expertise for a successful healthcare career. Reach out to us today.
+          We offer career-focused undergraduate programs in commerce, business, logistics, aviation, and computer applications. Contact us today to choose the right course for your future.
         </p>
       </div>
 

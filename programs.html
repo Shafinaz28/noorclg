@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Programs | Noor College</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --red: #C0211F;
+      --navy: #0C1A3A;
+      --navy-mid: #172D5C;
+      --white: #fff;
+      --off: #F7F6F2;
+      --line: #E8EAF0;
+      --muted: #64748B
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--navy);
+      background: var(--white);
+      padding-top: 78px
+    }
+
+    @media (max-width:992px) {
+      body {
+        padding-top: 74px
+      }
+    }
+
+    .hero {
+      background: linear-gradient(140deg, var(--navy), var(--navy-mid));
+      color: #fff;
+      padding: 120px 20px 70px;
+      text-align: center
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(38px, 7vw, 74px);
+      line-height: 1
+    }
+
+    .hero h1 em {
+      color: #f2a3a2;
+      font-style: italic
+    }
+
+    .hero p {
+      max-width: 780px;
+      margin: 14px auto 0;
+      color: rgba(255, 255, 255, .85);
+      line-height: 1.8
+    }
+
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 80px 20px
+    }
+
+    .top {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 40px
+    }
+
+    .tag {
+      font-size: 11px;
+      color: var(--red);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700
+    }
+
+    .top h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(30px, 4vw, 48px);
+      margin: 10px 0
+    }
+
+    .top p {
+      color: var(--muted);
+      line-height: 1.8
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px
+    }
+
+    @media (max-width:860px) {
+      .grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      position:relative;
+      transition: .25s ease
+    }
+
+    .card-hit{
+      position:absolute;
+      inset:0;
+      z-index:2;
+      text-decoration:none;
+    }
+    .card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 14px 14px 0 0
+    }
+
+    .card-body {
+      padding: 20px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      height: 100%;
+      position:relative;
+      z-index:3
+    }
+
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(12, 26, 58, .08)
+    }
+
+    .num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px;
+      color: var(--red);
+      line-height: 1
+    }
+
+    .card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      line-height: 1.1
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.75
+    }
+
+    .course-list {
+      margin: 2px 0 8px 18px;
+      color: #334155;
+      line-height: 1.75
+    }
+
+    .course-list li {
+      margin-bottom: 2px
+    }
+
+    .link {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #fff;
+      background: var(--navy);
+      text-decoration: none;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-weight: 600
+    }
+
+    .link:hover {
+      background: var(--red)
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header"></div>
+
+  <section class="hero">
+    <h1>All <em>Programs</em></h1>
+    <p>Explore all 7 program categories at Noor College. Choose your path and open the detailed course pages for
+      complete information.</p>
+  </section>
+
+  <main class="wrap">
+    <div class="top">
+      <div class="tag">Academic Pathways</div>
+      <h2>One Main Programs Page</h2>
+      <p>All major categories are listed below in one place for easy navigation.</p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <a href="ourcourse/ourcourse.html" class="card-hit" aria-label="Open Nursing programs"></a>
+        <img src="assets/gnm.jpg" alt="Nursing programs" class="card-img" />
+        <div class="card-body"><span class="num">01</span>
+          <h3>Nursing</h3>
+          <p>GNM, B.Sc Nursing, Post Basic B.Sc, and M.Sc Nursing programs.</p>
+          <ul class="course-list">
+            <li>GNM</li>
+            <li>B.Sc Nursing</li>
+            <li>Post Basic B.Sc Nursing</li>
+            <li>M.Sc Nursing</li>
+          </ul><a class="link"
+            href="ourcourse/ourcourse.html">Open Nursing Programs <span>→</span></a>
+        </div>
+      </article>
+      <article class="card">
+        <a href="manegemnet/management.html" class="card-hit" aria-label="Open Management programs"></a>
+        <img src="assets/clgimg1.jpg" alt="Management programs" class="card-img" />
+        <div class="card-body"><span class="num">02</span>
+          <h3>Management</h3>
+          <p>B.Com, BBA, BBA Aviation, B.Com Logistics, and BCA.</p>
+          <ul class="course-list">
+            <li>B.Com</li>
+            <li>BBA</li>
+            <li>BBA Aviation</li>
+            <li>B.Com Logistics</li>
+            <li>BCA</li>
+          </ul><a class="link" href="manegemnet/management.html">Open
+            Management <span>→</span></a>
+        </div>
+      </article>
+      <article class="card">
+        <a href="phrmacy/pharmacy.html" class="card-hit" aria-label="Open Pharmacy programs"></a>
+        <img src="assets/img1.jpg" alt="Pharmacy programs" class="card-img" />
+        <div class="card-body"><span class="num">03</span>
+          <h3>Pharmacy</h3>
+          <p>Career-focused pharmacy pathways with B.Pharmacy and D.Pharmacy.</p>
+          <ul class="course-list">
+            <li>B.Pharmacy</li>
+            <li>D.Pharmacy</li>
+          </ul><a class="link"
+            href="phrmacy/pharmacy.html">Open Pharmacy <span>→</span></a>
+        </div>
+      </article>
+      <article class="card">
+        <a href="alliedhealth/alliedhealth.html" class="card-hit" aria-label="Open Allied Health Sciences programs"></a>
+        <img src="assets/classrooms.jpg" alt="Allied health sciences programs" class="card-img" />
+        <div class="card-body"><span class="num">04</span>
+          <h3>Allied Health Sciences</h3>
+          <p>AT & OTT, MIT/Radiology, MLT, and CCT specializations.</p>
+          <ul class="course-list">
+            <li>B.Sc AT &amp; OTT</li>
+            <li>B.Sc MIT / Radiology</li>
+            <li>B.Sc MLT</li>
+            <li>B.Sc CCT</li>
+          </ul><a class="link"
+            href="alliedhealth/alliedhealth.html">Open Allied Health <span>→</span></a>
+        </div>
+      </article>
+      <article class="card">
+        <a href="physiotherapy/physiotherapy.html" class="card-hit" aria-label="Open Physiotherapy programs"></a>
+        <img src="assets/studentimg.jpg" alt="Physiotherapy program" class="card-img" />
+        <div class="card-body"><span class="num">05</span>
+          <h3>Physiotherapy</h3>
+          <p>Bachelor of Physiotherapy (BPT) with rehab-focused training.</p>
+          <ul class="course-list">
+            <li>BPT</li>
+          </ul><a class="link"
+            href="physiotherapy/physiotherapy.html">Open Physiotherapy <span>→</span></a>
+        </div>
+      </article>
+      <article class="card">
+        <a href="occupationaltherapy/occupationaltherapy.html" class="card-hit" aria-label="Open Occupational Therapy programs"></a>
+        <img src="assets/clgimg3.jpg" alt="Occupational therapy program" class="card-img" />
+        <div class="card-body"><span class="num">06</span>
+          <h3>Occupational Therapy</h3>
+          <p>BOT program for activity-based therapeutic rehabilitation.</p>
+          <ul class="course-list">
+            <li>BOT</li>
+          </ul><a class="link"
+            href="occupationaltherapy/occupationaltherapy.html">Open Occupational Therapy <span>→</span></a>
+        </div>
+      </article>
+      <article class="card">
+        <a href="hospitaladministration/hospitaladministration.html" class="card-hit" aria-label="Open Hospital Administration programs"></a>
+        <img src="assets/clgoutsideimgbus.jpg" alt="Hospital administration program" class="card-img" />
+        <div class="card-body"><span class="num">07</span>
+          <h3>Hospital Administration</h3>
+          <p>BHA pathway for healthcare operations and administration leadership.</p>
+          <ul class="course-list">
+            <li>BHA</li>
+          </ul><a class="link"
+            href="hospitaladministration/hospitaladministration.html">Open Hospital Administration <span>→</span></a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+  <script src="load.js"></script>
+</body>
+
+</html>

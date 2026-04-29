@@ -740,99 +740,102 @@ margin-top:20px;
 
     .programs-grid{
       display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:24px;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
       margin-top:56px;
     }
 
     .program-card{
       border:1px solid var(--light-gray);
-      border-radius:2px;
-      padding:40px 36px;
+      border-radius:14px;
+      padding:0 0 26px;
       position:relative;
       overflow:hidden;
       transition:all .4s;
-      cursor:pointer;
       background:var(--white);
     }
 
-    .program-card::before{
-      content:'';
+    .program-card-hit{
       position:absolute;
-      top:0;
-      left:0;
-      right:0;
-      height:3px;
-      background:var(--red);
-      transform:scaleX(0);
-      transform-origin:left;
-      transition:transform .4s;
+      inset:0;
+      z-index:2;
+      text-decoration:none;
     }
 
     .program-card:hover{
-      transform:translateY(-6px);
+      transform:translateY(-4px);
       box-shadow:0 20px 50px rgba(13,27,62,0.12);
-      border-color:transparent;
+      border-color:var(--navy);
+      background:var(--navy);
     }
 
-    .program-card:hover::before{
-      transform:scaleX(1);
+    .program-img{
+      position:relative;
+      height:190px;
+      overflow:hidden;
     }
 
-    .program-num{
-      font-family:'Playfair Display',serif;
-      font-size:60px;
-      font-weight:700;
-      color:var(--light-gray);
-      line-height:1;
+    .program-img img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .45s ease;
+    }
+
+    .program-img::after{
+      content:'';
       position:absolute;
-      top:20px;
-      right:24px;
-      transition:color .3s;
+      inset:0;
+      background:linear-gradient(to top, rgba(12,26,58,.55), rgba(12,26,58,.1));
     }
 
-    .program-card:hover .program-num{
-      color:rgba(192,33,31,0.1);
+    .program-card:hover .program-img img{
+      transform:scale(1.06);
     }
 
-    .program-icon{
-      width:52px;
-      height:52px;
-      border-radius:50%;
-      background:rgba(192,33,31,0.1);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:22px;
-      margin-bottom:20px;
-      transition:background .3s,color .3s;
+    .program-label{
+      display:inline-block;
+      margin:14px 22px 8px;
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.8px;
+      text-transform:uppercase;
       color:var(--red);
-    }
-
-    .program-card:hover .program-icon{
-      background:var(--red);
-      color:#fff;
+      background:rgba(192,33,31,.08);
+      border:1px solid rgba(192,33,31,.18);
+      border-radius:999px;
+      padding:6px 12px;
+      position:relative;
+      z-index:3;
     }
 
     .program-card h3{
       font-family:'Playfair Display',serif;
-      font-size:22px;
+      font-size:24px;
       font-weight:700;
       color:var(--navy);
-      margin-bottom:6px;
+      margin:0 22px 10px;
       position:relative;
-      z-index:1;
+      z-index:3;
+    }
+
+    .program-card:hover h3{
+      color:#fff;
     }
 
     .program-duration{
       font-size:12px;
       color:var(--red);
       font-weight:600;
-      letter-spacing:1px;
+      letter-spacing:.8px;
       text-transform:uppercase;
-      margin-bottom:16px;
+      margin:0 22px 14px;
       position:relative;
-      z-index:1;
+      z-index:3;
+    }
+
+    .program-card:hover .program-duration{
+      color:#f4a0a0;
     }
 
     .program-card p{
@@ -840,25 +843,42 @@ margin-top:20px;
       color:var(--text-muted);
       line-height:1.7;
       position:relative;
-      z-index:1;
+      z-index:3;
+      margin:0 22px;
+    }
+
+    .program-card:hover p{
+      color:rgba(255,255,255,0.78);
     }
 
     .program-link{
       display:inline-flex;
       align-items:center;
       gap:6px;
-      color:var(--red);
-      font-size:13px;
+      color:#fff;
+      background:var(--navy);
+      font-size:12px;
       font-weight:600;
-      margin-top:20px;
+      margin:18px 22px 0;
       text-decoration:none;
-      transition:gap .3s;
+      transition:all .3s;
       position:relative;
-      z-index:1;
+      z-index:3;
+      border-radius:8px;
+      padding:10px 14px;
     }
 
     .program-link:hover{
+      background:var(--red);
       gap:10px;
+    }
+
+    .program-card:hover .program-link{
+      background:transparent;
+      color:#f4a0a0;
+      border-bottom:2px solid var(--red);
+      border-radius:0;
+      padding:0 0 4px;
     }
 
     /* WHY */
@@ -1516,9 +1536,12 @@ margin-top:20px;
 
       .why-grid,
       .facilities-grid,
-      .stats-inner,
       .gallery-grid{
         grid-template-columns:1fr;
+      }
+
+      .stats-inner{
+        grid-template-columns:1fr 1fr;
       }
 
       .footer-grid{
@@ -1546,12 +1569,20 @@ margin-top:20px;
         min-height:340px;
       }
 
+      .stats-inner{
+        grid-template-columns:1fr 1fr;
+      }
+
       .stat-item{
-        border-right:none;
+        border-right:1px solid var(--light-gray);
         border-bottom:1px solid var(--light-gray);
       }
 
-      .stat-item:last-child{
+      .stat-item:nth-child(2n){
+        border-right:none;
+      }
+
+      .stat-item:nth-last-child(-n+2){
         border-bottom:none;
       }
 
@@ -1686,47 +1717,81 @@ margin-top:20px;
     <div class="section-inner">
       <div class="reveal" style="text-align:center;max-width:850px;margin:0 auto 56px auto;">
         <div class="section-tag">Academic Excellence</div>
-        <h2 class="section-title">Our Nursing <em>Programs</em></h2>
+        <h2 class="section-title">Our <em>Programs</em></h2>
         <p class="section-sub" style="margin:18px auto 0 auto;">
-          Discover world-class nursing education programs designed to shape compassionate, skilled, and future-ready healthcare professionals.
+          Explore all 7 academic pathways at Noor College and choose the right program for your career goals.
         </p>
       </div>
 
       <div class="programs-grid">
         <div class="program-card reveal">
-          <span class="program-num">01</span>
-          <div class="program-icon"><i class="fas fa-user-nurse"></i></div>
-          <h3>General Nursing & Midwifery</h3>
-          <p class="program-duration">Diploma Program</p>
-          <p>A highly sought-after diploma course aimed at preparing students to become skilled nursing professionals with expertise in general nursing and midwifery care.</p>
-          <a href="gnm.html" class="program-link">Learn More →</a>
+          <a href="ourcourse/ourcourse.html" class="program-card-hit" aria-label="Open Nursing programs"></a>
+          <div class="program-img"><img src="assets/gnm.jpg" alt="Nursing Programs"></div>
+          <span class="program-label">Healthcare</span>
+          <h3>Nursing</h3>
+          <p class="program-duration">4 Core Programs</p>
+          <p>Includes GNM, B.Sc Nursing, Post Basic B.Sc Nursing, and M.Sc Nursing with strong academic and clinical training.</p>
+          <a href="ourcourse/ourcourse.html" class="program-link">View Programs →</a>
         </div>
 
         <div class="program-card reveal">
-          <span class="program-num">02</span>
-          <div class="program-icon"><i class="fas fa-book-medical"></i></div>
-          <h3>B.Sc Nursing</h3>
-          <p class="program-duration">4 Year Undergraduate</p>
-          <p>Structured to prepare competent nursing professionals with a strong foundation in theory and clinical skills for modern healthcare environments.</p>
-          <a href="bscnursing.html" class="program-link">Learn More →</a>
+          <a href="manegemnet/management.html" class="program-card-hit" aria-label="Open Management programs"></a>
+          <div class="program-img"><img src="assets/clgimg1.jpg" alt="Management Programs"></div>
+          <span class="program-label">Business</span>
+          <h3>Management</h3>
+          <p class="program-duration">5 Career Tracks</p>
+          <p>Includes B.Com, BBA, BBA Aviation, B.Com Logistics, and BCA for business and industry-focused careers.</p>
+          <a href="manegemnet/management.html" class="program-link">View Programs →</a>
         </div>
 
         <div class="program-card reveal">
-          <span class="program-num">03</span>
-          <div class="program-icon"><i class="fas fa-hospital-user"></i></div>
-          <h3>Post Basic B.Sc Nursing</h3>
-          <p class="program-duration">2 Year Program</p>
-          <p>Designed for registered nurses seeking to enhance qualifications and advance into higher professional roles and leadership in healthcare.</p>
-          <a href="pbBsc.html" class="program-link">Learn More →</a>
+          <a href="phrmacy/pharmacy.html" class="program-card-hit" aria-label="Open Pharmacy programs"></a>
+          <div class="program-img"><img src="assets/img1.jpg" alt="Pharmacy Programs"></div>
+          <span class="program-label">Pharmaceutical</span>
+          <h3>Pharmacy</h3>
+          <p class="program-duration">2 Programs</p>
+          <p>Includes B.Pharmacy and D.Pharmacy with focus on pharmaceutical science, dispensing practice, and patient-centered care.</p>
+          <a href="phrmacy/pharmacy.html" class="program-link">View Programs →</a>
         </div>
 
         <div class="program-card reveal">
-          <span class="program-num">04</span>
-          <div class="program-icon"><i class="fas fa-flask"></i></div>
-          <h3>M.Sc Nursing</h3>
-          <p class="program-duration">2 Year Postgraduate</p>
-          <p>A postgraduate program offering specialization and advanced knowledge for leadership roles in nursing education, administration, and research.</p>
-          <a href="mscnursing.html" class="program-link">Learn More →</a>
+          <a href="alliedhealth/alliedhealth.html" class="program-card-hit" aria-label="Open Allied Health Sciences programs"></a>
+          <div class="program-img"><img src="assets/classrooms.jpg" alt="Allied Health Sciences"></div>
+          <span class="program-label">Diagnostics</span>
+          <h3>Allied Health Sciences</h3>
+          <p class="program-duration">4 Specializations</p>
+          <p>Includes B.Sc AT & OTT, B.Sc MIT / Radiology, B.Sc MLT, and B.Sc CCT with practical clinical exposure.</p>
+          <a href="alliedhealth/alliedhealth.html" class="program-link">View Programs →</a>
+        </div>
+
+        <div class="program-card reveal">
+          <a href="physiotherapy/physiotherapy.html" class="program-card-hit" aria-label="Open Physiotherapy programs"></a>
+          <div class="program-img"><img src="assets/studentimg.jpg" alt="Physiotherapy Program"></div>
+          <span class="program-label">Rehabilitation</span>
+          <h3>Physiotherapy</h3>
+          <p class="program-duration">1 Program</p>
+          <p>BPT program focused on rehabilitation science, therapeutic techniques, and patient mobility restoration.</p>
+          <a href="physiotherapy/physiotherapy.html" class="program-link">View Programs →</a>
+        </div>
+
+        <div class="program-card reveal">
+          <a href="occupationaltherapy/occupationaltherapy.html" class="program-card-hit" aria-label="Open Occupational Therapy programs"></a>
+          <div class="program-img"><img src="assets/clgimg3.jpg" alt="Occupational Therapy Program"></div>
+          <span class="program-label">Therapy</span>
+          <h3>Occupational Therapy</h3>
+          <p class="program-duration">1 Program</p>
+          <p>BOT program focused on activity-based rehabilitation to improve independence and quality of daily life.</p>
+          <a href="occupationaltherapy/occupationaltherapy.html" class="program-link">View Programs →</a>
+        </div>
+
+        <div class="program-card reveal">
+          <a href="hospitaladministration/hospitaladministration.html" class="program-card-hit" aria-label="Open Hospital Administration programs"></a>
+          <div class="program-img"><img src="assets/clgoutsideimgbus.jpg" alt="Hospital Administration Program"></div>
+          <span class="program-label">Administration</span>
+          <h3>Hospital Administration</h3>
+          <p class="program-duration">1 Program</p>
+          <p>BHA program focused on healthcare operations, patient service systems, and hospital management leadership.</p>
+          <a href="hospitaladministration/hospitaladministration.html" class="program-link">View Programs →</a>
         </div>
       </div>
     </div>
