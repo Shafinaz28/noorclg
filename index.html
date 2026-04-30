@@ -926,26 +926,92 @@ margin-top:20px;
 
     /* PROGRAMS */
     .programs{
-      background:var(--white);
+      background:
+        linear-gradient(135deg, rgba(8,20,48,0.92), rgba(11,28,66,0.96)),
+        radial-gradient(circle at 16% 20%, rgba(224,53,51,0.18), transparent 42%),
+        radial-gradient(circle at 82% 84%, rgba(201,150,58,0.12), transparent 44%);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .programs::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size:44px 44px;
+      opacity:.18;
+      pointer-events:none;
+    }
+
+    .programs .section-inner{
+      max-width:1240px;
+      position:relative;
+      z-index:1;
+    }
+
+    .programs .section-title{
+      color:#fff;
+    }
+
+    .programs .section-sub{
+      color:rgba(255,255,255,.8);
+      max-width:760px;
+    }
+
+    .programs-slider-wrap{
+      margin-top:56px;
+      overflow:hidden;
     }
 
     .programs-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
+      display:flex;
       gap:22px;
-      margin-top:56px;
+      transition:transform .45s ease;
+      will-change:transform;
     }
 
     .program-card{
-      border:1px solid var(--light-gray);
-      border-radius:14px;
-      padding:0 0 26px;
+      flex:0 0 calc((100% - 44px) / 3);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:16px;
+      padding:0 0 22px;
       position:relative;
       overflow:hidden;
-      transition:all .4s;
-      background:var(--white);
+      transition:transform .3s ease, box-shadow .3s ease;
+      background:#f8fafc;
       display:flex;
       flex-direction:column;
+      min-height:100%;
+    }
+
+    .program-card.reveal{
+      transform:translateY(28px) scale(.98);
+    }
+
+    .program-card.reveal.visible{
+      animation:programCardSlideIn .65s cubic-bezier(.2,.8,.2,1) both;
+    }
+
+    .programs-grid .program-card:nth-child(1).visible{animation-delay:.05s;}
+    .programs-grid .program-card:nth-child(2).visible{animation-delay:.12s;}
+    .programs-grid .program-card:nth-child(3).visible{animation-delay:.19s;}
+    .programs-grid .program-card:nth-child(4).visible{animation-delay:.26s;}
+    .programs-grid .program-card:nth-child(5).visible{animation-delay:.33s;}
+    .programs-grid .program-card:nth-child(6).visible{animation-delay:.40s;}
+    .programs-grid .program-card:nth-child(7).visible{animation-delay:.47s;}
+
+    @keyframes programCardSlideIn{
+      from{
+        opacity:0;
+        transform:translateY(28px) scale(.98);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+      }
     }
 
     .program-card-hit{
@@ -958,14 +1024,12 @@ margin-top:20px;
 
     .program-card:hover{
       transform:translateY(-4px);
-      box-shadow:0 20px 50px rgba(13,27,62,0.12);
-      border-color:var(--navy);
-      background:var(--navy);
+      box-shadow:0 24px 40px rgba(2,8,24,.45);
     }
 
     .program-img{
       position:relative;
-      height:190px;
+      height:180px;
       overflow:hidden;
     }
 
@@ -980,73 +1044,83 @@ margin-top:20px;
       content:'';
       position:absolute;
       inset:0;
-      background:linear-gradient(to top, rgba(12,26,58,.55), rgba(12,26,58,.1));
+      background:linear-gradient(to top, rgba(12,26,58,.48), rgba(12,26,58,.08));
     }
 
     .program-card:hover .program-img img{
-      transform:scale(1.06);
+      transform:scale(1.05);
     }
 
     .program-label{
       display:inline-block;
-      margin:14px 22px 8px;
-      font-size:11px;
+      margin:14px 18px 8px;
+      font-size:10px;
       font-weight:700;
-      letter-spacing:.8px;
+      letter-spacing:1px;
       text-transform:uppercase;
-      color:var(--red);
-      background:rgba(192,33,31,.08);
-      border:1px solid rgba(192,33,31,.18);
+      color:#7a580f;
+      background:#f5e7c6;
       border-radius:999px;
-      padding:6px 12px;
+      padding:5px 10px;
       position:relative;
       z-index:3;
     }
 
     .program-card h3{
       font-family:'Playfair Display',serif;
-      font-size:24px;
+      font-size:36px;
       font-weight:700;
-      color:var(--navy);
-      margin:0 22px 10px;
+      color:#0f1c3f;
+      margin:0 18px 8px;
+      line-height:1.1;
       position:relative;
       z-index:3;
-    }
-
-    .program-card:hover h3{
-      color:#fff;
     }
 
     .program-duration{
-      font-size:12px;
-      color:var(--red);
-      font-weight:600;
-      letter-spacing:.8px;
+      font-size:11px;
+      color:#8b1614;
+      font-weight:700;
+      letter-spacing:.9px;
       text-transform:uppercase;
-      margin:0 22px 14px;
+      margin:0 18px 10px;
       position:relative;
       z-index:3;
     }
 
-    .program-card:hover .program-duration{
-      color:#f4a0a0;
+    .program-tags{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin:0 18px 12px;
+      position:relative;
+      z-index:3;
+      flex-wrap:wrap;
+    }
+
+    .program-tag{
+      display:inline-block;
+      color:#fff;
+      background:#c0211f;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.2px;
+      line-height:1.25;
+      padding:4px 10px;
+      border-radius:999px;
     }
 
     .program-card p{
       font-size:14px;
-      color:var(--text-muted);
-      line-height:1.7;
+      color:#3b495f;
+      line-height:1.75;
       position:relative;
       z-index:3;
-      margin:0 22px;
+      margin:0 18px;
     }
 
     .program-card > p:not(.program-duration){
       flex:1;
-    }
-
-    .program-card:hover p{
-      color:rgba(255,255,255,0.78);
     }
 
     .program-link{
@@ -1054,36 +1128,26 @@ margin-top:20px;
       align-items:center;
       justify-content:center;
       color:#fff;
-      background:var(--navy);
+      background:#0f1c3f;
       font-size:12px;
       font-weight:600;
-      margin:20px auto 0;
       text-decoration:none;
       transition:all .3s;
       position:relative;
       z-index:3;
       border-radius:8px;
-      padding:11px 20px;
-      width:calc(100% - 44px);
-      max-width:180px;
+      padding:11px 18px;
+      width:calc(100% - 36px);
+      margin:18px auto 0;
+      max-width:200px;
       margin-top:auto;
-    }
-
-    .programs-grid > .program-card:last-child:nth-child(3n + 1){
-      grid-column:2;
     }
 
     .program-link:hover{
       background:var(--red);
     }
 
-    .program-card:hover .program-link{
-      background:var(--red);
-      color:#fff;
-      border-bottom:none;
-      border-radius:8px;
-      padding:11px 20px;
-    }
+    .programs-dots{display:none;}
 
     .admission-modal{
       position:fixed;
@@ -1633,11 +1697,11 @@ margin-top:20px;
       }
 
       .programs-grid{
-        grid-template-columns:1fr;
+        gap:14px;
       }
 
-      .programs-grid > .program-card:last-child:nth-child(3n + 1){
-        grid-column:auto;
+      .program-card{
+        flex:0 0 calc((100% - 14px) / 2);
       }
 
       .why-grid{
@@ -1731,27 +1795,28 @@ margin-top:20px;
       }
 
       .programs-grid{
-        gap:12px;
+        display:flex;
+        overflow-x:auto;
+        gap:14px;
+        padding:2px 2px 8px;
+        scroll-snap-type:x mandatory;
+        -webkit-overflow-scrolling:touch;
+      }
+
+      .program-card{
+        flex:0 0 100%;
+        padding:0 0 16px;
+        scroll-snap-align:start;
+      }
+
+      .program-card h3{
+        font-size:32px;
       }
 
       .why-grid,
       .facilities-grid,
       .gallery-grid{
         grid-template-columns:1fr;
-      }
-
-      .program-card{
-        display:block;
-        padding:0 0 14px;
-      }
-
-      .program-card > p:not(.program-duration){
-        flex:unset;
-      }
-
-      .program-link{
-        margin-top:14px;
-        margin-bottom:0;
       }
 
       .gallery-grid{
@@ -1858,9 +1923,9 @@ margin-top:20px;
 
     <div class="hero-layout">
       <div class="hero-content">
-        <div class="hero-badge">Noor Education Trust — Est. Bangalore</div>
-        <h1>Shaping the <em>Future</em> of Healthcare</h1>
-        <p>At Noor College & School of Nursing, we build compassionate, competent, and principled nursing professionals ready for the evolving demands of modern healthcare.</p>
+        <div class="hero-badge">Admissions Open 2026</div>
+        <h1>Build Your <em>Career</em> with Noor</h1>
+        <p>Explore a wide range of healthcare and professional programs designed for real-world success.</p>
         <div class="hero-btns">
           <a href="#" class="btn-primary apply-trigger">Apply for Admission</a>
           <a href="#programs" class="btn-outline">All Programs</a>
@@ -2004,12 +2069,14 @@ margin-top:20px;
         </p>
       </div>
 
-      <div class="programs-grid">
+      <div class="programs-slider-wrap">
+      <div class="programs-grid" id="programsGrid">
         <div class="program-card reveal">
           <a href="ourcourse/ourcourse.html" class="program-card-hit" aria-label="Open Nursing programs"></a>
           <div class="program-img"><img src="assets/gnm.jpg" alt="Nursing Programs"></div>
           <span class="program-label">Healthcare</span>
           <h3>Nursing</h3>
+          <div class="program-tags"><span class="program-tag">GNM</span><span class="program-tag">B.Sc Nursing</span><span class="program-tag">M.Sc Nursing</span></div>
           <p class="program-duration">4 Core Programs</p>
           <p>Includes GNM, B.Sc Nursing, Post Basic B.Sc Nursing, and M.Sc Nursing with strong academic and clinical training.</p>
           <a href="#" class="program-link apply-trigger">Apply Now</a>
@@ -2020,6 +2087,7 @@ margin-top:20px;
           <div class="program-img"><img src="assets/clgimg1.jpg" alt="Management Programs"></div>
           <span class="program-label">Business</span>
           <h3>Management</h3>
+          <div class="program-tags"><span class="program-tag">B.Com</span><span class="program-tag">BBA</span><span class="program-tag">BCA</span></div>
           <p class="program-duration">5 Career Tracks</p>
           <p>Includes B.Com, BBA, BBA Aviation, B.Com Logistics, and BCA for business and industry-focused careers.</p>
           <a href="#" class="program-link apply-trigger">Apply Now</a>
@@ -2030,6 +2098,7 @@ margin-top:20px;
           <div class="program-img"><img src="assets/img1.jpg" alt="Pharmacy Programs"></div>
           <span class="program-label">Pharmaceutical</span>
           <h3>Pharmacy</h3>
+          <div class="program-tags"><span class="program-tag">B.Pharmacy</span><span class="program-tag">D.Pharmacy</span></div>
           <p class="program-duration">2 Programs</p>
           <p>Includes B.Pharmacy and D.Pharmacy with focus on pharmaceutical science, dispensing practice, and patient-centered care.</p>
           <a href="#" class="program-link apply-trigger">Apply Now</a>
@@ -2040,6 +2109,7 @@ margin-top:20px;
           <div class="program-img"><img src="assets/classrooms.jpg" alt="Allied Health Sciences"></div>
           <span class="program-label">Diagnostics</span>
           <h3>Allied Health Sciences</h3>
+          <div class="program-tags"><span class="program-tag">AT &amp; OTT</span><span class="program-tag">MIT / Radiology</span><span class="program-tag">MLT</span></div>
           <p class="program-duration">4 Specializations</p>
           <p>Includes B.Sc AT & OTT, B.Sc MIT / Radiology, B.Sc MLT, and B.Sc CCT with practical clinical exposure.</p>
           <a href="#" class="program-link apply-trigger">Apply Now</a>
@@ -2050,6 +2120,7 @@ margin-top:20px;
           <div class="program-img"><img src="assets/studentimg.jpg" alt="Physiotherapy Program"></div>
           <span class="program-label">Rehabilitation</span>
           <h3>Physiotherapy</h3>
+          <div class="program-tags"><span class="program-tag">BPT</span></div>
           <p class="program-duration">1 Program</p>
           <p>BPT program focused on rehabilitation science, therapeutic techniques, and patient mobility restoration.</p>
           <a href="#" class="program-link apply-trigger">Apply Now</a>
@@ -2060,6 +2131,7 @@ margin-top:20px;
           <div class="program-img"><img src="assets/clgimg3.jpg" alt="Occupational Therapy Program"></div>
           <span class="program-label">Therapy</span>
           <h3>Occupational Therapy</h3>
+          <div class="program-tags"><span class="program-tag">BOT</span></div>
           <p class="program-duration">1 Program</p>
           <p>BOT program focused on activity-based rehabilitation to improve independence and quality of daily life.</p>
           <a href="#" class="program-link apply-trigger">Apply Now</a>
@@ -2070,10 +2142,12 @@ margin-top:20px;
           <div class="program-img"><img src="assets/clgoutsideimgbus.jpg" alt="Hospital Administration Program"></div>
           <span class="program-label">Administration</span>
           <h3>Hospital Administration</h3>
+          <div class="program-tags"><span class="program-tag">BHA</span></div>
           <p class="program-duration">1 Program</p>
           <p>BHA program focused on healthcare operations, patient service systems, and hospital management leadership.</p>
           <a href="#" class="program-link apply-trigger">Apply Now</a>
         </div>
+      </div>
       </div>
     </div>
   </section>
@@ -2729,6 +2803,68 @@ margin-top:20px;
           fillCourseSelect(heroCourseSelect, '', 'Select Course');
         }, 2200);
       });
+    }
+
+    // Departments auto slider (desktop + mobile)
+    const programsGrid = document.getElementById('programsGrid');
+    if (programsGrid) {
+      const programCards = Array.from(programsGrid.querySelectorAll('.program-card'));
+      let desktopIndex = 0;
+      let mobileIndex = 0;
+      let desktopProgramsTimer = null;
+      let mobileProgramsTimer = null;
+
+      const isMobilePrograms = () => window.matchMedia('(max-width: 768px)').matches;
+
+      const startDesktopProgramsSlider = () => {
+        clearInterval(desktopProgramsTimer);
+        if (isMobilePrograms() || programCards.length <= 3) return;
+
+        programsGrid.style.transform = 'translateX(0)';
+        desktopIndex = 0;
+
+        desktopProgramsTimer = setInterval(() => {
+          const firstCard = programCards[0];
+          if (!firstCard) return;
+
+          const styles = window.getComputedStyle(programsGrid);
+          const gap = parseFloat(styles.gap || styles.columnGap || '22') || 22;
+          const maxIndex = Math.max(0, programCards.length - 3);
+          desktopIndex = desktopIndex >= maxIndex ? 0 : desktopIndex + 1;
+          const shift = desktopIndex * (firstCard.offsetWidth + gap);
+
+          programsGrid.style.transform = `translateX(-${shift}px)`;
+        }, 3000);
+      };
+
+      const startMobileProgramsSlider = () => {
+        clearInterval(mobileProgramsTimer);
+        if (!isMobilePrograms() || !programCards.length) return;
+
+        mobileIndex = 0;
+        mobileProgramsTimer = setInterval(() => {
+          const nextIndex = (mobileIndex + 1) % programCards.length;
+          const targetCard = programCards[nextIndex];
+          if (!targetCard) return;
+
+          programsGrid.scrollTo({
+            left: targetCard.offsetLeft,
+            behavior: 'smooth'
+          });
+          mobileIndex = nextIndex;
+        }, 3200);
+      };
+
+      const refreshProgramsSlider = () => {
+        clearInterval(desktopProgramsTimer);
+        clearInterval(mobileProgramsTimer);
+        programsGrid.style.transform = 'translateX(0)';
+        startDesktopProgramsSlider();
+        startMobileProgramsSlider();
+      };
+
+      refreshProgramsSlider();
+      window.addEventListener('resize', refreshProgramsSlider);
     }
 
     // Mobile gallery auto slider
