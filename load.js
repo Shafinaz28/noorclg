@@ -1,5 +1,6 @@
-const COMPONENT_CACHE_KEY = "noor_component_cache_v4";
-const OLD_COMPONENT_CACHE_KEYS = ["noor_component_cache_v1", "noor_component_cache_v2", "noor_component_cache_v3"];
+const COMPONENT_CACHE_KEY = "noor_component_cache_v5";
+const OLD_COMPONENT_CACHE_KEYS = ["noor_component_cache_v1", "noor_component_cache_v2", "noor_component_cache_v3", "noor_component_cache_v4"];
+const COMPONENT_VERSION = "20260430-2";
 
 OLD_COMPONENT_CACHE_KEYS.forEach((key) => {
   try {
@@ -42,21 +43,22 @@ function mountComponent(id, data) {
 }
 
 function loadComponent(id, file) {
+  const requestFile = `${file}?v=${COMPONENT_VERSION}`;
   const cache = readComponentCache();
-  const cachedData = cache[file];
+  const cachedData = cache[requestFile];
   if (cachedData) {
     mountComponent(id, cachedData);
   }
 
-  fetch(file, { cache: "force-cache" })
+  fetch(requestFile, { cache: "no-store" })
     .then(response => {
-      if (!response.ok) throw new Error(`Failed to load ${file}`);
+      if (!response.ok) throw new Error(`Failed to load ${requestFile}`);
       return response.text();
     })
     .then(data => {
       mountComponent(id, data);
-      if (cache[file] !== data) {
-        cache[file] = data;
+      if (cache[requestFile] !== data) {
+        cache[requestFile] = data;
         writeComponentCache(cache);
       }
     })

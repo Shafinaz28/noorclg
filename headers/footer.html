@@ -1,6 +1,5 @@
 <!-- footer.html -->
 <footer class="site-footer">
-
 <style>
 .site-footer{
   background:#0C1A3A;
@@ -18,21 +17,18 @@
   text-decoration:none;
 }
 
-/* Divider */
 .footer-divider{
   height:1px;
   background:linear-gradient(90deg,transparent,#C0211F,transparent);
   opacity:.45;
 }
 
-/* Wrapper */
 .footer-wrap{
   max-width:1180px;
   margin:auto;
   padding:0 5%;
 }
 
-/* Grid */
 .footer-grid{
   display:grid;
   grid-template-columns:2fr 1fr 1fr 1fr;
@@ -40,51 +36,18 @@
   padding:65px 0;
 }
 
-/* Logo */
 .footer-logo-row{
-  display:flex;
+  display:inline-flex;
   align-items:center;
-  gap:14px;
   margin-bottom:18px;
 }
 
 .footer-logo{
   width:auto;
-  height:72px;
+  height:70px;
   max-width:100%;
   object-fit:contain;
   display:block;
-  flex-shrink:0;
-  background:transparent;
-  border-radius:0 !important;
-  padding:0;
-  mix-blend-mode:multiply;
-}
-
-.footer-logo-wordmark{
-  font-family:'DM Sans',sans-serif;
-  font-size:26px;
-  font-weight:700;
-  color:#fff;
-  letter-spacing:.02em;
-  line-height:1;
-}
-
-.footer-logo-text span{
-  display:block;
-  font-size:18px;
-  font-weight:700;
-  color:#fff;
-  line-height:1.1;
-}
-
-.footer-logo-text small{
-  display:block;
-  font-size:10px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:#B8BCC8;
-  margin-top:3px;
 }
 
 .footer-brand p{
@@ -95,7 +58,6 @@
   max-width:320px;
 }
 
-/* Social */
 .footer-social{
   display:flex;
   gap:10px;
@@ -121,7 +83,6 @@
   color:#fff;
 }
 
-/* Column */
 .footer-col h4{
   font-size:13px;
   font-weight:700;
@@ -162,7 +123,6 @@
   padding-left:5px;
 }
 
-/* Badge */
 .footer-badge{
   display:inline-block;
   padding:7px 14px;
@@ -176,7 +136,6 @@
   margin-bottom:10px;
 }
 
-/* Bottom */
 .footer-bottom{
   border-top:1px solid rgba(255,255,255,.08);
   padding:22px 0;
@@ -209,16 +168,14 @@
   color:#fff;
 }
 
-/* Tablet */
-@media(max-width:992px){
+@media (max-width:992px){
   .footer-grid{
     grid-template-columns:1fr 1fr;
     gap:35px;
   }
 }
 
-/* Mobile */
-@media(max-width:768px){
+@media (max-width:768px){
   .footer-wrap{
     padding:0 20px;
   }
@@ -234,20 +191,7 @@
   }
 
   .footer-logo{
-    width:auto;
-    height:62px;
-  }
-
-  .footer-logo-wordmark{
-    font-size:22px;
-  }
-
-  .footer-logo-text span{
-    font-size:16px;
-  }
-
-  .footer-logo-text small{
-    font-size:9px;
+    height:60px;
   }
 
   .footer-bottom{
@@ -265,15 +209,10 @@
 <div class="footer-divider"></div>
 
 <div class="footer-wrap">
-
   <div class="footer-grid">
-
-    <!-- Brand -->
     <div class="footer-brand">
-
-      <a href="index.html" class="logo">
-        <img src="assets/logo.png" alt="Noor College Logo">
-        
+      <a href="index.html" class="footer-logo-row">
+        <img src="assets/footerimg.png" alt="Noor College Logo" class="footer-logo">
       </a>
 
       <p>
@@ -281,15 +220,13 @@
       </p>
 
       <div class="footer-social">
-        <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="#" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
       </div>
-
     </div>
 
-    <!-- Programs -->
     <div class="footer-col">
       <h4>Programs</h4>
       <ul>
@@ -303,7 +240,6 @@
       </ul>
     </div>
 
-    <!-- Links -->
     <div class="footer-col">
       <h4>Quick Links</h4>
       <ul>
@@ -314,7 +250,6 @@
       </ul>
     </div>
 
-    <!-- Accreditation -->
     <div class="footer-col">
       <h4>Accreditation</h4>
       <ul>
@@ -328,24 +263,15 @@
         <div class="footer-badge">Noor Education Trust</div>
       </div>
     </div>
-
   </div>
 
-  <!-- Bottom -->
   <div class="footer-bottom">
-
-    <p>
-      © 2025 Noor College & School of Nursing. All rights reserved.
-    </p>
-
+    <p>© 2025 Noor College & School of Nursing. All rights reserved.</p>
     <div class="footer-bottom-right">
       <span>Under <a href="#">Noor Education Trust</a></span>
       <span>|</span>
       <span>Affiliated to <a href="#">RGUHS</a></span>
     </div>
-
   </div>
-
 </div>
-
 </footer>
