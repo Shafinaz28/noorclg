@@ -1,5 +1,5 @@
-const COMPONENT_CACHE_KEY = "noor_component_cache_v2";
-const OLD_COMPONENT_CACHE_KEYS = ["noor_component_cache_v1"];
+const COMPONENT_CACHE_KEY = "noor_component_cache_v4";
+const OLD_COMPONENT_CACHE_KEYS = ["noor_component_cache_v1", "noor_component_cache_v2", "noor_component_cache_v3"];
 
 OLD_COMPONENT_CACHE_KEYS.forEach((key) => {
   try {

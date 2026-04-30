@@ -3,8 +3,12 @@
   <div class="site-topbar">
     <div class="site-topbar__inner">
       <div class="site-topbar__left">
-        <a href="tel:9845026920">9845026920</a>
-        <a href="mailto:info@noorcollege.com">info@noorcollege.com</a>
+        <a href="tel:9845026920" class="site-topbar__call" aria-label="Call now">
+          <i class="fa-solid fa-phone-volume" aria-hidden="true"></i>
+        </a>
+        <a href="mailto:info@noorcollege.com" class="site-topbar__mail" aria-label="Send email">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+        </a>
       </div>
       <div class="site-topbar__social">
         <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
@@ -288,6 +292,28 @@
   text-decoration:none;
   font-size:11px;
   letter-spacing:0.04em;
+}
+
+.site-topbar__call{
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,0.28);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size:11px !important;
+}
+
+.site-topbar__mail{
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,0.28);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size:11px !important;
 }
 
 .site-topbar__left a:hover{

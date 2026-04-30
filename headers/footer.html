@@ -49,13 +49,25 @@
 }
 
 .footer-logo{
-  width:56px;
-  height:56px;
+  width:auto;
+  height:72px;
+  max-width:100%;
   object-fit:contain;
+  display:block;
   flex-shrink:0;
-  background:#fff;
-  border-radius:50%;
-  padding:4px;
+  background:transparent;
+  border-radius:0 !important;
+  padding:0;
+  mix-blend-mode:multiply;
+}
+
+.footer-logo-wordmark{
+  font-family:'DM Sans',sans-serif;
+  font-size:26px;
+  font-weight:700;
+  color:#fff;
+  letter-spacing:.02em;
+  line-height:1;
 }
 
 .footer-logo-text span{
@@ -222,8 +234,12 @@
   }
 
   .footer-logo{
-    width:48px;
-    height:48px;
+    width:auto;
+    height:62px;
+  }
+
+  .footer-logo-wordmark{
+    font-size:22px;
   }
 
   .footer-logo-text span{
@@ -256,14 +272,7 @@
     <div class="footer-brand">
 
       <a href="index.html" class="footer-logo-row">
-
-        <img src="assets/logo1.png" alt="Noor College Logo" class="footer-logo">
-
-        <div class="footer-logo-text">
-          <span>Noor College</span>
-          <small>School of Nursing</small>
-        </div>
-
+        <span class="footer-logo-wordmark">Noor College</span>
       </a>
 
       <p>
