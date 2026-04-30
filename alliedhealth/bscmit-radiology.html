@@ -20,11 +20,17 @@
     .fact small{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:1.1px}.fact strong{font-size:14px}
     .hl{margin-top:16px;list-style:none}.hl li{position:relative;padding-left:20px;margin-bottom:10px;color:#334155}.hl li::before{content:'✓';position:absolute;left:0;color:var(--red)}
     .cta{margin-top:24px;display:inline-flex;gap:10px;align-items:center;background:var(--navy);color:#fff;text-decoration:none;padding:12px 18px;border-radius:8px}.cta:hover{background:var(--red)}
+    @media (max-width:768px){
+      .hero{min-height:auto;padding:42px 0 28px}
+      h1{font-size:clamp(30px,8vw,42px)}
+      .sub{line-height:1.65}
+      section{padding:56px 0}
+    }
   </style>
 </head>
 <body>
   <div id="header"></div>
-  <section class="hero"><div class="wrap"><div class="crumb"><a href="index.html">Home</a> / <a href="alliedhealth/alliedhealth.html">Allied Health</a> / B.Sc MIT / Radiology</div><h1>B.Sc MIT / <em>Radiology</em></h1><p class="sub">A 3-year medical imaging program that builds competency in radiographic techniques, imaging systems, and diagnostic support practice.</p></div></section>
+  <section class="hero"><div class="wrap"><div class="crumb"><a href="index.html">Home</a> / <a href="/alliedhealth/alliedhealth.html">Allied Health</a> / B.Sc MIT / Radiology</div><h1>B.Sc MIT / <em>Radiology</em></h1><p class="sub">A 3-year medical imaging program that builds competency in radiographic techniques, imaging systems, and diagnostic support practice.</p></div></section>
   <section><div class="wrap grid"><div class="card"><h2>Program Overview</h2><p>This program prepares students for radiology and imaging departments with training in patient positioning, imaging workflows, quality control, and safety standards.</p><ul class="hl"><li>X-ray, CT, and imaging workflow fundamentals</li><li>Patient preparation and procedure assistance skills</li><li>Radiation safety and equipment handling awareness</li><li>Clinical posting exposure in imaging departments</li></ul><a class="cta" href="contact.html#contact-form">Apply for Admission <span>→</span></a></div><div><div class="img"><img src="assets/img1.jpg" alt="MIT Radiology students" /></div><div class="facts"><div class="fact"><small>Duration</small><strong>3 Years</strong></div><div class="fact"><small>Level</small><strong>Undergraduate</strong></div><div class="fact"><small>Eligibility</small><strong>10+2 / Equivalent</strong></div><div class="fact"><small>Mode</small><strong>Regular</strong></div></div></div></div></section>
   <div id="footer"></div>
   <script src="load.js"></script>

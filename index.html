@@ -99,7 +99,7 @@
 
     /* HERO */
     .hero{
-      min-height:calc(100vh - 78px);
+      min-height:calc(78vh - 78px);
       background:var(--navy);
       position:relative;
       overflow:hidden;
@@ -282,6 +282,197 @@
       max-width:860px;
       margin:0 auto;
       padding:0 20px;
+    }
+
+    .hero.hero-admission{
+      padding:72px 5% 44px;
+      align-items:flex-start;
+    }
+
+    .hero-layout{
+      width:min(1180px,100%);
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(0,1.2fr) minmax(340px,460px);
+      gap:42px;
+      align-items:center;
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-layout .hero-content{
+      text-align:left;
+      max-width:unset;
+      margin:0;
+      padding:0;
+    }
+
+    .hero-layout .hero-badge{
+      margin:0 0 18px;
+    }
+
+    .hero-layout .hero-btns{
+      justify-content:flex-start;
+    }
+
+    .admission-hero-card{
+      background:rgba(255,255,255,0.97);
+      border:1px solid rgba(201,150,58,0.55);
+      border-radius:14px;
+      padding:18px 18px;
+      box-shadow:0 22px 48px rgba(12,26,58,0.26);
+      backdrop-filter:blur(5px);
+    }
+
+    .admission-hero-card h3{
+      font-family:'Playfair Display',serif;
+      color:var(--red);
+      font-size:28px;
+      margin-bottom:4px;
+      text-align:center;
+    }
+
+    .admission-hero-card p{
+      display:none;
+    }
+
+    .admission-mini-form{
+      display:grid;
+      gap:8px;
+    }
+
+    .admission-mini-form .mini-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+    }
+
+    .admission-mini-form .mini-field{
+      position:relative;
+    }
+
+    .admission-mini-form .mini-field i{
+      position:absolute;
+      left:12px;
+      top:50%;
+      transform:translateY(-50%);
+      color:#64748b;
+      font-size:13px;
+      pointer-events:none;
+    }
+
+    .admission-mini-form .mini-input{
+      width:100%;
+      border:1px solid #cbd5e1;
+      border-radius:8px;
+      padding:9px 11px 9px 34px;
+      font-size:13px;
+      color:var(--navy);
+      outline:none;
+      font-family:'DM Sans',sans-serif;
+      background:#fff;
+      transition:border-color .25s, box-shadow .25s;
+    }
+
+    .admission-mini-form .mini-input:focus{
+      border-color:var(--red);
+      box-shadow:0 0 0 3px rgba(192,33,31,0.12);
+    }
+
+    .admission-mini-form .mini-submit{
+      width:100%;
+      border:none;
+      border-radius:8px;
+      padding:10px 12px;
+      background:linear-gradient(135deg, var(--navy), var(--navy-mid));
+      color:#fff;
+      font-size:14px;
+      font-weight:700;
+      letter-spacing:.3px;
+      cursor:pointer;
+      transition:all .3s;
+      font-family:'DM Sans',sans-serif;
+      margin-top:0;
+    }
+
+    .admission-mini-form .mini-submit:hover{
+      background:var(--red);
+      transform:translateY(-1px);
+      box-shadow:0 10px 22px rgba(192,33,31,0.25);
+    }
+
+    .admission-mini-form .mini-textarea{
+      min-height:72px;
+      resize:vertical;
+      padding-top:10px;
+      padding-left:12px;
+    }
+
+    .hero-program-dropdown{
+      position:relative;
+    }
+
+    .hero-program-toggle{
+      width:100%;
+      border:1px solid #cbd5e1;
+      border-radius:8px;
+      background:#fff;
+      color:var(--navy);
+      font-size:13px;
+      font-family:'DM Sans',sans-serif;
+      text-align:left;
+      padding:9px 34px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .hero-program-toggle i{
+      position:static !important;
+      transform:none !important;
+      margin-left:8px;
+      color:#64748b;
+      font-size:12px;
+    }
+
+    .hero-program-dropdown.open .hero-program-toggle{
+      border-color:var(--red);
+      box-shadow:0 0 0 3px rgba(192,33,31,0.12);
+    }
+
+    .hero-program-options{
+      list-style:none;
+      margin:4px 0 0;
+      padding:4px 0;
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      border:1px solid #cbd5e1;
+      border-radius:8px;
+      background:#fff;
+      box-shadow:0 12px 26px rgba(12,26,58,0.18);
+      max-height:190px;
+      overflow:auto;
+      display:none;
+      z-index:10;
+    }
+
+    .hero-program-dropdown.open .hero-program-options{
+      display:block;
+    }
+
+    .hero-program-options li{
+      padding:8px 12px;
+      font-size:13px;
+      color:var(--navy);
+      cursor:pointer;
+    }
+
+    .hero-program-options li:hover{
+      background:#f8fafc;
+      color:var(--red);
     }
 
     /* GALLERY */
@@ -753,6 +944,8 @@ margin-top:20px;
       overflow:hidden;
       transition:all .4s;
       background:var(--white);
+      display:flex;
+      flex-direction:column;
     }
 
     .program-card-hit{
@@ -760,6 +953,7 @@ margin-top:20px;
       inset:0;
       z-index:2;
       text-decoration:none;
+      display:block;
     }
 
     .program-card:hover{
@@ -847,38 +1041,140 @@ margin-top:20px;
       margin:0 22px;
     }
 
+    .program-card > p:not(.program-duration){
+      flex:1;
+    }
+
     .program-card:hover p{
       color:rgba(255,255,255,0.78);
     }
 
     .program-link{
-      display:inline-flex;
+      display:flex;
       align-items:center;
-      gap:6px;
+      justify-content:center;
       color:#fff;
       background:var(--navy);
       font-size:12px;
       font-weight:600;
-      margin:18px 22px 0;
+      margin:20px auto 0;
       text-decoration:none;
       transition:all .3s;
       position:relative;
       z-index:3;
       border-radius:8px;
-      padding:10px 14px;
+      padding:11px 20px;
+      width:calc(100% - 44px);
+      max-width:180px;
+      margin-top:auto;
+    }
+
+    .programs-grid > .program-card:last-child:nth-child(3n + 1){
+      grid-column:2;
     }
 
     .program-link:hover{
       background:var(--red);
-      gap:10px;
     }
 
     .program-card:hover .program-link{
+      background:var(--red);
+      color:#fff;
+      border-bottom:none;
+      border-radius:8px;
+      padding:11px 20px;
+    }
+
+    .admission-modal{
+      position:fixed;
+      inset:0;
+      background:rgba(2, 12, 35, 0.72);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:22px;
+      z-index:1200;
+    }
+
+    .admission-modal.is-open{
+      display:flex;
+    }
+
+    .admission-modal__panel{
+      width:min(640px, 100%);
+      background:#fff;
+      border-radius:12px;
+      box-shadow:0 28px 70px rgba(2, 12, 35, 0.4);
+      position:relative;
+      overflow:hidden;
+      max-height:84vh;
+      overflow-y:auto;
+    }
+
+    .admission-modal__head{
+      background:linear-gradient(135deg, var(--navy), var(--navy-mid));
+      color:#fff;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .admission-modal__head h3{
+      margin:0;
+      font-family:'Playfair Display',serif;
+      font-size:24px;
+    }
+
+    .admission-modal__head p{
+      margin:4px 0 0;
+      font-size:13px;
+      color:rgba(255,255,255,0.78);
+    }
+
+    .admission-modal__close{
       background:transparent;
-      color:#f4a0a0;
-      border-bottom:2px solid var(--red);
-      border-radius:0;
-      padding:0 0 4px;
+      border:1px solid rgba(255,255,255,0.55);
+      width:38px;
+      height:38px;
+      border-radius:50%;
+      color:#fff;
+      cursor:pointer;
+      font-size:20px;
+      line-height:1;
+      flex-shrink:0;
+    }
+
+    .admission-modal__body{
+      padding:14px 18px 18px;
+    }
+
+    .admission-modal .form-submit{
+      margin-top:4px;
+      padding:12px;
+      font-size:14px;
+    }
+
+    .admission-modal .form-group{
+      margin-bottom:12px;
+      gap:5px;
+    }
+
+    .admission-modal .form-row{
+      margin-bottom:12px;
+      gap:12px;
+    }
+
+    .admission-modal .form-group input,
+    .admission-modal .form-group select,
+    .admission-modal .form-group textarea{
+      padding:10px 12px;
+      font-size:13px;
+    }
+
+    .admission-modal .form-group textarea{
+      min-height:84px;
     }
 
     /* WHY */
@@ -1229,7 +1525,7 @@ margin-top:20px;
 
     .contact-form{
       background:var(--white);
-      padding:40px;
+      padding:28px 30px;
       border:1px solid var(--light-gray);
       border-radius:2px;
     }
@@ -1239,21 +1535,21 @@ margin-top:20px;
       font-size:22px;
       font-weight:700;
       color:var(--navy);
-      margin-bottom:24px;
+      margin-bottom:16px;
     }
 
     .form-row{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:16px;
-      margin-bottom:16px;
+      gap:12px;
+      margin-bottom:12px;
     }
 
     .form-group{
       display:flex;
       flex-direction:column;
-      gap:6px;
-      margin-bottom:16px;
+      gap:5px;
+      margin-bottom:12px;
     }
 
     .form-group label{
@@ -1267,11 +1563,11 @@ margin-top:20px;
     .form-group input,
     .form-group select,
     .form-group textarea{
-      padding:12px 16px;
+      padding:10px 12px;
       border:1px solid var(--mid-gray);
       border-radius:2px;
       font-family:'DM Sans',sans-serif;
-      font-size:14px;
+      font-size:13px;
       color:var(--navy);
       background:var(--white);
       transition:border-color .3s, box-shadow .3s;
@@ -1288,18 +1584,18 @@ margin-top:20px;
 
     .form-group textarea{
       resize:vertical;
-      min-height:100px;
+      min-height:78px;
     }
 
     .form-submit{
       width:100%;
-      padding:14px;
+      padding:12px;
       background:var(--navy);
       color:#fff;
       border:none;
       border-radius:2px;
       font-family:'DM Sans',sans-serif;
-      font-size:15px;
+      font-size:14px;
       font-weight:600;
       cursor:pointer;
       letter-spacing:.5px;
@@ -1458,6 +1754,23 @@ margin-top:20px;
 
     /* RESPONSIVE */
     @media (max-width: 900px){
+      .hero-layout{
+        grid-template-columns:1fr;
+        gap:30px;
+      }
+
+      .hero-layout .hero-content{
+        text-align:center;
+      }
+
+      .hero-layout .hero-badge{
+        margin:0 auto 18px;
+      }
+
+      .hero-layout .hero-btns{
+        justify-content:center;
+      }
+
       .about-grid,
       .campus-inner,
       .contact-grid{
@@ -1466,6 +1779,10 @@ margin-top:20px;
 
       .programs-grid{
         grid-template-columns:1fr;
+      }
+
+      .programs-grid > .program-card:last-child:nth-child(3n + 1){
+        grid-column:auto;
       }
 
       .why-grid{
@@ -1502,6 +1819,34 @@ margin-top:20px;
         padding:90px 18px 70px;
       }
 
+      .hero.hero-admission{
+        padding:68px 18px 36px;
+      }
+
+      .hero-layout .hero-content{
+        padding:0;
+      }
+
+      .admission-hero-card{
+        padding:16px 14px;
+      }
+
+      .admission-modal__head{
+        padding:18px 16px;
+      }
+
+      .admission-modal__head h3{
+        font-size:24px;
+      }
+
+      .admission-modal__body{
+        padding:18px 16px 22px;
+      }
+
+      .admission-mini-form .mini-row{
+        grid-template-columns:1fr;
+      }
+
       .hero-dots{
         bottom:78px;
       }
@@ -1534,10 +1879,44 @@ margin-top:20px;
         padding:28px 20px;
       }
 
+      .programs-grid{
+        gap:12px;
+      }
+
       .why-grid,
       .facilities-grid,
       .gallery-grid{
         grid-template-columns:1fr;
+      }
+
+      .program-card{
+        display:block;
+        padding:0 0 14px;
+      }
+
+      .program-card > p:not(.program-duration){
+        flex:unset;
+      }
+
+      .program-link{
+        margin-top:14px;
+        margin-bottom:0;
+      }
+
+      .gallery-grid{
+        display:flex;
+        overflow-x:auto;
+        gap:14px;
+        margin-top:40px;
+        padding:2px 2px 8px;
+        scroll-snap-type:x mandatory;
+        -webkit-overflow-scrolling:touch;
+      }
+
+      .gallery-grid .gallery-card{
+        flex:0 0 100%;
+        min-height:260px;
+        scroll-snap-align:start;
       }
 
       .stats-inner{
@@ -1607,7 +1986,7 @@ margin-top:20px;
   <div id="header"></div>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero hero-admission">
     <div class="hero-slider">
       <div class="hero-slide active" style="background-image:url('assets/confference.jpg');"></div>
       <div class="hero-slide" style="background-image:url('assets/clgimg.jpg');"></div>
@@ -1629,14 +2008,68 @@ margin-top:20px;
     <div class="orb orb2"></div>
     <div class="orb orb3"></div>
 
-    <div class="hero-content">
-      <div class="hero-badge">Noor Education Trust — Est. Bangalore</div>
-      <h1>Shaping the <em>Future</em> of Healthcare</h1>
-      <p>At Noor College & School of Nursing, we build compassionate, competent, and principled nursing professionals ready for the evolving demands of modern healthcare.</p>
-      <div class="hero-btns">
-        <a href="programs.html" class="btn-primary">Explore Programs →</a>
-        <a href="about.html" class="btn-outline">Learn More</a>
+    <div class="hero-layout">
+      <div class="hero-content">
+        <div class="hero-badge">Noor Education Trust — Est. Bangalore</div>
+        <h1>Shaping the <em>Future</em> of Healthcare</h1>
+        <p>At Noor College & School of Nursing, we build compassionate, competent, and principled nursing professionals ready for the evolving demands of modern healthcare.</p>
+        <div class="hero-btns">
+          <a href="#" class="btn-primary apply-trigger">Apply for Admission</a>
+          <a href="#programs" class="btn-outline">All Programs</a>
+        </div>
       </div>
+
+      <aside class="admission-hero-card reveal">
+        <h3>Admission Open 2026</h3>
+        <p>Apply through one admission form for all programs. Start your application now and our team will connect with you.</p>
+        <form class="admission-mini-form" id="heroAdmissionForm">
+          <div class="mini-row">
+            <div class="mini-field">
+              <i class="fas fa-user"></i>
+              <input class="mini-input" type="text" placeholder="First Name" required>
+            </div>
+            <div class="mini-field">
+              <i class="fas fa-user"></i>
+              <input class="mini-input" type="text" placeholder="Last Name" required>
+            </div>
+          </div>
+          <div class="mini-field">
+            <i class="fas fa-envelope"></i>
+            <input class="mini-input" type="email" placeholder="Email Address" required>
+          </div>
+          <div class="mini-field">
+            <i class="fas fa-phone"></i>
+            <input class="mini-input" type="tel" placeholder="Phone Number" required>
+          </div>
+          <div class="mini-field hero-program-dropdown" id="heroProgramDropdown">
+            <i class="fas fa-graduation-cap"></i>
+            <input type="hidden" id="heroProgramValue" required>
+            <button type="button" class="hero-program-toggle" id="heroProgramToggle">
+              <span id="heroProgramLabel">Select Department</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <ul class="hero-program-options" id="heroProgramOptions">
+              <li data-value="Nursing">Nursing</li>
+              <li data-value="Management">Management</li>
+              <li data-value="Pharmacy">Pharmacy</li>
+              <li data-value="Allied Health Sciences">Allied Health Sciences</li>
+              <li data-value="Physiotherapy">Physiotherapy</li>
+              <li data-value="Occupational Therapy">Occupational Therapy</li>
+              <li data-value="Hospital Administration">Hospital Administration</li>
+            </ul>
+          </div>
+          <div class="mini-field">
+            <i class="fas fa-book"></i>
+            <select class="mini-input" id="heroCourseSelect" required disabled>
+              <option value="">Select Course</option>
+            </select>
+          </div>
+          <div class="mini-field">
+            <textarea class="mini-input mini-textarea" placeholder="Any questions or special requirements..."></textarea>
+          </div>
+          <button type="submit" class="mini-submit">Register</button>
+        </form>
+      </aside>
     </div>
 
     <!-- <div class="hero-dots">
@@ -1731,7 +2164,7 @@ margin-top:20px;
           <h3>Nursing</h3>
           <p class="program-duration">4 Core Programs</p>
           <p>Includes GNM, B.Sc Nursing, Post Basic B.Sc Nursing, and M.Sc Nursing with strong academic and clinical training.</p>
-          <a href="ourcourse/ourcourse.html" class="program-link">View Programs →</a>
+          <a href="#" class="program-link apply-trigger">Apply Now</a>
         </div>
 
         <div class="program-card reveal">
@@ -1741,7 +2174,7 @@ margin-top:20px;
           <h3>Management</h3>
           <p class="program-duration">5 Career Tracks</p>
           <p>Includes B.Com, BBA, BBA Aviation, B.Com Logistics, and BCA for business and industry-focused careers.</p>
-          <a href="manegemnet/management.html" class="program-link">View Programs →</a>
+          <a href="#" class="program-link apply-trigger">Apply Now</a>
         </div>
 
         <div class="program-card reveal">
@@ -1751,7 +2184,7 @@ margin-top:20px;
           <h3>Pharmacy</h3>
           <p class="program-duration">2 Programs</p>
           <p>Includes B.Pharmacy and D.Pharmacy with focus on pharmaceutical science, dispensing practice, and patient-centered care.</p>
-          <a href="phrmacy/pharmacy.html" class="program-link">View Programs →</a>
+          <a href="#" class="program-link apply-trigger">Apply Now</a>
         </div>
 
         <div class="program-card reveal">
@@ -1761,7 +2194,7 @@ margin-top:20px;
           <h3>Allied Health Sciences</h3>
           <p class="program-duration">4 Specializations</p>
           <p>Includes B.Sc AT & OTT, B.Sc MIT / Radiology, B.Sc MLT, and B.Sc CCT with practical clinical exposure.</p>
-          <a href="alliedhealth/alliedhealth.html" class="program-link">View Programs →</a>
+          <a href="#" class="program-link apply-trigger">Apply Now</a>
         </div>
 
         <div class="program-card reveal">
@@ -1771,7 +2204,7 @@ margin-top:20px;
           <h3>Physiotherapy</h3>
           <p class="program-duration">1 Program</p>
           <p>BPT program focused on rehabilitation science, therapeutic techniques, and patient mobility restoration.</p>
-          <a href="physiotherapy/physiotherapy.html" class="program-link">View Programs →</a>
+          <a href="#" class="program-link apply-trigger">Apply Now</a>
         </div>
 
         <div class="program-card reveal">
@@ -1781,7 +2214,7 @@ margin-top:20px;
           <h3>Occupational Therapy</h3>
           <p class="program-duration">1 Program</p>
           <p>BOT program focused on activity-based rehabilitation to improve independence and quality of daily life.</p>
-          <a href="occupationaltherapy/occupationaltherapy.html" class="program-link">View Programs →</a>
+          <a href="#" class="program-link apply-trigger">Apply Now</a>
         </div>
 
         <div class="program-card reveal">
@@ -1791,7 +2224,7 @@ margin-top:20px;
           <h3>Hospital Administration</h3>
           <p class="program-duration">1 Program</p>
           <p>BHA program focused on healthcare operations, patient service systems, and hospital management leadership.</p>
-          <a href="hospitaladministration/hospitaladministration.html" class="program-link">View Programs →</a>
+          <a href="#" class="program-link apply-trigger">Apply Now</a>
         </div>
       </div>
     </div>
@@ -2012,7 +2445,7 @@ margin-top:20px;
     <div class="admission-inner reveal">
       <h2>Begin Your Nursing Journey Today</h2>
       <p>Join hundreds of students who have chosen Noor College to launch their healthcare careers. Applications now open for the upcoming academic year.</p>
-      <a href="#contact" class="btn-white">Apply for Admission →</a>
+      <a href="#" class="btn-white apply-trigger">Apply for Admission →</a>
     </div>
   </section>
 
@@ -2112,6 +2545,71 @@ margin-top:20px;
       </div>
     </div>
   </section>
+
+  <div class="admission-modal" id="admissionModal" aria-hidden="true">
+    <div class="admission-modal__panel" role="dialog" aria-modal="true" aria-labelledby="admissionModalTitle">
+      <div class="admission-modal__head">
+        <div>
+          <h3 id="admissionModalTitle">Admission Open 2026</h3>
+          <p>Fill your details and submit your enquiry.</p>
+        </div>
+        <button class="admission-modal__close" type="button" id="closeAdmissionModal" aria-label="Close admission form">&times;</button>
+      </div>
+      <div class="admission-modal__body">
+        <form id="admissionPopupForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label><i class="fas fa-user"></i> First Name</label>
+              <input type="text" placeholder="Your first name" required>
+            </div>
+
+            <div class="form-group">
+              <label><i class="fas fa-user"></i> Last Name</label>
+              <input type="text" placeholder="Your last name" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label><i class="fas fa-envelope"></i> Email Address</label>
+            <input type="email" placeholder="your@email.com" required>
+          </div>
+
+          <div class="form-group">
+            <label><i class="fas fa-phone"></i> Phone Number</label>
+            <input type="tel" placeholder="9845026920" required>
+          </div>
+
+          <div class="form-group">
+            <label><i class="fas fa-building"></i> Department</label>
+            <select id="popupDepartmentSelect" required>
+              <option value="">Select a department</option>
+              <option>Nursing</option>
+              <option>Management</option>
+              <option>Pharmacy</option>
+              <option>Allied Health Sciences</option>
+              <option>Physiotherapy</option>
+              <option>Occupational Therapy</option>
+              <option>Hospital Administration</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label><i class="fas fa-graduation-cap"></i> Course</label>
+            <select id="popupCourseSelect" required disabled>
+              <option value="">Select a course</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label><i class="fas fa-message"></i> Message</label>
+            <textarea placeholder="Any questions or special requirements..."></textarea>
+          </div>
+
+          <button type="submit" class="form-submit">Submit Enquiry →</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <div id="footer"></div>
 
@@ -2233,6 +2731,178 @@ margin-top:20px;
           enquiryForm.reset();
         }, 2500);
       });
+    }
+
+    const admissionModal = document.getElementById('admissionModal');
+    const closeAdmissionModalBtn = document.getElementById('closeAdmissionModal');
+    const applyTriggers = document.querySelectorAll('.apply-trigger');
+    const heroAdmissionForm = document.getElementById('heroAdmissionForm');
+    const heroAdmissionSubmit = heroAdmissionForm ? heroAdmissionForm.querySelector('.mini-submit') : null;
+    const heroProgramDropdown = document.getElementById('heroProgramDropdown');
+    const heroProgramToggle = document.getElementById('heroProgramToggle');
+    const heroProgramLabel = document.getElementById('heroProgramLabel');
+    const heroProgramValue = document.getElementById('heroProgramValue');
+    const heroProgramOptions = document.querySelectorAll('#heroProgramOptions li');
+    const heroCourseSelect = document.getElementById('heroCourseSelect');
+    const admissionPopupForm = document.getElementById('admissionPopupForm');
+    const popupDepartmentSelect = document.getElementById('popupDepartmentSelect');
+    const popupCourseSelect = document.getElementById('popupCourseSelect');
+    const popupSubmitBtn = admissionPopupForm ? admissionPopupForm.querySelector('.form-submit') : null;
+
+    const departmentCourses = {
+      'Nursing': ['GNM', 'B.Sc Nursing', 'Post Basic B.Sc', 'M.Sc Nursing'],
+      'Management': ['B.Com', 'BBA', 'BBA Aviation', 'B.Com Logistics', 'BCA'],
+      'Pharmacy': ['B.Pharmacy', 'D.Pharmacy'],
+      'Allied Health Sciences': ['B.Sc AT & OTT', 'B.Sc MIT / Radiology', 'B.Sc MLT', 'B.Sc CCT'],
+      'Physiotherapy': ['BPT'],
+      'Occupational Therapy': ['BOT'],
+      'Hospital Administration': ['BHA']
+    };
+
+    function openAdmissionModal() {
+      if (!admissionModal) return;
+      admissionModal.classList.add('is-open');
+      admissionModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeAdmissionModal() {
+      if (!admissionModal) return;
+      admissionModal.classList.remove('is-open');
+      admissionModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    applyTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        openAdmissionModal();
+      });
+    });
+
+    if (closeAdmissionModalBtn) {
+      closeAdmissionModalBtn.addEventListener('click', closeAdmissionModal);
+    }
+
+    if (admissionModal) {
+      admissionModal.addEventListener('click', (event) => {
+        if (event.target === admissionModal) {
+          closeAdmissionModal();
+        }
+      });
+    }
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && admissionModal && admissionModal.classList.contains('is-open')) {
+        closeAdmissionModal();
+      }
+    });
+
+    function setHeroProgram(value) {
+      if (!heroProgramLabel || !heroProgramValue) return;
+      heroProgramLabel.textContent = value || 'Select Department';
+      heroProgramValue.value = value || '';
+    }
+
+    function fillCourseSelect(selectEl, department, placeholderText) {
+      if (!selectEl) return;
+      const courses = department ? (departmentCourses[department] || []) : [];
+      selectEl.innerHTML = `<option value="">${placeholderText}</option>`;
+      courses.forEach((course) => {
+        const option = document.createElement('option');
+        option.value = course;
+        option.textContent = course;
+        selectEl.appendChild(option);
+      });
+      selectEl.disabled = courses.length === 0;
+    }
+
+    if (heroProgramDropdown && heroProgramToggle) {
+      heroProgramToggle.addEventListener('click', () => {
+        heroProgramDropdown.classList.toggle('open');
+      });
+
+      heroProgramOptions.forEach((option) => {
+        option.addEventListener('click', () => {
+          const selectedDepartment = option.dataset.value || option.textContent.trim();
+          setHeroProgram(selectedDepartment);
+          fillCourseSelect(heroCourseSelect, selectedDepartment, 'Select Course');
+          heroProgramDropdown.classList.remove('open');
+        });
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!heroProgramDropdown.contains(event.target)) {
+          heroProgramDropdown.classList.remove('open');
+        }
+      });
+    }
+
+    if (admissionPopupForm && popupSubmitBtn) {
+      admissionPopupForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        popupSubmitBtn.textContent = '✓ Enquiry Submitted';
+        popupSubmitBtn.style.background = '#16a34a';
+
+        setTimeout(() => {
+          popupSubmitBtn.textContent = 'Submit Enquiry →';
+          popupSubmitBtn.style.background = '';
+          admissionPopupForm.reset();
+          closeAdmissionModal();
+        }, 2200);
+      });
+    }
+
+    if (popupDepartmentSelect && popupCourseSelect) {
+      popupDepartmentSelect.addEventListener('change', () => {
+        fillCourseSelect(popupCourseSelect, popupDepartmentSelect.value, 'Select a course');
+      });
+    }
+
+    if (heroAdmissionForm && heroAdmissionSubmit) {
+      heroAdmissionForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        if (heroProgramValue && !heroProgramValue.value) {
+          heroProgramDropdown.classList.add('open');
+          return;
+        }
+        if (heroCourseSelect && !heroCourseSelect.value) {
+          heroCourseSelect.focus();
+          return;
+        }
+        heroAdmissionSubmit.textContent = '✓ Submitted';
+        heroAdmissionSubmit.style.background = '#16a34a';
+
+        setTimeout(() => {
+          heroAdmissionSubmit.textContent = 'Register';
+          heroAdmissionSubmit.style.background = '';
+          heroAdmissionForm.reset();
+          setHeroProgram('');
+          fillCourseSelect(heroCourseSelect, '', 'Select Course');
+        }, 2200);
+      });
+    }
+
+    // Mobile gallery auto slider
+    const galleryGrid = document.querySelector('.gallery-grid');
+    if (galleryGrid && window.matchMedia('(max-width: 768px)').matches) {
+      const galleryCards = galleryGrid.querySelectorAll('.gallery-card');
+      let galleryIndex = 0;
+
+      const autoSlideGallery = () => {
+        if (!galleryCards.length) return;
+        const nextIndex = (galleryIndex + 1) % galleryCards.length;
+        const targetCard = galleryCards[nextIndex];
+        if (!targetCard) return;
+
+        galleryGrid.scrollTo({
+          left: targetCard.offsetLeft,
+          behavior: 'smooth'
+        });
+        galleryIndex = nextIndex;
+      };
+
+      setInterval(autoSlideGallery, 3000);
     }
   </script>
 </body>

@@ -13,6 +13,12 @@
       </div>
     </div>
   </div>
+  <div class="site-announcement" role="status" aria-label="Admission announcement">
+    <div class="site-announcement__track">
+      <span>Admissions Open 2026 - Apply Now</span>
+      <span aria-hidden="true">Admissions Open 2026 - Apply Now</span>
+    </div>
+  </div>
   <nav id="nav" class="site-nav" aria-label="Main navigation">
     <div class="site-nav__inner">
       <a href="index.html" class="logo">
@@ -224,6 +230,9 @@
     </div>
   </nav>
 </header>
+<a class="whatsapp-float" href="https://wa.me/919845026920" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+  <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+</a>
 
 <style>
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
@@ -313,6 +322,36 @@
   background:var(--white);
   border-bottom:1px solid var(--light-gray);
   box-shadow:0 2px 20px rgba(12,26,58,0.06);
+}
+
+.site-announcement{
+  background:var(--red);
+  color:#fff;
+  border-bottom:1px solid rgba(255,255,255,0.22);
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+.site-announcement__track{
+  display:inline-flex;
+  align-items:center;
+  gap:64px;
+  min-width:100%;
+  padding:6px 0;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  animation:announcementSlide 16s linear infinite;
+}
+
+.site-announcement__track span{
+  display:inline-block;
+}
+
+@keyframes announcementSlide{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
 }
 
 .site-nav__inner{
@@ -638,9 +677,42 @@
   display:none;
 }
 
+.whatsapp-float{
+  position:fixed;
+  right:18px;
+  bottom:20px;
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  background:#25D366;
+  color:#fff;
+  display:flex !important;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  box-shadow:0 10px 24px rgba(37,211,102,0.35);
+  z-index:3000;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+
+.whatsapp-float i{
+  font-size:30px;
+}
+
+.whatsapp-float:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 30px rgba(37,211,102,0.42);
+}
+
 @media (max-width:992px){
   .site-topbar{
     display:none;
+  }
+
+  .site-announcement__track{
+    font-size:10px;
+    letter-spacing:0.1em;
+    padding:7px 0;
   }
 
   .site-topbar__inner{
@@ -670,7 +742,8 @@
   }
 
   .logo img{
-    height:42px;
+    height:auto;
+    width:160px;
   }
 
   .logo-words span{
@@ -849,6 +922,17 @@
   .mobile-social-row a:hover{
     border-color:var(--red);
     color:var(--red);
+  }
+
+  .whatsapp-float{
+    width:50px;
+    height:50px;
+    right:14px;
+    bottom:calc(14px + env(safe-area-inset-bottom));
+  }
+
+  .whatsapp-float i{
+    font-size:28px;
   }
 }
 </style>

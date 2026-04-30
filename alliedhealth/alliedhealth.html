@@ -449,6 +449,7 @@
       line-height:1;
       color:rgba(255,255,255,.88);
       font-weight:700;
+      display:none;
     }
 
     .course-body{
@@ -856,9 +857,20 @@
       }
 
       .strip-stat{
-        flex-direction:column;
-        align-items:center;
-        gap:16px;
+        width:100%;
+        flex-direction:row;
+        flex-wrap:nowrap;
+        align-items:flex-start;
+        justify-content:space-between;
+        gap:10px;
+      }
+
+      .sstat{
+        flex:1;
+      }
+
+      .sstat strong{
+        font-size:24px;
       }
 
       .course-img{height:190px;}
@@ -950,7 +962,7 @@
 
       <div class="course-grid">
         <article class="course-card r">
-          <a href="alliedhealth/bscatott.html" class="course-card-hit" aria-label="Open B.Sc AT and OTT program"></a>
+          <a href="/alliedhealth/bscatott.html" class="course-card-hit" aria-label="Open B.Sc AT and OTT program"></a>
           <div class="course-img">
             <img src="assets/classrooms.jpg" alt="B.Sc AT and OTT Course" class="course-real-img" />
             <div class="duration-pill">3 Year Undergraduate</div>
@@ -969,7 +981,7 @@
               <li>Infection control and sterile technique proficiency</li>
               <li>Hospital postings with hands-on clinical exposure</li>
             </ul>
-            <a href="alliedhealth/bscatott.html" class="course-cta">
+            <a href="/alliedhealth/bscatott.html" class="course-cta">
               <span>Click here for more information</span>
               <span>→</span>
             </a>
@@ -977,7 +989,7 @@
         </article>
 
         <article class="course-card r d1">
-          <a href="alliedhealth/bscmit-radiology.html" class="course-card-hit" aria-label="Open B.Sc MIT Radiology program"></a>
+          <a href="/alliedhealth/bscmit-radiology.html" class="course-card-hit" aria-label="Open B.Sc MIT Radiology program"></a>
           <div class="course-img">
             <img src="assets/img1.jpg" alt="B.Sc MIT Radiology Course" class="course-real-img" />
             <div class="duration-pill">3 Year Undergraduate</div>
@@ -996,7 +1008,7 @@
               <li>Radiation safety and quality control awareness</li>
               <li>Clinical exposure in imaging departments</li>
             </ul>
-            <a href="alliedhealth/bscmit-radiology.html" class="course-cta">
+            <a href="/alliedhealth/bscmit-radiology.html" class="course-cta">
               <span>Click here for more information</span>
               <span>→</span>
             </a>
@@ -1004,7 +1016,7 @@
         </article>
 
         <article class="course-card r d2">
-          <a href="alliedhealth/bscmlt.html" class="course-card-hit" aria-label="Open B.Sc MLT program"></a>
+          <a href="/alliedhealth/bscmlt.html" class="course-card-hit" aria-label="Open B.Sc MLT program"></a>
           <div class="course-img">
             <img src="assets/studentimg.jpg" alt="B.Sc MLT Course" class="course-real-img" />
             <div class="duration-pill">3 Year Undergraduate</div>
@@ -1023,7 +1035,7 @@
               <li>Quality assurance and reporting standards</li>
               <li>Hospital lab internships and practical workflows</li>
             </ul>
-            <a href="alliedhealth/bscmlt.html" class="course-cta">
+            <a href="/alliedhealth/bscmlt.html" class="course-cta">
               <span>Click here for more information</span>
               <span>→</span>
             </a>
@@ -1031,7 +1043,7 @@
         </article>
 
         <article class="course-card r d3">
-          <a href="alliedhealth/bsccct.html" class="course-card-hit" aria-label="Open B.Sc CCT program"></a>
+          <a href="/alliedhealth/bsccct.html" class="course-card-hit" aria-label="Open B.Sc CCT program"></a>
           <div class="course-img">
             <img src="assets/clgoutsideimgbus.jpg" alt="B.Sc CCT Course" class="course-real-img" />
             <div class="duration-pill">3 Year Undergraduate</div>
@@ -1050,7 +1062,7 @@
               <li>Cath-lab and ICU support competency development</li>
               <li>Clinical training in cardiology care settings</li>
             </ul>
-            <a href="alliedhealth/bsccct.html" class="course-cta">
+            <a href="/alliedhealth/bsccct.html" class="course-cta">
               <span>Click here for more information</span>
               <span>→</span>
             </a>

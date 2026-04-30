@@ -384,7 +384,8 @@
       font-size: 62px;
       line-height: 1;
       color: rgba(255, 255, 255, .88);
-      font-weight: 700
+      font-weight: 700;
+      display: none
     }
 
     .course-body {
@@ -596,6 +597,26 @@
     }
 
     @media (max-width:768px) {
+      .strip-stat {
+        width: 100%;
+        gap: 10px;
+        flex-wrap: nowrap;
+        justify-content: space-between
+      }
+
+      .sstat {
+        flex: 1
+      }
+
+      .sstat strong {
+        font-size: 24px
+      }
+
+      .sstat small {
+        font-size: 10px;
+        letter-spacing: 1px
+      }
+
       .course-grid {
         grid-template-columns: 1fr
       }
@@ -664,7 +685,7 @@
               <li>Hands-on rehabilitation and therapeutic exercise training</li>
               <li>Clinical rotations in hospitals and rehabilitation settings</li>
               <li>Career pathways in hospitals, sports clinics, and wellness centers</li>
-            </ul><a href="physiotherapy/bpt.html" class="course-cta"><span>Click here for more
+            </ul><a href="/physiotherapy/bpt.html" class="course-cta"><span>Click here for more
                 information</span><span>→</span></a>
           </div>
         </article>

@@ -448,6 +448,7 @@
       line-height:1;
       color:rgba(255,255,255,.88);
       font-weight:700;
+      display:none;
     }
 
     .course-body{
@@ -855,9 +856,20 @@
       }
 
       .strip-stat{
-        flex-direction:column;
-        align-items:center;
-        gap:16px;
+        width:100%;
+        flex-direction:row;
+        flex-wrap:nowrap;
+        align-items:flex-start;
+        justify-content:space-between;
+        gap:10px;
+      }
+
+      .sstat{
+        flex:1;
+      }
+
+      .sstat strong{
+        font-size:24px;
       }
 
       .course-img{height:190px;}
@@ -949,7 +961,7 @@
 
       <div class="course-grid">
         <article class="course-card r">
-          <a href="gnm.html" class="course-card-hit" aria-label="Open GNM program"></a>
+          <a href="/ourcourse/gnm.html" class="course-card-hit" aria-label="Open GNM program"></a>
           <div class="course-img">
             <img src="assets/gnm.jpg" alt="GNM Course" class="course-real-img" />
             <div class="duration-pill">Diploma Program</div>
@@ -968,7 +980,7 @@
               <li>Midwifery and maternal care specialisation</li>
               <li>Affiliated to RGUHS — nationally recognised qualification</li>
             </ul>
-            <a href="gnm.html" class="course-cta">
+            <a href="/ourcourse/gnm.html" class="course-cta">
               <span>Click here for more information</span>
               <span>→</span>
             </a>
@@ -976,7 +988,7 @@
         </article>
 
         <article class="course-card r d1">
-          <a href="bscnursing.html" class="course-card-hit" aria-label="Open B.Sc Nursing program"></a>
+          <a href="/ourcourse/bscnursing.html" class="course-card-hit" aria-label="Open B.Sc Nursing program"></a>
           <div class="course-img">
             <img src="assets/bsc.jpg" alt="B.Sc Nursing" class="course-real-img" />
             <div class="duration-pill">4 Year Undergraduate</div>
@@ -995,7 +1007,7 @@
               <li>Access to advanced labs — microbiology, nutrition, community health</li>
               <li>HELINET digital library access with international journals</li>
             </ul>
-            <a href="bscnursing.html" class="course-cta">
+            <a href="/ourcourse/bscnursing.html" class="course-cta">
               <span>Click here for more information</span>
               <span>→</span>
             </a>
@@ -1003,7 +1015,7 @@
         </article>
 
         <article class="course-card r d2">
-          <a href="pbBsc.html" class="course-card-hit" aria-label="Open Post Basic B.Sc Nursing program"></a>
+          <a href="/ourcourse/pbBsc.html" class="course-card-hit" aria-label="Open Post Basic B.Sc Nursing program"></a>
           <div class="course-img">
             <img src="assets/pbbsc.jpg" alt="Post Basic B.Sc Nursing" class="course-real-img" />
             <div class="duration-pill">2 Year Program</div>
@@ -1022,7 +1034,7 @@
               <li>Advanced clinical skills and leadership training</li>
               <li>Opens pathway to M.Sc Nursing and beyond</li>
             </ul>
-            <a href="pbBsc.html" class="course-cta">
+            <a href="/ourcourse/pbBsc.html" class="course-cta">
               <span>Click here for more information</span>
               <span>→</span>
             </a>
@@ -1030,7 +1042,7 @@
         </article>
 
         <article class="course-card r d3">
-          <a href="mscnursing.html" class="course-card-hit" aria-label="Open M.Sc Nursing program"></a>
+          <a href="/ourcourse/mscnursing.html" class="course-card-hit" aria-label="Open M.Sc Nursing program"></a>
           <div class="course-img">
             <img src="assets/msc.jpg" alt="M.Sc Nursing" class="course-real-img" />
             <div class="duration-pill">2 Year Masters</div>
@@ -1049,7 +1061,7 @@
               <li>Prepares for nurse educator and administrator roles</li>
               <li>Pathway to doctoral studies and academic careers</li>
             </ul>
-            <a href="mscnursing.html" class="course-cta">
+            <a href="/ourcourse/mscnursing.html" class="course-cta">
               <span>Click here for more information</span>
               <span>→</span>
             </a>
